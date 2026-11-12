@@ -1,265 +1,80 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>🎄 미리 준비하는 크리스마스 & 올겨울 월동 꿀템 모음</title>
-  <!-- Open Graph -->
-  <meta property="og:title" content="🎄 미리 준비하는 크리스마스 & 올겨울 월동 꿀템">
-  <meta property="og:description" content="크리스마스 트리, 창문 틈막이 패킹, 충전식 손난로, 포장마차 꼬치오뎅, 탄소매트 최저가 모음">
-  <style>
-    :root {
-      --primary: #107c41;
-      --xmas-red: #d8232a;
-      --xmas-gold: #f5a623;
-      --coupang: #e61919;
-      --bg: #0d1b2a;
-      --card-bg: rgba(255, 255, 255, 0.96);
-      --text: #1d1d1f;
-      --sub-text: #666;
-      --border: rgba(255, 255, 255, 0.2);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, sans-serif; }
-    
-    body {
-      background: radial-gradient(circle at 50% 10%, #1e3d59 0%, #0d1b2a 100%);
-      color: var(--text);
-      display: flex;
-      justify-content: center;
-      padding: 24px 16px;
-      min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* Falling Snow Animation */
-    .snow-wrap {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .snowflake {
-      position: absolute;
-      top: -10px;
-      color: #fff;
-      font-size: 14px;
-      user-select: none;
-      opacity: 0.8;
-      animation: fall linear infinite;
-    }
-    @keyframes fall {
-      0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
-      100% { transform: translateY(105vh) rotate(360deg); opacity: 0.2; }
-    }
-    .s1 { left: 8%; font-size: 16px; animation-duration: 8s; animation-delay: 0s; }
-    .s2 { left: 24%; font-size: 12px; animation-duration: 11s; animation-delay: 2s; }
-    .s3 { left: 42%; font-size: 18px; animation-duration: 9s; animation-delay: 4s; }
-    .s4 { left: 60%; font-size: 10px; animation-duration: 13s; animation-delay: 1s; }
-    .s5 { left: 78%; font-size: 15px; animation-duration: 10s; animation-delay: 3s; }
-    .s6 { left: 92%; font-size: 13px; animation-duration: 12s; animation-delay: 5s; }
-
-    .container { width: 100%; max-width: 440px; margin: 0 auto; position: relative; z-index: 1; }
-    
-    /* Profile Header */
-    .profile-header { text-align: center; margin-bottom: 20px; padding: 10px 0; }
-    .avatar-wrap {
-      width: 76px; height: 76px; border-radius: 50%;
-      background: linear-gradient(135deg, #107c41, #0b532c);
-      margin: 0 auto 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 38px;
-      box-shadow: 0 0 20px rgba(245, 166, 35, 0.4), 0 4px 14px rgba(0,0,0,0.3);
-      border: 2px solid #f5a623;
-    }
-    .channel-name { font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 4px; letter-spacing: -0.4px; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
-    .channel-desc { font-size: 13px; color: #d0d8e2; line-height: 1.4; }
-    
-    /* Notice Badge */
-    .notice-box {
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 12px; padding: 10px 14px;
-      font-size: 12px; color: #f0f4f8; margin-bottom: 18px;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .notice-icon { font-size: 16px; }
-
-    .section-title { font-size: 14px; font-weight: 800; color: #ffeb99; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; letter-spacing: -0.2px; }
-
-    /* Product Cards */
-    .card-list { display: flex; flex-direction: column; gap: 12px; }
-    .product-card {
-      background: var(--card-bg);
-      border-radius: 16px; padding: 14px;
-      display: flex; gap: 13px; align-items: center;
-      text-decoration: none; color: inherit;
-      border: 1px solid rgba(255,255,255,0.4);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-      transition: all 0.2s ease;
-      position: relative; overflow: hidden;
-    }
-    .product-card:active { transform: scale(0.98); background: #fdfdfd; }
-    
-    .thumb-wrap {
-      width: 76px; height: 76px; border-radius: 12px;
-      background: #f4f6f9; overflow: hidden; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 34px;
-      border: 1px solid #eef1f5;
-    }
-    
-    .card-info { flex: 1; min-width: 0; }
-    .badge-row { display: flex; gap: 5px; margin-bottom: 4px; align-items: center; flex-wrap: wrap; }
-    .badge { font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
-    .badge-xmas { background: #ffebeb; color: var(--xmas-red); border: 1px solid #ffd4d4; }
-    .badge-best { background: #eef7ee; color: #1e7e34; }
-    .badge-hot { background: #fff5eb; color: #ff8a00; }
-    
-    .item-title { font-size: 14px; font-weight: 700; line-height: 1.35; margin-bottom: 3px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; letter-spacing: -0.3px; color: #111; }
-    .item-desc { font-size: 11px; color: var(--sub-text); margin-bottom: 6px; line-height: 1.3; }
-    .price-row { display: flex; align-items: baseline; gap: 4px; }
-    .price-text { font-size: 14px; font-weight: 800; color: #111; }
-    
-    .btn-cta {
-      margin-left: auto;
-      background: linear-gradient(135deg, #d8232a, #b0181e);
-      color: white; font-size: 11px; font-weight: 700;
-      padding: 7px 11px; border-radius: 8px;
-      display: flex; align-items: center; gap: 2px;
-      flex-shrink: 0;
-      box-shadow: 0 2px 6px rgba(216, 35, 42, 0.3);
-    }
-    
-    /* Footer */
-    .footer { margin-top: 32px; text-align: center; font-size: 11px; color: #9bb0c7; line-height: 1.6; padding: 0 10px; }
-    .ftc-badge { display: inline-block; background: rgba(255, 255, 255, 0.15); color: #e2e8f0; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; margin-bottom: 6px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미리 준비하는 크리스마스, 올겨울 물건 모음</title>
+<meta property="og:title" content="미리 준비하는 크리스마스, 올겨울 물건 모음">
+<meta property="og:description" content="연말 홈파티부터 찬 바람 막이까지 한곳에 모았어요.">
+<style>
+:root{--gold:#f5a623;--red:#d8232a;--green:#107c41;--card:rgba(255,255,255,.96);--sub:#5f6670}
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+body{background:radial-gradient(circle at 50% 10%,#1e3d59 0%,#0d1b2a 100%);min-height:100vh;padding:20px 16px 32px;color:#1d1d1f;overflow-x:hidden}
+.snow{position:fixed;inset:0;pointer-events:none;z-index:0}
+.snow i{position:absolute;top:-12px;width:6px;height:6px;border-radius:50%;background:#fff;opacity:.75;animation:fall linear infinite}
+@keyframes fall{0%{transform:translateY(0)}100%{transform:translateY(105vh);opacity:.15}}
+.snow i:nth-child(1){left:8%;animation-duration:9s}.snow i:nth-child(2){left:24%;width:4px;height:4px;animation-duration:12s;animation-delay:2s}
+.snow i:nth-child(3){left:42%;width:7px;height:7px;animation-duration:10s;animation-delay:4s}.snow i:nth-child(4){left:60%;width:4px;height:4px;animation-duration:14s;animation-delay:1s}
+.snow i:nth-child(5){left:78%;animation-duration:11s;animation-delay:3s}.snow i:nth-child(6){left:92%;width:5px;height:5px;animation-duration:13s;animation-delay:5s}
+@media (prefers-reduced-motion:reduce){.snow{display:none}}
+.wrap{max-width:440px;margin:0 auto;position:relative;z-index:1}
+.ftc{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:12px;padding:10px 14px;font-size:13px;line-height:1.5;color:#fff;margin-bottom:18px}
+.head{text-align:center;margin-bottom:18px}
+.tree{width:72px;height:72px;border-radius:50%;margin:0 auto 12px;background:linear-gradient(135deg,var(--green),#0b532c);border:2px solid var(--gold);box-shadow:0 0 20px rgba(245,166,35,.4);display:flex;align-items:center;justify-content:center}
+.head h1{font-size:20px;font-weight:800;color:#fff;margin-bottom:6px;letter-spacing:-.4px}
+.head p{font-size:13px;color:#d0d8e2;line-height:1.45}
+.sec{font-size:14px;font-weight:800;color:#ffeb99;margin-bottom:10px}
+.list{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--card);border-radius:16px;padding:13px;display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.card:active{transform:scale(.98)}
+.thumb{width:72px;height:72px;border-radius:12px;background:#f4f6f9;border:1px solid #eef1f5;flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:var(--green)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.info{flex:1;min-width:0}
+.badges{display:flex;gap:5px;margin-bottom:4px;flex-wrap:wrap}
+.badge{font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;background:#ffebeb;color:var(--red);border:1px solid #ffd4d4}
+.name{font-size:14px;font-weight:700;line-height:1.35;color:#111;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.why{font-size:12px;color:var(--sub);margin-top:3px;line-height:1.35}
+.price{font-size:12px;color:var(--sub);margin-top:3px}
+.cta{background:linear-gradient(135deg,#d8232a,#b0181e);color:#fff;font-size:12px;font-weight:700;padding:7px 10px;border-radius:8px;white-space:nowrap;box-shadow:0 2px 6px rgba(216,35,42,.3)}
+.foot{margin-top:28px;text-align:center;font-size:11px;color:#9bb0c7;line-height:1.6}
+.empty{text-align:center;color:#d0d8e2;font-size:14px;padding:40px 0}
+</style>
 </head>
 <body>
-
-<!-- Falling Snowflakes Background -->
-<div class="snow-wrap">
-  <div class="snowflake s1">❄</div>
-  <div class="snowflake s2">❅</div>
-  <div class="snowflake s3">❄</div>
-  <div class="snowflake s4">❅</div>
-  <div class="snowflake s5">❄</div>
-  <div class="snowflake s6">❅</div>
+<div class="snow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="wrap">
+<div class="ftc">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>
+<div class="head"><div class="tree" aria-hidden="true"><svg width="34" height="38" viewBox="0 0 34 38"><path d="M17 2 29 16h-6l8 10h-7l7 8H3l7-8H3l8-10H5z" fill="#e8f5e9"/><rect x="14" y="32" width="6" height="6" fill="#f5a623"/></svg></div><h1>미리 준비하는 크리스마스, 올겨울 물건 모음</h1><p>연말 홈파티부터 찬 바람 막이까지 한곳에 모았어요.</p></div>
+<div class="sec">올겨울 미리 챙겨 두는 물건</div>
+<div class="list">
+<a class="card" href="https://link.coupang.com/a/iCGEleYKcK" target="_blank" rel="noopener noreferrer sponsored">
+<div class="thumb">창</div>
+<div class="info"><div class="badges"><span class="badge">찬 바람 막이</span></div><div class="name">창문 외풍차단 틈막이 패킹</div><div class="why">창틀 틈으로 드는 찬 바람을 막아요</div></div>
+<div class="cta">쿠팡에서 보기</div>
+</a>
+<a class="card" href="https://link.coupang.com/a/iCGMOaYd52" target="_blank" rel="noopener noreferrer sponsored">
+<div class="thumb">손</div>
+<div class="info"><div class="badges"><span class="badge">출퇴근길</span></div><div class="name">손난로</div><div class="why">주머니에 넣고 다니는 손난로</div></div>
+<div class="cta">쿠팡에서 보기</div>
+</a>
+<a class="card" href="https://link.coupang.com/a/iCGPZ9URPM" target="_blank" rel="noopener noreferrer sponsored">
+<div class="thumb">오</div>
+<div class="info"><div class="badges"><span class="badge">겨울 야식</span></div><div class="name">오뎅</div><div class="why">집에서 끓여 먹는 뜨끈한 어묵탕</div></div>
+<div class="cta">쿠팡에서 보기</div>
+</a>
+<a class="card" href="https://link.coupang.com/a/iCGTm4Ipcy" target="_blank" rel="noopener noreferrer sponsored">
+<div class="thumb">전</div>
+<div class="info"><div class="badges"><span class="badge">잠자리</span></div><div class="name">전기장판</div><div class="why">보일러 틀기 전 이불 속을 데울 때</div></div>
+<div class="cta">쿠팡에서 보기</div>
+</a>
+<a class="card" href="https://link.coupang.com/a/iCGVIuJnHM" target="_blank" rel="noopener noreferrer sponsored">
+<div class="thumb">1</div>
+<div class="info"><div class="badges"><span class="badge">잠자리</span></div><div class="name">1인용 전기장판</div><div class="why">혼자 쓰는 침대에 맞는 크기</div></div>
+<div class="cta">쿠팡에서 보기</div>
+</a>
 </div>
-
-<div class="container">
-  <!-- Profile Section -->
-  <div class="profile-header">
-    <div class="avatar-wrap">🎄</div>
-    <div class="channel-name">크리스마스 & 겨울 생존 꿀템</div>
-    <div class="channel-desc">연말 감성 홈파티 트리부터 난방비 아끼는 월동템 모아보기 ❄️</div>
-  </div>
-
-  <!-- Safe Redirect Guide Notice -->
-  <div class="notice-box">
-    <span class="notice-icon">🛡️</span>
-    <span>쿠팡 공식 앱 또는 웹사이트로 안전하게 연결됩니다.</span>
-  </div>
-
-  <div class="section-title">✨ 지금 가장 많이 찾는 시즌 추천템</div>
-
-  <!-- Product Card List -->
-  <div class="card-list">
-    <!-- Item 1: 크리스마스 트리 -->
-    <a href="https://link.coupang.com/a/EXAMPLE_TREE" class="product-card" target="_blank" rel="noopener noreferrer">
-      <div class="thumb-wrap">🎄</div>
-      <div class="card-info">
-        <div class="badge-row">
-          <span class="badge badge-xmas">연말필수</span>
-          <span class="badge badge-hot">얼리버드특가</span>
-        </div>
-        <div class="item-title">무선 리모컨 오너먼트 풀세트 크리스마스 트리 (지네전구 포함)</div>
-        <div class="item-desc">품절 대란 전 미리 준비하는 감성 겨울 홈인테리어</div>
-        <div class="price-row">
-          <span class="price-text">최저가 확인</span>
-        </div>
-      </div>
-      <div class="btn-cta">보기 ›</div>
-    </a>
-
-    <!-- Item 2: 틈막이 패킹 -->
-    <a href="https://link.coupang.com/a/EXAMPLE_PACKING" class="product-card" target="_blank" rel="noopener noreferrer">
-      <div class="thumb-wrap">🪟</div>
-      <div class="card-info">
-        <div class="badge-row">
-          <span class="badge badge-best">난방비절감</span>
-          <span class="badge badge-xmas">겨울1등템</span>
-        </div>
-        <div class="item-title">창문 외풍차단 틈막이 풍지판 고무 패킹 (창틀 소음/찬바람 완벽 차단)</div>
-        <div class="item-desc">외풍만 막아도 방안 체감온도 2~3도 즉시 상승!</div>
-        <div class="price-row">
-          <span class="price-text">최저가 확인</span>
-        </div>
-      </div>
-      <div class="btn-cta">보기 ›</div>
-    </a>
-
-    <!-- Item 3: 충전식 손난로 -->
-    <a href="https://link.coupang.com/a/EXAMPLE_WARMER" class="product-card" target="_blank" rel="noopener noreferrer">
-      <div class="thumb-wrap">♨️</div>
-      <div class="card-info">
-        <div class="badge-row">
-          <span class="badge badge-hot">출퇴근필수</span>
-          <span class="badge badge-best">로켓배송</span>
-        </div>
-        <div class="item-title">고속 양면 발열 대용량 충전식 손난로 겸 보조배터리</div>
-        <div class="item-desc">3초 즉각 발열, 주머니 속 든든한 55도 온기</div>
-        <div class="price-row">
-          <span class="price-text">최저가 확인</span>
-        </div>
-      </div>
-      <div class="btn-cta">보기 ›</div>
-    </a>
-
-    <!-- Item 4: 오뎅탕 밀키트 -->
-    <a href="https://link.coupang.com/a/EXAMPLE_ODENG" class="product-card" target="_blank" rel="noopener noreferrer">
-      <div class="thumb-wrap">🍢</div>
-      <div class="card-info">
-        <div class="badge-row">
-          <span class="badge badge-hot">겨울야식1위</span>
-          <span class="badge badge-best">로켓프레시</span>
-        </div>
-        <div class="item-title">부산 포장마차 꼬치 어묵탕 밀키트 (비법 육수스프 포함)</div>
-        <div class="item-desc">집에서 5분 만에 즐기는 뜨끈한 길거리 포장마차 맛</div>
-        <div class="price-row">
-          <span class="price-text">최저가 확인</span>
-        </div>
-      </div>
-      <div class="btn-cta">보기 ›</div>
-    </a>
-
-    <!-- Item 5: 탄소 전기장판 -->
-    <a href="https://link.coupang.com/a/iCGVluJnHM" class="product-card" target="_blank" rel="noopener noreferrer">
-      <div class="thumb-wrap">⚡</div>
-      <div class="card-info">
-        <div class="badge-row">
-          <span class="badge badge-best">초절전</span>
-          <span class="badge badge-xmas">숙면필수</span>
-        </div>
-        <div class="item-title">안심 무전자파 워셔블 탄소매트 / 카본 전기장판</div>
-        <div class="item-desc">물세탁 가능, 전기세 걱정 없는 원적외선 온열매트</div>
-        <div class="price-row">
-          <span class="price-text">최저가 확인</span>
-        </div>
-      </div>
-      <div class="btn-cta">보기 ›</div>
-    </a>
-  </div>
-
-  <!-- FTC Compliance Footer -->
-  <div class="footer">
-    <div class="ftc-badge">공정위 지침 필수 문구</div>
-    <p>이 포스팅은 쿠팡 파트너스 활동의 일환으로,<br>이에 따른 일정액의 수수료를 제공받습니다.</p>
-  </div>
+<div class="foot">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.<br>가격과 배송 조건은 쿠팡 쪽에서 바뀔 수 있어요.</div>
 </div>
-
+<!-- build:ec6abda1e0e2 -->
 </body>
 </html>
