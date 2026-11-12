@@ -3,102 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>미리 준비하는 크리스마스, 올겨울 물건 모음</title>
-<meta property="og:title" content="미리 준비하는 크리스마스, 올겨울 물건 모음">
-<meta property="og:description" content="연말 홈파티부터 찬 바람 막이까지 한곳에 모았어요.">
+<title>올겨울 미리 챙기는 살림</title>
+<meta property="og:title" content="올겨울 미리 챙기는 살림">
+<meta property="og:description" content="겨울 장보기 모음">
+<meta property="og:image" content="https://myeongdang-jari.github.io/myeongdangjari/img/hero.jpg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
-:root{--gold:#f5a623;--red:#d8232a;--green:#107c41;--card:rgba(255,255,255,.96);--sub:#5f6670}
-*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
-body{background:radial-gradient(circle at 50% 10%,#1e3d59 0%,#0d1b2a 100%);min-height:100vh;padding:20px 16px 32px;color:#1d1d1f;overflow-x:hidden}
-.snow{position:fixed;inset:0;pointer-events:none;z-index:0}
-.snow i{position:absolute;top:-12px;width:6px;height:6px;border-radius:50%;background:#fff;opacity:.75;animation:fall linear infinite}
-@keyframes fall{0%{transform:translateY(0)}100%{transform:translateY(105vh);opacity:.15}}
-.snow i:nth-child(1){left:8%;animation-duration:9s}.snow i:nth-child(2){left:24%;width:4px;height:4px;animation-duration:12s;animation-delay:2s}
-.snow i:nth-child(3){left:42%;width:7px;height:7px;animation-duration:10s;animation-delay:4s}.snow i:nth-child(4){left:60%;width:4px;height:4px;animation-duration:14s;animation-delay:1s}
-.snow i:nth-child(5){left:78%;animation-duration:11s;animation-delay:3s}.snow i:nth-child(6){left:92%;width:5px;height:5px;animation-duration:13s;animation-delay:5s}
-@media (prefers-reduced-motion:reduce){.snow{display:none}}
-.wrap{max-width:440px;margin:0 auto;position:relative;z-index:1}
-.ftc{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:12px;padding:10px 14px;font-size:13px;line-height:1.5;color:#fff;margin-bottom:18px}
-.head{text-align:center;margin-bottom:18px}
-.tree{width:72px;height:72px;border-radius:50%;margin:0 auto 12px;background:linear-gradient(135deg,var(--green),#0b532c);border:2px solid var(--gold);box-shadow:0 0 20px rgba(245,166,35,.4);display:flex;align-items:center;justify-content:center}
-.head h1{font-size:20px;font-weight:800;color:#fff;margin-bottom:6px;letter-spacing:-.4px}
-.head p{font-size:13px;color:#d0d8e2;line-height:1.45}
-.sec{font-size:14px;font-weight:800;color:#ffeb99;margin-bottom:10px}
-.list{display:flex;flex-direction:column;gap:12px}
-.card{background:var(--card);border-radius:16px;padding:13px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
-.row{display:flex;gap:12px;align-items:center}
-.btns{display:flex;gap:8px;margin-top:10px}
-.btn{flex:1;display:block;text-align:center;text-decoration:none;color:#fff;font-size:13px;font-weight:700;padding:9px 6px;border-radius:9px}
-.btn:active{transform:scale(.98)}
-.btn.cp{background:linear-gradient(135deg,#d8232a,#b0181e);box-shadow:0 2px 6px rgba(216,35,42,.3)}
-.btn.nv{background:#03a94e;box-shadow:0 2px 6px rgba(3,169,78,.3)}
-.thumb{width:72px;height:72px;border-radius:12px;background:#f4f6f9;border:1px solid #eef1f5;flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:var(--green)}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.info{flex:1;min-width:0}
-.badges{display:flex;gap:5px;margin-bottom:4px;flex-wrap:wrap}
-.badge{font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;background:#ffebeb;color:var(--red);border:1px solid #ffd4d4}
-.name{font-size:14px;font-weight:700;line-height:1.35;color:#111;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.why{font-size:12px;color:var(--sub);margin-top:3px;line-height:1.35}
+:root{--ink:#15171c;--sub:#737a85;--line:#eceef2;--bg:#f3f4f6;--red:#e2363c;--navy:#17304f}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{text-decoration:none}
+.wrap{max-width:480px;margin:0 auto;background:#fff;min-height:100vh}
+.ftc{font-size:11.5px;color:#5c6470;background:#f7f8fa;padding:9px 16px;line-height:1.5;border-bottom:1px solid var(--line)}
+.bar{position:sticky;top:0;z-index:5;background:#fff;padding:12px 16px 10px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.mk{width:30px;height:30px;border-radius:9px;background:var(--red);display:flex;align-items:center;justify-content:center}
+.brand b{font-size:17px;letter-spacing:-.4px}.brand span{font-size:11.5px;color:var(--sub);margin-left:auto}
+.find{display:flex;align-items:center;gap:8px;background:var(--bg);border-radius:11px;padding:10px 12px}
+.find input{border:0;background:none;font:inherit;font-size:14px;flex:1;outline:none;color:var(--ink)}
+.hero{margin:14px 16px 0;border-radius:18px;overflow:hidden;position:relative;aspect-ratio:16/10;background:var(--navy)}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .cap{position:absolute;inset:auto 0 0 0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(10,20,35,.82));color:#fff}
+.hero small{font-size:11.5px;font-weight:600;opacity:.85}.hero h1{font-size:21px;line-height:1.3;letter-spacing:-.5px;margin-top:4px}.hero p{font-size:12.5px;opacity:.85;margin-top:3px}
+.ex{position:absolute;right:8px;top:8px;font-size:10px;color:#fff;background:rgba(0,0,0,.42);padding:2px 6px;border-radius:5px}
+.cats{display:flex;gap:4px;overflow-x:auto;padding:16px 12px 6px;scrollbar-width:none}
+.cat{flex:none;min-width:68px;padding:0 4px;white-space:nowrap;border:0;background:none;font:inherit;cursor:pointer;text-align:center}
+.cat i{display:block;width:56px;height:56px;margin:0 auto 6px;border-radius:50%;overflow:hidden;border:2px solid transparent;background:var(--bg)}
+.cat i img{width:100%;height:100%;object-fit:cover}
+.cat span{font-size:12px;font-weight:600;color:#3c424c}
+.cat.on i{border-color:var(--red)}.cat.on span{color:var(--red)}
+.sec{display:flex;align-items:baseline;justify-content:space-between;padding:16px 16px 0}
+.sec h2{font-size:17px;letter-spacing:-.4px}.sec span{font-size:12px;color:var(--sub)}
+.list{display:grid;grid-template-columns:1fr 1fr;gap:20px 12px;padding:12px 16px 6px}
+.card{display:flex;flex-direction:column}
+.card .ph{aspect-ratio:1;border-radius:14px;overflow:hidden;position:relative;background:var(--bg)}
+.card .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.tag{position:absolute;left:8px;top:8px;background:rgba(255,255,255,.94);font-size:10.5px;font-weight:700;padding:3px 7px;border-radius:6px;color:var(--ink)}
+.name{font-size:14px;font-weight:600;line-height:1.35;margin:9px 0 3px;letter-spacing:-.2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.why{font-size:12px;color:var(--sub);line-height:1.4;min-height:34px}
 .price{font-size:12px;color:var(--sub);margin-top:3px}
-.foot{margin-top:28px;text-align:center;font-size:11px;color:#9bb0c7;line-height:1.6}
-.empty{text-align:center;color:#d0d8e2;font-size:14px;padding:40px 0}
+.btns{display:flex;gap:5px;margin-top:auto;padding-top:8px}
+.btn{flex:1;text-align:center;font-size:12.5px;font-weight:700;padding:9px 0;border-radius:9px;color:#fff}
+.btn.cp{background:var(--ink)}.btn.nv{background:#03c75a}
+.btn:active{transform:scale(.98)}
+.none{grid-column:1/-1;text-align:center;color:var(--sub);font-size:13px;padding:30px 0}
+.foot{padding:22px 16px 34px;font-size:11px;color:#9aa1aa;line-height:1.6;border-top:1px solid var(--line);margin-top:16px}
 </style>
 </head>
 <body>
-<div class="snow" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
 <div class="wrap">
 <div class="ftc">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>
-<div class="head"><div class="tree" aria-hidden="true"><svg width="34" height="38" viewBox="0 0 34 38"><path d="M17 2 29 16h-6l8 10h-7l7 8H3l7-8H3l8-10H5z" fill="#e8f5e9"/><rect x="14" y="32" width="6" height="6" fill="#f5a623"/></svg></div><h1>미리 준비하는 크리스마스, 올겨울 물건 모음</h1><p>연말 홈파티부터 찬 바람 막이까지 한곳에 모았어요.</p></div>
-<div class="sec">올겨울 미리 챙겨 두는 물건</div>
+<div class="bar"><div class="brand"><div class="mk" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M4 7h16l-1.5 11a2 2 0 0 1-2 1.7h-9A2 2 0 0 1 5.5 18zM9 7a3 3 0 0 1 6 0" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div><b>겨울 살림 마트</b><span>겨울 장보기 모음</span></div>
+<label class="find"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="#8a919c" stroke-width="2" fill="none"/><path d="m20 20-4-4" stroke="#8a919c" stroke-width="2" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="찾는 물건 이름" aria-label="물건 찾기"></label></div>
+<div class="hero"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/hero.jpg" alt=""><span class="ex">예시 그림</span><div class="cap"><small>이번 주 장보기</small><h1>올겨울 미리 챙기는 살림</h1><p>9가지 물건을 갈래별로 모았어요</p></div></div>
+<div class="cats"><button class="cat on" data-c=""><i><img src="https://myeongdang-jari.github.io/myeongdangjari/img/hero.jpg" alt=""></i><span>전체</span></button><button class="cat" data-c="찬 바람 막이"><i><img src="https://myeongdang-jari.github.io/myeongdangjari/img/window.jpg" alt=""></i><span>찬 바람 막이</span></button><button class="cat" data-c="출퇴근길"><i><img src="https://myeongdang-jari.github.io/myeongdangjari/img/street.jpg" alt=""></i><span>출퇴근길</span></button><button class="cat" data-c="겨울 야식"><i><img src="https://myeongdang-jari.github.io/myeongdangjari/img/soup.jpg" alt=""></i><span>겨울 야식</span></button><button class="cat" data-c="잠자리"><i><img src="https://myeongdang-jari.github.io/myeongdangjari/img/bed.jpg" alt=""></i><span>잠자리</span></button><button class="cat" data-c="크리스마스"><i><img src="https://myeongdang-jari.github.io/myeongdangjari/img/xmas.jpg" alt=""></i><span>크리스마스</span></button></div>
+<div class="sec"><h2>올겨울 미리 챙겨 두는 물건</h2><span id="n">9개</span></div>
 <div class="list">
-<div class="card">
-<div class="row"><div class="thumb">창</div>
-<div class="info"><div class="badges"><span class="badge">찬 바람 막이</span></div><div class="name">창문 외풍차단 틈막이 패킹</div><div class="why">창틀 틈으로 드는 찬 바람을 막아요</div></div></div>
+<div class="card" data-c="찬 바람 막이" data-t="창문 외풍차단 틈막이 패킹">
+<div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/window.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">찬 바람 막이</span></div>
+<div class="name">창문 외풍차단 틈막이 패킹</div><div class="why">창틀 틈으로 드는 찬 바람을 막아요</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCGEleYKcK" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card">
-<div class="row"><div class="thumb">손</div>
-<div class="info"><div class="badges"><span class="badge">출퇴근길</span></div><div class="name">손난로</div><div class="why">주머니에 넣고 다니는 손난로</div></div></div>
+<div class="card" data-c="출퇴근길" data-t="손난로">
+<div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/street.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">출퇴근길</span></div>
+<div class="name">손난로</div><div class="why">주머니에 넣고 다니는 손난로</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCGMOaYd52" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card">
-<div class="row"><div class="thumb">오</div>
-<div class="info"><div class="badges"><span class="badge">겨울 야식</span></div><div class="name">오뎅</div><div class="why">집에서 끓여 먹는 뜨끈한 어묵탕</div></div></div>
+<div class="card" data-c="겨울 야식" data-t="오뎅">
+<div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/soup.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">겨울 야식</span></div>
+<div class="name">오뎅</div><div class="why">집에서 끓여 먹는 뜨끈한 어묵탕</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCGPZ9URPM" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card">
-<div class="row"><div class="thumb">전</div>
-<div class="info"><div class="badges"><span class="badge">잠자리</span></div><div class="name">전기장판</div><div class="why">보일러 틀기 전 이불 속을 데울 때</div></div></div>
+<div class="card" data-c="잠자리" data-t="전기장판">
+<div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/bed.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">잠자리</span></div>
+<div class="name">전기장판</div><div class="why">보일러 틀기 전 이불 속을 데울 때</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCGTm4Ipcy" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card">
-<div class="row"><div class="thumb">1</div>
-<div class="info"><div class="badges"><span class="badge">잠자리</span></div><div class="name">1인용 전기장판</div><div class="why">혼자 쓰는 침대에 맞는 크기</div></div></div>
+<div class="card" data-c="잠자리" data-t="1인용 전기장판">
+<div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/bed.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">잠자리</span></div>
+<div class="name">1인용 전기장판</div><div class="why">혼자 쓰는 침대에 맞는 크기</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCGVIuJnHM" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card">
-<div class="row"><div class="thumb">무</div>
-<div class="info"><div class="badges"><span class="badge">크리스마스</span></div><div class="name">무타공 크리스마스 벽트리 풀세트</div><div class="why">벽에 구멍 없이 꾸미는 트리</div></div></div>
+<div class="card" data-c="크리스마스" data-t="무타공 크리스마스 벽트리 풀세트">
+<div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/xmas.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">크리스마스</span></div>
+<div class="name">무타공 크리스마스 벽트리 풀세트</div><div class="why">벽에 구멍 없이 꾸미는 트리</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCIvlSR701" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card">
-<div class="row"><div class="thumb">와</div>
-<div class="info"><div class="badges"><span class="badge">크리스마스</span></div><div class="name">와이어 지네전구</div><div class="why">트리와 창가에 두르는 작은 전구</div></div></div>
+<div class="card" data-c="크리스마스" data-t="와이어 지네전구">
+<div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/xmas.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">크리스마스</span></div>
+<div class="name">와이어 지네전구</div><div class="why">트리와 창가에 두르는 작은 전구</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCIBP8pOAS" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card">
-<div class="row"><div class="thumb">크</div>
-<div class="info"><div class="badges"><span class="badge">크리스마스</span></div><div class="name">크리스마스 오르골 1</div><div class="why">연말 선물로 건네는 오르골</div></div></div>
+<div class="card" data-c="크리스마스" data-t="크리스마스 오르골 1">
+<div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/xmas.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">크리스마스</span></div>
+<div class="name">크리스마스 오르골 1</div><div class="why">연말 선물로 건네는 오르골</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCIEE8o6uW" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card">
-<div class="row"><div class="thumb">크</div>
-<div class="info"><div class="badges"><span class="badge">크리스마스</span></div><div class="name">크리스마스 오르골 2</div><div class="why">모양이 다른 오르골 하나 더</div></div></div>
+<div class="card" data-c="크리스마스" data-t="크리스마스 오르골 2">
+<div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/xmas.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">크리스마스</span></div>
+<div class="name">크리스마스 오르골 2</div><div class="why">모양이 다른 오르골 하나 더</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCIGCEZy9s" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
+<div class="none" id="none" hidden>찾는 물건이 아직 없어요.</div>
 </div>
-<div class="foot">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.<br>가격과 배송 조건은 판매처에서 바뀔 수 있어요.</div>
+<div class="foot">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.<br>가격과 배송 조건은 판매처에서 바뀔 수 있어요. 그림 중 「예시 그림」은 쓰는 장면을 그린 것이라 실제 상품과 다를 수 있어요.</div>
 </div>
-<!-- build:2141a09b72a2 -->
+<script>
+(function(){var c='',q=document.getElementById('q'),cs=document.querySelectorAll('.card'),bs=document.querySelectorAll('.cat');
+function f(){var t=q.value.trim(),n=0;cs.forEach(function(e){var ok=(!c||e.dataset.c===c)&&(!t||e.dataset.t.indexOf(t)>-1);e.hidden=!ok;if(ok)n++});document.getElementById('n').textContent=n+'개';document.getElementById('none').hidden=n>0}
+bs.forEach(function(b){b.onclick=function(){c=b.dataset.c;bs.forEach(function(x){x.classList.toggle('on',x===b)});f()}});q.oninput=f})();
+</script>
+<!-- build:b1e16c974b21 -->
 </body>
 </html>
