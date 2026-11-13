@@ -47,6 +47,21 @@ a{text-decoration:none}
 .btn.cp{background:var(--ink)}.btn.nv{background:#03c75a}
 .btn:active{transform:scale(.98)}
 .none{grid-column:1/-1;text-align:center;color:var(--sub);font-size:13px;padding:30px 0}
+.rooms{display:flex;gap:12px;overflow-x:auto;padding:12px 16px 4px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.room{flex:none;width:86%;scroll-snap-align:start;position:relative;border-radius:16px;overflow:hidden;aspect-ratio:1;background:var(--bg)}
+.room img{width:100%;height:100%;object-fit:cover;display:block}
+.room .rn{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:700;padding:4px 9px;border-radius:7px}
+.pin{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:5px;background:#fff;border:0;border-radius:99px;padding:4px 10px 4px 4px;font:inherit;font-size:12px;font-weight:700;color:var(--ink);box-shadow:0 3px 10px rgba(0,0,0,.35);cursor:pointer;white-space:nowrap}
+.pin b{width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center}
+.pin:after{content:"";position:absolute;inset:-4px;border-radius:99px;border:2px solid rgba(255,255,255,.85);animation:pl 1.8s ease-out infinite}
+@keyframes pl{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(1.2)}}
+@media (prefers-reduced-motion:reduce){.pin:after{animation:none}}
+.sheet{position:fixed;inset:0;z-index:20;background:rgba(10,14,20,.45);display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheet .in{background:#fff;width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:10px 16px 24px;max-height:80vh;overflow:auto}
+.sheet .gr{width:40px;height:4px;border-radius:2px;background:#d9dce1;margin:0 auto 12px}
+.sl{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px}
+.sl .card:only-child{grid-column:1/-1}.sl .card:only-child .ph{aspect-ratio:16/10}
 .foot{padding:22px 16px 34px;font-size:11px;color:#9aa1aa;line-height:1.6;border-top:1px solid var(--line);margin-top:16px}
 </style>
 </head>
@@ -57,49 +72,50 @@ a{text-decoration:none}
 <label class="find"><svg width="16" height="16" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="#8a919c" stroke-width="2" fill="none"/><path d="m20 20-4-4" stroke="#8a919c" stroke-width="2" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="찾는 물건 이름" aria-label="물건 찾기"></label></div>
 <div class="hero"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/hero.jpg" alt=""><span class="ex">예시 그림</span><div class="cap"><small>이번 주 장보기</small><h1>올겨울 미리 챙기는 살림</h1><p>9가지 물건을 갈래별로 모았어요</p></div></div>
 <div class="cats"><button class="cat on" data-c=""><i><img src="https://myeongdang-jari.github.io/myeongdangjari/img/hero.jpg" alt=""></i><span>전체</span></button><button class="cat" data-c="찬 바람 막이"><i><img src="https://myeongdang-jari.github.io/myeongdangjari/img/window.jpg" alt=""></i><span>찬 바람 막이</span></button><button class="cat" data-c="출퇴근길"><i><img src="https://myeongdang-jari.github.io/myeongdangjari/img/street.jpg" alt=""></i><span>출퇴근길</span></button><button class="cat" data-c="겨울 야식"><i><img src="https://myeongdang-jari.github.io/myeongdangjari/img/soup.jpg" alt=""></i><span>겨울 야식</span></button><button class="cat" data-c="잠자리"><i><img src="https://myeongdang-jari.github.io/myeongdangjari/img/bed.jpg" alt=""></i><span>잠자리</span></button><button class="cat" data-c="크리스마스"><i><img src="https://myeongdang-jari.github.io/myeongdangjari/img/xmas.jpg" alt=""></i><span>크리스마스</span></button></div>
+<div class="sec"><h2>방에서 고르기</h2><span>딱지를 눌러 보세요</span></div><div class="rooms"><div class="room"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/xmas.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><button class="pin" style="left:50.0%;top:40.0%" data-ids="g1113010659"><b>1</b>벽트리</button><button class="pin" style="left:24.0%;top:31.0%" data-ids="g1113010814"><b>2</b>지네전구</button><button class="pin" style="left:71.0%;top:73.0%" data-ids="g1113010939,g1113010940"><b>3</b>오르골</button><span class="rn">크리스마스 거실</span></div><div class="room"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/bed.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><button class="pin" style="left:62.0%;top:54.0%" data-ids="g1113004411,g1113004832"><b>4</b>전기장판</button><span class="rn">따뜻한 침실</span></div><div class="room"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/window.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><button class="pin" style="left:52.0%;top:47.0%" data-ids="ref05"><b>5</b>틈막이</button><span class="rn">창가</span></div><div class="room"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/soup.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><button class="pin" style="left:66.0%;top:47.0%" data-ids="g1113004403"><b>6</b>어묵</button><span class="rn">겨울 저녁상</span></div><div class="room"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/street.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><button class="pin" style="left:45.0%;top:62.0%" data-ids="g1113004226"><b>7</b>손난로</button><span class="rn">출근길</span></div></div>
 <div class="sec"><h2>올겨울 미리 챙겨 두는 물건</h2><span id="n">9개</span></div>
 <div class="list">
-<div class="card" data-c="찬 바람 막이" data-t="창문 외풍차단 틈막이 패킹">
+<div class="card" data-id="ref05" data-c="찬 바람 막이" data-t="창문 외풍차단 틈막이 패킹">
 <div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/window.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">찬 바람 막이</span></div>
 <div class="name">창문 외풍차단 틈막이 패킹</div><div class="why">창틀 틈으로 드는 찬 바람을 막아요</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCGEleYKcK" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card" data-c="출퇴근길" data-t="손난로">
+<div class="card" data-id="g1113004226" data-c="출퇴근길" data-t="손난로">
 <div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/street.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">출퇴근길</span></div>
 <div class="name">손난로</div><div class="why">주머니에 넣고 다니는 손난로</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCGMOaYd52" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card" data-c="겨울 야식" data-t="오뎅">
+<div class="card" data-id="g1113004403" data-c="겨울 야식" data-t="오뎅">
 <div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/soup.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">겨울 야식</span></div>
 <div class="name">오뎅</div><div class="why">집에서 끓여 먹는 뜨끈한 어묵탕</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCGPZ9URPM" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card" data-c="잠자리" data-t="전기장판">
+<div class="card" data-id="g1113004411" data-c="잠자리" data-t="전기장판">
 <div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/bed.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">잠자리</span></div>
 <div class="name">전기장판</div><div class="why">보일러 틀기 전 이불 속을 데울 때</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCGTm4Ipcy" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card" data-c="잠자리" data-t="1인용 전기장판">
+<div class="card" data-id="g1113004832" data-c="잠자리" data-t="1인용 전기장판">
 <div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/bed.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">잠자리</span></div>
 <div class="name">1인용 전기장판</div><div class="why">혼자 쓰는 침대에 맞는 크기</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCGVIuJnHM" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card" data-c="크리스마스" data-t="무타공 크리스마스 벽트리 풀세트">
+<div class="card" data-id="g1113010659" data-c="크리스마스" data-t="무타공 크리스마스 벽트리 풀세트">
 <div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/xmas.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">크리스마스</span></div>
 <div class="name">무타공 크리스마스 벽트리 풀세트</div><div class="why">벽에 구멍 없이 꾸미는 트리</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCIvlSR701" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card" data-c="크리스마스" data-t="와이어 지네전구">
+<div class="card" data-id="g1113010814" data-c="크리스마스" data-t="와이어 지네전구">
 <div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/xmas.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">크리스마스</span></div>
 <div class="name">와이어 지네전구</div><div class="why">트리와 창가에 두르는 작은 전구</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCIBP8pOAS" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card" data-c="크리스마스" data-t="크리스마스 오르골 1">
+<div class="card" data-id="g1113010939" data-c="크리스마스" data-t="크리스마스 오르골 1">
 <div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/xmas.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">크리스마스</span></div>
 <div class="name">크리스마스 오르골 1</div><div class="why">연말 선물로 건네는 오르골</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCIEE8o6uW" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
 </div>
-<div class="card" data-c="크리스마스" data-t="크리스마스 오르골 2">
+<div class="card" data-id="g1113010940" data-c="크리스마스" data-t="크리스마스 오르골 2">
 <div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/xmas.jpg" alt="" loading="lazy"><span class="ex">예시 그림</span><span class="tag">크리스마스</span></div>
 <div class="name">크리스마스 오르골 2</div><div class="why">모양이 다른 오르골 하나 더</div>
 <div class="btns"><a class="btn cp" href="https://link.coupang.com/a/iCIGCEZy9s" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기</a></div>
@@ -107,12 +123,16 @@ a{text-decoration:none}
 <div class="none" id="none" hidden>찾는 물건이 아직 없어요.</div>
 </div>
 <div class="foot">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.<br>가격과 배송 조건은 판매처에서 바뀔 수 있어요. 그림 중 「예시 그림」은 쓰는 장면을 그린 것이라 실제 상품과 다를 수 있어요.</div>
+<div class="sheet" id="sh" hidden><div class="in"><div class="gr"></div><div class="sl" id="sl"></div></div></div>
 </div>
 <script>
 (function(){var c='',q=document.getElementById('q'),cs=document.querySelectorAll('.card'),bs=document.querySelectorAll('.cat');
 function f(){var t=q.value.trim(),n=0;cs.forEach(function(e){var ok=(!c||e.dataset.c===c)&&(!t||e.dataset.t.indexOf(t)>-1);e.hidden=!ok;if(ok)n++});document.getElementById('n').textContent=n+'개';document.getElementById('none').hidden=n>0}
-bs.forEach(function(b){b.onclick=function(){c=b.dataset.c;bs.forEach(function(x){x.classList.toggle('on',x===b)});f()}});q.oninput=f})();
+bs.forEach(function(b){b.onclick=function(){c=b.dataset.c;bs.forEach(function(x){x.classList.toggle('on',x===b)});f()}});q.oninput=f;
+var sh=document.getElementById('sh'),sl=document.getElementById('sl');
+document.querySelectorAll('.pin').forEach(function(b){b.onclick=function(){sl.innerHTML='';b.dataset.ids.split(',').forEach(function(i){var k=document.querySelector('.list .card[data-id="'+i+'"]');if(k){k=k.cloneNode(true);k.hidden=false;sl.appendChild(k)}});sh.hidden=false}});
+sh.onclick=function(ev){if(ev.target===sh)sh.hidden=true}})();
 </script>
-<!-- build:b1e16c974b21 -->
+<!-- build:fd21b4623676 -->
 </body>
 </html>
