@@ -5,6 +5,7 @@
 - 웹페이지 생성, 템플릿 빌드 및 소셜 발행 스크립트는 PC 로컬 환경에서 실행합니다.
 - 공개 저장소 규정에 따라 내부 수치 및 정산 정보는 포함하지 않습니다.
 - 2026-11-16 갱신: 쿠팡 파트너스 계정에서 발급한 상품 링크 25건과 상품 사진으로 카탈로그를 다시 구성했습니다.
+- 2026-11-17 갱신: 겨울 인기 품목과 호기심 상품 7건을 더해 상품 링크 32건으로 늘렸습니다.
 - 문구 규칙: 가격 숫자·최저가·써 본 척·효과 장담·이모지 없이 씁니다.
 
 ## 상품 데이터
@@ -283,6 +284,83 @@
 - 쿠팡 검색어: 극세사 담요
 - 상품 링크: https://link.coupang.com/a/iIFk7hUsDs
 - 사진: img/products/fleece-blanket.jpg
+
+### 상품 26
+- id: electric-seat
+- 이름: HanilMedical 1인용 전기방석 HL-100(20), 네이비, 450 x 450 mm
+- 갈래: 잠자리
+- 계정: take
+- 후킹 한 줄: 소파나 의자에 앉아 있는 동안 엉덩이부터 따뜻하게 데우는 1인용 전기방석입니다.
+- 요약: 전원을 넣으면 열선이 골고루 퍼지고, 쓰지 않을 때는 돌돌 말아 두면 됩니다. 등받이 의자나 소파 한쪽에 깔아 두기 좋은 크기입니다.
+- 쿠팡 검색어: 전기방석 1인용
+- 상품 링크: https://link.coupang.com/a/iJZa0xMjV6
+- 사진: img/products/electric-seat.jpg
+
+### 상품 27
+- id: k2-gloves
+- 이름: K2 세이프티 히트플렉스 니트 장갑, 1세트, 블랙
+- 갈래: 출퇴근길
+- 계정: ads
+- 후킹 한 줄: 자전거 손잡이나 버스 손잡이를 잡는 아침, 손끝이 시린 것을 덜어 주는 니트 장갑입니다.
+- 요약: 니트로 짠 장갑이라 손등에 닿는 감촉이 부드럽고, 두께가 두껍지 않아 가방이나 코트 주머니에 넣어 두기 좋습니다.
+- 쿠팡 검색어: K2 방한장갑
+- 상품 링크: https://link.coupang.com/a/iJZgIrr1O0
+- 사진: img/products/k2-gloves.jpg
+
+### 상품 28
+- id: kimchi
+- 이름: 종가 포기김치, 2.3kg, 1개
+- 갈래: 겨울 야식
+- 계정: take
+- 후킹 한 줄: 김장을 직접 담그지 않는 집에서 겨울 내내 꺼내 먹기 좋은 포기김치입니다.
+- 요약: 한 통으로 와서 김치통에 옮겨 담아 두면 됩니다. 국이나 찌개에 넣을 때도 한 포기씩 꺼내 쓰기 좋습니다.
+- 쿠팡 검색어: 종가 포기김치
+- 상품 링크: https://link.coupang.com/a/iJZojEkCYe
+- 사진: img/products/kimchi.jpg
+
+### 상품 29
+- id: radiator
+- 이름: 신일 컴팩트 라디에이터 5핀, SER-D5500KP
+- 갈래: 겨울 준비
+- 계정: take
+- 후킹 한 줄: 보일러를 켜기엔 아까운 날, 방 하나만 데우는 전기 라디에이터입니다.
+- 요약: 기름이 도는 방식이라 바람이 일지 않고 소리가 크지 않습니다. 바퀴가 달려 있어 방과 거실 사이를 옮겨 가며 쓸 수 있습니다.
+- 쿠팡 검색어: 신일 라디에이터
+- 상품 링크: https://link.coupang.com/a/iJZvbm24om
+- 사진: img/products/radiator.jpg
+
+### 상품 30
+- id: tokyotomi-heater
+- 이름: 토요토미 팬히터 LC-L53 풀세트 (국내 정품 A/S 가능) 도요토미, BLACK
+- 갈래: 별별템
+- 계정: ads
+- 후킹 한 줄: 캠핑하는 사람들이 먼저 찾는 일본식 팬히터입니다. 쿠팡에 정품으로 올라와 있습니다.
+- 요약: 기름을 넣고 쓰는 난로라 환기에 신경 써야 하고, 무게가 있어 한 번 자리를 잡으면 거실 한쪽에 두고 쓰게 됩니다.
+- 쿠팡 검색어: 토요토미 팬히터
+- 상품 링크: https://link.coupang.com/a/iJZycVPxSu
+- 사진: img/products/tokyotomi-heater.jpg
+
+### 상품 31
+- id: drone
+- 이름: DJI Neo 2 플라이 모어 콤보 드론, 혼합색상, 1세트
+- 갈래: 별별템
+- 계정: ads
+- 후킹 한 줄: 손바닥만 한 크기로 하늘 사진을 남기는 드론입니다. 쿠팡 가전 코너에 이런 것도 있습니다.
+- 요약: 본체와 조종기, 배터리가 함께 오는 구성입니다. 겨울 여행에서 위에서 찍은 사진을 남기고 싶을 때 눈에 들어오는 세트입니다.
+- 쿠팡 검색어: DJI Neo 2 드론
+- 상품 링크: https://link.coupang.com/a/iJZCB6mDYq
+- 사진: img/products/drone.jpg
+
+### 상품 32
+- id: premiere-projector
+- 이름: 삼성전자 The Premiere 프로젝터 웜 화이트 254~330cm 방문설치, SP-LPDU9SAXXKR
+- 갈래: 별별템
+- 계정: ads
+- 후킹 한 줄: 벽에 붙여 두고 쓰는 삼성 초단초점 프로젝터입니다. 장바구니에 담아 둘 수 있는 가전으로 쿠팡에 올라와 있습니다.
+- 요약: 방문 설치로 배송되는 모델이라 자리를 잡아 주는 과정까지 포함되어 있습니다. 거실 벽 한 면을 화면으로 쓰고 싶을 때 비교해 볼 만한 상품입니다.
+- 쿠팡 검색어: 삼성 더 프리미어 프로젝터
+- 상품 링크: https://link.coupang.com/a/iJZGHOUWlM
+- 사진: img/products/premiere-projector.jpg
 
 ## 데이터 인터페이스 (JSON)
 
@@ -612,6 +690,97 @@
       "촘촘한 극세사라 가볍고 부드럽습니다. 이불 위에 한 겹 더 덮거나 차에 두고 쓰기 좋습니다."
     ],
     "search_keyword": "극세사 담요"
+  },
+  {
+    "id": "electric-seat",
+    "name": "HanilMedical 1인용 전기방석 HL-100(20), 네이비, 450 x 450 mm",
+    "partners_link": "https://link.coupang.com/a/iJZa0xMjV6",
+    "image": "img/products/electric-seat.jpg",
+    "account": "take",
+    "category": "잠자리",
+    "hook": "소파나 의자에 앉아 있는 동안 엉덩이부터 따뜻하게 데우는 1인용 전기방석입니다.",
+    "summary": [
+      "전원을 넣으면 열선이 골고루 퍼지고, 쓰지 않을 때는 돌돌 말아 두면 됩니다. 등받이 의자나 소파 한쪽에 깔아 두기 좋은 크기입니다."
+    ],
+    "search_keyword": "전기방석 1인용"
+  },
+  {
+    "id": "k2-gloves",
+    "name": "K2 세이프티 히트플렉스 니트 장갑, 1세트, 블랙",
+    "partners_link": "https://link.coupang.com/a/iJZgIrr1O0",
+    "image": "img/products/k2-gloves.jpg",
+    "account": "ads",
+    "category": "출퇴근길",
+    "hook": "자전거 손잡이나 버스 손잡이를 잡는 아침, 손끝이 시린 것을 덜어 주는 니트 장갑입니다.",
+    "summary": [
+      "니트로 짠 장갑이라 손등에 닿는 감촉이 부드럽고, 두께가 두껍지 않아 가방이나 코트 주머니에 넣어 두기 좋습니다."
+    ],
+    "search_keyword": "K2 방한장갑"
+  },
+  {
+    "id": "kimchi",
+    "name": "종가 포기김치, 2.3kg, 1개",
+    "partners_link": "https://link.coupang.com/a/iJZojEkCYe",
+    "image": "img/products/kimchi.jpg",
+    "account": "take",
+    "category": "겨울 야식",
+    "hook": "김장을 직접 담그지 않는 집에서 겨울 내내 꺼내 먹기 좋은 포기김치입니다.",
+    "summary": [
+      "한 통으로 와서 김치통에 옮겨 담아 두면 됩니다. 국이나 찌개에 넣을 때도 한 포기씩 꺼내 쓰기 좋습니다."
+    ],
+    "search_keyword": "종가 포기김치"
+  },
+  {
+    "id": "radiator",
+    "name": "신일 컴팩트 라디에이터 5핀, SER-D5500KP",
+    "partners_link": "https://link.coupang.com/a/iJZvbm24om",
+    "image": "img/products/radiator.jpg",
+    "account": "take",
+    "category": "겨울 준비",
+    "hook": "보일러를 켜기엔 아까운 날, 방 하나만 데우는 전기 라디에이터입니다.",
+    "summary": [
+      "기름이 도는 방식이라 바람이 일지 않고 소리가 크지 않습니다. 바퀴가 달려 있어 방과 거실 사이를 옮겨 가며 쓸 수 있습니다."
+    ],
+    "search_keyword": "신일 라디에이터"
+  },
+  {
+    "id": "tokyotomi-heater",
+    "name": "토요토미 팬히터 LC-L53 풀세트 (국내 정품 A/S 가능) 도요토미, BLACK",
+    "partners_link": "https://link.coupang.com/a/iJZycVPxSu",
+    "image": "img/products/tokyotomi-heater.jpg",
+    "account": "ads",
+    "category": "별별템",
+    "hook": "캠핑하는 사람들이 먼저 찾는 일본식 팬히터입니다. 쿠팡에 정품으로 올라와 있습니다.",
+    "summary": [
+      "기름을 넣고 쓰는 난로라 환기에 신경 써야 하고, 무게가 있어 한 번 자리를 잡으면 거실 한쪽에 두고 쓰게 됩니다."
+    ],
+    "search_keyword": "토요토미 팬히터"
+  },
+  {
+    "id": "drone",
+    "name": "DJI Neo 2 플라이 모어 콤보 드론, 혼합색상, 1세트",
+    "partners_link": "https://link.coupang.com/a/iJZCB6mDYq",
+    "image": "img/products/drone.jpg",
+    "account": "ads",
+    "category": "별별템",
+    "hook": "손바닥만 한 크기로 하늘 사진을 남기는 드론입니다. 쿠팡 가전 코너에 이런 것도 있습니다.",
+    "summary": [
+      "본체와 조종기, 배터리가 함께 오는 구성입니다. 겨울 여행에서 위에서 찍은 사진을 남기고 싶을 때 눈에 들어오는 세트입니다."
+    ],
+    "search_keyword": "DJI Neo 2 드론"
+  },
+  {
+    "id": "premiere-projector",
+    "name": "삼성전자 The Premiere 프로젝터 웜 화이트 254~330cm 방문설치, SP-LPDU9SAXXKR",
+    "partners_link": "https://link.coupang.com/a/iJZGHOUWlM",
+    "image": "img/products/premiere-projector.jpg",
+    "account": "ads",
+    "category": "별별템",
+    "hook": "벽에 붙여 두고 쓰는 삼성 초단초점 프로젝터입니다. 장바구니에 담아 둘 수 있는 가전으로 쿠팡에 올라와 있습니다.",
+    "summary": [
+      "방문 설치로 배송되는 모델이라 자리를 잡아 주는 과정까지 포함되어 있습니다. 거실 벽 한 면을 화면으로 쓰고 싶을 때 비교해 볼 만한 상품입니다."
+    ],
+    "search_keyword": "삼성 더 프리미어 프로젝터"
   }
 ]
 ```
