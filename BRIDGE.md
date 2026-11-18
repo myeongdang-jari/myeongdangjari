@@ -6,6 +6,7 @@
 - 공개 저장소 규정에 따라 내부 수치 및 정산 정보는 포함하지 않습니다.
 - 2026-11-16 갱신: 쿠팡 파트너스 계정에서 발급한 상품 링크 25건과 상품 사진으로 카탈로그를 다시 구성했습니다.
 - 2026-11-17 갱신: 겨울 인기 품목과 호기심 상품 7건을 더해 상품 링크 32건으로 늘렸습니다.
+- 2026-11-18 갱신: 성에방지 커버·발열조끼·반반 전기그릴·붕어빵 메이커·1인용 사우나 5건을 더해 상품 링크 37건입니다.
 - 문구 규칙: 가격 숫자·최저가·써 본 척·효과 장담·이모지 없이 씁니다.
 
 ## 상품 데이터
@@ -361,6 +362,61 @@
 - 쿠팡 검색어: 삼성 더 프리미어 프로젝터
 - 상품 링크: https://link.coupang.com/a/iJZGHOUWlM
 - 사진: img/products/premiere-projector.jpg
+
+### 상품 33
+- id: frost-cover
+- 이름: 카템 3중 차단 마그네틱 성에방지 커버, 전차종, 1세트
+- 갈래: 출퇴근길
+- 계정: take
+- 후킹 한 줄: 아침에 성에를 긁는 대신 밤에 덮어 두는 앞유리 커버입니다.
+- 요약: 자석과 문틈 고정 방식이라 덮어 두고 아침에 걷어 내면 됩니다. 사이드미러까지 함께 덮는 구성이라 유리에 앉은 성에를 밀어 내는 시간을 줄이는 쪽입니다.
+- 쿠팡 검색어: 차량 성에방지커버
+- 상품 링크: https://link.coupang.com/a/iLFf9cx10m
+- 사진: img/products/frost-cover.jpg
+
+### 상품 34
+- id: heating-vest
+- 이름: 에쉬울프 USB 발열조끼 스마트 온열조끼, DR013
+- 갈래: 출퇴근길
+- 계정: take
+- 후킹 한 줄: 보조배터리를 꽂으면 앞판과 뒷판이 데워지는 조끼입니다.
+- 요약: 패딩 안에 껴입거나 단독으로 입고 다닐 수 있는 두께입니다. USB 연결 방식이라 쓰는 보조배터리 용량에 따라 사용 시간이 달라지고, KC 인증 표기가 있는지 확인해 두는 편이 좋습니다.
+- 쿠팡 검색어: USB 발열조끼
+- 상품 링크: https://link.coupang.com/a/iLFuzgsa9k
+- 사진: img/products/heating-vest.jpg
+
+### 상품 35
+- id: electric-grill
+- 이름: 홈플래닛 반반 멀티 전기그릴(개별 온도 조절), AD-SK18
+- 갈래: 연말 홈파티
+- 계정: take
+- 후킹 한 줄: 한쪽은 굽고 한쪽은 끓이는 반반 상판 전기그릴입니다.
+- 요약: 좌우 온도를 따로 조절해 고기와 국물 요리를 같이 올려 둘 수 있습니다. 상판이 넓어 식탁 가운데에 두고 여러 명이 둘러앉기 좋습니다.
+- 쿠팡 검색어: 반반 전기그릴
+- 상품 링크: https://link.coupang.com/a/iLEWQmy5U4
+- 사진: img/products/electric-grill.jpg
+
+### 상품 36
+- id: fishbread-maker
+- 이름: 위즈웰 간식 메이커 3종 세트 붕어빵 + 와플 + 샌드위치, WSW-6137
+- 갈래: 겨울 간식
+- 계정: take
+- 후킹 한 줄: 플레이트를 바꿔 끼우면 붕어빵, 와플, 샌드위치가 되는 전기 메이커입니다.
+- 요약: 붕어빵틀과 와플판, 샌드위치판이 한 세트로 옵니다. 아이와 같이 반죽을 붓고 기다리는 겨울 방학 간식용입니다.
+- 쿠팡 검색어: 붕어빵 메이커
+- 상품 링크: https://link.coupang.com/a/iLE0sQqZEq
+- 사진: img/products/fishbread-maker.jpg
+
+### 상품 37
+- id: home-sauna
+- 이름: [휴먼사우나] 로벤스 편백나무+히노끼 스톤찜질+좌훈+족욕찜질 원적외선 반신욕기, LPH-300
+- 갈래: 별별템
+- 계정: ads
+- 후킹 한 줄: 집에 들이는 1인용 반신욕기입니다. 편백나무 안에서 앉는 자리와 스톤을 데우는 구조입니다.
+- 요약: 원적외선 방식이라 물을 끓이지 않고 앉는 자리와 스톤을 데웁니다. 크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다.
+- 쿠팡 검색어: 1인용 가정용 사우나
+- 상품 링크: https://link.coupang.com/a/iLFmqwxj0C
+- 사진: img/products/home-sauna.jpg
 
 ## 데이터 인터페이스 (JSON)
 
@@ -781,6 +837,71 @@
       "방문 설치로 배송되는 모델이라 자리를 잡아 주는 과정까지 포함되어 있습니다. 거실 벽 한 면을 화면으로 쓰고 싶을 때 비교해 볼 만한 상품입니다."
     ],
     "search_keyword": "삼성 더 프리미어 프로젝터"
+  },
+  {
+    "id": "frost-cover",
+    "name": "카템 3중 차단 마그네틱 성에방지 커버, 전차종, 1세트",
+    "partners_link": "https://link.coupang.com/a/iLFf9cx10m",
+    "image": "img/products/frost-cover.jpg",
+    "account": "take",
+    "category": "출퇴근길",
+    "hook": "아침에 성에를 긁는 대신 밤에 덮어 두는 앞유리 커버입니다.",
+    "summary": [
+      "자석과 문틈 고정 방식이라 덮어 두고 아침에 걷어 내면 됩니다. 사이드미러까지 함께 덮는 구성이라 유리에 앉은 성에를 밀어 내는 시간을 줄이는 쪽입니다."
+    ],
+    "search_keyword": "차량 성에방지커버"
+  },
+  {
+    "id": "heating-vest",
+    "name": "에쉬울프 USB 발열조끼 스마트 온열조끼, DR013",
+    "partners_link": "https://link.coupang.com/a/iLFuzgsa9k",
+    "image": "img/products/heating-vest.jpg",
+    "account": "take",
+    "category": "출퇴근길",
+    "hook": "보조배터리를 꽂으면 앞판과 뒷판이 데워지는 조끼입니다.",
+    "summary": [
+      "패딩 안에 껴입거나 단독으로 입고 다닐 수 있는 두께입니다. USB 연결 방식이라 쓰는 보조배터리 용량에 따라 사용 시간이 달라지고, KC 인증 표기가 있는지 확인해 두는 편이 좋습니다."
+    ],
+    "search_keyword": "USB 발열조끼"
+  },
+  {
+    "id": "electric-grill",
+    "name": "홈플래닛 반반 멀티 전기그릴(개별 온도 조절), AD-SK18",
+    "partners_link": "https://link.coupang.com/a/iLEWQmy5U4",
+    "image": "img/products/electric-grill.jpg",
+    "account": "take",
+    "category": "연말 홈파티",
+    "hook": "한쪽은 굽고 한쪽은 끓이는 반반 상판 전기그릴입니다.",
+    "summary": [
+      "좌우 온도를 따로 조절해 고기와 국물 요리를 같이 올려 둘 수 있습니다. 상판이 넓어 식탁 가운데에 두고 여러 명이 둘러앉기 좋습니다."
+    ],
+    "search_keyword": "반반 전기그릴"
+  },
+  {
+    "id": "fishbread-maker",
+    "name": "위즈웰 간식 메이커 3종 세트 붕어빵 + 와플 + 샌드위치, WSW-6137",
+    "partners_link": "https://link.coupang.com/a/iLE0sQqZEq",
+    "image": "img/products/fishbread-maker.jpg",
+    "account": "take",
+    "category": "겨울 간식",
+    "hook": "플레이트를 바꿔 끼우면 붕어빵, 와플, 샌드위치가 되는 전기 메이커입니다.",
+    "summary": [
+      "붕어빵틀과 와플판, 샌드위치판이 한 세트로 옵니다. 아이와 같이 반죽을 붓고 기다리는 겨울 방학 간식용입니다."
+    ],
+    "search_keyword": "붕어빵 메이커"
+  },
+  {
+    "id": "home-sauna",
+    "name": "[휴먼사우나] 로벤스 편백나무+히노끼 스톤찜질+좌훈+족욕찜질 원적외선 반신욕기, LPH-300",
+    "partners_link": "https://link.coupang.com/a/iLFmqwxj0C",
+    "image": "img/products/home-sauna.jpg",
+    "account": "ads",
+    "category": "별별템",
+    "hook": "집에 들이는 1인용 반신욕기입니다. 편백나무 안에서 앉는 자리와 스톤을 데우는 구조입니다.",
+    "summary": [
+      "원적외선 방식이라 물을 끓이지 않고 앉는 자리와 스톤을 데웁니다. 크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다."
+    ],
+    "search_keyword": "1인용 가정용 사우나"
   }
 ]
 ```
