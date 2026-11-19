@@ -6,6 +6,7 @@
 - 공개 저장소 규정에 따라 내부 수치 및 정산 정보는 포함하지 않습니다.
 - 2026-11-16 갱신: 쿠팡 파트너스 계정에서 발급한 상품 링크 25건과 상품 사진으로 카탈로그를 다시 구성했습니다.
 - 2026-11-17 갱신: 겨울 인기 품목과 호기심 상품 7건을 더해 상품 링크 32건으로 늘렸습니다.
+- 2026-11-19 갱신(2차): 써모스 보온도시락·오리온 어드벤트 캘린더·따수미 난방텐트·코멧 아기물티슈·우드피카 유아 바라클라바 5건을 더해 상품 링크 51건입니다. 토스쇼핑 쉐어링크(https://toss.shopping/_m/5Y0O20Ah)도 브릿지 하단에 함께 걸었습니다.
 - 2026-11-19 갱신: 미니 제습기·12L 제습기·극세사 차렵이불·욕실 온풍기·족욕기·목어깨 마사지기·필터 샤워기·화목난로 8건을 더해 상품 링크 46건입니다.
 - 2026-11-18 갱신: 성에방지 커버·발열조끼·반반 전기그릴·붕어빵 메이커·1인용 사우나·무선 제설기 6건을 더해 상품 링크 38건입니다.
 - 문구 규칙: 가격 숫자·최저가·써 본 척·효과 장담·이모지 없이 씁니다.
@@ -517,6 +518,61 @@
 - 쿠팡 검색어: 캠핑 화목난로
 - 상품 링크: https://link.coupang.com/a/iNjIJWmvVk
 - 사진: img/products/firewood-stove.jpg
+
+### 상품 47
+- id: thermos-lunchbox
+- 이름: 써모스 일체형 대용량 보온도시락 + 보온백 + 수저 세트, 샌드베이지, 1개
+- 갈래: 주방·도시락
+- 계정: take
+- 후킹 한 줄: 국물이나 반찬이 식지 않게 싸 가는 보온도시락입니다.
+- 요약: 1500ml를 네 단으로 나눠 담는 일체형이고 보온백과 수저가 같이 옵니다. 보냉도 되는 제품으로 표기돼 있습니다.
+- 쿠팡 검색어: 써모스 보온도시락
+- 상품 링크: https://link.coupang.com/a/iNGqzfSzhA
+- 사진: img/products/thermos-lunchbox.jpg
+
+### 상품 48
+- id: advent-calendar
+- 이름: 오리온 크리스마스 어드벤트 캘린더 과자세트, 9종, 1세트
+- 갈래: 크리스마스
+- 계정: myeongjanae
+- 후킹 한 줄: 12월에 하루씩 열어 보는 크리스마스 달력입니다.
+- 요약: 과자 9종이 들어 있는 혼합 세트입니다. 상자 겉면에 작은 문들이 있어 12월에 하나씩 열어 보는 방식입니다.
+- 쿠팡 검색어: 어드벤트 캘린더
+- 상품 링크: https://link.coupang.com/a/iNGrtQRPe8
+- 사진: img/products/advent-calendar.jpg
+
+### 상품 49
+- id: heating-tent
+- 이름: 따수미 패브릭 난방텐트 3인용
+- 갈래: 겨울 난방·방풍
+- 계정: take
+- 후킹 한 줄: 침대 위에 씌워 방 하나만 덥히는 난방텐트입니다.
+- 요약: 지퍼로 여닫고 바닥이 없는 구조라 침대 위에 덮어 쓰는 방식입니다. 3인용(킹) 크기로 나온 제품입니다.
+- 쿠팡 검색어: 패브릭 난방텐트
+- 상품 링크: https://link.coupang.com/a/iNGssAUnfM
+- 사진: img/products/heating-tent.jpg
+
+### 상품 50
+- id: baby-wipes
+- 이름: 코멧 오리지널 유아용 아기물티슈 캡형, 100매입
+- 갈래: 생필품
+- 계정: myeongjanae
+- 후킹 한 줄: 한 장씩 뽑아 쓰는 아기물티슈입니다.
+- 요약: 캡을 눌러 한 장씩 뽑는 캡형 100매입입니다. 상품평이 49만 개가 넘고 한 달에 10만 명 이상이 산 상품입니다.
+- 쿠팡 검색어: 코멧 아기물티슈
+- 상품 링크: https://link.coupang.com/a/iNGtoaNmy4
+- 사진: img/products/baby-wipes.jpg
+
+### 상품 51
+- id: kids-balaclava
+- 이름: 우드피카 유아용 패치 바라클라바 넥워머
+- 갈래: 겨울 방한
+- 계정: take
+- 후킹 한 줄: 목부터 머리까지 한 번에 덮는 아동용 넥워머입니다.
+- 요약: 단추로 여미는 아크릴 니트라 목도리처럼 풀리지 않습니다. 아동·유아용으로 나온 제품입니다.
+- 쿠팡 검색어: 유아 바라클라바
+- 상품 링크: https://link.coupang.com/a/iNGukGGgi4
+- 사진: img/products/kids-balaclava.jpg
 
 ## 데이터 인터페이스 (JSON)
 
@@ -1119,6 +1175,71 @@
       "연통과 함께 세팅하는 스테인리스 난로입니다. 불을 쓰는 제품이라 실내에서는 환기와 설치 자리, 소방 안전을 먼저 확인해야 합니다."
     ],
     "search_keyword": "캠핑 화목난로"
+  },
+  {
+    "id": "thermos-lunchbox",
+    "name": "써모스 일체형 대용량 보온도시락 + 보온백 + 수저 세트, 샌드베이지, 1개",
+    "partners_link": "https://link.coupang.com/a/iNGqzfSzhA",
+    "image": "img/products/thermos-lunchbox.jpg",
+    "account": "take",
+    "category": "주방·도시락",
+    "hook": "국물이나 반찬이 식지 않게 싸 가는 보온도시락입니다.",
+    "summary": [
+      "1500ml를 네 단으로 나눠 담는 일체형이고 보온백과 수저가 같이 옵니다. 보냉도 되는 제품으로 표기돼 있습니다."
+    ],
+    "search_keyword": "써모스 보온도시락"
+  },
+  {
+    "id": "advent-calendar",
+    "name": "오리온 크리스마스 어드벤트 캘린더 과자세트, 9종, 1세트",
+    "partners_link": "https://link.coupang.com/a/iNGrtQRPe8",
+    "image": "img/products/advent-calendar.jpg",
+    "account": "myeongjanae",
+    "category": "크리스마스",
+    "hook": "12월에 하루씩 열어 보는 크리스마스 달력입니다.",
+    "summary": [
+      "과자 9종이 들어 있는 혼합 세트입니다. 상자 겉면에 작은 문들이 있어 12월에 하나씩 열어 보는 방식입니다."
+    ],
+    "search_keyword": "어드벤트 캘린더"
+  },
+  {
+    "id": "heating-tent",
+    "name": "따수미 패브릭 난방텐트 3인용",
+    "partners_link": "https://link.coupang.com/a/iNGssAUnfM",
+    "image": "img/products/heating-tent.jpg",
+    "account": "take",
+    "category": "겨울 난방·방풍",
+    "hook": "침대 위에 씌워 방 하나만 덥히는 난방텐트입니다.",
+    "summary": [
+      "지퍼로 여닫고 바닥이 없는 구조라 침대 위에 덮어 쓰는 방식입니다. 3인용(킹) 크기로 나온 제품입니다."
+    ],
+    "search_keyword": "패브릭 난방텐트"
+  },
+  {
+    "id": "baby-wipes",
+    "name": "코멧 오리지널 유아용 아기물티슈 캡형, 100매입",
+    "partners_link": "https://link.coupang.com/a/iNGtoaNmy4",
+    "image": "img/products/baby-wipes.jpg",
+    "account": "myeongjanae",
+    "category": "생필품",
+    "hook": "한 장씩 뽑아 쓰는 아기물티슈입니다.",
+    "summary": [
+      "캡을 눌러 한 장씩 뽑는 캡형 100매입입니다. 상품평이 49만 개가 넘고 한 달에 10만 명 이상이 산 상품입니다."
+    ],
+    "search_keyword": "코멧 아기물티슈"
+  },
+  {
+    "id": "kids-balaclava",
+    "name": "우드피카 유아용 패치 바라클라바 넥워머",
+    "partners_link": "https://link.coupang.com/a/iNGukGGgi4",
+    "image": "img/products/kids-balaclava.jpg",
+    "account": "take",
+    "category": "겨울 방한",
+    "hook": "목부터 머리까지 한 번에 덮는 아동용 넥워머입니다.",
+    "summary": [
+      "단추로 여미는 아크릴 니트라 목도리처럼 풀리지 않습니다. 아동·유아용으로 나온 제품입니다."
+    ],
+    "search_keyword": "유아 바라클라바"
   }
 ]
 ```
