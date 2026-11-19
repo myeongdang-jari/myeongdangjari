@@ -465,13 +465,13 @@
 
 ### 상품 42
 - id: bathroom-heater
-- 이름: 한경희 굿즈앤 1초 PTC 욕실 온풍기, AFP-P4400
+- 이름: 한경희생활과학 PTC 온풍기 욕실 난방기 스탠드 벽걸이 전기히터, HAAN-4000(블랙)
 - 갈래: 욕실 난방
 - 계정: take
-- 후킹 한 줄: 욕실 벽에 걸어 두고 샤워 전에 켜 두는 온풍기입니다.
-- 요약: 벽걸이형 PTC 히터라 바닥 자리를 차지하지 않습니다. 물이 닿는 곳에 두는 제품이라 설치 위치와 전원은 설명서를 따라 확인해 두는 편이 좋습니다.
+- 후킹 한 줄: 욕실 벽에 걸거나 세워 두고 샤워 전에 켜 두는 온풍기입니다.
+- 요약: 벽에 걸거나 세워 두는 겸용형이라 좁은 욕실에서 놓을 자리를 골라 쓸 수 있습니다. 물이 닿는 곳에 두는 제품이라 설치 위치와 전원은 설명서를 따라 확인해 두는 편이 좋습니다.
 - 쿠팡 검색어: 욕실 온풍기
-- 상품 링크: https://link.coupang.com/a/iNjHzpBs1R
+- 상품 링크: https://link.coupang.com/a/iNkaGmHDW0
 - 사진: img/products/bathroom-heater.jpg
 
 ### 상품 43
@@ -1057,14 +1057,14 @@
   },
   {
     "id": "bathroom-heater",
-    "name": "한경희 굿즈앤 1초 PTC 욕실 온풍기, AFP-P4400",
-    "partners_link": "https://link.coupang.com/a/iNjHzpBs1R",
+    "name": "한경희생활과학 PTC 온풍기 욕실 난방기 스탠드 벽걸이 전기히터, HAAN-4000(블랙)",
+    "partners_link": "https://link.coupang.com/a/iNkaGmHDW0",
     "image": "img/products/bathroom-heater.jpg",
     "account": "take",
     "category": "욕실 난방",
-    "hook": "욕실 벽에 걸어 두고 샤워 전에 켜 두는 온풍기입니다.",
+    "hook": "욕실 벽에 걸거나 세워 두고 샤워 전에 켜 두는 온풍기입니다.",
     "summary": [
-      "벽걸이형 PTC 히터라 바닥 자리를 차지하지 않습니다. 물이 닿는 곳에 두는 제품이라 설치 위치와 전원은 설명서를 따라 확인해 두는 편이 좋습니다."
+      "벽에 걸거나 세워 두는 겸용형이라 좁은 욕실에서 놓을 자리를 골라 쓸 수 있습니다. 물이 닿는 곳에 두는 제품이라 설치 위치와 전원은 설명서를 따라 확인해 두는 편이 좋습니다."
     ],
     "search_keyword": "욕실 온풍기"
   },
