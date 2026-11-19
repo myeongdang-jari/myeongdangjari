@@ -6,6 +6,7 @@
 - 공개 저장소 규정에 따라 내부 수치 및 정산 정보는 포함하지 않습니다.
 - 2026-11-16 갱신: 쿠팡 파트너스 계정에서 발급한 상품 링크 25건과 상품 사진으로 카탈로그를 다시 구성했습니다.
 - 2026-11-17 갱신: 겨울 인기 품목과 호기심 상품 7건을 더해 상품 링크 32건으로 늘렸습니다.
+- 2026-11-19 갱신: 미니 제습기·12L 제습기·극세사 차렵이불·욕실 온풍기·족욕기·목어깨 마사지기·필터 샤워기·화목난로 8건을 더해 상품 링크 46건입니다.
 - 2026-11-18 갱신: 성에방지 커버·발열조끼·반반 전기그릴·붕어빵 메이커·1인용 사우나·무선 제설기 6건을 더해 상품 링크 38건입니다.
 - 문구 규칙: 가격 숫자·최저가·써 본 척·효과 장담·이모지 없이 씁니다.
 
@@ -428,6 +429,94 @@
 - 쿠팡 검색어: 무선 제설기
 - 상품 링크: https://link.coupang.com/a/iLF6x1Pvky
 - 사진: img/products/snow-blower.jpg
+
+### 상품 39
+- id: mini-dehumidifier
+- 이름: EXTEDRG 제습기 2.8L 강력제습 가정용 저소음 원룸 미니 제습기, D9
+- 갈래: 결로·습기
+- 계정: take
+- 후킹 한 줄: 창틀에 물방울이 맺히는 날, 방 안 물을 물통으로 모으는 작은 제습기입니다.
+- 요약: 옷장이나 욕실처럼 좁은 자리에 두는 2.8L 소형입니다. 물통이 차면 표시가 뜨고, 습도가 내려가면 스스로 멈춥니다.
+- 쿠팡 검색어: 미니 제습기
+- 상품 링크: https://link.coupang.com/a/iNjEeRx34C
+- 사진: img/products/mini-dehumidifier.jpg
+
+### 상품 40
+- id: dehumidifier-12l
+- 이름: 롯데알미늄 제습기 12L, LDH-7000N
+- 갈래: 결로·습기
+- 계정: take
+- 후킹 한 줄: 빨래를 널어 둔 방의 물을 하루 12L까지 빼내는 컴프레서 제습기입니다.
+- 요약: 일일 제습량 12L, 사용면적 약 10평으로 표기된 모델입니다. 물통은 2L이고 연속배수 호스를 연결할 수 있어 물 비우는 일을 줄일 수 있습니다.
+- 쿠팡 검색어: 가정용 제습기 12L
+- 상품 링크: https://link.coupang.com/a/iNjUwx2rpA
+- 사진: img/products/dehumidifier-12l.jpg
+
+### 상품 41
+- id: winter-duvet
+- 이름: 코멧 홈 양면 극세사 솔리드 차렵이불
+- 갈래: 겨울 침구
+- 계정: take
+- 후킹 한 줄: 커버를 씌우지 않고 바로 덮는 겨울 극세사 차렵이불입니다.
+- 요약: 솜이 안에 누벼 있어 이불커버 없이 쓰고, 빨래도 한 장만 하면 됩니다. 앞뒤 색이 달라 뒤집어 덮을 수 있습니다.
+- 쿠팡 검색어: 극세사 차렵이불
+- 상품 링크: https://link.coupang.com/a/iNjFeUXyNw
+- 사진: img/products/winter-duvet.jpg
+
+### 상품 42
+- id: bathroom-heater
+- 이름: 한경희 굿즈앤 1초 PTC 욕실 온풍기, AFP-P4400
+- 갈래: 욕실 난방
+- 계정: take
+- 후킹 한 줄: 욕실 벽에 걸어 두고 샤워 전에 켜 두는 온풍기입니다.
+- 요약: 벽걸이형 PTC 히터라 바닥 자리를 차지하지 않습니다. 물이 닿는 곳에 두는 제품이라 설치 위치와 전원은 설명서를 따라 확인해 두는 편이 좋습니다.
+- 쿠팡 검색어: 욕실 온풍기
+- 상품 링크: https://link.coupang.com/a/iNjHzpBs1R
+- 사진: img/products/bathroom-heater.jpg
+
+### 상품 43
+- id: foot-spa
+- 이름: 이노크아든 사파이어 스파 족욕기, FM-505, 화이트
+- 갈래: 겨울 발 보온
+- 계정: take
+- 후킹 한 줄: 물을 받아 온도를 맞춰 두는 습식 족욕기입니다.
+- 요약: 온도를 정해 두면 맞춰 가열하고, 바닥에 지압 롤러와 거품 기능이 있습니다. 고정형이라 둘 자리와 콘센트 위치를 먼저 정하는 편이 좋습니다.
+- 쿠팡 검색어: 가정용 족욕기
+- 상품 링크: https://link.coupang.com/a/iNjK48KKbs
+- 사진: img/products/foot-spa.jpg
+
+### 상품 44
+- id: neck-massager
+- 이름: 제스파 플러스 목어깨 등 허리 마사지기, ZP187, 퍼플
+- 갈래: 겨울 몸풀기
+- 계정: take
+- 후킹 한 줄: 목에 걸치고 기대서 쓰는 목·어깨 마사지기입니다.
+- 요약: 4개의 안마볼이 돌아가며 방향을 바꾸고, 온열을 함께 켤 수 있습니다. 15분이 지나면 스스로 꺼지고, 차량용 전원선이 함께 들어 있습니다.
+- 쿠팡 검색어: 목어깨 마사지기
+- 상품 링크: https://link.coupang.com/a/iNjJRe2DPU
+- 사진: img/products/neck-massager.jpg
+
+### 상품 45
+- id: filter-shower
+- 이름: 코멧 홈 파워수압 필터 샤워기 본품 + 필터 2개입, 실버
+- 갈래: 욕실
+- 계정: take
+- 후킹 한 줄: 헤드 안쪽 필터로 물을 한 번 거르는 샤워기입니다.
+- 요약: 본체와 필터 2개가 한 세트로 옵니다. 필터는 2~3개월 주기로 갈아 끼우고, 수압을 올려 주는 판이 들어 있습니다.
+- 쿠팡 검색어: 필터 샤워기
+- 상품 링크: https://link.coupang.com/a/iNjGtwDojc
+- 사진: img/products/filter-shower.jpg
+
+### 상품 46
+- id: firewood-stove
+- 이름: 아웃도어웍스 화목난로, OW200
+- 갈래: 별별템
+- 계정: ads
+- 후킹 한 줄: 장작을 넣고 불을 보는 캠핑용 화목난로입니다.
+- 요약: 연통과 함께 세팅하는 스테인리스 난로입니다. 불을 쓰는 제품이라 실내에서는 환기와 설치 자리, 소방 안전을 먼저 확인해야 합니다.
+- 쿠팡 검색어: 캠핑 화목난로
+- 상품 링크: https://link.coupang.com/a/iNjIJWmvVk
+- 사진: img/products/firewood-stove.jpg
 
 ## 데이터 인터페이스 (JSON)
 
@@ -926,6 +1015,110 @@
       "충전 배터리로 눈을 밀어 내는 소형 제설기입니다. 배터리 포함 여부와 날개 폭이 값을 가릅니다. 같은 검색에 손에 드는 송풍기형이 섞여 나오니 상품 구분을 확인해 보세요."
     ],
     "search_keyword": "무선 제설기"
+  },
+  {
+    "id": "mini-dehumidifier",
+    "name": "EXTEDRG 제습기 2.8L 강력제습 가정용 저소음 원룸 미니 제습기, D9",
+    "partners_link": "https://link.coupang.com/a/iNjEeRx34C",
+    "image": "img/products/mini-dehumidifier.jpg",
+    "account": "take",
+    "category": "결로·습기",
+    "hook": "창틀에 물방울이 맺히는 날, 방 안 물을 물통으로 모으는 작은 제습기입니다.",
+    "summary": [
+      "옷장이나 욕실처럼 좁은 자리에 두는 2.8L 소형입니다. 물통이 차면 표시가 뜨고, 습도가 내려가면 스스로 멈춥니다."
+    ],
+    "search_keyword": "미니 제습기"
+  },
+  {
+    "id": "dehumidifier-12l",
+    "name": "롯데알미늄 제습기 12L, LDH-7000N",
+    "partners_link": "https://link.coupang.com/a/iNjUwx2rpA",
+    "image": "img/products/dehumidifier-12l.jpg",
+    "account": "take",
+    "category": "결로·습기",
+    "hook": "빨래를 널어 둔 방의 물을 하루 12L까지 빼내는 컴프레서 제습기입니다.",
+    "summary": [
+      "일일 제습량 12L, 사용면적 약 10평으로 표기된 모델입니다. 물통은 2L이고 연속배수 호스를 연결할 수 있어 물 비우는 일을 줄일 수 있습니다."
+    ],
+    "search_keyword": "가정용 제습기 12L"
+  },
+  {
+    "id": "winter-duvet",
+    "name": "코멧 홈 양면 극세사 솔리드 차렵이불",
+    "partners_link": "https://link.coupang.com/a/iNjFeUXyNw",
+    "image": "img/products/winter-duvet.jpg",
+    "account": "take",
+    "category": "겨울 침구",
+    "hook": "커버를 씌우지 않고 바로 덮는 겨울 극세사 차렵이불입니다.",
+    "summary": [
+      "솜이 안에 누벼 있어 이불커버 없이 쓰고, 빨래도 한 장만 하면 됩니다. 앞뒤 색이 달라 뒤집어 덮을 수 있습니다."
+    ],
+    "search_keyword": "극세사 차렵이불"
+  },
+  {
+    "id": "bathroom-heater",
+    "name": "한경희 굿즈앤 1초 PTC 욕실 온풍기, AFP-P4400",
+    "partners_link": "https://link.coupang.com/a/iNjHzpBs1R",
+    "image": "img/products/bathroom-heater.jpg",
+    "account": "take",
+    "category": "욕실 난방",
+    "hook": "욕실 벽에 걸어 두고 샤워 전에 켜 두는 온풍기입니다.",
+    "summary": [
+      "벽걸이형 PTC 히터라 바닥 자리를 차지하지 않습니다. 물이 닿는 곳에 두는 제품이라 설치 위치와 전원은 설명서를 따라 확인해 두는 편이 좋습니다."
+    ],
+    "search_keyword": "욕실 온풍기"
+  },
+  {
+    "id": "foot-spa",
+    "name": "이노크아든 사파이어 스파 족욕기, FM-505, 화이트",
+    "partners_link": "https://link.coupang.com/a/iNjK48KKbs",
+    "image": "img/products/foot-spa.jpg",
+    "account": "take",
+    "category": "겨울 발 보온",
+    "hook": "물을 받아 온도를 맞춰 두는 습식 족욕기입니다.",
+    "summary": [
+      "온도를 정해 두면 맞춰 가열하고, 바닥에 지압 롤러와 거품 기능이 있습니다. 고정형이라 둘 자리와 콘센트 위치를 먼저 정하는 편이 좋습니다."
+    ],
+    "search_keyword": "가정용 족욕기"
+  },
+  {
+    "id": "neck-massager",
+    "name": "제스파 플러스 목어깨 등 허리 마사지기, ZP187, 퍼플",
+    "partners_link": "https://link.coupang.com/a/iNjJRe2DPU",
+    "image": "img/products/neck-massager.jpg",
+    "account": "take",
+    "category": "겨울 몸풀기",
+    "hook": "목에 걸치고 기대서 쓰는 목·어깨 마사지기입니다.",
+    "summary": [
+      "4개의 안마볼이 돌아가며 방향을 바꾸고, 온열을 함께 켤 수 있습니다. 15분이 지나면 스스로 꺼지고, 차량용 전원선이 함께 들어 있습니다."
+    ],
+    "search_keyword": "목어깨 마사지기"
+  },
+  {
+    "id": "filter-shower",
+    "name": "코멧 홈 파워수압 필터 샤워기 본품 + 필터 2개입, 실버",
+    "partners_link": "https://link.coupang.com/a/iNjGtwDojc",
+    "image": "img/products/filter-shower.jpg",
+    "account": "take",
+    "category": "욕실",
+    "hook": "헤드 안쪽 필터로 물을 한 번 거르는 샤워기입니다.",
+    "summary": [
+      "본체와 필터 2개가 한 세트로 옵니다. 필터는 2~3개월 주기로 갈아 끼우고, 수압을 올려 주는 판이 들어 있습니다."
+    ],
+    "search_keyword": "필터 샤워기"
+  },
+  {
+    "id": "firewood-stove",
+    "name": "아웃도어웍스 화목난로, OW200",
+    "partners_link": "https://link.coupang.com/a/iNjIJWmvVk",
+    "image": "img/products/firewood-stove.jpg",
+    "account": "ads",
+    "category": "별별템",
+    "hook": "장작을 넣고 불을 보는 캠핑용 화목난로입니다.",
+    "summary": [
+      "연통과 함께 세팅하는 스테인리스 난로입니다. 불을 쓰는 제품이라 실내에서는 환기와 설치 자리, 소방 안전을 먼저 확인해야 합니다."
+    ],
+    "search_keyword": "캠핑 화목난로"
   }
 ]
 ```
