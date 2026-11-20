@@ -6,6 +6,7 @@
 - 공개 저장소 규정에 따라 내부 수치 및 정산 정보는 포함하지 않습니다.
 - 2026-11-16 갱신: 쿠팡 파트너스 계정에서 발급한 상품 링크 25건과 상품 사진으로 카탈로그를 다시 구성했습니다.
 - 2026-11-17 갱신: 겨울 인기 품목과 호기심 상품 7건을 더해 상품 링크 32건으로 늘렸습니다.
+- 2026-11-20 갱신: 수면양말 2종(5종 SET·4켤레 세트)·하루온 붙이는 핫팩·순샘 주방세제 리필·코멧 접이식 빨래건조대·다이슨 에어랩·제스파 컴포르테 안마의자 7건을 더해 상품 링크 58건입니다.
 - 2026-11-19 갱신(2차): 써모스 보온도시락·오리온 어드벤트 캘린더·따수미 난방텐트·코멧 아기물티슈·우드피카 유아 바라클라바 5건을 더해 상품 링크 51건입니다. 토스쇼핑 쉐어링크(https://toss.shopping/_m/5Y0O20Ah)도 브릿지 하단에 함께 걸었습니다.
 - 2026-11-19 갱신: 미니 제습기·12L 제습기·극세사 차렵이불·욕실 온풍기·족욕기·목어깨 마사지기·필터 샤워기·화목난로 8건을 더해 상품 링크 46건입니다.
 - 2026-11-18 갱신: 성에방지 커버·발열조끼·반반 전기그릴·붕어빵 메이커·1인용 사우나·무선 제설기 6건을 더해 상품 링크 38건입니다.
@@ -575,6 +576,83 @@
 - 사진: img/products/kids-balaclava.jpg
 
 ## 데이터 인터페이스 (JSON)
+
+### 상품 52
+- id: socks-5set
+- 이름: 퍼니스코 여성 겨울 수면 양말 5종 SET
+- 갈래: 겨울 침구·수면
+- 계정: take
+- 후킹 한 줄: 밤에 발이 시려 양말을 신고 자는 집에 두는 무압박 수면양말입니다.
+- 요약: 밴딩을 세게 조이지 않아 신고 자도 발목에 자국이 덜 남습니다. 다섯 켤레가 한 세트라 빨아 가며 돌려 신기 좋습니다.
+- 쿠팡 검색어: 여성 수면양말 5종
+- 상품 링크: https://link.coupang.com/a/iO8Bl4KKOa
+- 사진: img/products/socks-5set.jpg
+
+### 상품 53
+- id: socks-4set
+- 이름: 이지하임 4켤레 털빠짐없는 편안한 무압박 남녀공용 수면양말 세트
+- 갈래: 겨울 침구·수면
+- 계정: take
+- 후킹 한 줄: 수면양말을 신고 나면 털이 묻어 나와 고민이던 집에 두는 네 켤레 세트입니다.
+- 요약: 상품명에 털 빠짐을 줄인 소재로 표기돼 있습니다. 남녀공용으로 나와 온 가족이 나눠 신을 수 있습니다.
+- 쿠팡 검색어: 무압박 수면양말 4켤레
+- 상품 링크: https://link.coupang.com/a/iO8FgfqG8O
+- 사진: img/products/socks-4set.jpg
+
+### 상품 54
+- id: hotpack-attach
+- 이름: 하루온 붙이는 핫팩 50g 10개입, 2개
+- 갈래: 겨울 방한
+- 계정: take
+- 후킹 한 줄: 옷 안쪽에 붙여 두면 손에 쥐지 않아도 등과 배가 따뜻한 핫팩입니다.
+- 요약: 10개입 봉지 두 개로 오는 구성입니다. 상품평이 5만 2천 개가 넘고, 최근 한 달 사이 7천 명 이상이 산 것으로 표시돼 있습니다.
+- 쿠팡 검색어: 하루온 붙이는 핫팩
+- 상품 링크: https://link.coupang.com/a/iO8CicdLVc
+- 사진: img/products/hotpack-attach.jpg
+
+### 상품 55
+- id: dish-soap
+- 이름: 순샘 구연산 자몽향 주방세제 리필, 1.4L, 3개
+- 갈래: 살림·세제
+- 계정: take
+- 후킹 한 줄: 설거지할 때 기름이 잘 빠지지 않아 세제를 더 짜게 되는 집에 두는 리필입니다.
+- 요약: 1.4L 리필 세 통 구성입니다. 구연산이 들어간 자몽향 세제로 표기돼 있습니다.
+- 쿠팡 검색어: 순샘 주방세제 리필
+- 상품 링크: https://link.coupang.com/a/iO8DtBKacu
+- 사진: img/products/dish-soap.jpg
+
+### 상품 56
+- id: drying-rack
+- 이름: 코멧 홈 접이식 대형 빨래건조대, 그레이, 1개
+- 갈래: 살림·빨래
+- 계정: take
+- 후킹 한 줄: 겨울엔 밖에 못 널어 거실에 건조대를 펴 두게 되는 집에 두는 접이식 건조대입니다.
+- 요약: 쓰지 않을 때는 접어 세워 둘 수 있습니다. 상품평이 2만 2천 개가 넘는 상품입니다.
+- 쿠팡 검색어: 코멧 접이식 빨래건조대
+- 상품 링크: https://link.coupang.com/a/iO8Eo2uBq0
+- 사진: img/products/drying-rack.jpg
+
+### 상품 57
+- id: dyson-airwrap
+- 이름: 다이슨 에어랩 id 멀티 스타일러 앤 드라이어, 161845-01, 블루 + 코퍼
+- 갈래: 뷰티·가전
+- 계정: ads
+- 후킹 한 줄: 겨울 외출 전에 머리를 말리고 모양까지 잡고 싶다는 말이 나올 때 눈에 들어오는 기계입니다.
+- 요약: 본체와 여러 가지 헤드가 함께 오는 구성입니다. 머리를 말리는 일과 모양을 잡는 일을 한 자리에서 끝내는 쪽입니다.
+- 쿠팡 검색어: 다이슨 에어랩
+- 상품 링크: https://link.coupang.com/a/iO8Gt4yyfk
+- 사진: img/products/dyson-airwrap.jpg
+
+### 상품 58
+- id: massage-chair
+- 이름: 제스파 컴포르테 안마의자 + 전용 러그 방문설치, ZPC2034(안마의자), ZP540(러그), 퓨어화이트
+- 갈래: 가전·설치
+- 계정: ads
+- 후킹 한 줄: 퇴근하고 소파 대신 앉겠다고 하는 자리에 놓는 전신 안마의자입니다.
+- 요약: 안마의자와 전용 러그가 함께 오고 방문 설치로 배송됩니다. 크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다.
+- 쿠팡 검색어: 제스파 컴포르테 안마의자
+- 상품 링크: https://link.coupang.com/a/iO8HqggG16
+- 사진: img/products/massage-chair.jpg
 
 ```json
 [
@@ -1240,6 +1318,97 @@
       "단추로 여미는 아크릴 니트라 목도리처럼 풀리지 않습니다. 아동·유아용으로 나온 제품입니다."
     ],
     "search_keyword": "유아 바라클라바"
+  },
+  {
+    "id": "socks-5set",
+    "name": "퍼니스코 여성 겨울 수면 양말 5종 SET",
+    "partners_link": "https://link.coupang.com/a/iO8Bl4KKOa",
+    "image": "img/products/socks-5set.jpg",
+    "account": "take",
+    "category": "겨울 침구·수면",
+    "hook": "밤에 발이 시려 양말을 신고 자는 집에 두는 무압박 수면양말입니다.",
+    "summary": [
+      "밴딩을 세게 조이지 않아 신고 자도 발목에 자국이 덜 남습니다. 다섯 켤레가 한 세트라 빨아 가며 돌려 신기 좋습니다."
+    ],
+    "search_keyword": "여성 수면양말 5종"
+  },
+  {
+    "id": "socks-4set",
+    "name": "이지하임 4켤레 털빠짐없는 편안한 무압박 남녀공용 수면양말 세트",
+    "partners_link": "https://link.coupang.com/a/iO8FgfqG8O",
+    "image": "img/products/socks-4set.jpg",
+    "account": "take",
+    "category": "겨울 침구·수면",
+    "hook": "수면양말을 신고 나면 털이 묻어 나와 고민이던 집에 두는 네 켤레 세트입니다.",
+    "summary": [
+      "상품명에 털 빠짐을 줄인 소재로 표기돼 있습니다. 남녀공용으로 나와 온 가족이 나눠 신을 수 있습니다."
+    ],
+    "search_keyword": "무압박 수면양말 4켤레"
+  },
+  {
+    "id": "hotpack-attach",
+    "name": "하루온 붙이는 핫팩 50g 10개입, 2개",
+    "partners_link": "https://link.coupang.com/a/iO8CicdLVc",
+    "image": "img/products/hotpack-attach.jpg",
+    "account": "take",
+    "category": "겨울 방한",
+    "hook": "옷 안쪽에 붙여 두면 손에 쥐지 않아도 등과 배가 따뜻한 핫팩입니다.",
+    "summary": [
+      "10개입 봉지 두 개로 오는 구성입니다. 상품평이 5만 2천 개가 넘고, 최근 한 달 사이 7천 명 이상이 산 것으로 표시돼 있습니다."
+    ],
+    "search_keyword": "하루온 붙이는 핫팩"
+  },
+  {
+    "id": "dish-soap",
+    "name": "순샘 구연산 자몽향 주방세제 리필, 1.4L, 3개",
+    "partners_link": "https://link.coupang.com/a/iO8DtBKacu",
+    "image": "img/products/dish-soap.jpg",
+    "account": "take",
+    "category": "살림·세제",
+    "hook": "설거지할 때 기름이 잘 빠지지 않아 세제를 더 짜게 되는 집에 두는 리필입니다.",
+    "summary": [
+      "1.4L 리필 세 통 구성입니다. 구연산이 들어간 자몽향 세제로 표기돼 있습니다."
+    ],
+    "search_keyword": "순샘 주방세제 리필"
+  },
+  {
+    "id": "drying-rack",
+    "name": "코멧 홈 접이식 대형 빨래건조대, 그레이, 1개",
+    "partners_link": "https://link.coupang.com/a/iO8Eo2uBq0",
+    "image": "img/products/drying-rack.jpg",
+    "account": "take",
+    "category": "살림·빨래",
+    "hook": "겨울엔 밖에 못 널어 거실에 건조대를 펴 두게 되는 집에 두는 접이식 건조대입니다.",
+    "summary": [
+      "쓰지 않을 때는 접어 세워 둘 수 있습니다. 상품평이 2만 2천 개가 넘는 상품입니다."
+    ],
+    "search_keyword": "코멧 접이식 빨래건조대"
+  },
+  {
+    "id": "dyson-airwrap",
+    "name": "다이슨 에어랩 id 멀티 스타일러 앤 드라이어, 161845-01, 블루 + 코퍼",
+    "partners_link": "https://link.coupang.com/a/iO8Gt4yyfk",
+    "image": "img/products/dyson-airwrap.jpg",
+    "account": "ads",
+    "category": "뷰티·가전",
+    "hook": "겨울 외출 전에 머리를 말리고 모양까지 잡고 싶다는 말이 나올 때 눈에 들어오는 기계입니다.",
+    "summary": [
+      "본체와 여러 가지 헤드가 함께 오는 구성입니다. 머리를 말리는 일과 모양을 잡는 일을 한 자리에서 끝내는 쪽입니다."
+    ],
+    "search_keyword": "다이슨 에어랩"
+  },
+  {
+    "id": "massage-chair",
+    "name": "제스파 컴포르테 안마의자 + 전용 러그 방문설치, ZPC2034(안마의자), ZP540(러그), 퓨어화이트",
+    "partners_link": "https://link.coupang.com/a/iO8HqggG16",
+    "image": "img/products/massage-chair.jpg",
+    "account": "ads",
+    "category": "가전·설치",
+    "hook": "퇴근하고 소파 대신 앉겠다고 하는 자리에 놓는 전신 안마의자입니다.",
+    "summary": [
+      "안마의자와 전용 러그가 함께 오고 방문 설치로 배송됩니다. 크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다."
+    ],
+    "search_keyword": "제스파 컴포르테 안마의자"
   }
 ]
 ```
