@@ -6,6 +6,7 @@
 - 공개 저장소 규정에 따라 내부 수치 및 정산 정보는 포함하지 않습니다.
 - 2026-11-16 갱신: 쿠팡 파트너스 계정에서 발급한 상품 링크 25건과 상품 사진으로 카탈로그를 다시 구성했습니다.
 - 2026-11-17 갱신: 겨울 인기 품목과 호기심 상품 7건을 더해 상품 링크 32건으로 늘렸습니다.
+- 2026-11-21 갱신: 욕실·수납 3건(홈스타 핑크파워 욕실 찌든때 클리너 750ml 2개·물빠짐 샤워봉 거치 선반 세트·무타공 욕실 수납선반 6종 세트)을 더하고 세 건 모두에 유튜브 쇼츠 근거(evidence)를 붙였습니다. 화장지(tissue)는 보류로 내려 새 글·페이지에서 빼고 JSON 배열에서도 제외해 상품 링크 60건입니다.
 - 2026-11-20 갱신: 수면양말 2종(5종 SET·4켤레 세트)·하루온 붙이는 핫팩·순샘 주방세제 리필·코멧 접이식 빨래건조대·다이슨 에어랩·제스파 컴포르테 안마의자 7건을 더해 상품 링크 58건입니다.
 - 2026-11-19 갱신(2차): 써모스 보온도시락·오리온 어드벤트 캘린더·따수미 난방텐트·코멧 아기물티슈·우드피카 유아 바라클라바 5건을 더해 상품 링크 51건입니다. 토스쇼핑 쉐어링크(https://toss.shopping/_m/5Y0O20Ah)도 브릿지 하단에 함께 걸었습니다.
 - 2026-11-19 갱신: 미니 제습기·12L 제습기·극세사 차렵이불·욕실 온풍기·족욕기·목어깨 마사지기·필터 샤워기·화목난로 8건을 더해 상품 링크 46건입니다.
@@ -178,6 +179,7 @@
 - 쿠팡 검색어: 3겹 화장지 30롤
 - 상품 링크: https://link.coupang.com/a/iIEOjsfmXA
 - 사진: img/products/tissue.jpg
+- 상태: 보류 (2026-11-21) — 유튜브 쇼츠 30만 이상 근거를 확인하지 못해 새 글·페이지에 쓰지 않습니다. JSON 배열에서도 제외했습니다.
 
 ### 상품 16
 - id: diatomite-mat
@@ -654,6 +656,39 @@
 - 상품 링크: https://link.coupang.com/a/iO8HqggG16
 - 사진: img/products/massage-chair.jpg
 
+### 상품 59
+- id: homstar-pink
+- 이름: 홈스타 핑크파워 욕실 찌든때 클리너, 750ml, 2개
+- 갈래: 욕실·위생
+- 계정: take
+- 후킹 한 줄: 욕실 타일과 줄눈의 찌든 때에 뿌려 두는 거품형 세정제입니다.
+- 요약: 분사대가 달린 750ml 두 통 구성입니다. 거품을 붙여 두었다가 물로 헹구는 방식으로 쓰고, 욕실과 주방에 한 통씩 나눠 둘 수 있습니다.
+- 쿠팡 검색어: 홈스타 핑크파워
+- 상품 링크: https://link.coupang.com/a/iQCW1zM8US
+- 사진: img/products/homstar-pink.jpg
+
+### 상품 60
+- id: shower-rod-shelf
+- 이름: 물빠짐 샤워봉 거치 선반 + 보조캡 3종 + 방수테이프 세트, 화이트, 1세트
+- 갈래: 욕실 수납
+- 계정: take
+- 후킹 한 줄: 샤워봉에 걸어 물이 빠지는 자리에 두는 선반입니다.
+- 요약: 샤워봉에 걸어 고정하는 방식이라 타공 없이 설치합니다. 바닥이 물빠짐 구조라 샴푸병 밑에 물이 고이지 않고, 보조캡과 방수테이프가 함께 옵니다.
+- 쿠팡 검색어: 샤워봉 선반
+- 상품 링크: https://link.coupang.com/a/iQC1PH3waW
+- 사진: img/products/shower-rod-shelf.jpg
+
+### 상품 61
+- id: bathroom-shelf-set
+- 이름: 다용도 무타공 욕실 수납선반 6종 세트 일자형 드라이기 거치대 비누받침대 칫솔걸이, 화이트, 1세트
+- 갈래: 욕실 수납
+- 계정: take
+- 후킹 한 줄: 못을 쓰지 않고 붙이는 욕실 수납 6종 세트입니다.
+- 요약: 일자형 선반과 비누받침, 칫솔걸이, 드라이기 거치대를 한 세트로 묶은 구성입니다. 물이 빠지는 구조라 세면대 옆에 두기 좋습니다.
+- 쿠팡 검색어: 무타공 욕실선반 세트
+- 상품 링크: https://link.coupang.com/a/iQC5PCoQuq
+- 사진: img/products/bathroom-shelf-set.jpg
+
 ```json
 [
   {
@@ -837,19 +872,6 @@
       "한 장씩 끼워 쓰고 가득 차면 그대로 버리면 됩니다. 500장이라 몇 달은 다시 사러 가지 않아도 됩니다."
     ],
     "search_keyword": "배수구 거름망"
-  },
-  {
-    "id": "tissue",
-    "name": "쿠팡 베이직 천연펄프 3겹 롤 화장지 30m, 30개입, 1개",
-    "partners_link": "https://link.coupang.com/a/iIEOjsfmXA",
-    "image": "img/products/tissue.jpg",
-    "account": "take",
-    "category": "주방·살림",
-    "hook": "3겹 도톰한 롤 화장지 30롤 한 상자입니다.",
-    "summary": [
-      "천연펄프 3겹이라 물에 잘 풀리고 도톰한 편입니다. 30롤 한 상자라 다 쓰고 나서 다시 사러 가는 일이 줄어듭니다."
-    ],
-    "search_keyword": "3겹 화장지 30롤"
   },
   {
     "id": "diatomite-mat",
@@ -1409,6 +1431,66 @@
       "안마의자와 전용 러그가 함께 오고 방문 설치로 배송됩니다. 크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다."
     ],
     "search_keyword": "제스파 컴포르테 안마의자"
+  },
+  {
+    "id": "homstar-pink",
+    "name": "홈스타 핑크파워 욕실 찌든때 클리너, 750ml, 2개",
+    "partners_link": "https://link.coupang.com/a/iQCW1zM8US",
+    "image": "img/products/homstar-pink.jpg",
+    "account": "take",
+    "category": "욕실·위생",
+    "hook": "욕실 타일과 줄눈의 찌든 때에 뿌려 두는 거품형 세정제입니다.",
+    "summary": [
+      "분사대가 달린 750ml 두 통 구성입니다. 거품을 붙여 두었다가 물로 헹구는 방식으로 쓰고, 욕실과 주방에 한 통씩 나눠 둘 수 있습니다."
+    ],
+    "search_keyword": "홈스타 핑크파워",
+    "evidence": {
+      "shorts_url": "https://www.youtube.com/shorts/ln-Zo04IiU4",
+      "views": 5600000,
+      "uploaded": "2026-08-12",
+      "store_word": "다이소",
+      "why_coupang": "영상에서 이 제품은 다이소보다 쿠팡이 더 저렴하다고 짚었습니다. 두 통 구성으로 한 번에 받는 쪽입니다."
+    }
+  },
+  {
+    "id": "shower-rod-shelf",
+    "name": "물빠짐 샤워봉 거치 선반 + 보조캡 3종 + 방수테이프 세트, 화이트, 1세트",
+    "partners_link": "https://link.coupang.com/a/iQC1PH3waW",
+    "image": "img/products/shower-rod-shelf.jpg",
+    "account": "take",
+    "category": "욕실 수납",
+    "hook": "샤워봉에 걸어 물이 빠지는 자리에 두는 선반입니다.",
+    "summary": [
+      "샤워봉에 걸어 고정하는 방식이라 타공 없이 설치합니다. 바닥이 물빠짐 구조라 샴푸병 밑에 물이 고이지 않고, 보조캡과 방수테이프가 함께 옵니다."
+    ],
+    "search_keyword": "샤워봉 선반",
+    "evidence": {
+      "shorts_url": "https://www.youtube.com/shorts/ln-Zo04IiU4",
+      "views": 5600000,
+      "uploaded": "2026-08-12",
+      "store_word": "다이소",
+      "why_coupang": "샤워봉에 거는 방식이라 타공 없이 쓰고, 보조캡과 방수테이프까지 한 세트로 옵니다."
+    }
+  },
+  {
+    "id": "bathroom-shelf-set",
+    "name": "다용도 무타공 욕실 수납선반 6종 세트 일자형 드라이기 거치대 비누받침대 칫솔걸이, 화이트, 1세트",
+    "partners_link": "https://link.coupang.com/a/iQC5PCoQuq",
+    "image": "img/products/bathroom-shelf-set.jpg",
+    "account": "take",
+    "category": "욕실 수납",
+    "hook": "못을 쓰지 않고 붙이는 욕실 수납 6종 세트입니다.",
+    "summary": [
+      "일자형 선반과 비누받침, 칫솔걸이, 드라이기 거치대를 한 세트로 묶은 구성입니다. 물이 빠지는 구조라 세면대 옆에 두기 좋습니다."
+    ],
+    "search_keyword": "무타공 욕실선반 세트",
+    "evidence": {
+      "shorts_url": "https://www.youtube.com/shorts/ln-Zo04IiU4",
+      "views": 5600000,
+      "uploaded": "2026-08-12",
+      "store_word": "다이소",
+      "why_coupang": "6종을 한 세트로 묶어 욕실 수납을 한 번에 맞추는 구성입니다."
+    }
   }
 ]
 ```
