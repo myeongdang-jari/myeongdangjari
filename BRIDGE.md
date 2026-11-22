@@ -6,6 +6,7 @@
 - 공개 저장소 규정에 따라 내부 수치 및 정산 정보는 포함하지 않습니다.
 - 2026-11-16 갱신: 쿠팡 파트너스 계정에서 발급한 상품 링크 25건과 상품 사진으로 카탈로그를 다시 구성했습니다.
 - 2026-11-17 갱신: 겨울 인기 품목과 호기심 상품 7건을 더해 상품 링크 32건으로 늘렸습니다.
+- 2026-11-22 갱신: 자취·살림 4건(샤오미 LCD 온습도계 2개·필립스 납작 멀티탭 3구·도브 뷰티 크림바 90g 12개입·벨라쿠진 올스텐 짤순이)을 더하고 네 건 모두 최근 30일·조회 10만 이상 쇼츠 근거(evidence)를 붙였습니다. 상품 링크 67건입니다.
 - 2026-11-21 갱신(2차): 유튜브 쇼츠 검증 기준을 「최근 30일 업로드 · 조회 10만 이상」으로 낮춘 대표님 확정에 맞춰 편의점·마트 신상 3건(오리온 꼬북칩 얼얼한 샹궈맛 102g 12개·롯데웰푸드 ABC 초콜릿 187g 3개·이디야 비니스트 토피넛 라떼분말 20g 30개입)을 더하고 세 건 모두 30일 안에 올라온 쇼츠 근거(evidence)를 붙였습니다. 상품 링크 63건입니다.
 - 2026-11-21 갱신: 욕실·수납 3건(홈스타 핑크파워 욕실 찌든때 클리너 750ml 2개·물빠짐 샤워봉 거치 선반 세트·무타공 욕실 수납선반 6종 세트)을 더하고 세 건 모두에 유튜브 쇼츠 근거(evidence)를 붙였습니다. 화장지(tissue)는 보류로 내려 새 글·페이지에서 빼고 JSON 배열에서도 제외해 상품 링크 60건입니다.
 - 2026-11-20 갱신: 수면양말 2종(5종 SET·4켤레 세트)·하루온 붙이는 핫팩·순샘 주방세제 리필·코멧 접이식 빨래건조대·다이슨 에어랩·제스파 컴포르테 안마의자 7건을 더해 상품 링크 58건입니다.
@@ -723,6 +724,50 @@
 - 쿠팡 검색어: 이디야 토피넛 라떼
 - 상품 링크: https://link.coupang.com/a/iQEYy7kS3E
 - 사진: img/products/ediya-toffe-nut.jpg
+### 상품 65
+- id: led-thermo-clock
+- 이름: 샤오미 디지털 대화면 LCD 시계 온습도계(건전지포함), 화이트, 2개
+- 갈래: 자취 살림
+- 계정: ads
+- 후킹 한 줄: 원룸 책상 위에 두고 온도와 습도, 시각을 한 화면으로 보는 시계입니다.
+- 요약: 숫자가 크게 뜨는 LCD 화면에 온도와 습도, 시각이 함께 나옵니다. 건전지가 들어 있어 콘센트 없이 두면 되고, 두 개라 방과 거실에 하나씩 나눠 둘 수 있습니다.
+- 쿠팡 검색어: 샤오미 온습도계 시계
+- 상품 링크: https://link.coupang.com/a/iShBc92TL2
+- 사진: img/products/led-thermo-clock.jpg
+
+### 상품 66
+- id: slim-power-strip
+- 이름: 필립스 고용량 멀티탭 3구 홈탭 납작멀티탭, 그레이 CHP1134G, 1개, 1.5m
+- 갈래: 자취 살림
+- 계정: ads
+- 후킹 한 줄: 소파 뒤나 책상 밑 좁은 틈에 밀어 넣는 납작 플러그 멀티탭입니다.
+- 요약: 플러그가 꺾여 있어 벽과 가구 사이 좁은 자리에도 들어갑니다. 3구에 선 길이 1.5m이고, 필립스 브랜드로 나온 제품입니다.
+- 쿠팡 검색어: 필립스 납작 멀티탭 3구
+- 상품 링크: https://link.coupang.com/a/iShJgZ75vU
+- 사진: img/products/slim-power-strip.jpg
+
+### 상품 67
+- id: dove-cream-bar
+- 이름: 도브 뷰티 크림바, 90g, 12개입
+- 갈래: 욕실·비누
+- 계정: ads
+- 후킹 한 줄: 샤워할 때 한 개씩 꺼내 쓰는 도브 비누를 열두 개 묶어 받는 구성입니다.
+- 요약: 90g 낱개 열두 개가 한 상자로 옵니다. 상품평이 7만 건을 넘고 최근 한 달 사이 만 명 이상이 산 것으로 표시된 상품입니다.
+- 쿠팡 검색어: 도브 뷰티 크림바 90g
+- 상품 링크: https://link.coupang.com/a/iShGQwqRzM
+- 사진: img/products/dove-cream-bar.jpg
+
+### 상품 68
+- id: veg-spinner
+- 이름: 벨라쿠진 무연마제 올스텐 304 짤순이 파스타망, 1세트
+- 갈래: 주방 살림
+- 계정: take
+- 후킹 한 줄: 데친 나물의 물을 손으로 짜지 않아도 되는 스테인리스 짤순이입니다.
+- 요약: 바스켓에 데친 나물이나 불린 두부를 넣고 뚜껑을 눌러 물을 빼는 방식입니다. 파스타 삶은 물을 빼는 망으로도 쓰는 구성이고, 로켓배송으로 다음 날 도착합니다.
+- 쿠팡 검색어: 벨라쿠진 짤순이
+- 상품 링크: https://link.coupang.com/a/iShEQzGA68
+- 사진: img/products/veg-spinner.jpg
+
 ```json
 [
   {
@@ -1584,6 +1629,86 @@
       "uploaded": "2026-11-19",
       "store_word": "코스트코",
       "why_coupang": "영상은 코스트코에서 이디야 토피넛 라떼 한 상자를 장바구니에 담습니다. 쿠팡 같은 30개입 상자가 할인가로 올라와 있고, 회원이 아니어도 다음 날 도착합니다."
+    }
+  },
+  {
+    "id": "led-thermo-clock",
+    "name": "샤오미 디지털 대화면 LCD 시계 온습도계(건전지포함), 화이트, 2개",
+    "partners_link": "https://link.coupang.com/a/iShBc92TL2",
+    "image": "img/products/led-thermo-clock.jpg",
+    "account": "ads",
+    "category": "자취 살림",
+    "hook": "원룸 책상 위에 두고 온도와 습도, 시각을 한 화면으로 보는 시계입니다.",
+    "summary": [
+      "숫자가 크게 뜨는 LCD 화면에 온도와 습도, 시각이 함께 나옵니다. 건전지가 들어 있어 콘센트 없이 두면 되고, 두 개라 방과 거실에 하나씩 나눠 둘 수 있습니다."
+    ],
+    "search_keyword": "샤오미 온습도계 시계",
+    "evidence": {
+      "shorts_url": "https://www.youtube.com/shorts/QXoij_61VqA",
+      "views": 248370,
+      "uploaded": "2026-11-17",
+      "store_word": "쿠팡",
+      "why_coupang": "영상 첫 번째 항목이 습도와 온도, 요일을 보여 주는 무선 시계입니다. 쿠팡에서는 같은 화면 구성의 온습도계를 두 개 묶음으로 받습니다."
+    }
+  },
+  {
+    "id": "slim-power-strip",
+    "name": "필립스 고용량 멀티탭 3구 홈탭 납작멀티탭, 그레이 CHP1134G, 1개, 1.5m",
+    "partners_link": "https://link.coupang.com/a/iShJgZ75vU",
+    "image": "img/products/slim-power-strip.jpg",
+    "account": "ads",
+    "category": "자취 살림",
+    "hook": "소파 뒤나 책상 밑 좁은 틈에 밀어 넣는 납작 플러그 멀티탭입니다.",
+    "summary": [
+      "플러그가 꺾여 있어 벽과 가구 사이 좁은 자리에도 들어갑니다. 3구에 선 길이 1.5m이고, 필립스 브랜드로 나온 제품입니다."
+    ],
+    "search_keyword": "필립스 납작 멀티탭 3구",
+    "evidence": {
+      "shorts_url": "https://www.youtube.com/shorts/QXoij_61VqA",
+      "views": 248370,
+      "uploaded": "2026-11-17",
+      "store_word": "쿠팡",
+      "why_coupang": "영상 열 번째 항목이 소파 뒤 좁은 틈의 콘센트를 쓰는 납작 멀티탭입니다. 쿠팡에서 같은 납작형 3구를 찾을 수 있습니다."
+    }
+  },
+  {
+    "id": "dove-cream-bar",
+    "name": "도브 뷰티 크림바, 90g, 12개입",
+    "partners_link": "https://link.coupang.com/a/iShGQwqRzM",
+    "image": "img/products/dove-cream-bar.jpg",
+    "account": "ads",
+    "category": "욕실·비누",
+    "hook": "샤워할 때 한 개씩 꺼내 쓰는 도브 비누를 열두 개 묶어 받는 구성입니다.",
+    "summary": [
+      "90g 낱개 열두 개가 한 상자로 옵니다. 상품평이 7만 건을 넘고 최근 한 달 사이 만 명 이상이 산 것으로 표시된 상품입니다."
+    ],
+    "search_keyword": "도브 뷰티 크림바 90g",
+    "evidence": {
+      "shorts_url": "https://www.youtube.com/shorts/BLHLS0toKYE",
+      "views": 276427,
+      "uploaded": "2026-11-15",
+      "store_word": "다이소",
+      "why_coupang": "영상은 다이소에서 산 작은 도브 비누를 짜서 쓰는 용기에 옮겨 담는 장면을 보여 줍니다. 쿠팡에서는 같은 90g 비누를 열두 개 한 상자로 받습니다."
+    }
+  },
+  {
+    "id": "veg-spinner",
+    "name": "벨라쿠진 무연마제 올스텐 304 짤순이 파스타망, 1세트",
+    "partners_link": "https://link.coupang.com/a/iShEQzGA68",
+    "image": "img/products/veg-spinner.jpg",
+    "account": "take",
+    "category": "주방 살림",
+    "hook": "데친 나물의 물을 손으로 짜지 않아도 되는 스테인리스 짤순이입니다.",
+    "summary": [
+      "바스켓에 데친 나물이나 불린 두부를 넣고 뚜껑을 눌러 물을 빼는 방식입니다. 파스타 삶은 물을 빼는 망으로도 쓰는 구성이고, 로켓배송으로 다음 날 도착합니다."
+    ],
+    "search_keyword": "벨라쿠진 짤순이",
+    "evidence": {
+      "shorts_url": "https://www.youtube.com/shorts/VHdqdcscMbw",
+      "views": 196064,
+      "uploaded": "2026-11-16",
+      "store_word": "쿠팡",
+      "why_coupang": "영상 첫 번째 항목이 뚜껑을 눌러 물을 빼는 스테인리스 짤순이입니다. 쿠팡에서 같은 방식의 올스텐 짤순이를 로켓배송으로 받습니다."
     }
   }
 ]
