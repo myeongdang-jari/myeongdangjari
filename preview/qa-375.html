@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>QA · 브릿지 화면 폭 검사</title>
+<style>
+  body{margin:0;background:#20261f;color:#e7e6da;font:13px/1.5 -apple-system,Pretendard,sans-serif}
+  .bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 14px;position:sticky;top:0;z-index:2;background:#20261f;border-bottom:1px solid #38402f}
+  .bar b{font-size:12px;letter-spacing:.08em;color:#9aa694;margin-right:6px}
+  .bar button{font:inherit;padding:5px 12px;border:1px solid #4c5742;background:transparent;color:#e7e6da;border-radius:99px;cursor:pointer}
+  .bar button.on{background:#8fa392;color:#1b2e24;border-color:#8fa392}
+  .bar input{width:64px;padding:5px 8px;border:1px solid #4c5742;background:#2a3126;color:#e7e6da;border-radius:4px}
+  .bar .out{font-variant-numeric:tabular-nums;color:#bfc9b6}
+  .bar .out.err{color:#f0a3a3}
+  .stage{padding:14px}
+  iframe{width:375px;height:780px;border:0;background:#fff;display:block}
+</style>
+</head>
+<body>
+<div class="bar">
+  <b>폭 검사</b>
+  <button data-w="375" class="on">375</button>
+  <button data-w="414">414</button>
+  <button data-w="768">768</button>
+  <button data-w="1024">1024</button>
+  <button data-w="1440">1440</button>
+  <input id="w" type="number" value="375" min="240" max="2000" aria-label="폭 직접 입력">
+  <span class="out" id="out">—</span>
+</div>
+<div class="stage"><iframe id="f" src="../index.html" title="쿠팡 브릿지 화면"></iframe></div>
+<script>
+(function(){
+  var f = document.getElementById('f'), out = document.getElementById('out');
+  function setW(w){ f.style.width = w + 'px'; document.getElementById('w').value = w;
+    Array.prototype.forEach.call(document.querySelectorAll('.bar button'), function(b){
+      b.classList.toggle('on', b.dataset.w === String(w)); }); }
+  Array.prototype.forEach.call(document.querySelectorAll('.bar button'), function(b){
+    b.addEventListener('click', function(){ setW(b.dataset.w); }); });
+  document.getElementById('w').addEventListener('input', function(e){
+    var v = parseInt(e.target.value, 10); if(v >= 240) setW(v); });
+
+  window.qa = function(){
+    var d = f.contentDocument, win = f.contentWindow;
+    if(!d) return {error: 'iframe not readable'};
+    var vw = d.documentElement.clientWidth, over = [];
+    Array.prototype.forEach.call(d.querySelectorAll('body *'), function(el){
+      var r = el.getBoundingClientRect(), cs = win.getComputedStyle(el);
+      if(r.width > 0 && r.right > vw + 1 && cs.position !== 'fixed' && cs.overflowX === 'visible'){
+        over.push((el.className || el.tagName) + ' → ' + Math.round(r.right));
+      }
+    });
+    return {
+      frameWidth: f.clientWidth,
+      innerWidth: win.innerWidth,
+      scrollWidth: d.documentElement.scrollWidth,
+      bodyScrollWidth: d.body.scrollWidth,
+      overflowCount: over.length,
+      overflowSample: over.slice(0, 8),
+      cards: d.querySelectorAll('.card').length
+    };
+  };
+  function tick(){
+    try{ var r = window.qa();
+      out.textContent = r.frameWidth + 'px · scrollWidth ' + r.scrollWidth +
+        (r.scrollWidth <= r.innerWidth ? ' ✓ 가로 스크롤 없음' : ' ✗ 넘침 ' + r.overflowCount);
+      out.className = 'out' + (r.scrollWidth <= r.innerWidth ? '' : ' err');
+    }catch(e){ out.textContent = '측정 실패: ' + e.message; out.className = 'out err'; }
+  }
+  f.addEventListener('load', tick);
+  setInterval(tick, 1500);
+  setTimeout(tick, 600);
+  setW(375);
+})();
+</script>
+</body>
+</html>
