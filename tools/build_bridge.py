@@ -125,7 +125,7 @@ html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--body);font-family:var(--sans);line-height:1.65;
   -webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:anywhere}
 a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
+img{display:block;max-width:100%;height:auto}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid var(--forest);outline-offset:3px}
 ::selection{background:#dfe6dc;color:var(--ink)}
@@ -154,8 +154,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* 히어로 */
 .hero{max-width:var(--w);margin:0 auto;padding:clamp(34px,5vw,64px) var(--pad) 0}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
-  gap:clamp(28px,4.4vw,60px);align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);
+  gap:clamp(28px,4.4vw,56px);align-items:center}
 .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.2em;color:var(--forest-2);text-transform:uppercase}
 .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(32px,5.1vw,62px);line-height:1.16;
   letter-spacing:-.035em;color:var(--ink);margin-top:14px}
@@ -169,7 +169,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .stack figure{margin:0;min-width:0}
 .stack img{width:100%;aspect-ratio:1;object-fit:cover;background:#fff;border:1px solid var(--line)}
 .stack .a{grid-column:1/-1}
-.stack .a img{aspect-ratio:4/3}
+.stack .a img{aspect-ratio:16/10}
 .stack figcaption{grid-column:1/-1;font-size:10.5px;color:var(--sub);letter-spacing:.02em;margin-top:2px}
 
 /* 차례 */
@@ -224,8 +224,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .chapter[hidden]{display:none}
 .chapter + .chapter{border-top:1px solid var(--line);margin-top:clamp(38px,5vw,60px);padding-top:clamp(38px,5vw,56px)}
 .chead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);
-  gap:clamp(20px,3.4vw,48px);align-items:end;margin-bottom:clamp(22px,3vw,34px)}
-.chn{display:block;font-family:var(--serif);font-size:12px;letter-spacing:.16em;color:var(--forest-2);margin-bottom:10px}
+  gap:clamp(20px,3.4vw,48px);align-items:start;margin-bottom:clamp(22px,3vw,34px)}
+.chn{display:block;font-family:var(--serif);font-size:clamp(30px,3.4vw,42px);line-height:1;font-weight:500;
+  letter-spacing:.02em;color:var(--forest-2);margin-bottom:12px;font-variant-numeric:tabular-nums}
 .chlabel{font-size:11.5px;letter-spacing:.12em;color:var(--sub);margin-bottom:9px;font-weight:500}
 .chead h2{font-family:var(--serif);font-weight:700;font-size:clamp(23px,2.7vw,34px);line-height:1.32;
   letter-spacing:-.025em;color:var(--ink)}
@@ -245,7 +246,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .card .no{color:var(--forest-2);font-weight:600;letter-spacing:.1em;font-variant-numeric:tabular-nums;white-space:nowrap}
 .card .tag{padding-left:9px;border-left:1px solid var(--line-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .card .name{font-size:14px;font-weight:600;line-height:1.45;letter-spacing:-.015em;color:var(--ink);
-  margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  margin-top:6px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .card .name a:hover{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-2)}
 .card .why{font-size:12.5px;line-height:1.55;color:var(--sub);margin-top:5px;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -473,7 +474,7 @@ def build():
     <div class="chead">
       <div>
         <span class="chn">{s["no"]}</span>
-        <p class="chlabel">{esc(s["eyebrow"])}</p>
+        <p class="chlabel">{esc(s["eyebrow"].split(" · ")[1])}</p>
         <h2 id="h-{s["slug"]}">{esc(s["title"])}</h2>
       </div>
       <div>
