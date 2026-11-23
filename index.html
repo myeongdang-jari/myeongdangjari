@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-<!-- 이 파일은 tools/build_bridge.py 가 만든다. 상품을 추가·수정할 때는 파일 아래쪽
-     상품 데이터 배열(script id="d" 의 JSON)에 항목을 넣고 `python3 tools/build_bridge.py` 를
-     실행한다. 카드·번호·태그·검색색인이 모두 그 데이터로 다시 만들어진다. -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -11,1173 +8,130 @@
 <meta property="og:title" content="첫 추위가 온 한 주, 살림하는 아줌마의 겨울 일기">
 <meta property="og:description" content="겨울 장보기 모음">
 <meta property="og:image" content="https://myeongdang-jari.github.io/myeongdangjari/img/products/wind-pack.jpg">
-<meta name="theme-color" content="#f6f5f0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
-:root{
-  --paper:#f6f5f0; --paper-2:#faf9f5; --card:#fff;
-  --ink:#1c221e; --body:#3b423c; --sub:#737a71;
-  --forest:#1b2e24; --forest-2:#2f4a39;
-  --line:#e4e1d7; --line-2:#cfcbbd;
-  --serif:"Noto Serif KR","Nanum Myeongjo",AppleMyungjo,Batang,"Times New Roman",serif;
-  --sans:Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-  --w:1180px; --pad:clamp(16px,4.6vw,32px); --hh:58px;
-}
+:root{--ink:#17181c;--body:#33383f;--sub:#6f7680;--line:#ebebe8;--bg:#f5f4f1;--red:#d9342b}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--body);font-family:var(--sans);line-height:1.65;
-  -webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:anywhere}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%;height:auto}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-:focus-visible{outline:2px solid var(--forest);outline-offset:3px}
-::selection{background:#dfe6dc;color:var(--ink)}
-.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:absolute;left:-9999px;top:0;z-index:99;background:var(--forest);color:#fff;padding:10px 16px;font-size:13px}
-.skip:focus{left:8px;top:8px}
-
-/* 상단 공정위 고지 */
-.ftc{background:var(--forest);color:#e6e4d8;font-size:11px;line-height:1.5;letter-spacing:.01em;
-  text-align:center;padding:8px var(--pad);word-break:keep-all}
-
-/* 헤더 */
-.site{position:sticky;top:0;z-index:40;background:rgba(246,245,240,.93);
-  backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);
-  border-bottom:1px solid var(--line)}
-.site .in{max-width:var(--w);margin:0 auto;padding:0 var(--pad);height:var(--hh);
-  display:flex;align-items:center;gap:14px}
-.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--serif);font-size:19px;
-  font-weight:700;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
-.brand .mk{width:9px;height:9px;background:var(--forest);display:inline-block;flex:none}
-.site .right{margin-left:auto;display:flex;align-items:center;gap:16px;font-size:11.5px;
-  color:var(--sub);letter-spacing:.04em;white-space:nowrap}
-.site .right b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
-.site .right .sep{width:1px;height:11px;background:var(--line-2);display:inline-block}
-@media(max-width:560px){.site .right .vol{display:none}}
-
-/* 히어로 */
-.hero{max-width:var(--w);margin:0 auto;padding:clamp(30px,4.2vw,54px) var(--pad) 0}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);
-  gap:clamp(28px,4.4vw,56px);align-items:start}
-.eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.2em;color:var(--forest-2);text-transform:uppercase}
-.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(32px,5.1vw,62px);line-height:1.16;
-  letter-spacing:-.035em;color:var(--ink);margin-top:14px}
-.stand{font-size:clamp(14.5px,1.1vw,16.5px);line-height:1.8;color:var(--body);margin-top:20px;max-width:32em}
-.hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:26px;padding-top:18px;
-  border-top:1px solid var(--line);font-size:12px;color:var(--sub);letter-spacing:.03em}
-.hero-meta b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
-.hero-meta .d{width:3px;height:3px;background:var(--line-2);border-radius:50%}
-.disc{font-size:11.5px;color:var(--sub);line-height:1.7;margin-top:14px}
-.stack{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.stack figure{margin:0;min-width:0}
-.stack img{width:100%;aspect-ratio:1;object-fit:cover;background:#fff;border:1px solid var(--line)}
-.stack .a{grid-column:1/-1}
-.stack .a img{aspect-ratio:16/10}
-.stack figcaption{grid-column:1/-1;font-size:10.5px;color:var(--sub);letter-spacing:.02em;margin-top:2px}
-
-/* 차례 */
-.toc{max-width:var(--w);margin:0 auto;padding:clamp(30px,4vw,52px) var(--pad) 0}
-.toc .hd{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:8px}
-.toc h2{font-size:11.5px;font-weight:600;letter-spacing:.2em;color:var(--sub);text-transform:uppercase}
-.toc .hd span{font-size:11.5px;color:var(--sub);letter-spacing:.04em}
-.toc ol{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(28px,4vw,48px)}
-.toc a{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:baseline;
-  padding:12px 2px;border-bottom:1px solid var(--line);transition:color .15s}
-.toc a:hover .t{color:var(--forest-2);text-decoration:underline;text-underline-offset:3px}
-.toc .n{font-family:var(--serif);font-size:11.5px;letter-spacing:.1em;color:var(--forest-2)}
-.toc .t{font-size:14px;color:var(--ink);font-weight:500;letter-spacing:-.01em}
-.toc .t em{display:block;font-style:normal;font-size:10.5px;font-weight:400;color:var(--sub);letter-spacing:.02em;
-  margin-bottom:1px}
-.toc .c{font-size:11px;color:var(--sub);font-variant-numeric:tabular-nums}
-
-/* 탐색 바 */
-.tools{position:sticky;top:var(--hh);z-index:30;background:rgba(246,245,240,.96);
-  backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);
-  border-bottom:1px solid var(--line);margin-top:clamp(26px,4vw,44px)}
-.tools .in{max-width:var(--w);margin:0 auto;padding:14px var(--pad) 12px;display:flex;flex-direction:column;gap:11px}
-.searchrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.search{position:relative;flex:1;min-width:200px;max-width:560px}
-.search .ic{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--sub);pointer-events:none}
-.search input{width:100%;height:46px;padding:0 46px 0 44px;background:#fff;color:var(--ink);
-  border:1px solid var(--line-2);border-radius:2px;font:inherit;font-size:14px;letter-spacing:-.01em;
-  appearance:none;-webkit-appearance:none}
-.search input::-webkit-search-cancel-button{display:none}
-.search input::placeholder{color:#9aa096}
-.search input:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(27,46,36,.09)}
-.search .clr{position:absolute;right:9px;top:50%;transform:translateY(-50%);width:28px;height:28px;
-  display:none;align-items:center;justify-content:center;border-radius:50%;color:var(--sub)}
-.search .clr:hover{background:var(--paper);color:var(--ink)}
-.search.has .clr{display:flex}
-.rs{margin-left:auto;font-size:12px;color:var(--sub);letter-spacing:.03em;white-space:nowrap}
-.rs b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
-.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:2px;
-  margin:0 calc(var(--pad) * -1);padding-left:var(--pad);padding-right:var(--pad)}
-.chips::-webkit-scrollbar{display:none}
-.chip{flex:none;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 13px;
-  border:1px solid var(--line-2);border-radius:99px;font-size:12.5px;color:var(--body);
-  background:transparent;white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
-.chip:hover{border-color:var(--forest);color:var(--ink)}
-.chip[aria-pressed=true]{background:var(--forest);border-color:var(--forest);color:#f1f0e6}
-.chip .cn{font-size:10.5px;opacity:.62;font-variant-numeric:tabular-nums}
-@media(max-width:640px){.searchrow{gap:10px}.search{max-width:none;min-width:0}
-  .rs{font-size:11.5px;letter-spacing:0}}
-
-/* 장 */
-.chapters{max-width:var(--w);margin:0 auto;padding:0 var(--pad)}
-.chapter{padding:clamp(38px,5vw,60px) 0 0;scroll-margin-top:calc(var(--hh) + 128px)}
-.chapter[hidden]{display:none}
-.chapter + .chapter{border-top:1px solid var(--line);margin-top:clamp(38px,5vw,60px);padding-top:clamp(38px,5vw,56px)}
-.chead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);
-  gap:clamp(20px,3.4vw,48px);align-items:start;margin-bottom:clamp(22px,3vw,34px)}
-.chn{display:block;font-family:var(--serif);font-size:clamp(30px,3.4vw,42px);line-height:1;font-weight:500;
-  letter-spacing:.02em;color:var(--forest-2);margin-bottom:12px;font-variant-numeric:tabular-nums}
-.chlabel{font-size:11.5px;letter-spacing:.12em;color:var(--sub);margin-bottom:9px;font-weight:500}
-.chead h2{font-family:var(--serif);font-weight:700;font-size:clamp(23px,2.7vw,34px);line-height:1.32;
-  letter-spacing:-.025em;color:var(--ink)}
-.diary{font-family:var(--serif);font-size:15px;line-height:1.95;color:#414840;
-  border-left:1px solid var(--line-2);padding-left:clamp(14px,2vw,20px)}
-.chcount{display:block;margin-top:12px;font-size:11px;letter-spacing:.1em;color:var(--sub)}
-
-/* 카드 그리드 */
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 22px}
-.card{display:flex;flex-direction:column;min-width:0}
-.card[hidden]{display:none!important}
-.card .ph{display:block;background:#fff;border:1px solid var(--line);overflow:hidden;
-  aspect-ratio:1;transition:border-color .18s}
-.card .ph img{width:100%;height:100%;object-fit:cover}
-.card:hover .ph{border-color:var(--line-2)}
-.card .meta{display:flex;align-items:center;gap:9px;margin-top:11px;font-size:10.5px;letter-spacing:.06em;color:var(--sub)}
-.card .no{color:var(--forest-2);font-weight:600;letter-spacing:.1em;font-variant-numeric:tabular-nums;white-space:nowrap}
-.card .tag{padding-left:9px;border-left:1px solid var(--line-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.card .name{font-size:14px;font-weight:600;line-height:1.45;letter-spacing:-.015em;color:var(--ink);
-  margin-top:6px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.card .name a:hover{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-2)}
-.card .why{font-size:12.5px;line-height:1.55;color:var(--sub);margin-top:5px;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.card .buy{margin-top:auto;padding-top:11px;align-self:flex-start;display:inline-flex;align-items:center;gap:4px;
-  font-size:11.5px;letter-spacing:.05em;color:var(--forest-2);border-bottom:1px solid rgba(47,74,57,.28);
-  padding-bottom:2px;transition:color .15s,border-color .15s}
-.card .buy:hover{color:var(--forest);border-color:var(--forest)}
-.card .buy span{font-size:11px}
-.card.flash .ph{box-shadow:0 0 0 2px var(--forest)}
-@media(max-width:1024px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 18px}}
-@media(max-width:860px){
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}
-  .chead{grid-template-columns:1fr;align-items:start}
-  .diary{font-size:14px;line-height:1.85}
-  .toc ol{grid-template-columns:1fr}
-  .hero-grid{grid-template-columns:1fr}
-  .stack .a img{aspect-ratio:16/10}
-}
-@media(max-width:640px){
-  .card .name{font-size:13.5px}
-  .card .why{font-size:12px}
-  .grid{gap:22px 13px}
-}
-
-/* 빈 결과 */
-.empty{display:none;padding:70px 0 40px;text-align:center}
-.empty.on{display:block}
-.empty p{font-family:var(--serif);font-size:17px;color:var(--ink)}
-.empty small{display:block;margin-top:8px;font-size:12.5px;color:var(--sub)}
-.empty button{margin-top:18px;border:1px solid var(--forest);color:var(--forest);padding:11px 20px;
-  border-radius:99px;font-size:12.5px}
-
-/* 푸터 */
-.foot{background:var(--forest);color:#c3c9bd;margin-top:clamp(56px,7vw,88px);padding:clamp(38px,5vw,56px) var(--pad)}
-.foot .in{max-width:var(--w);margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto;
-  gap:22px 40px;align-items:end}
-.foot .fb{display:inline-flex;align-items:center;gap:9px;font-family:var(--serif);font-size:21px;
-  font-weight:700;letter-spacing:-.02em;color:#f2f1e6}
-.foot .fb .mk{width:9px;height:9px;background:#8fa392;display:inline-block}
-.foot p{font-size:11px;line-height:1.85;color:#a9b2a4;margin-top:12px;max-width:56em}
-.foot .sig{font-size:10px;letter-spacing:.14em;color:#86947f;text-align:right;line-height:1.9}
-@media(max-width:700px){.foot .in{grid-template-columns:1fr}.foot .sig{text-align:left}}
-
-/* 상세 */
-.dv{position:fixed;inset:0;z-index:60;background:var(--paper);overflow-y:auto;
-  -webkit-overflow-scrolling:touch;overscroll-behavior:contain}
-.dv[hidden]{display:none!important}
-.dvi{max-width:860px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding:0 var(--pad)}
-.dtop{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:6px;height:56px;
-  margin:0 calc(var(--pad) * -1);padding:0 calc(var(--pad) - 6px);
-  background:rgba(246,245,240,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line)}
-.dtop button{width:42px;height:42px;display:flex;align-items:center;justify-content:center;
-  border-radius:50%;color:var(--ink);transition:background .15s}
-.dtop button:hover{background:#ecebe2}
-.dtop .lb{font-size:11.5px;letter-spacing:.08em;color:var(--sub)}
-.dtop .lb b{color:var(--ink);font-weight:600}
-.dbody{padding:26px 0 46px;flex:1}
-.gal{display:flex;overflow-x:auto;gap:8px;scroll-snap-type:x mandatory;scrollbar-width:none;
-  background:#fff;border:1px solid var(--line);justify-content:center;align-items:center;
-  max-height:min(52vh,430px)}
+body{font-family:Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;word-break:keep-all}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%}
+.wrap{max-width:480px;margin:0 auto;background:#fff;min-height:100vh}
+.ftc{font-size:11.5px;color:#5c6470;background:#f7f7f5;padding:9px 16px;line-height:1.5}
+.bar{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:baseline;gap:8px;padding:13px 16px 0}
+.brand b{font-size:18px;letter-spacing:-.5px}.brand span{font-size:12px;color:var(--sub);margin-left:auto}
+.cats{display:flex;justify-content:space-between;padding:4px 14px 6px}
 .gal::-webkit-scrollbar{display:none}
-.gal img{flex:none;width:auto;height:auto;max-width:100%;max-height:min(52vh,430px);
-  object-fit:contain;scroll-snap-align:center;margin:0 auto}
-.ds{font-size:11px;letter-spacing:.14em;color:var(--forest-2);font-weight:600}
-.dbody h1{font-family:var(--serif);font-weight:700;font-size:clamp(21px,3vw,30px);line-height:1.42;
-  letter-spacing:-.025em;color:var(--ink);margin-top:12px}
-.lead{font-size:15px;line-height:1.8;color:var(--body);margin-top:12px}
-.dbody h2{font-size:11.5px;letter-spacing:.16em;color:var(--sub);font-weight:600;margin:34px 0 2px}
+.cat{padding:10px 8px;font-size:14px;font-weight:600;color:#3c424c;white-space:nowrap}
+.cat:active{color:var(--red)}
+.top{padding:20px 16px 0}
+.top small{font-size:12.5px;font-weight:700;color:var(--red)}
+.top h1{font-size:24px;line-height:1.3;letter-spacing:-.8px;margin-top:2px}
+.top p{font-size:12px;color:var(--sub);margin-top:5px}
+.covers{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 16px 2px}
+.cv{aspect-ratio:4/5;position:relative;border-radius:16px;overflow:hidden;background:var(--bg)}
+.cv:first-child{grid-column:1/-1;aspect-ratio:16/11}
+.cv img{height:100%;object-fit:cover}
+.cv span{position:absolute;inset:auto 0 0 0;padding:48px 12px 12px;background:linear-gradient(transparent,rgba(12,14,18,.9));color:#fff}
+.cv small{font-size:11.5px;font-weight:700;opacity:.9}
+.cv b{display:block;font-size:15px;line-height:1.36;letter-spacing:-.4px;margin-top:2px}
+.cv:first-child b{font-size:20px}
+.cv i{display:block;font-style:normal;font-size:11.5px;opacity:.82;margin-top:4px}
+.story{scroll-margin-top:104px;padding-top:26px}
+.sh{padding:0 16px}
+.sh small{font-size:12px;font-weight:700;color:var(--red)}
+.sh h2{font-size:20px;line-height:1.35;letter-spacing:-.6px;margin-top:3px}
+.diary{font-size:15px;line-height:1.78;color:var(--body);margin-top:11px;padding:14px 15px;background:#faf7f0;border-radius:12px}
+.pk{display:block;font-size:13.5px;font-weight:700;margin-top:18px}
+.list{display:grid;grid-template-columns:1fr 1fr;gap:20px 12px;padding:14px 16px 8px}
+.card .ph{aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--bg);border:1px solid var(--line)}
+.card .ph img{height:100%;object-fit:cover}
+.name{font-size:14px;font-weight:600;line-height:1.38;margin-top:9px;letter-spacing:-.2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.why{font-size:12.5px;color:var(--sub);line-height:1.45;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card:active .ph{opacity:.85}
+.none{text-align:center;color:var(--sub);font-size:13px;padding:40px 0}
+.room{position:relative;margin:0 16px 16px;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:var(--bg)}
+.room img{height:100%;object-fit:cover}
+.ex{position:absolute;right:8px;top:8px;font-size:10px;color:#fff;background:rgba(0,0,0,.42);padding:2px 6px;border-radius:5px}
+.pin{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:5px;background:#fff;border-radius:99px;padding:5px 11px 5px 5px;font-size:12.5px;font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,.35);white-space:nowrap}
+.pin b{width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:15px;line-height:1;display:flex;align-items:center;justify-content:center}
+.foot{padding:22px 16px 34px;font-size:11px;color:#8d949d;line-height:1.6;border-top:1px solid var(--line);margin-top:28px}
+.dv{position:fixed;inset:0;z-index:20;background:#fff;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.dv[hidden]{display:none}
+.dvi{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column}
+.dtop{position:sticky;top:0;z-index:2;display:flex;align-items:center;height:52px;padding:0 6px;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
+.dtop button{width:44px;height:44px;border:0;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.dtop span{font-size:15px;font-weight:700}
+.gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;background:var(--bg)}
+.gal img{flex:none;width:88%;aspect-ratio:1;object-fit:contain;background:#fff;scroll-snap-align:start}
+.gal.one img{width:100%}
+.dbody{padding:18px 16px 26px;flex:1}
+.dbody .ds{font-size:12.5px;font-weight:700;color:var(--red)}
+.dbody h1{font-size:20px;line-height:1.42;letter-spacing:-.5px;margin-top:5px}
+.lead{font-size:15px;line-height:1.65;color:var(--body);margin-top:12px}
+.dbody h2{font-size:15px;margin:24px 0 6px}
 .dbody ul{list-style:none}
-.dbody li{position:relative;padding:12px 0 12px 16px;font-size:14px;line-height:1.8;color:var(--body);
-  border-bottom:1px solid var(--line)}
-.dbody li::before{content:"";position:absolute;left:1px;top:21px;width:5px;height:5px;background:var(--forest-2)}
-.note{font-size:11.5px;line-height:1.85;color:var(--sub);margin-top:26px;padding-top:16px;
-  border-top:1px solid var(--line)}
-.rel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 14px;margin-top:12px}
-.rc{min-width:0}
-.rc img{aspect-ratio:1;object-fit:cover;background:#fff;border:1px solid var(--line)}
-.rc span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-  font-size:11.5px;line-height:1.45;color:var(--body);margin-top:6px}
-.rc:hover span{color:var(--forest);text-decoration:underline;text-underline-offset:2px}
-.morelink{display:inline-block;margin-top:18px;font-size:12px;letter-spacing:.02em;color:var(--forest-2);
-  border-bottom:1px solid rgba(47,74,57,.3);padding-bottom:2px}
-.morelink:hover{border-color:var(--forest)}
-.cta{position:sticky;bottom:0;display:flex;gap:8px;margin:0 calc(var(--pad) * -1);
-  padding:12px var(--pad) calc(12px + env(safe-area-inset-bottom));
-  background:var(--paper);border-top:1px solid var(--line)}
-.btn{flex:1;text-align:center;font-size:14.5px;font-weight:600;padding:15px 0;border-radius:2px;
-  letter-spacing:.01em;color:#fff;background:var(--forest);transition:background .15s}
-.btn:hover{background:var(--forest-2)}
-.btn.nv{background:#03c75a}
-.btn.nv:hover{background:#02b351}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.dbody li{position:relative;padding:9px 0 9px 15px;font-size:14px;line-height:1.55;color:var(--body);border-bottom:1px solid var(--line)}
+.dbody li:before{content:"";position:absolute;left:2px;top:17px;width:5px;height:5px;border-radius:50%;background:var(--red)}
+.note{font-size:12px;color:var(--sub);line-height:1.6;margin-top:18px;background:#f7f7f5;border-radius:10px;padding:11px 12px}
+.rel{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 10px;padding-top:4px}
+.rc img{aspect-ratio:1;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+.rc span{font-size:12.5px;line-height:1.38;margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cta{position:sticky;bottom:0;display:flex;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line)}
+.btn{flex:1;text-align:center;font-size:15.5px;font-weight:700;padding:15px 0;border-radius:12px;color:#fff}
+.btn.cp{background:var(--ink)}.btn.nv{background:#03c75a}
+.btn:active{transform:scale(.985)}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="wrap">
 <div class="ftc">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>
-<header class="site">
-  <div class="in">
-    <a class="brand" href="./"><span class="mk"></span>겨울 살림 마트</a>
-    <div class="right">
-      <span class="vol">2026년 11월 · 7개 장</span>
-      <span class="sep vol"></span>
-      <span>이번 호 <b data-count>72</b>가지</span>
-    </div>
-  </div>
-</header>
-<main id="main">
-<section class="hero">
-  <div class="hero-grid">
-    <div>
-      <p class="eyebrow">살림하는 아줌마의 겨울 일기</p>
-      <h1>첫 추위가 온 한 주</h1>
-      <p class="stand">창틈에서 시작해 현관, 이불 속, 식탁 위까지. 한 주 동안 하나씩 찾아 둔
-        겨울 살림 물건 72가지를 장마다 모았습니다. 필요한 것만 골라 보세요.</p>
-      <div class="hero-meta">
-        <span>7개 장</span><span class="d"></span>
-        <span>물건 <b data-count>72</b>가지</span><span class="d"></span>
-        <span>2026년 11월</span>
-      </div>
-      <p class="disc">일기는 꾸며 쓴 이야기예요. 사진은 판매 중인 상품 사진이에요.</p>
-    </div>
-    <div class="stack">
-      <figure class="a"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/fleece-blanket.jpg" alt="" width="492" height="492" loading="eager"></figure>
-      <figure><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/music-box.jpg" alt="" width="492" height="492" loading="lazy"></figure>
-      <figure><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/hoppang.jpg" alt="" width="492" height="492" loading="lazy"></figure>
-      <figcaption>이번 호에 실린 물건들 &mdash; 사진은 판매 중인 상품 사진입니다.</figcaption>
-    </div>
-  </div>
-</section>
-
-<section class="toc" aria-labelledby="toc-h">
-  <div class="hd"><h2 id="toc-h">차례</h2><span>월요일부터 일요일까지</span></div>
-  <ol>
-    <li><a href="#s-window"><span class="n">01</span><span class="t"><em>월요일 아침</em>커튼이 혼자 흔들렸다</span><span class="c">4</span></a></li>
-    <li><a href="#s-street"><span class="n">02</span><span class="t"><em>화요일 등원길</em>장갑을 껴도 손끝이 시리다</span><span class="c">8</span></a></li>
-    <li><a href="#s-bed"><span class="n">03</span><span class="t"><em>수요일 밤</em>보일러 틀까 말까</span><span class="c">7</span></a></li>
-    <li><a href="#s-soup"><span class="n">04</span><span class="t"><em>목요일 저녁</em>결국 오늘도 어묵탕</span><span class="c">5</span></a></li>
-    <li><a href="#s-xmas"><span class="n">05</span><span class="t"><em>금요일 오후</em>엄마, 크리스마스 언제 와?</span><span class="c">4</span></a></li>
-    <li><a href="#s-chores"><span class="n">06</span><span class="t"><em>토요일 낮</em>미뤄 둔 살림이 한꺼번에</span><span class="c">38</span></a></li>
-    <li><a href="#s-wow"><span class="n">07</span><span class="t"><em>일요일 밤</em>남편의 장바구니</span><span class="c">6</span></a></li>
-  </ol>
-</section>
-
-<div class="tools">
-  <div class="in">
-    <div class="searchrow">
-      <div class="search" id="sb">
-        <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/>
-          <path d="M16.5 16.5 21 21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-        <label class="sr" for="q">상품명이나 설명으로 찾기</label>
-        <input id="q" type="search" placeholder="상품명이나 설명으로 찾기" autocomplete="off" spellcheck="false">
-        <button class="clr" id="qc" type="button" aria-label="검색어 지우기">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        </button>
-      </div>
-      <p class="rs" id="rs" aria-live="polite"></p>
-    </div>
-    <div class="chips" role="group" aria-label="주제로 고르기">
-      <button class="chip" type="button" data-cat="all" aria-pressed="true">전체 <span class="cn">72</span></button>
-      <button class="chip" type="button" data-cat="window" aria-pressed="false">단열·방한 <span class="cn">4</span></button>
-      <button class="chip" type="button" data-cat="street" aria-pressed="false">차량·외출 <span class="cn">8</span></button>
-      <button class="chip" type="button" data-cat="bed" aria-pressed="false">난방·이불 <span class="cn">7</span></button>
-      <button class="chip" type="button" data-cat="soup" aria-pressed="false">간식·어묵 <span class="cn">5</span></button>
-      <button class="chip" type="button" data-cat="xmas" aria-pressed="false">크리스마스 <span class="cn">4</span></button>
-      <button class="chip" type="button" data-cat="chores" aria-pressed="false">욕실·살림 <span class="cn">38</span></button>
-      <button class="chip" type="button" data-cat="wow" aria-pressed="false">남편 위시 <span class="cn">6</span></button>
-    </div>
-  </div>
+<div class="bar"><div class="brand"><b>겨울 살림 마트</b><span>이번 주 물건 72가지</span></div><nav class="cats" aria-label="요일 고르기"><a class="cat" href="#s-window">월</a><a class="cat" href="#s-street">화</a><a class="cat" href="#s-bed">수</a><a class="cat" href="#s-soup">목</a><a class="cat" href="#s-xmas">금</a><a class="cat" href="#s-chores">토</a><a class="cat" href="#s-wow">일</a></nav></div>
+<div class="top"><small>살림하는 아줌마의 겨울 일기</small><h1>첫 추위가 온 한 주</h1><p>일기는 꾸며 쓴 이야기예요. 사진은 판매 중인 상품 사진이에요.</p></div>
+<div class="covers"><a class="cv" href="#s-window"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/wind-pack.jpg" alt=""><span><small>1화 월요일 아침</small><b>커튼이 혼자 흔들렸다</b><i>물건 4가지</i></span></a><a class="cv" href="#s-street"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/hand-warmer.jpg" alt=""><span><small>2화 화요일 등원길</small><b>장갑을 껴도 손끝이 시리다</b><i>물건 8가지</i></span></a><a class="cv" href="#s-bed"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-blanket.jpg" alt=""><span><small>3화 수요일 밤</small><b>보일러 틀까 말까</b><i>물건 7가지</i></span></a><a class="cv" href="#s-soup"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/fish-cake.jpg" alt=""><span><small>4화 목요일 저녁</small><b>결국 오늘도 어묵탕</b><i>물건 5가지</i></span></a><a class="cv" href="#s-xmas"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/music-box.jpg" alt=""><span><small>5화 금요일 오후</small><b>엄마, 크리스마스 언제 와?</b><i>물건 4가지</i></span></a><a class="cv" href="#s-chores"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/sink-splash.jpg" alt=""><span><small>6화 토요일 낮</small><b>미뤄 둔 살림이 한꺼번에</b><i>물건 38가지</i></span></a><a class="cv" href="#s-wow"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/tokyotomi-heater.jpg" alt=""><span><small>7화 일요일 밤</small><b>남편의 장바구니</b><i>물건 6가지</i></span></a></div>
+<section class="story" id="s-window"><div class="sh"><small>1화 월요일 아침</small><h2>커튼이 혼자 흔들렸다</h2><p class="diary">아침에 애들 방 문을 열었는데 커튼이 혼자 흔들리고 있었어. 창문은 분명히 닫혀 있었는데. 손을 대 보니 창틀 틈으로 찬 바람이 솔솔 들어와. 보일러를 더 올리기 전에 틈부터 막기로 하고, 창틀이랑 현관에 붙일 것들을 찾아 뒀어.</p><span class="pk">이날 찾아 둔 것</span></div><div class="list"><a class="card" href="#p=ref05"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/wind-pack.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">에코와이드 끼우는 문풍지 창문 틈새막이 외풍 창틀 바람막이 L, 4개</div><div class="why">창틀 틈으로 드는 찬 바람을 막아요</div></a><a class="card" href="#p=bm-bubble-wrap"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/bubble-wrap.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">뽁순이 3중 뽁뽁이 단열에어캡, 1개</div><div class="why">창유리에 붙여 방 안 온기가 밖으로 빠져나가는 것을 줄이는 단열 시트입니다</div></a><a class="card" href="#p=bm-door-curtain"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/door-curtain.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">유미코 겨울 현관 자석 방풍커튼, 1개</div><div class="why">문을 여닫을 때마다 복도 한기가 밀려오는 현관에 두르는 자석 커튼입니다</div></a><a class="card" href="#p=bm-weatherstrip"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/weatherstrip.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">코멧 국내생산 사계절 우레탄 문풍지 3M, 5개</div><div class="why">문과 창문 틈에 붙여 바람이 새는 자리를 막는 접착식 우레탄 폼입니다</div></a></div></section>
+<section class="story" id="s-street"><div class="sh"><small>2화 화요일 등원길</small><h2>장갑을 껴도 손끝이 시리다</h2><p class="diary">애들 등원시키고 돌아오면 손이 꽁꽁 얼어 있어. 차 앞유리에는 성에가 하얗게 앉았고, 시동을 걸면 안쪽에는 김이 서려. 아침마다 조금씩 늦는 이유가 이거였어. 주머니랑 차에 하나씩 넣어 둘 것들을 찾아 뒀어.</p><span class="pk">이날 찾아 둔 것</span></div><div class="list"><a class="card" href="#p=g1113004226"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/hand-warmer.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">하루온 군인핫팩 포켓용 대용량 핫팩 160g, 30개</div><div class="why">주머니에 넣고 다니는 손난로</div></a><a class="card" href="#p=bm-balaclava"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/balaclava.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">라세르 겨울 방한 기모 바라클라바</div><div class="why">목부터 정수리까지 한 번에 감싸는 기모 바라클라바입니다</div></a><a class="card" href="#p=bm-anti-fog"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/anti-fog.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">소낙스 김서림 방지제 관리용품, 500ml, 1개</div><div class="why">겨울 아침 차에 오르면 앞유리에 서리는 김을 줄여 주는 코팅제입니다</div></a><a class="card" href="#p=bm-ice-scraper"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/ice-scraper.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">깔끔조아 스크래치 없는 회전형 길이조절 차량용 성에제거기, 1개</div><div class="why">손이 닿지 않는 앞유리 가운데까지 밀어 내는 길이조절 스크래퍼입니다</div></a><a class="card" href="#p=bm-k2-gloves"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/k2-gloves.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">K2 세이프티 히트플렉스 니트 장갑, 1세트, 블랙</div><div class="why">자전거 손잡이나 버스 손잡이를 잡는 아침, 손끝이 시린 것을 덜어 주는 니트 장갑입니다</div></a><a class="card" href="#p=bm-frost-cover"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/frost-cover.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">카템 3중 차단 마그네틱 성에방지 커버, 전차종, 1세트</div><div class="why">아침에 성에를 긁는 대신 밤에 덮어 두는 앞유리 커버입니다</div></a><a class="card" href="#p=bm-heating-vest"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/heating-vest.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">에쉬울프 USB 발열조끼 스마트 온열조끼, DR013</div><div class="why">보조배터리를 꽂으면 앞판과 뒷판이 데워지는 조끼입니다</div></a><a class="card" href="#p=bm-heated-boots"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/heated-boots.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">Mochae 발열 신발 USB충전 온열부츠 대용량 4000mAh 배터리 2개 3단계온도조절 물세탁가능 겨울 가정 사무실 야외, 화이트(260~265mm), NJB-01</div><div class="why">신발 안쪽에서 열이 나는 부츠라, 아침 등원길처럼 서서 기다리는 시간에 발이 덜 시립니다</div></a></div></section>
+<section class="story" id="s-bed"><div class="sh"><small>3화 수요일 밤</small><h2>보일러 틀까 말까</h2><p class="diary">보일러 틀까 말까로 남편이랑 또 실랑이했어. 가스비 고지서가 무서운 건 둘 다 똑같거든. 그래서 방 전체 말고 이불 속이랑 앉은 자리부터 데우기로 했어. 난방을 켜면 공기가 마르니까 가습기도 같이 봐 뒀어.</p><span class="pk">이날 찾아 둔 것</span></div><div class="list"><a class="card" href="#p=g1113004411"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-blanket.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">HanilMedical 탄소열선 고급 전기요 HL-D205(25), 북극곰, M</div><div class="why">보일러 틀기 전 이불 속을 데울 때</div></a><a class="card" href="#p=bm-partition-heater"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/partition-heater.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">홈플래닛 접이식 파티션 히터, D2401, 그레이</div><div class="why">책상 아래로 시린 발목과 무릎만 따로 감싸 주는 접이식 발난로입니다</div></a><a class="card" href="#p=bm-humidifier"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/humidifier.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">홈플래닛 초음파 가습기 4L, RD210/화이트</div><div class="why">난방으로 건조해진 방 공기에 물안개를 채우는 4L 초음파 가습기입니다</div></a><a class="card" href="#p=bm-fleece-blanket"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/fleece-blanket.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">더자리 마이블랭킷 극세사 담요</div><div class="why">소파에 두고 무릎 덮기 좋은 극세사 담요입니다</div></a><a class="card" href="#p=bm-electric-seat"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-seat.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">HanilMedical 1인용 전기방석 HL-100(20), 네이비, 450 x 450 mm</div><div class="why">소파나 의자에 앉아 있는 동안 엉덩이부터 따뜻하게 데우는 1인용 전기방석입니다</div></a><a class="card" href="#p=bm-radiator"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/radiator.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">신일 컴팩트 라디에이터 5핀, SER-D5500KP</div><div class="why">보일러를 켜기엔 아까운 날, 방 하나만 데우는 전기 라디에이터입니다</div></a><a class="card" href="#p=bm-heating-tent"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/heating-tent.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">따수미 패브릭 난방텐트 3인용</div><div class="why">침대 위에 씌워 방 하나만 덥히는 난방텐트입니다</div></a></div></section>
+<section class="story" id="s-soup"><div class="sh"><small>4화 목요일 저녁</small><h2>결국 오늘도 어묵탕</h2><p class="diary">추운 날 저녁 메뉴가 고민되면 결국 어묵탕이야. 애들도 국물을 좋아해서 냄비가 금방 비어. 밥 먹고 나면 꼭 간식을 찾으니까, 냉동실에 넣어 둘 호빵이랑 붕어빵도 같이 찾아 뒀어.</p><span class="pk">이날 찾아 둔 것</span></div><div class="list"><a class="card" href="#p=g1113004403"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/fish-cake.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">효성어묵 부산옛날어묵 종합 (냉동), 1kg, 1개</div><div class="why">집에서 끓여 먹는 뜨끈한 어묵탕</div></a><a class="card" href="#p=bm-hoppang"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/hoppang.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">삼립 호빵 발효미종 단팥 + 피자, 97g, 12개입, 1세트</div><div class="why">전자레인지나 찜기에 데워 겨울 저녁에 먹는 단팥, 야채 호빵입니다</div></a><a class="card" href="#p=bm-boongeoppang"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/boongeoppang.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">비비고 단팥붕어빵 (냉동), 300g, 1개</div><div class="why">에어프라이어에 돌리면 겉은 바삭하고 속은 뜨거운 냉동 붕어빵입니다</div></a><a class="card" href="#p=bm-hot-choco"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/hot-choco.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">미떼 핫초코 오리지날, 30g, 30개입, 1개</div><div class="why">우유에 한 봉 풀면 되는 핫초코 30봉입니다</div></a><a class="card" href="#p=bm-kimchi"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/kimchi.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">종가 포기김치, 2.3kg, 1개</div><div class="why">김장을 직접 담그지 않는 집에서 겨울 내내 꺼내 먹기 좋은 포기김치입니다</div></a></div></section>
+<section class="story" id="s-xmas"><div class="sh"><small>5화 금요일 오후</small><h2>엄마, 크리스마스 언제 와?</h2><p class="diary">애들이 크리스마스 언제 오냐고 매일 물어봐. 거실에 큰 트리를 놓으면 둘째가 장식을 다 뜯어 놓을 게 뻔해. 그래서 올해는 책상 위에 올려 두는 작은 것들로 찾아 뒀어.</p><span class="pk">이날 찾아 둔 것</span></div><div class="list"><a class="card" href="#p=g1113010939"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/music-box.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">홀리해요 크리스마스 오르골 무드등 플랫 스노우볼, 산타</div><div class="why">연말 선물로 건네는 오르골</div></a><a class="card" href="#p=bm-music-box-lamp"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/music-box-lamp.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">스네몬 오르골 오로라 무드등, 핑크화이트</div><div class="why">오로라 빛이 돌아가며 방 천장까지 물들이는 오르골 무드등입니다</div></a><a class="card" href="#p=bm-mini-tree"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/mini-tree.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">크리스마스 40cm 설레는 밤 완제 트리 풀세트 전구포함, 혼합색상</div><div class="why">꾸미는 수고 없이 꺼내 세우면 모습이 갖춰지는 40cm 미니 트리입니다</div></a><a class="card" href="#p=bm-advent-calendar"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/advent-calendar.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">오리온 크리스마스 어드벤트 캘린더 과자세트, 9종, 1세트</div><div class="why">12월에 하루씩 열어 보는 크리스마스 달력입니다</div></a></div></section>
+<section class="story" id="s-chores"><div class="sh"><small>6화 토요일 낮</small><h2>미뤄 둔 살림이 한꺼번에</h2><p class="diary">추우니까 설거지도 욕실 청소도 자꾸 미루게 돼. 주말에 몰아서 하려고 보니 줄눈에 곰팡이가 올라와 있었어. 손이 덜 가게 거들어 줄 살림 물건들을 찾아 뒀어.</p><span class="pk">이날 찾아 둔 것</span></div><div class="list"><a class="card" href="#p=bm-sink-splash"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/sink-splash.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">달팽이리빙 퀴진드마망 실리콘 씽크대 물막이, 크림화이트, 1개</div><div class="why">설거지할 때 튀는 물이 옷과 바닥으로 가지 않게 세우는 실리콘 판입니다</div></a><a class="card" href="#p=bm-oil-screen"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/oil-screen.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">시샘 연마제없는 스텐 다용도 기름방지망, 33cm, 1개</div><div class="why">고기를 굽거나 튀길 때 튀는 기름을 막아 두는 스테인리스 망입니다</div></a><a class="card" href="#p=bm-drain-filter"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/drain-filter.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">코멧 싱크대 배수구 거름망, 500개</div><div class="why">배수구에 끼워 음식물 찌꺼기와 머리카락을 한 번에 걸러 내는 망입니다</div></a><a class="card" href="#p=bm-diatomite-mat"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/diatomite-mat.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">코멧 홈 빨아쓰는 규조토 발매트, 베이지 타원, 1개</div><div class="why">욕실에서 나와 젖은 발을 한 번만 디디면 물기를 빨아들이는 발매트입니다</div></a><a class="card" href="#p=bm-mold-gel"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/mold-gel.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">홈스타 바르는 곰팡이 싹 세정제, 120ml, 2개</div><div class="why">줄눈과 실리콘 틈에 발라 두면 문지르지 않아도 곰팡이가 들뜨는 젤형 세정제입니다</div></a><a class="card" href="#p=bm-electric-grill"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-grill.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">홈플래닛 반반 멀티 전기그릴(개별 온도 조절), AD-SK18</div><div class="why">한쪽은 굽고 한쪽은 끓이는 반반 상판 전기그릴입니다</div></a><a class="card" href="#p=bm-fishbread-maker"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/fishbread-maker.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">위즈웰 간식 메이커 3종 세트 붕어빵 + 와플 + 샌드위치, WSW-6137</div><div class="why">플레이트를 바꿔 끼우면 붕어빵, 와플, 샌드위치가 되는 전기 메이커입니다</div></a><a class="card" href="#p=bm-mini-dehumidifier"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/mini-dehumidifier.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">EXTEDRG 제습기 2.8L 강력제습 가정용 저소음 원룸 미니 제습기, D9</div><div class="why">창틀에 물방울이 맺히는 날, 방 안 물을 물통으로 모으는 작은 제습기입니다</div></a><a class="card" href="#p=bm-dehumidifier-12l"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/dehumidifier-12l.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">롯데알미늄 제습기 12L, LDH-7000N</div><div class="why">빨래를 널어 둔 방의 물을 하루 12L까지 빼내는 컴프레서 제습기입니다</div></a><a class="card" href="#p=bm-winter-duvet"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/winter-duvet.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">코멧 홈 양면 극세사 솔리드 차렵이불</div><div class="why">커버를 씌우지 않고 바로 덮는 겨울 극세사 차렵이불입니다</div></a><a class="card" href="#p=bm-bathroom-heater"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/bathroom-heater.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">한경희생활과학 PTC 온풍기 욕실 난방기 스탠드 벽걸이 전기히터, HAAN-4000(블랙)</div><div class="why">욕실 벽에 걸거나 세워 두고 샤워 전에 켜 두는 온풍기입니다</div></a><a class="card" href="#p=bm-foot-spa"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/foot-spa.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">이노크아든 사파이어 스파 족욕기, FM-505, 화이트</div><div class="why">물을 받아 온도를 맞춰 두는 습식 족욕기입니다</div></a><a class="card" href="#p=bm-neck-massager"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/neck-massager.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">제스파 플러스 목어깨 등 허리 마사지기, ZP187, 퍼플</div><div class="why">목에 걸치고 기대서 쓰는 목, 어깨 마사지기입니다</div></a><a class="card" href="#p=bm-filter-shower"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/filter-shower.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">코멧 홈 파워수압 필터 샤워기 본품 + 필터 2개입, 실버</div><div class="why">헤드 안쪽 필터로 물을 한 번 거르는 샤워기입니다</div></a><a class="card" href="#p=bm-thermos-lunchbox"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/thermos-lunchbox.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">써모스 일체형 대용량 보온도시락 + 보온백 + 수저 세트, 샌드베이지, 1개</div><div class="why">국물이나 반찬이 식지 않게 싸 가는 보온도시락입니다</div></a><a class="card" href="#p=bm-baby-wipes"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/baby-wipes.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">코멧 오리지널 유아용 아기물티슈 캡형, 100매입</div><div class="why">한 장씩 뽑아 쓰는 아기물티슈입니다</div></a><a class="card" href="#p=bm-kids-balaclava"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/kids-balaclava.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">우드피카 유아용 패치 바라클라바 넥워머</div><div class="why">목부터 머리까지 한 번에 덮는 아동용 넥워머입니다</div></a><a class="card" href="#p=bm-socks-5set"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/socks-5set.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">퍼니스코 여성 겨울 수면 양말 5종 SET</div><div class="why">밤에 발이 시려 양말을 신고 자는 집에 두는 무압박 수면양말입니다</div></a><a class="card" href="#p=bm-socks-4set"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/socks-4set.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">이지하임 4켤레 털빠짐없는 편안한 무압박 남녀공용 수면양말 세트</div><div class="why">수면양말을 신고 나면 털이 묻어 나와 고민이던 집에 두는 네 켤레 세트입니다</div></a><a class="card" href="#p=bm-hotpack-attach"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/hotpack-attach.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">하루온 붙이는 핫팩 50g 10개입, 2개</div><div class="why">옷 안쪽에 붙여 두면 손에 쥐지 않아도 등과 배가 따뜻한 핫팩입니다</div></a><a class="card" href="#p=bm-dish-soap"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/dish-soap.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">순샘 구연산 자몽향 주방세제 리필, 1.4L, 3개</div><div class="why">설거지할 때 기름이 잘 빠지지 않아 세제를 더 짜게 되는 집에 두는 리필입니다</div></a><a class="card" href="#p=bm-drying-rack"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/drying-rack.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">코멧 홈 접이식 대형 빨래건조대, 그레이, 1개</div><div class="why">겨울엔 밖에 못 널어 거실에 건조대를 펴 두게 되는 집에 두는 접이식 건조대입니다</div></a><a class="card" href="#p=bm-dyson-airwrap"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/dyson-airwrap.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">다이슨 에어랩 id 멀티 스타일러 앤 드라이어, 161845-01, 블루 + 코퍼</div><div class="why">겨울 외출 전에 머리를 말리고 모양까지 잡고 싶다는 말이 나올 때 눈에 들어오는 기계입니다</div></a><a class="card" href="#p=bm-massage-chair"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/massage-chair.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">제스파 컴포르테 안마의자 + 전용 러그 방문설치, ZPC2034(안마의자), ZP540(러그), 퓨어화이트</div><div class="why">퇴근하고 소파 대신 앉겠다고 하는 자리에 놓는 전신 안마의자입니다</div></a><a class="card" href="#p=bm-homstar-pink"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/homstar-pink.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">홈스타 핑크파워 욕실 찌든때 클리너, 750ml, 2개</div><div class="why">욕실 타일과 줄눈의 찌든 때에 뿌려 두는 거품형 세정제입니다</div></a><a class="card" href="#p=bm-shower-rod-shelf"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/shower-rod-shelf.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">물빠짐 샤워봉 거치 선반 + 보조캡 3종 + 방수테이프 세트, 화이트, 1세트</div><div class="why">샤워봉에 걸어 물이 빠지는 자리에 두는 선반입니다</div></a><a class="card" href="#p=bm-bathroom-shelf-set"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/bathroom-shelf-set.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">다용도 무타공 욕실 수납선반 6종 세트 일자형 드라이기 거치대 비누받침대 칫솔걸이, 화이트, 1세트</div><div class="why">못을 쓰지 않고 붙이는 욕실 수납 6종 세트입니다</div></a><a class="card" href="#p=bm-kobukchip-sanghu"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/kobukchip-sanghu.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">오리온 꼬북칩 얼얼한 샹궈맛, 102g, 12개</div><div class="why">편의점에서 한 봉씩 집어 오던 매운 과자를 열두 봉 한 번에 받는 구성입니다</div></a><a class="card" href="#p=bm-abc-choco-187"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/abc-choco-187.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">롯데웰푸드 ABC 초콜릿, 187g, 3개</div><div class="why">마트에서 한 봉씩 사 오던 ABC 초콜릿을 세 봉 묶어 받는 구성입니다</div></a><a class="card" href="#p=bm-ediya-toffe-nut"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/ediya-toffe-nut.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">이디야 비니스트 토피넛 라떼분말, 20g, 30개입, 1개</div><div class="why">코스트코에서 상자째 사 오던 토피넛 라떼 스틱을 서른 봉으로 받는 구성입니다</div></a><a class="card" href="#p=bm-led-thermo-clock"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/led-thermo-clock.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">샤오미 디지털 대화면 LCD 시계 온습도계(건전지포함), 화이트, 2개</div><div class="why">원룸 책상 위에 두고 온도와 습도, 시각을 한 화면으로 보는 시계입니다</div></a><a class="card" href="#p=bm-slim-power-strip"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/slim-power-strip.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">필립스 고용량 멀티탭 3구 홈탭 납작멀티탭, 그레이 CHP1134G, 1개, 1.5m</div><div class="why">소파 뒤나 책상 밑 좁은 틈에 밀어 넣는 납작 플러그 멀티탭입니다</div></a><a class="card" href="#p=bm-dove-cream-bar"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/dove-cream-bar.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">도브 뷰티 크림바, 90g, 12개입</div><div class="why">샤워할 때 한 개씩 꺼내 쓰는 도브 비누를 열두 개 묶어 받는 구성입니다</div></a><a class="card" href="#p=bm-veg-spinner"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/veg-spinner.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">벨라쿠진 무연마제 올스텐 304 짤순이 파스타망, 1세트</div><div class="why">데친 나물의 물을 손으로 짜지 않아도 되는 스테인리스 짤순이입니다</div></a><a class="card" href="#p=bm-thermal-pot"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/thermal-pot.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">키친아트 대용량 보온 티포트 1.8L, KAEP-8520</div><div class="why">대추나 과일을 넣고 버튼만 누르면 차가 우러나고, 마실 만큼 따라내는 전기 티포트입니다</div></a><a class="card" href="#p=bm-silicone-container-s"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/silicone-container-set.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">실리샵 국산 플래티넘 실리콘 밀폐용기 세트 (3colors), 대형+중형+소형, 미들그레이, 1개</div><div class="why">다이소에서 하나씩 사 모으던 실리콘 밀폐용기를 대, 중, 소 한 세트로 받는 구성입니다</div></a><a class="card" href="#p=bm-stain-tissue"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/stain-tissue.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">고릴라랩 의류 얼룩 클리너 쏙티슈 10매입, 혼합색상, 1개</div><div class="why">외출 중 옷에 묻은 얼룩을 그 자리에서 닦아 내는 휴대용 얼룩 제거 티슈입니다</div></a><a class="card" href="#p=bm-music-frame-xmas"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/music-frame-xmas.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">노래나오는 냉장고자석 인테리어소품 크리스마스 선물 뮤직박스 액자 인스타히트, 세트 1 메인 + 9 자기테이프</div><div class="why">냉장고 문에 붙여 두고 레코드판을 올리면 노래가 나오는 액자형 뮤직박스입니다</div></a></div></section>
+<section class="story" id="s-wow"><div class="sh"><small>7화 일요일 밤</small><h2>남편의 장바구니</h2><p class="diary">애들을 재우고 나니 남편이 휴대폰을 내밀어. 캠핑 갈 때 쓴다는 팬히터, 가방에 들어간다는 드론, 거실 벽을 화면으로 쓴다는 프로젝터. 살 건 아니라는데 눈은 진심이야. 구경은 같이 했어.</p><span class="pk">이날 찾아 둔 것</span></div><div class="list"><a class="card" href="#p=bm-tokyotomi-heater"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/tokyotomi-heater.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">토요토미 팬히터 LC-L53 풀세트 (국내 정품 A/S 가능) 도요토미, BLACK</div><div class="why">캠핑하는 사람들이 먼저 찾는 일본식 팬히터입니다</div></a><a class="card" href="#p=bm-drone"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/drone.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">DJI Neo 2 플라이 모어 콤보 드론, 혼합색상, 1세트</div><div class="why">손바닥만 한 크기로 하늘 사진을 남기는 드론입니다</div></a><a class="card" href="#p=bm-premiere-projector"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/premiere-projector.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">삼성전자 The Premiere 프로젝터 웜 화이트 254~330cm 방문설치, SP-LPDU9SAXXKR</div><div class="why">벽에 붙여 두고 쓰는 삼성 초단초점 프로젝터입니다</div></a><a class="card" href="#p=bm-home-sauna"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/home-sauna.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">[휴먼사우나] 로벤스 편백나무+히노끼 스톤찜질+좌훈+족욕찜질 원적외선 반신욕기, LPH-300</div><div class="why">집에 들이는 1인용 반신욕기입니다</div></a><a class="card" href="#p=bm-snow-blower"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/snow-blower.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">클라빈다 충전식 무선 전동 리튬 배터리 제설기 소형 다기능 휴대용 가정용 고출력 접이식, 1세트</div><div class="why">눈이 온 날 아침, 삽 대신 미는 충전식 제설기입니다</div></a><a class="card" href="#p=bm-firewood-stove"><div class="ph"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/firewood-stove.jpg" alt="" loading="lazy" width="492" height="492"></div><div class="name">아웃도어웍스 화목난로, OW200</div><div class="why">장작을 넣고 불을 보는 캠핑용 화목난로입니다</div></a></div></section>
+<div class="foot">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.<br>가격과 배송 조건은 판매처에서 바뀔 수 있어요.</div>
 </div>
-
-<div class="chapters">
-  <section class="chapter" id="s-window" data-cat="window" aria-labelledby="h-window">
-    <div class="chead">
-      <div>
-        <span class="chn">01</span>
-        <p class="chlabel">월요일 아침</p>
-        <h2 id="h-window">커튼이 혼자 흔들렸다</h2>
-      </div>
-      <div>
-        <p class="diary">아침에 애들 방 문을 열었는데 커튼이 혼자 흔들리고 있었어. 창문은 분명히 닫혀 있었는데. 손을 대 보니 창틀 틈으로 찬 바람이 솔솔 들어와. 보일러를 더 올리기 전에 틈부터 막기로 하고, 창틀이랑 현관에 붙일 것들을 찾아 뒀어.</p>
-        <span class="chcount">물건 4가지</span>
-      </div>
-    </div>
-    <div class="grid">
-      <article class="card" data-id="ref05" data-cat="window">
-        <a class="ph" href="#p=ref05" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/wind-pack.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 01</span><span class="tag">단열·방한</span></p>
-        <h3 class="name"><a href="#p=ref05">에코와이드 끼우는 문풍지 창문 틈새막이 외풍 창틀 바람막이 L, 4개</a></h3>
-        <p class="why">창문 쪽에서 찬 바람이 솔솔 들어오는 집이라면</p>
-        <a class="buy" href="https://link.coupang.com/a/iCGEleYKcK" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-bubble-wrap" data-cat="window">
-        <a class="ph" href="#p=bm-bubble-wrap" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/bubble-wrap.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 02</span><span class="tag">단열·방한</span></p>
-        <h3 class="name"><a href="#p=bm-bubble-wrap">뽁순이 3중 뽁뽁이 단열에어캡, 1개</a></h3>
-        <p class="why">창유리에 붙여 방 안 온기가 밖으로 빠져나가는 것을 줄이는 단열 시트입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIEMwhrXoW" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-door-curtain" data-cat="window">
-        <a class="ph" href="#p=bm-door-curtain" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/door-curtain.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 03</span><span class="tag">단열·방한</span></p>
-        <h3 class="name"><a href="#p=bm-door-curtain">유미코 겨울 현관 자석 방풍커튼, 1개</a></h3>
-        <p class="why">문을 여닫을 때마다 복도 한기가 밀려오는 현관에 두르는 자석 커튼입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIEQEbGvW8" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-weatherstrip" data-cat="window">
-        <a class="ph" href="#p=bm-weatherstrip" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/weatherstrip.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 04</span><span class="tag">단열·방한</span></p>
-        <h3 class="name"><a href="#p=bm-weatherstrip">코멧 국내생산 사계절 우레탄 문풍지 3M, 5개</a></h3>
-        <p class="why">문과 창문 틈에 붙여 바람이 새는 자리를 막는 접착식 우레탄 폼입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIESNRkMGO" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-    </div>
-  </section>
-
-  <section class="chapter" id="s-street" data-cat="street" aria-labelledby="h-street">
-    <div class="chead">
-      <div>
-        <span class="chn">02</span>
-        <p class="chlabel">화요일 등원길</p>
-        <h2 id="h-street">장갑을 껴도 손끝이 시리다</h2>
-      </div>
-      <div>
-        <p class="diary">애들 등원시키고 돌아오면 손이 꽁꽁 얼어 있어. 차 앞유리에는 성에가 하얗게 앉았고, 시동을 걸면 안쪽에는 김이 서려. 아침마다 조금씩 늦는 이유가 이거였어. 주머니랑 차에 하나씩 넣어 둘 것들을 찾아 뒀어.</p>
-        <span class="chcount">물건 8가지</span>
-      </div>
-    </div>
-    <div class="grid">
-      <article class="card" data-id="g1113004226" data-cat="street">
-        <a class="ph" href="#p=g1113004226" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/hand-warmer.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 05</span><span class="tag">차량·외출</span></p>
-        <h3 class="name"><a href="#p=g1113004226">하루온 군인핫팩 포켓용 대용량 핫팩 160g, 30개</a></h3>
-        <p class="why">출근길에 손이 꽁꽁 어는 계절이 왔어요</p>
-        <a class="buy" href="https://link.coupang.com/a/iCGMOaYd52" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-balaclava" data-cat="street">
-        <a class="ph" href="#p=bm-balaclava" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/balaclava.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 06</span><span class="tag">차량·외출</span></p>
-        <h3 class="name"><a href="#p=bm-balaclava">라세르 겨울 방한 기모 바라클라바</a></h3>
-        <p class="why">목부터 정수리까지 한 번에 감싸는 기모 바라클라바입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIEUEDeUua" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-anti-fog" data-cat="street">
-        <a class="ph" href="#p=bm-anti-fog" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/anti-fog.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 07</span><span class="tag">차량·외출</span></p>
-        <h3 class="name"><a href="#p=bm-anti-fog">소낙스 김서림 방지제 관리용품, 500ml, 1개</a></h3>
-        <p class="why">겨울 아침 차에 오르면 앞유리에 서리는 김을 줄여 주는 코팅제입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIE2GCK1TM" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-ice-scraper" data-cat="street">
-        <a class="ph" href="#p=bm-ice-scraper" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/ice-scraper.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 08</span><span class="tag">차량·외출</span></p>
-        <h3 class="name"><a href="#p=bm-ice-scraper">깔끔조아 스크래치 없는 회전형 길이조절 차량용 성에제거기, 1개</a></h3>
-        <p class="why">손이 닿지 않는 앞유리 가운데까지 밀어 내는 길이조절 스크래퍼입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIE47Fx8DY" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-k2-gloves" data-cat="street">
-        <a class="ph" href="#p=bm-k2-gloves" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/k2-gloves.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 09</span><span class="tag">차량·외출</span></p>
-        <h3 class="name"><a href="#p=bm-k2-gloves">K2 세이프티 히트플렉스 니트 장갑, 1세트, 블랙</a></h3>
-        <p class="why">자전거 손잡이나 버스 손잡이를 잡는 아침, 손끝이 시린 것을 덜어 주는 니트 장갑입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iJZgIrr1O0" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-frost-cover" data-cat="street">
-        <a class="ph" href="#p=bm-frost-cover" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/frost-cover.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 10</span><span class="tag">차량·외출</span></p>
-        <h3 class="name"><a href="#p=bm-frost-cover">카템 3중 차단 마그네틱 성에방지 커버, 전차종, 1세트</a></h3>
-        <p class="why">아침에 성에를 긁는 대신 밤에 덮어 두는 앞유리 커버입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iLFf9cx10m" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-heating-vest" data-cat="street">
-        <a class="ph" href="#p=bm-heating-vest" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/heating-vest.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 11</span><span class="tag">차량·외출</span></p>
-        <h3 class="name"><a href="#p=bm-heating-vest">에쉬울프 USB 발열조끼 스마트 온열조끼, DR013</a></h3>
-        <p class="why">보조배터리를 꽂으면 앞판과 뒷판이 데워지는 조끼입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iLFuzgsa9k" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-heated-boots" data-cat="street">
-        <a class="ph" href="#p=bm-heated-boots" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/heated-boots.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 12</span><span class="tag">차량·외출</span></p>
-        <h3 class="name"><a href="#p=bm-heated-boots">Mochae 발열 신발 USB충전 온열부츠 대용량 4000mAh 배터리 2개 3단계온도조절 물세탁가능 겨울 가정 사무실 야외, 화이트(260~265mm), NJB-01</a></h3>
-        <p class="why">신발 안쪽에서 열이 나는 부츠라, 아침 등원길처럼 서서 기다리는 시간에 발이 덜 시립니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iTWD6spgUC" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-    </div>
-  </section>
-
-  <section class="chapter" id="s-bed" data-cat="bed" aria-labelledby="h-bed">
-    <div class="chead">
-      <div>
-        <span class="chn">03</span>
-        <p class="chlabel">수요일 밤</p>
-        <h2 id="h-bed">보일러 틀까 말까</h2>
-      </div>
-      <div>
-        <p class="diary">보일러 틀까 말까로 남편이랑 또 실랑이했어. 가스비 고지서가 무서운 건 둘 다 똑같거든. 그래서 방 전체 말고 이불 속이랑 앉은 자리부터 데우기로 했어. 난방을 켜면 공기가 마르니까 가습기도 같이 봐 뒀어.</p>
-        <span class="chcount">물건 7가지</span>
-      </div>
-    </div>
-    <div class="grid">
-      <article class="card" data-id="g1113004411" data-cat="bed">
-        <a class="ph" href="#p=g1113004411" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-blanket.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 13</span><span class="tag">난방·이불</span></p>
-        <h3 class="name"><a href="#p=g1113004411">HanilMedical 탄소열선 고급 전기요 HL-D205(25), 북극곰, M</a></h3>
-        <p class="why">보일러 틀기 전에 이불 속부터 데우고 싶을 때</p>
-        <a class="buy" href="https://link.coupang.com/a/iCGTm4Ipcy" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-partition-heater" data-cat="bed">
-        <a class="ph" href="#p=bm-partition-heater" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/partition-heater.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 14</span><span class="tag">난방·이불</span></p>
-        <h3 class="name"><a href="#p=bm-partition-heater">홈플래닛 접이식 파티션 히터, D2401, 그레이</a></h3>
-        <p class="why">책상 아래로 시린 발목과 무릎만 따로 감싸 주는 접이식 발난로입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIEIHsSHfM" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-humidifier" data-cat="bed">
-        <a class="ph" href="#p=bm-humidifier" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/humidifier.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 15</span><span class="tag">난방·이불</span></p>
-        <h3 class="name"><a href="#p=bm-humidifier">홈플래닛 초음파 가습기 4L, RD210/화이트</a></h3>
-        <p class="why">난방으로 건조해진 방 공기에 물안개를 채우는 4L 초음파 가습기입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIE620JWfI" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-fleece-blanket" data-cat="bed">
-        <a class="ph" href="#p=bm-fleece-blanket" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/fleece-blanket.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 16</span><span class="tag">난방·이불</span></p>
-        <h3 class="name"><a href="#p=bm-fleece-blanket">더자리 마이블랭킷 극세사 담요</a></h3>
-        <p class="why">소파에 두고 무릎 덮기 좋은 극세사 담요입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIFk7hUsDs" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-electric-seat" data-cat="bed">
-        <a class="ph" href="#p=bm-electric-seat" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-seat.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 17</span><span class="tag">난방·이불</span></p>
-        <h3 class="name"><a href="#p=bm-electric-seat">HanilMedical 1인용 전기방석 HL-100(20), 네이비, 450 x 450 mm</a></h3>
-        <p class="why">소파나 의자에 앉아 있는 동안 엉덩이부터 따뜻하게 데우는 1인용 전기방석입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iJZa0xMjV6" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-radiator" data-cat="bed">
-        <a class="ph" href="#p=bm-radiator" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/radiator.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 18</span><span class="tag">난방·이불</span></p>
-        <h3 class="name"><a href="#p=bm-radiator">신일 컴팩트 라디에이터 5핀, SER-D5500KP</a></h3>
-        <p class="why">보일러를 켜기엔 아까운 날, 방 하나만 데우는 전기 라디에이터입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iJZvbm24om" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-heating-tent" data-cat="bed">
-        <a class="ph" href="#p=bm-heating-tent" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/heating-tent.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 19</span><span class="tag">난방·이불</span></p>
-        <h3 class="name"><a href="#p=bm-heating-tent">따수미 패브릭 난방텐트 3인용</a></h3>
-        <p class="why">침대 위에 씌워 방 하나만 덥히는 난방텐트입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNGssAUnfM" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-    </div>
-  </section>
-
-  <section class="chapter" id="s-soup" data-cat="soup" aria-labelledby="h-soup">
-    <div class="chead">
-      <div>
-        <span class="chn">04</span>
-        <p class="chlabel">목요일 저녁</p>
-        <h2 id="h-soup">결국 오늘도 어묵탕</h2>
-      </div>
-      <div>
-        <p class="diary">추운 날 저녁 메뉴가 고민되면 결국 어묵탕이야. 애들도 국물을 좋아해서 냄비가 금방 비어. 밥 먹고 나면 꼭 간식을 찾으니까, 냉동실에 넣어 둘 호빵이랑 붕어빵도 같이 찾아 뒀어.</p>
-        <span class="chcount">물건 5가지</span>
-      </div>
-    </div>
-    <div class="grid">
-      <article class="card" data-id="g1113004403" data-cat="soup">
-        <a class="ph" href="#p=g1113004403" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/fish-cake.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 20</span><span class="tag">간식·어묵</span></p>
-        <h3 class="name"><a href="#p=g1113004403">효성어묵 부산옛날어묵 종합 (냉동), 1kg, 1개</a></h3>
-        <p class="why">추운 밤엔 뜨끈한 어묵탕 한 그릇</p>
-        <a class="buy" href="https://link.coupang.com/a/iCGPZ9URPM" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-hoppang" data-cat="soup">
-        <a class="ph" href="#p=bm-hoppang" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/hoppang.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 21</span><span class="tag">간식·어묵</span></p>
-        <h3 class="name"><a href="#p=bm-hoppang">삼립 호빵 발효미종 단팥 + 피자, 97g, 12개입, 1세트</a></h3>
-        <p class="why">전자레인지나 찜기에 데워 겨울 저녁에 먹는 단팥, 야채 호빵입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIFbUN1Zwy" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-boongeoppang" data-cat="soup">
-        <a class="ph" href="#p=bm-boongeoppang" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/boongeoppang.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 22</span><span class="tag">간식·어묵</span></p>
-        <h3 class="name"><a href="#p=bm-boongeoppang">비비고 단팥붕어빵 (냉동), 300g, 1개</a></h3>
-        <p class="why">에어프라이어에 돌리면 겉은 바삭하고 속은 뜨거운 냉동 붕어빵입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIFdE5NoCO" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-hot-choco" data-cat="soup">
-        <a class="ph" href="#p=bm-hot-choco" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/hot-choco.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 23</span><span class="tag">간식·어묵</span></p>
-        <h3 class="name"><a href="#p=bm-hot-choco">미떼 핫초코 오리지날, 30g, 30개입, 1개</a></h3>
-        <p class="why">우유에 한 봉 풀면 되는 핫초코 30봉입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIFf8a2pjg" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-kimchi" data-cat="soup">
-        <a class="ph" href="#p=bm-kimchi" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/kimchi.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 24</span><span class="tag">간식·어묵</span></p>
-        <h3 class="name"><a href="#p=bm-kimchi">종가 포기김치, 2.3kg, 1개</a></h3>
-        <p class="why">김장을 직접 담그지 않는 집에서 겨울 내내 꺼내 먹기 좋은 포기김치입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iJZojEkCYe" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-    </div>
-  </section>
-
-  <section class="chapter" id="s-xmas" data-cat="xmas" aria-labelledby="h-xmas">
-    <div class="chead">
-      <div>
-        <span class="chn">05</span>
-        <p class="chlabel">금요일 오후</p>
-        <h2 id="h-xmas">엄마, 크리스마스 언제 와?</h2>
-      </div>
-      <div>
-        <p class="diary">애들이 크리스마스 언제 오냐고 매일 물어봐. 거실에 큰 트리를 놓으면 둘째가 장식을 다 뜯어 놓을 게 뻔해. 그래서 올해는 책상 위에 올려 두는 작은 것들로 찾아 뒀어.</p>
-        <span class="chcount">물건 4가지</span>
-      </div>
-    </div>
-    <div class="grid">
-      <article class="card" data-id="g1113010939" data-cat="xmas">
-        <a class="ph" href="#p=g1113010939" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/music-box.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 25</span><span class="tag">크리스마스</span></p>
-        <h3 class="name"><a href="#p=g1113010939">홀리해요 크리스마스 오르골 무드등 플랫 스노우볼, 산타</a></h3>
-        <p class="why">크리스마스 선물로 작은 소리 하나 건네고 싶을 때</p>
-        <a class="buy" href="https://link.coupang.com/a/iCIEE8o6uW" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-music-box-lamp" data-cat="xmas">
-        <a class="ph" href="#p=bm-music-box-lamp" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/music-box-lamp.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 26</span><span class="tag">크리스마스</span></p>
-        <h3 class="name"><a href="#p=bm-music-box-lamp">스네몬 오르골 오로라 무드등, 핑크화이트</a></h3>
-        <p class="why">오로라 빛이 돌아가며 방 천장까지 물들이는 오르골 무드등입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIFhNLDGpw" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-mini-tree" data-cat="xmas">
-        <a class="ph" href="#p=bm-mini-tree" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/mini-tree.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 27</span><span class="tag">크리스마스</span></p>
-        <h3 class="name"><a href="#p=bm-mini-tree">크리스마스 40cm 설레는 밤 완제 트리 풀세트 전구포함, 혼합색상</a></h3>
-        <p class="why">꾸미는 수고 없이 꺼내 세우면 모습이 갖춰지는 40cm 미니 트리입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIFjGOaEQC" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-advent-calendar" data-cat="xmas">
-        <a class="ph" href="#p=bm-advent-calendar" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/advent-calendar.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 28</span><span class="tag">크리스마스</span></p>
-        <h3 class="name"><a href="#p=bm-advent-calendar">오리온 크리스마스 어드벤트 캘린더 과자세트, 9종, 1세트</a></h3>
-        <p class="why">12월에 하루씩 열어 보는 크리스마스 달력입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNGrtQRPe8" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-    </div>
-  </section>
-
-  <section class="chapter" id="s-chores" data-cat="chores" aria-labelledby="h-chores">
-    <div class="chead">
-      <div>
-        <span class="chn">06</span>
-        <p class="chlabel">토요일 낮</p>
-        <h2 id="h-chores">미뤄 둔 살림이 한꺼번에</h2>
-      </div>
-      <div>
-        <p class="diary">추우니까 설거지도 욕실 청소도 자꾸 미루게 돼. 주말에 몰아서 하려고 보니 줄눈에 곰팡이가 올라와 있었어. 손이 덜 가게 거들어 줄 살림 물건들을 찾아 뒀어.</p>
-        <span class="chcount">물건 38가지</span>
-      </div>
-    </div>
-    <div class="grid">
-      <article class="card" data-id="bm-sink-splash" data-cat="chores">
-        <a class="ph" href="#p=bm-sink-splash" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/sink-splash.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 29</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-sink-splash">달팽이리빙 퀴진드마망 실리콘 씽크대 물막이, 크림화이트, 1개</a></h3>
-        <p class="why">설거지할 때 튀는 물이 옷과 바닥으로 가지 않게 세우는 실리콘 판입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIEWfbNl0e" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-oil-screen" data-cat="chores">
-        <a class="ph" href="#p=bm-oil-screen" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/oil-screen.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 30</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-oil-screen">시샘 연마제없는 스텐 다용도 기름방지망, 33cm, 1개</a></h3>
-        <p class="why">고기를 굽거나 튀길 때 튀는 기름을 막아 두는 스테인리스 망입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIEXV8gHw4" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-drain-filter" data-cat="chores">
-        <a class="ph" href="#p=bm-drain-filter" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/drain-filter.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 31</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-drain-filter">코멧 싱크대 배수구 거름망, 500개</a></h3>
-        <p class="why">배수구에 끼워 음식물 찌꺼기와 머리카락을 한 번에 걸러 내는 망입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIFajZuk5A" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-diatomite-mat" data-cat="chores">
-        <a class="ph" href="#p=bm-diatomite-mat" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/diatomite-mat.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 32</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-diatomite-mat">코멧 홈 빨아쓰는 규조토 발매트, 베이지 타원, 1개</a></h3>
-        <p class="why">욕실에서 나와 젖은 발을 한 번만 디디면 물기를 빨아들이는 발매트입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIE0nWcz24" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-mold-gel" data-cat="chores">
-        <a class="ph" href="#p=bm-mold-gel" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/mold-gel.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 33</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-mold-gel">홈스타 바르는 곰팡이 싹 세정제, 120ml, 2개</a></h3>
-        <p class="why">줄눈과 실리콘 틈에 발라 두면 문지르지 않아도 곰팡이가 들뜨는 젤형 세정제입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iIE8F8LqqO" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-electric-grill" data-cat="chores">
-        <a class="ph" href="#p=bm-electric-grill" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-grill.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 34</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-electric-grill">홈플래닛 반반 멀티 전기그릴(개별 온도 조절), AD-SK18</a></h3>
-        <p class="why">한쪽은 굽고 한쪽은 끓이는 반반 상판 전기그릴입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iLEWQmy5U4" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-fishbread-maker" data-cat="chores">
-        <a class="ph" href="#p=bm-fishbread-maker" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/fishbread-maker.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 35</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-fishbread-maker">위즈웰 간식 메이커 3종 세트 붕어빵 + 와플 + 샌드위치, WSW-6137</a></h3>
-        <p class="why">플레이트를 바꿔 끼우면 붕어빵, 와플, 샌드위치가 되는 전기 메이커입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iLE0sQqZEq" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-mini-dehumidifier" data-cat="chores">
-        <a class="ph" href="#p=bm-mini-dehumidifier" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/mini-dehumidifier.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 36</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-mini-dehumidifier">EXTEDRG 제습기 2.8L 강력제습 가정용 저소음 원룸 미니 제습기, D9</a></h3>
-        <p class="why">창틀에 물방울이 맺히는 날, 방 안 물을 물통으로 모으는 작은 제습기입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNjEeRx34C" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-dehumidifier-12l" data-cat="chores">
-        <a class="ph" href="#p=bm-dehumidifier-12l" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/dehumidifier-12l.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 37</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-dehumidifier-12l">롯데알미늄 제습기 12L, LDH-7000N</a></h3>
-        <p class="why">빨래를 널어 둔 방의 물을 하루 12L까지 빼내는 컴프레서 제습기입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNjUwx2rpA" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-winter-duvet" data-cat="chores">
-        <a class="ph" href="#p=bm-winter-duvet" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/winter-duvet.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 38</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-winter-duvet">코멧 홈 양면 극세사 솔리드 차렵이불</a></h3>
-        <p class="why">커버를 씌우지 않고 바로 덮는 겨울 극세사 차렵이불입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNjFeUXyNw" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-bathroom-heater" data-cat="chores">
-        <a class="ph" href="#p=bm-bathroom-heater" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/bathroom-heater.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 39</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-bathroom-heater">한경희생활과학 PTC 온풍기 욕실 난방기 스탠드 벽걸이 전기히터, HAAN-4000(블랙)</a></h3>
-        <p class="why">욕실 벽에 걸거나 세워 두고 샤워 전에 켜 두는 온풍기입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNkaGmHDW0" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-foot-spa" data-cat="chores">
-        <a class="ph" href="#p=bm-foot-spa" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/foot-spa.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 40</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-foot-spa">이노크아든 사파이어 스파 족욕기, FM-505, 화이트</a></h3>
-        <p class="why">물을 받아 온도를 맞춰 두는 습식 족욕기입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNjK48KKbs" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-neck-massager" data-cat="chores">
-        <a class="ph" href="#p=bm-neck-massager" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/neck-massager.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 41</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-neck-massager">제스파 플러스 목어깨 등 허리 마사지기, ZP187, 퍼플</a></h3>
-        <p class="why">목에 걸치고 기대서 쓰는 목, 어깨 마사지기입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNjJRe2DPU" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-filter-shower" data-cat="chores">
-        <a class="ph" href="#p=bm-filter-shower" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/filter-shower.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 42</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-filter-shower">코멧 홈 파워수압 필터 샤워기 본품 + 필터 2개입, 실버</a></h3>
-        <p class="why">헤드 안쪽 필터로 물을 한 번 거르는 샤워기입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNjGtwDojc" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-thermos-lunchbox" data-cat="chores">
-        <a class="ph" href="#p=bm-thermos-lunchbox" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/thermos-lunchbox.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 43</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-thermos-lunchbox">써모스 일체형 대용량 보온도시락 + 보온백 + 수저 세트, 샌드베이지, 1개</a></h3>
-        <p class="why">국물이나 반찬이 식지 않게 싸 가는 보온도시락입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNGqzfSzhA" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-baby-wipes" data-cat="chores">
-        <a class="ph" href="#p=bm-baby-wipes" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/baby-wipes.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 44</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-baby-wipes">코멧 오리지널 유아용 아기물티슈 캡형, 100매입</a></h3>
-        <p class="why">한 장씩 뽑아 쓰는 아기물티슈입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNGtoaNmy4" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-kids-balaclava" data-cat="chores">
-        <a class="ph" href="#p=bm-kids-balaclava" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/kids-balaclava.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 45</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-kids-balaclava">우드피카 유아용 패치 바라클라바 넥워머</a></h3>
-        <p class="why">목부터 머리까지 한 번에 덮는 아동용 넥워머입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNGukGGgi4" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-socks-5set" data-cat="chores">
-        <a class="ph" href="#p=bm-socks-5set" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/socks-5set.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 46</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-socks-5set">퍼니스코 여성 겨울 수면 양말 5종 SET</a></h3>
-        <p class="why">밤에 발이 시려 양말을 신고 자는 집에 두는 무압박 수면양말입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iO8Bl4KKOa" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-socks-4set" data-cat="chores">
-        <a class="ph" href="#p=bm-socks-4set" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/socks-4set.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 47</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-socks-4set">이지하임 4켤레 털빠짐없는 편안한 무압박 남녀공용 수면양말 세트</a></h3>
-        <p class="why">수면양말을 신고 나면 털이 묻어 나와 고민이던 집에 두는 네 켤레 세트입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iO8FgfqG8O" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-hotpack-attach" data-cat="chores">
-        <a class="ph" href="#p=bm-hotpack-attach" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/hotpack-attach.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 48</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-hotpack-attach">하루온 붙이는 핫팩 50g 10개입, 2개</a></h3>
-        <p class="why">옷 안쪽에 붙여 두면 손에 쥐지 않아도 등과 배가 따뜻한 핫팩입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iO8CicdLVc" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-dish-soap" data-cat="chores">
-        <a class="ph" href="#p=bm-dish-soap" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/dish-soap.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 49</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-dish-soap">순샘 구연산 자몽향 주방세제 리필, 1.4L, 3개</a></h3>
-        <p class="why">설거지할 때 기름이 잘 빠지지 않아 세제를 더 짜게 되는 집에 두는 리필입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iO8DtBKacu" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-drying-rack" data-cat="chores">
-        <a class="ph" href="#p=bm-drying-rack" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/drying-rack.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 50</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-drying-rack">코멧 홈 접이식 대형 빨래건조대, 그레이, 1개</a></h3>
-        <p class="why">겨울엔 밖에 못 널어 거실에 건조대를 펴 두게 되는 집에 두는 접이식 건조대입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iO8Eo2uBq0" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-dyson-airwrap" data-cat="chores">
-        <a class="ph" href="#p=bm-dyson-airwrap" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/dyson-airwrap.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 51</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-dyson-airwrap">다이슨 에어랩 id 멀티 스타일러 앤 드라이어, 161845-01, 블루 + 코퍼</a></h3>
-        <p class="why">겨울 외출 전에 머리를 말리고 모양까지 잡고 싶다는 말이 나올 때 눈에 들어오는 기계입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iO8Gt4yyfk" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-massage-chair" data-cat="chores">
-        <a class="ph" href="#p=bm-massage-chair" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/massage-chair.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 52</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-massage-chair">제스파 컴포르테 안마의자 + 전용 러그 방문설치, ZPC2034(안마의자), ZP540(러그), 퓨어화이트</a></h3>
-        <p class="why">퇴근하고 소파 대신 앉겠다고 하는 자리에 놓는 전신 안마의자입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iO8HqggG16" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-homstar-pink" data-cat="chores">
-        <a class="ph" href="#p=bm-homstar-pink" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/homstar-pink.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 53</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-homstar-pink">홈스타 핑크파워 욕실 찌든때 클리너, 750ml, 2개</a></h3>
-        <p class="why">욕실 타일과 줄눈의 찌든 때에 뿌려 두는 거품형 세정제입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iQCW1zM8US" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-shower-rod-shelf" data-cat="chores">
-        <a class="ph" href="#p=bm-shower-rod-shelf" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/shower-rod-shelf.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 54</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-shower-rod-shelf">물빠짐 샤워봉 거치 선반 + 보조캡 3종 + 방수테이프 세트, 화이트, 1세트</a></h3>
-        <p class="why">샤워봉에 걸어 물이 빠지는 자리에 두는 선반입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iQC1PH3waW" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-bathroom-shelf-set" data-cat="chores">
-        <a class="ph" href="#p=bm-bathroom-shelf-set" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/bathroom-shelf-set.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 55</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-bathroom-shelf-set">다용도 무타공 욕실 수납선반 6종 세트 일자형 드라이기 거치대 비누받침대 칫솔걸이, 화이트, 1세트</a></h3>
-        <p class="why">못을 쓰지 않고 붙이는 욕실 수납 6종 세트입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iQC5PCoQuq" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-kobukchip-sanghu" data-cat="chores">
-        <a class="ph" href="#p=bm-kobukchip-sanghu" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/kobukchip-sanghu.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 56</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-kobukchip-sanghu">오리온 꼬북칩 얼얼한 샹궈맛, 102g, 12개</a></h3>
-        <p class="why">편의점에서 한 봉씩 집어 오던 매운 과자를 열두 봉 한 번에 받는 구성입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iQESmpr2vQ" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-abc-choco-187" data-cat="chores">
-        <a class="ph" href="#p=bm-abc-choco-187" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/abc-choco-187.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 57</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-abc-choco-187">롯데웰푸드 ABC 초콜릿, 187g, 3개</a></h3>
-        <p class="why">마트에서 한 봉씩 사 오던 ABC 초콜릿을 세 봉 묶어 받는 구성입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iQEVKNmeo8" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-ediya-toffe-nut" data-cat="chores">
-        <a class="ph" href="#p=bm-ediya-toffe-nut" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/ediya-toffe-nut.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 58</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-ediya-toffe-nut">이디야 비니스트 토피넛 라떼분말, 20g, 30개입, 1개</a></h3>
-        <p class="why">코스트코에서 상자째 사 오던 토피넛 라떼 스틱을 서른 봉으로 받는 구성입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iQEYy7kS3E" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-led-thermo-clock" data-cat="chores">
-        <a class="ph" href="#p=bm-led-thermo-clock" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/led-thermo-clock.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 59</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-led-thermo-clock">샤오미 디지털 대화면 LCD 시계 온습도계(건전지포함), 화이트, 2개</a></h3>
-        <p class="why">원룸 책상 위에 두고 온도와 습도, 시각을 한 화면으로 보는 시계입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iShBc92TL2" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-slim-power-strip" data-cat="chores">
-        <a class="ph" href="#p=bm-slim-power-strip" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/slim-power-strip.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 60</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-slim-power-strip">필립스 고용량 멀티탭 3구 홈탭 납작멀티탭, 그레이 CHP1134G, 1개, 1.5m</a></h3>
-        <p class="why">소파 뒤나 책상 밑 좁은 틈에 밀어 넣는 납작 플러그 멀티탭입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iShJgZ75vU" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-dove-cream-bar" data-cat="chores">
-        <a class="ph" href="#p=bm-dove-cream-bar" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/dove-cream-bar.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 61</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-dove-cream-bar">도브 뷰티 크림바, 90g, 12개입</a></h3>
-        <p class="why">샤워할 때 한 개씩 꺼내 쓰는 도브 비누를 열두 개 묶어 받는 구성입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iShGQwqRzM" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-veg-spinner" data-cat="chores">
-        <a class="ph" href="#p=bm-veg-spinner" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/veg-spinner.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 62</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-veg-spinner">벨라쿠진 무연마제 올스텐 304 짤순이 파스타망, 1세트</a></h3>
-        <p class="why">데친 나물의 물을 손으로 짜지 않아도 되는 스테인리스 짤순이입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iShEQzGA68" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-thermal-pot" data-cat="chores">
-        <a class="ph" href="#p=bm-thermal-pot" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/thermal-pot.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 63</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-thermal-pot">키친아트 대용량 보온 티포트 1.8L, KAEP-8520</a></h3>
-        <p class="why">대추나 과일을 넣고 버튼만 누르면 차가 우러나고, 마실 만큼 따라내는 전기 티포트입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iTWvfu4RvE" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-silicone-container-s" data-cat="chores">
-        <a class="ph" href="#p=bm-silicone-container-s" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/silicone-container-set.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 64</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-silicone-container-s">실리샵 국산 플래티넘 실리콘 밀폐용기 세트 (3colors), 대형+중형+소형, 미들그레이, 1개</a></h3>
-        <p class="why">다이소에서 하나씩 사 모으던 실리콘 밀폐용기를 대, 중, 소 한 세트로 받는 구성입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iTWx799ftk" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-stain-tissue" data-cat="chores">
-        <a class="ph" href="#p=bm-stain-tissue" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/stain-tissue.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 65</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-stain-tissue">고릴라랩 의류 얼룩 클리너 쏙티슈 10매입, 혼합색상, 1개</a></h3>
-        <p class="why">외출 중 옷에 묻은 얼룩을 그 자리에서 닦아 내는 휴대용 얼룩 제거 티슈입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iTWA56cFZ6" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-music-frame-xmas" data-cat="chores">
-        <a class="ph" href="#p=bm-music-frame-xmas" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/music-frame-xmas.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 66</span><span class="tag">욕실·살림</span></p>
-        <h3 class="name"><a href="#p=bm-music-frame-xmas">노래나오는 냉장고자석 인테리어소품 크리스마스 선물 뮤직박스 액자 인스타히트, 세트 1 메인 + 9 자기테이프</a></h3>
-        <p class="why">냉장고 문에 붙여 두고 레코드판을 올리면 노래가 나오는 액자형 뮤직박스입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iTZsVkfR0K" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-    </div>
-  </section>
-
-  <section class="chapter" id="s-wow" data-cat="wow" aria-labelledby="h-wow">
-    <div class="chead">
-      <div>
-        <span class="chn">07</span>
-        <p class="chlabel">일요일 밤</p>
-        <h2 id="h-wow">남편의 장바구니</h2>
-      </div>
-      <div>
-        <p class="diary">애들을 재우고 나니 남편이 휴대폰을 내밀어. 캠핑 갈 때 쓴다는 팬히터, 가방에 들어간다는 드론, 거실 벽을 화면으로 쓴다는 프로젝터. 살 건 아니라는데 눈은 진심이야. 구경은 같이 했어.</p>
-        <span class="chcount">물건 6가지</span>
-      </div>
-    </div>
-    <div class="grid">
-      <article class="card" data-id="bm-tokyotomi-heater" data-cat="wow">
-        <a class="ph" href="#p=bm-tokyotomi-heater" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/tokyotomi-heater.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 67</span><span class="tag">남편 위시</span></p>
-        <h3 class="name"><a href="#p=bm-tokyotomi-heater">토요토미 팬히터 LC-L53 풀세트 (국내 정품 A/S 가능) 도요토미, BLACK</a></h3>
-        <p class="why">캠핑하는 사람들이 먼저 찾는 일본식 팬히터입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iJZycVPxSu" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-drone" data-cat="wow">
-        <a class="ph" href="#p=bm-drone" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/drone.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 68</span><span class="tag">남편 위시</span></p>
-        <h3 class="name"><a href="#p=bm-drone">DJI Neo 2 플라이 모어 콤보 드론, 혼합색상, 1세트</a></h3>
-        <p class="why">손바닥만 한 크기로 하늘 사진을 남기는 드론입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iJZCB6mDYq" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-premiere-projector" data-cat="wow">
-        <a class="ph" href="#p=bm-premiere-projector" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/premiere-projector.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 69</span><span class="tag">남편 위시</span></p>
-        <h3 class="name"><a href="#p=bm-premiere-projector">삼성전자 The Premiere 프로젝터 웜 화이트 254~330cm 방문설치, SP-LPDU9SAXXKR</a></h3>
-        <p class="why">벽에 붙여 두고 쓰는 삼성 초단초점 프로젝터입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iJZGHOUWlM" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-home-sauna" data-cat="wow">
-        <a class="ph" href="#p=bm-home-sauna" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/home-sauna.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 70</span><span class="tag">남편 위시</span></p>
-        <h3 class="name"><a href="#p=bm-home-sauna">[휴먼사우나] 로벤스 편백나무+히노끼 스톤찜질+좌훈+족욕찜질 원적외선 반신욕기, LPH-300</a></h3>
-        <p class="why">집에 들이는 1인용 반신욕기입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iLFmqwxj0C" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-snow-blower" data-cat="wow">
-        <a class="ph" href="#p=bm-snow-blower" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/snow-blower.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 71</span><span class="tag">남편 위시</span></p>
-        <h3 class="name"><a href="#p=bm-snow-blower">클라빈다 충전식 무선 전동 리튬 배터리 제설기 소형 다기능 휴대용 가정용 고출력 접이식, 1세트</a></h3>
-        <p class="why">눈이 온 날 아침, 삽 대신 미는 충전식 제설기입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iLF6x1Pvky" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-      <article class="card" data-id="bm-firewood-stove" data-cat="wow">
-        <a class="ph" href="#p=bm-firewood-stove" tabindex="-1" aria-hidden="true"><img src="https://myeongdang-jari.github.io/myeongdangjari/img/products/firewood-stove.jpg" alt="" loading="lazy" width="492" height="492"></a>
-        <p class="meta"><span class="no">No. 72</span><span class="tag">남편 위시</span></p>
-        <h3 class="name"><a href="#p=bm-firewood-stove">아웃도어웍스 화목난로, OW200</a></h3>
-        <p class="why">장작을 넣고 불을 보는 캠핑용 화목난로입니다</p>
-        <a class="buy" href="https://link.coupang.com/a/iNjIJWmvVk" target="_blank" rel="noopener noreferrer sponsored">쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>
-      </article>
-    </div>
-  </section>
-
-  <div class="empty" id="empty">
-    <p>찾는 물건이 없어요</p>
-    <small>다른 낱말로 찾아보시거나, 전체를 눌러 처음으로 돌아가세요.</small>
-    <button type="button" id="reset">전체 보기</button>
-  </div>
-</div>
-</main>
-<footer class="foot">
-  <div class="in">
-    <div>
-      <span class="fb"><span class="mk"></span>겨울 살림 마트</span>
-      <p>이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.<br>가격과 배송 조건은 판매처에서 바뀔 수 있어요.</p>
-    </div>
-    <div class="sig">살림하는 아줌마의 겨울 일기<br>VOL. 11 &middot; 2026</div>
-  </div>
-</footer>
-
-<div class="dv" id="dv" hidden role="dialog" aria-modal="true" aria-labelledby="dt">
-  <div class="dvi">
-    <div class="dtop">
-      <button id="bk" aria-label="뒤로">
-        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <span class="lb">겨울 살림 마트 &middot; <b id="dno"></b></span>
-    </div>
-    <div class="gal" id="gal"></div>
-    <div class="dbody">
-      <a class="ds" id="ds"></a>
-      <h1 id="dt"></h1>
-      <p class="lead" id="dh"></p>
-      <div id="pw"><h2>이런 물건이에요</h2><ul id="dp"></ul></div>
-      <p class="note">가격과 배송 조건은 쿠팡 상품 페이지에서 확인해 주세요. 판매처에서 바뀔 수 있어요.<br>이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
-      <div id="rw"><h2>같은 장에서 찾아 둔 물건</h2><div class="rel" id="rel"></div><p id="rmore"></p></div>
-    </div>
-    <div class="cta" id="cta" data-cp="쿠팡에서 보기" data-nv="네이버에서 보기"></div>
-  </div>
-</div>
-<script type="application/json" id="d">[{"id":"ref05","title":"에코와이드 끼우는 문풍지 창문 틈새막이 외풍 창틀 바람막이 L, 4개","s":"window","st":"1화 커튼이 혼자 흔들렸다","hook":"창문 쪽에서 찬 바람이 솔솔 들어오는 집이라면","pts":["접착제나 공구 없이 창틀 레일 홈에 끼우는 방식이라 이사 갈 때도 떼어 다시 쓸 수 있습니다.","네 개들이라 방마다 나눠 끼우기 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/wind-pack.jpg"],"link":"https://link.coupang.com/a/iCGEleYKcK","naver":""},{"id":"bm-bubble-wrap","title":"뽁순이 3중 뽁뽁이 단열에어캡, 1개","s":"window","st":"1화 커튼이 혼자 흔들렸다","hook":"창유리에 붙여 방 안 온기가 밖으로 빠져나가는 것을 줄이는 단열 시트입니다","pts":["3중 에어캡 구조가 공기층을 만들어 유리에서 오는 냉기를 덜어 줍니다.","물만 뿌려 붙이는 방식이라 뜯어낼 때도 자국이 남지 않습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/bubble-wrap.jpg"],"link":"https://link.coupang.com/a/iIEMwhrXoW","naver":""},{"id":"bm-door-curtain","title":"유미코 겨울 현관 자석 방풍커튼, 1개","s":"window","st":"1화 커튼이 혼자 흔들렸다","hook":"문을 여닫을 때마다 복도 한기가 밀려오는 현관에 두르는 자석 커튼입니다","pts":["가운데가 자석으로 붙어 사람이 지나가면 스스로 닫히고, 문틀에 벨크로로 걸어 못을 쓰지 않습니다.","안감이 두툼해 바람을 막아 줍니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/door-curtain.jpg"],"link":"https://link.coupang.com/a/iIEQEbGvW8","naver":""},{"id":"bm-weatherstrip","title":"코멧 국내생산 사계절 우레탄 문풍지 3M, 5개","s":"window","st":"1화 커튼이 혼자 흔들렸다","hook":"문과 창문 틈에 붙여 바람이 새는 자리를 막는 접착식 우레탄 폼입니다","pts":["말랑한 우레탄이라 울퉁불퉁한 틈에도 모양대로 밀착되고 계절 상관없이 쓸 수 있습니다.","3M씩 다섯 롤이라 문마다 나눠 붙이기 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/weatherstrip.jpg"],"link":"https://link.coupang.com/a/iIESNRkMGO","naver":""},{"id":"g1113004226","title":"하루온 군인핫팩 포켓용 대용량 핫팩 160g, 30개","s":"street","st":"2화 장갑을 껴도 손끝이 시리다","hook":"출근길에 손이 꽁꽁 어는 계절이 왔어요","pts":["160g 큰 사이즈라 온기가 오래갑니다.","30개입 한 상자라 아침에 하나씩 챙겨 나가기 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/hand-warmer.jpg"],"link":"https://link.coupang.com/a/iCGMOaYd52","naver":""},{"id":"bm-balaclava","title":"라세르 겨울 방한 기모 바라클라바","s":"street","st":"2화 장갑을 껴도 손끝이 시리다","hook":"목부터 정수리까지 한 번에 감싸는 기모 바라클라바입니다","pts":["얼굴 둘레에 기모 안감을 넣어 찬 바람이 목덜미로 들어오는 것을 줄입니다.","헬멧이나 모자 안에 같이 쓸 수 있는 두께입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/balaclava.jpg"],"link":"https://link.coupang.com/a/iIEUEDeUua","naver":""},{"id":"bm-anti-fog","title":"소낙스 김서림 방지제 관리용품, 500ml, 1개","s":"street","st":"2화 장갑을 껴도 손끝이 시리다","hook":"겨울 아침 차에 오르면 앞유리에 서리는 김을 줄여 주는 코팅제입니다","pts":["유리 안쪽에 뿌려 닦아 두면 수증기가 맺히는 자리가 줄어듭니다.","500ml라 한 겨울 내내 차 한 대에 쓰기 넉넉합니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/anti-fog.jpg"],"link":"https://link.coupang.com/a/iIE2GCK1TM","naver":""},{"id":"bm-ice-scraper","title":"깔끔조아 스크래치 없는 회전형 길이조절 차량용 성에제거기, 1개","s":"street","st":"2화 장갑을 껴도 손끝이 시리다","hook":"손이 닿지 않는 앞유리 가운데까지 밀어 내는 길이조절 스크래퍼입니다","pts":["손잡이 각도가 돌아가고 길이가 늘어나 차 높이에 맞춰 쓸 수 있습니다.","브러시가 함께 달려 눈과 성에를 한 번에 정리합니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/ice-scraper.jpg"],"link":"https://link.coupang.com/a/iIE47Fx8DY","naver":""},{"id":"bm-k2-gloves","title":"K2 세이프티 히트플렉스 니트 장갑, 1세트, 블랙","s":"street","st":"2화 장갑을 껴도 손끝이 시리다","hook":"자전거 손잡이나 버스 손잡이를 잡는 아침, 손끝이 시린 것을 덜어 주는 니트 장갑입니다","pts":["니트로 짠 장갑이라 손등에 닿는 감촉이 부드럽고, 두께가 두껍지 않아 가방이나 코트 주머니에 넣어 두기 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/k2-gloves.jpg"],"link":"https://link.coupang.com/a/iJZgIrr1O0","naver":""},{"id":"bm-frost-cover","title":"카템 3중 차단 마그네틱 성에방지 커버, 전차종, 1세트","s":"street","st":"2화 장갑을 껴도 손끝이 시리다","hook":"아침에 성에를 긁는 대신 밤에 덮어 두는 앞유리 커버입니다","pts":["자석과 문틈 고정 방식이라 덮어 두고 아침에 걷어 내면 됩니다.","사이드미러까지 함께 덮는 구성이라 유리에 앉은 성에를 밀어 내는 시간을 줄이는 쪽입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/frost-cover.jpg"],"link":"https://link.coupang.com/a/iLFf9cx10m","naver":""},{"id":"bm-heating-vest","title":"에쉬울프 USB 발열조끼 스마트 온열조끼, DR013","s":"street","st":"2화 장갑을 껴도 손끝이 시리다","hook":"보조배터리를 꽂으면 앞판과 뒷판이 데워지는 조끼입니다","pts":["패딩 안에 껴입거나 단독으로 입고 다닐 수 있는 두께입니다.","USB 연결 방식이라 쓰는 보조배터리 용량에 따라 사용 시간이 달라지고, KC 인증 표기가 있는지 확인해 두는 편이 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/heating-vest.jpg"],"link":"https://link.coupang.com/a/iLFuzgsa9k","naver":""},{"id":"bm-heated-boots","title":"Mochae 발열 신발 USB충전 온열부츠 대용량 4000mAh 배터리 2개 3단계온도조절 물세탁가능 겨울 가정 사무실 야외, 화이트(260~265mm), NJB-01","s":"street","st":"2화 장갑을 껴도 손끝이 시리다","hook":"신발 안쪽에서 열이 나는 부츠라, 아침 등원길처럼 서서 기다리는 시간에 발이 덜 시립니다","pts":["4000mAh 배터리 두 개가 함께 오고 3단계로 온도를 맞추는 충전식 온열부츠입니다.","물세탁이 되는 재질로 표기돼 있고, 집이나 사무실, 야외에서 신는 부츠형입니다.","화이트 260~265mm 사이즈로 나온 상품입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/heated-boots.jpg"],"link":"https://link.coupang.com/a/iTWD6spgUC","naver":""},{"id":"g1113004411","title":"HanilMedical 탄소열선 고급 전기요 HL-D205(25), 북극곰, M","s":"bed","st":"3화 보일러 틀까 말까","hook":"보일러 틀기 전에 이불 속부터 데우고 싶을 때","pts":["탄소 열선을 촘촘히 넣어 온도가 고르게 퍼지고, 켜 둔 지 오래되면 스스로 꺼집니다.","세탁이 되는 소재라 겨울이 끝난 뒤 손질도 간단합니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-blanket.jpg"],"link":"https://link.coupang.com/a/iCGTm4Ipcy","naver":""},{"id":"bm-partition-heater","title":"홈플래닛 접이식 파티션 히터, D2401, 그레이","s":"bed","st":"3화 보일러 틀까 말까","hook":"책상 아래로 시린 발목과 무릎만 따로 감싸 주는 접이식 발난로입니다","pts":["쓰지 않을 때는 접어 세워 둘 수 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/partition-heater.jpg"],"link":"https://link.coupang.com/a/iIEIHsSHfM","naver":""},{"id":"bm-humidifier","title":"홈플래닛 초음파 가습기 4L, RD210/화이트","s":"bed","st":"3화 보일러 틀까 말까","hook":"난방으로 건조해진 방 공기에 물안개를 채우는 4L 초음파 가습기입니다","pts":["물통을 위에서 열어 바로 채우고, 본체와 통이 분리돼 안쪽까지 씻을 수 있습니다.","통이 커서 물을 채우는 일이 잦지 않습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/humidifier.jpg"],"link":"https://link.coupang.com/a/iIE620JWfI","naver":""},{"id":"bm-fleece-blanket","title":"더자리 마이블랭킷 극세사 담요","s":"bed","st":"3화 보일러 틀까 말까","hook":"소파에 두고 무릎 덮기 좋은 극세사 담요입니다","pts":["촘촘한 극세사라 가볍고 부드럽습니다.","이불 위에 한 겹 더 덮거나 차에 두고 쓰기 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/fleece-blanket.jpg"],"link":"https://link.coupang.com/a/iIFk7hUsDs","naver":""},{"id":"bm-electric-seat","title":"HanilMedical 1인용 전기방석 HL-100(20), 네이비, 450 x 450 mm","s":"bed","st":"3화 보일러 틀까 말까","hook":"소파나 의자에 앉아 있는 동안 엉덩이부터 따뜻하게 데우는 1인용 전기방석입니다","pts":["전원을 넣으면 열선이 골고루 퍼지고, 쓰지 않을 때는 돌돌 말아 두면 됩니다.","등받이 의자나 소파 한쪽에 깔아 두기 좋은 크기입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-seat.jpg"],"link":"https://link.coupang.com/a/iJZa0xMjV6","naver":""},{"id":"bm-radiator","title":"신일 컴팩트 라디에이터 5핀, SER-D5500KP","s":"bed","st":"3화 보일러 틀까 말까","hook":"보일러를 켜기엔 아까운 날, 방 하나만 데우는 전기 라디에이터입니다","pts":["기름이 도는 방식이라 바람이 일지 않고 소리가 크지 않습니다.","바퀴가 달려 있어 방과 거실 사이를 옮겨 가며 쓸 수 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/radiator.jpg"],"link":"https://link.coupang.com/a/iJZvbm24om","naver":""},{"id":"bm-heating-tent","title":"따수미 패브릭 난방텐트 3인용","s":"bed","st":"3화 보일러 틀까 말까","hook":"침대 위에 씌워 방 하나만 덥히는 난방텐트입니다","pts":["지퍼로 여닫고 바닥이 없는 구조라 침대 위에 덮어 쓰는 방식입니다.","3인용(킹) 크기로 나온 제품입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/heating-tent.jpg"],"link":"https://link.coupang.com/a/iNGssAUnfM","naver":""},{"id":"g1113004403","title":"효성어묵 부산옛날어묵 종합 (냉동), 1kg, 1개","s":"soup","st":"4화 결국 오늘도 어묵탕","hook":"추운 밤엔 뜨끈한 어묵탕 한 그릇","pts":["사각, 봉, 야채 어묵이 섞여 있어 요리마다 골라 쓰기 좋습니다.","1kg이라 몇 번 나눠 먹을 양입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/fish-cake.jpg"],"link":"https://link.coupang.com/a/iCGPZ9URPM","naver":""},{"id":"bm-hoppang","title":"삼립 호빵 발효미종 단팥 + 피자, 97g, 12개입, 1세트","s":"soup","st":"4화 결국 오늘도 어묵탕","hook":"전자레인지나 찜기에 데워 겨울 저녁에 먹는 단팥, 야채 호빵입니다","pts":["단팥과 피자가 반씩 들어 있어 골라 먹기 좋습니다.","낱개 포장이라 먹을 만큼만 데우면 되고, 로켓프레시로 다음 날 새벽에 도착합니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/hoppang.jpg"],"link":"https://link.coupang.com/a/iIFbUN1Zwy","naver":""},{"id":"bm-boongeoppang","title":"비비고 단팥붕어빵 (냉동), 300g, 1개","s":"soup","st":"4화 결국 오늘도 어묵탕","hook":"에어프라이어에 돌리면 겉은 바삭하고 속은 뜨거운 냉동 붕어빵입니다","pts":["팬에 기름을 두르지 않고 에어프라이어로 데울 수 있습니다.","300g 한 봉이라 아이 간식으로 부담 없는 양입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/boongeoppang.jpg"],"link":"https://link.coupang.com/a/iIFdE5NoCO","naver":""},{"id":"bm-hot-choco","title":"미떼 핫초코 오리지날, 30g, 30개입, 1개","s":"soup","st":"4화 결국 오늘도 어묵탕","hook":"우유에 한 봉 풀면 되는 핫초코 30봉입니다","pts":["개별 포장이라 한 잔씩 뜯어 타면 됩니다.","사무실이나 아이 간식으로 두고 쓰기 좋은 구성입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/hot-choco.jpg"],"link":"https://link.coupang.com/a/iIFf8a2pjg","naver":""},{"id":"bm-kimchi","title":"종가 포기김치, 2.3kg, 1개","s":"soup","st":"4화 결국 오늘도 어묵탕","hook":"김장을 직접 담그지 않는 집에서 겨울 내내 꺼내 먹기 좋은 포기김치입니다","pts":["한 통으로 와서 김치통에 옮겨 담아 두면 됩니다.","국이나 찌개에 넣을 때도 한 포기씩 꺼내 쓰기 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/kimchi.jpg"],"link":"https://link.coupang.com/a/iJZojEkCYe","naver":""},{"id":"g1113010939","title":"홀리해요 크리스마스 오르골 무드등 플랫 스노우볼, 산타","s":"xmas","st":"5화 엄마, 크리스마스 언제 와?","hook":"크리스마스 선물로 작은 소리 하나 건네고 싶을 때","pts":["세워 두거나 들고 다닐 수 있는 형태라 선반과 식탁 어디에나 놓입니다.","불을 켜면 은은한 무드등으로도 쓸 수 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/music-box.jpg"],"link":"https://link.coupang.com/a/iCIEE8o6uW","naver":""},{"id":"bm-music-box-lamp","title":"스네몬 오르골 오로라 무드등, 핑크화이트","s":"xmas","st":"5화 엄마, 크리스마스 언제 와?","hook":"오로라 빛이 돌아가며 방 천장까지 물들이는 오르골 무드등입니다","pts":["음악이 나오는 오르골에 오로라 조명이 함께 들어 있어 아이 방 취침등으로도 쓸 수 있습니다.","밝기를 낮춰 잠들 때 켜 두기 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/music-box-lamp.jpg"],"link":"https://link.coupang.com/a/iIFhNLDGpw","naver":""},{"id":"bm-mini-tree","title":"크리스마스 40cm 설레는 밤 완제 트리 풀세트 전구포함, 혼합색상","s":"xmas","st":"5화 엄마, 크리스마스 언제 와?","hook":"꾸미는 수고 없이 꺼내 세우면 모습이 갖춰지는 40cm 미니 트리입니다","pts":["장식과 전구가 이미 달려 있어 처음 트리를 두는 집도 부담이 적습니다.","40cm라 원룸이나 아이 방 책상 위에도 놓입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/mini-tree.jpg"],"link":"https://link.coupang.com/a/iIFjGOaEQC","naver":""},{"id":"bm-advent-calendar","title":"오리온 크리스마스 어드벤트 캘린더 과자세트, 9종, 1세트","s":"xmas","st":"5화 엄마, 크리스마스 언제 와?","hook":"12월에 하루씩 열어 보는 크리스마스 달력입니다","pts":["과자 9종이 들어 있는 혼합 세트입니다.","상자 겉면에 작은 문들이 있어 12월에 하나씩 열어 보는 방식입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/advent-calendar.jpg"],"link":"https://link.coupang.com/a/iNGrtQRPe8","naver":""},{"id":"bm-sink-splash","title":"달팽이리빙 퀴진드마망 실리콘 씽크대 물막이, 크림화이트, 1개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"설거지할 때 튀는 물이 옷과 바닥으로 가지 않게 세우는 실리콘 판입니다","pts":["하단 흡착판으로 상판에 붙여 세우고, 말랑한 실리콘 재질이라 부딪혀도 소리가 나지 않습니다.","물때가 끼면 통째로 씻어 말리면 됩니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/sink-splash.jpg"],"link":"https://link.coupang.com/a/iIEWfbNl0e","naver":""},{"id":"bm-oil-screen","title":"시샘 연마제없는 스텐 다용도 기름방지망, 33cm, 1개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"고기를 굽거나 튀길 때 튀는 기름을 막아 두는 스테인리스 망입니다","pts":["촘촘한 망이라 김은 빠져나가고 기름은 막아 줍니다.","손잡이가 달려 있어 조리 중에도 집기 편합니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/oil-screen.jpg"],"link":"https://link.coupang.com/a/iIEXV8gHw4","naver":""},{"id":"bm-drain-filter","title":"코멧 싱크대 배수구 거름망, 500개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"배수구에 끼워 음식물 찌꺼기와 머리카락을 한 번에 걸러 내는 망입니다","pts":["한 장씩 끼워 쓰고 가득 차면 그대로 버리면 됩니다.","500장이라 몇 달은 다시 사러 가지 않아도 됩니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/drain-filter.jpg"],"link":"https://link.coupang.com/a/iIFajZuk5A","naver":""},{"id":"bm-diatomite-mat","title":"코멧 홈 빨아쓰는 규조토 발매트, 베이지 타원, 1개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"욕실에서 나와 젖은 발을 한 번만 디디면 물기를 빨아들이는 발매트입니다","pts":["규조토가 섞인 연질 소재라 돌처럼 단단하지 않고 발에 부드럽습니다.","빨아서 말릴 수 있어 눅눅한 냄새 걱정이 덜합니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/diatomite-mat.jpg"],"link":"https://link.coupang.com/a/iIE0nWcz24","naver":""},{"id":"bm-mold-gel","title":"홈스타 바르는 곰팡이 싹 세정제, 120ml, 2개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"줄눈과 실리콘 틈에 발라 두면 문지르지 않아도 곰팡이가 들뜨는 젤형 세정제입니다","pts":["흘러내리지 않는 젤이라 벽면에도 붙어 있습니다.","뾰족한 노즐로 좁은 틈에 바로 짜 넣을 수 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/mold-gel.jpg"],"link":"https://link.coupang.com/a/iIE8F8LqqO","naver":""},{"id":"bm-electric-grill","title":"홈플래닛 반반 멀티 전기그릴(개별 온도 조절), AD-SK18","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"한쪽은 굽고 한쪽은 끓이는 반반 상판 전기그릴입니다","pts":["좌우 온도를 따로 조절해 고기와 국물 요리를 같이 올려 둘 수 있습니다.","상판이 넓어 식탁 가운데에 두고 여러 명이 둘러앉기 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-grill.jpg"],"link":"https://link.coupang.com/a/iLEWQmy5U4","naver":""},{"id":"bm-fishbread-maker","title":"위즈웰 간식 메이커 3종 세트 붕어빵 + 와플 + 샌드위치, WSW-6137","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"플레이트를 바꿔 끼우면 붕어빵, 와플, 샌드위치가 되는 전기 메이커입니다","pts":["붕어빵틀과 와플판, 샌드위치판이 한 세트로 옵니다.","아이와 같이 반죽을 붓고 기다리는 겨울 방학 간식용입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/fishbread-maker.jpg"],"link":"https://link.coupang.com/a/iLE0sQqZEq","naver":""},{"id":"bm-mini-dehumidifier","title":"EXTEDRG 제습기 2.8L 강력제습 가정용 저소음 원룸 미니 제습기, D9","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"창틀에 물방울이 맺히는 날, 방 안 물을 물통으로 모으는 작은 제습기입니다","pts":["옷장이나 욕실처럼 좁은 자리에 두는 2.8L 소형입니다.","물통이 차면 표시가 뜨고, 습도가 내려가면 스스로 멈춥니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/mini-dehumidifier.jpg"],"link":"https://link.coupang.com/a/iNjEeRx34C","naver":""},{"id":"bm-dehumidifier-12l","title":"롯데알미늄 제습기 12L, LDH-7000N","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"빨래를 널어 둔 방의 물을 하루 12L까지 빼내는 컴프레서 제습기입니다","pts":["일일 제습량 12L, 사용면적 약 10평으로 표기된 모델입니다.","물통은 2L이고 연속배수 호스를 연결할 수 있어 물 비우는 일을 줄일 수 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/dehumidifier-12l.jpg"],"link":"https://link.coupang.com/a/iNjUwx2rpA","naver":""},{"id":"bm-winter-duvet","title":"코멧 홈 양면 극세사 솔리드 차렵이불","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"커버를 씌우지 않고 바로 덮는 겨울 극세사 차렵이불입니다","pts":["솜이 안에 누벼 있어 이불커버 없이 쓰고, 빨래도 한 장만 하면 됩니다.","앞뒤 색이 달라 뒤집어 덮을 수 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/winter-duvet.jpg"],"link":"https://link.coupang.com/a/iNjFeUXyNw","naver":""},{"id":"bm-bathroom-heater","title":"한경희생활과학 PTC 온풍기 욕실 난방기 스탠드 벽걸이 전기히터, HAAN-4000(블랙)","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"욕실 벽에 걸거나 세워 두고 샤워 전에 켜 두는 온풍기입니다","pts":["벽에 걸거나 세워 두는 겸용형이라 좁은 욕실에서 놓을 자리를 골라 쓸 수 있습니다.","물이 닿는 곳에 두는 제품이라 설치 위치와 전원은 설명서를 따라 확인해 두는 편이 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/bathroom-heater.jpg"],"link":"https://link.coupang.com/a/iNkaGmHDW0","naver":""},{"id":"bm-foot-spa","title":"이노크아든 사파이어 스파 족욕기, FM-505, 화이트","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"물을 받아 온도를 맞춰 두는 습식 족욕기입니다","pts":["온도를 정해 두면 맞춰 가열하고, 바닥에 지압 롤러와 거품 기능이 있습니다.","고정형이라 둘 자리와 콘센트 위치를 먼저 정하는 편이 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/foot-spa.jpg"],"link":"https://link.coupang.com/a/iNjK48KKbs","naver":""},{"id":"bm-neck-massager","title":"제스파 플러스 목어깨 등 허리 마사지기, ZP187, 퍼플","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"목에 걸치고 기대서 쓰는 목, 어깨 마사지기입니다","pts":["4개의 안마볼이 돌아가며 방향을 바꾸고, 온열을 함께 켤 수 있습니다.","15분이 지나면 스스로 꺼지고, 차량용 전원선이 함께 들어 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/neck-massager.jpg"],"link":"https://link.coupang.com/a/iNjJRe2DPU","naver":""},{"id":"bm-filter-shower","title":"코멧 홈 파워수압 필터 샤워기 본품 + 필터 2개입, 실버","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"헤드 안쪽 필터로 물을 한 번 거르는 샤워기입니다","pts":["본체와 필터 2개가 한 세트로 옵니다.","필터는 2~3개월 주기로 갈아 끼우고, 수압을 올려 주는 판이 들어 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/filter-shower.jpg"],"link":"https://link.coupang.com/a/iNjGtwDojc","naver":""},{"id":"bm-thermos-lunchbox","title":"써모스 일체형 대용량 보온도시락 + 보온백 + 수저 세트, 샌드베이지, 1개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"국물이나 반찬이 식지 않게 싸 가는 보온도시락입니다","pts":["1500ml를 네 단으로 나눠 담는 일체형이고 보온백과 수저가 같이 옵니다.","보냉도 되는 제품으로 표기돼 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/thermos-lunchbox.jpg"],"link":"https://link.coupang.com/a/iNGqzfSzhA","naver":""},{"id":"bm-baby-wipes","title":"코멧 오리지널 유아용 아기물티슈 캡형, 100매입","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"한 장씩 뽑아 쓰는 아기물티슈입니다","pts":["캡을 눌러 한 장씩 뽑는 캡형 100매입입니다.","상품평이 49만 개가 넘고 한 달에 10만 명 이상이 산 상품입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/baby-wipes.jpg"],"link":"https://link.coupang.com/a/iNGtoaNmy4","naver":""},{"id":"bm-kids-balaclava","title":"우드피카 유아용 패치 바라클라바 넥워머","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"목부터 머리까지 한 번에 덮는 아동용 넥워머입니다","pts":["단추로 여미는 아크릴 니트라 목도리처럼 풀리지 않습니다.","아동, 유아용으로 나온 제품입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/kids-balaclava.jpg"],"link":"https://link.coupang.com/a/iNGukGGgi4","naver":""},{"id":"bm-socks-5set","title":"퍼니스코 여성 겨울 수면 양말 5종 SET","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"밤에 발이 시려 양말을 신고 자는 집에 두는 무압박 수면양말입니다","pts":["밴딩을 세게 조이지 않아 신고 자도 발목에 자국이 덜 남습니다.","다섯 켤레가 한 세트라 빨아 가며 돌려 신기 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/socks-5set.jpg"],"link":"https://link.coupang.com/a/iO8Bl4KKOa","naver":""},{"id":"bm-socks-4set","title":"이지하임 4켤레 털빠짐없는 편안한 무압박 남녀공용 수면양말 세트","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"수면양말을 신고 나면 털이 묻어 나와 고민이던 집에 두는 네 켤레 세트입니다","pts":["상품명에 털 빠짐을 줄인 소재로 표기돼 있습니다.","남녀공용으로 나와 온 가족이 나눠 신을 수 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/socks-4set.jpg"],"link":"https://link.coupang.com/a/iO8FgfqG8O","naver":""},{"id":"bm-hotpack-attach","title":"하루온 붙이는 핫팩 50g 10개입, 2개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"옷 안쪽에 붙여 두면 손에 쥐지 않아도 등과 배가 따뜻한 핫팩입니다","pts":["10개입 봉지 두 개로 오는 구성입니다.","상품평이 5만 2천 개가 넘고, 최근 한 달 사이 7천 명 이상이 산 것으로 표시돼 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/hotpack-attach.jpg"],"link":"https://link.coupang.com/a/iO8CicdLVc","naver":""},{"id":"bm-dish-soap","title":"순샘 구연산 자몽향 주방세제 리필, 1.4L, 3개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"설거지할 때 기름이 잘 빠지지 않아 세제를 더 짜게 되는 집에 두는 리필입니다","pts":["1.4L 리필 세 통 구성입니다.","구연산이 들어간 자몽향 세제로 표기돼 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/dish-soap.jpg"],"link":"https://link.coupang.com/a/iO8DtBKacu","naver":""},{"id":"bm-drying-rack","title":"코멧 홈 접이식 대형 빨래건조대, 그레이, 1개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"겨울엔 밖에 못 널어 거실에 건조대를 펴 두게 되는 집에 두는 접이식 건조대입니다","pts":["쓰지 않을 때는 접어 세워 둘 수 있습니다.","상품평이 2만 2천 개가 넘는 상품입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/drying-rack.jpg"],"link":"https://link.coupang.com/a/iO8Eo2uBq0","naver":""},{"id":"bm-dyson-airwrap","title":"다이슨 에어랩 id 멀티 스타일러 앤 드라이어, 161845-01, 블루 + 코퍼","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"겨울 외출 전에 머리를 말리고 모양까지 잡고 싶다는 말이 나올 때 눈에 들어오는 기계입니다","pts":["본체와 여러 가지 헤드가 함께 오는 구성입니다.","머리를 말리는 일과 모양을 잡는 일을 한 자리에서 끝내는 쪽입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/dyson-airwrap.jpg"],"link":"https://link.coupang.com/a/iO8Gt4yyfk","naver":""},{"id":"bm-massage-chair","title":"제스파 컴포르테 안마의자 + 전용 러그 방문설치, ZPC2034(안마의자), ZP540(러그), 퓨어화이트","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"퇴근하고 소파 대신 앉겠다고 하는 자리에 놓는 전신 안마의자입니다","pts":["안마의자와 전용 러그가 함께 오고 방문 설치로 배송됩니다.","크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/massage-chair.jpg"],"link":"https://link.coupang.com/a/iO8HqggG16","naver":""},{"id":"bm-homstar-pink","title":"홈스타 핑크파워 욕실 찌든때 클리너, 750ml, 2개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"욕실 타일과 줄눈의 찌든 때에 뿌려 두는 거품형 세정제입니다","pts":["분사대가 달린 750ml 두 통 구성입니다.","거품을 붙여 두었다가 물로 헹구는 방식으로 쓰고, 욕실과 주방에 한 통씩 나눠 둘 수 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/homstar-pink.jpg"],"link":"https://link.coupang.com/a/iQCW1zM8US","naver":""},{"id":"bm-shower-rod-shelf","title":"물빠짐 샤워봉 거치 선반 + 보조캡 3종 + 방수테이프 세트, 화이트, 1세트","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"샤워봉에 걸어 물이 빠지는 자리에 두는 선반입니다","pts":["샤워봉에 걸어 고정하는 방식이라 타공 없이 설치합니다.","바닥이 물빠짐 구조라 샴푸병 밑에 물이 고이지 않고, 보조캡과 방수테이프가 함께 옵니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/shower-rod-shelf.jpg"],"link":"https://link.coupang.com/a/iQC1PH3waW","naver":""},{"id":"bm-bathroom-shelf-set","title":"다용도 무타공 욕실 수납선반 6종 세트 일자형 드라이기 거치대 비누받침대 칫솔걸이, 화이트, 1세트","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"못을 쓰지 않고 붙이는 욕실 수납 6종 세트입니다","pts":["일자형 선반과 비누받침, 칫솔걸이, 드라이기 거치대를 한 세트로 묶은 구성입니다.","물이 빠지는 구조라 세면대 옆에 두기 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/bathroom-shelf-set.jpg"],"link":"https://link.coupang.com/a/iQC5PCoQuq","naver":""},{"id":"bm-kobukchip-sanghu","title":"오리온 꼬북칩 얼얼한 샹궈맛, 102g, 12개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"편의점에서 한 봉씩 집어 오던 매운 과자를 열두 봉 한 번에 받는 구성입니다","pts":["샹궈 향과 얼얼한 매운맛이 도는 102g 봉입니다.","열두 봉이라 야식이나 간식으로 하나씩 꺼내 먹기 좋고, 편의점에 들러 낱봉으로 사 모으는 일이 줄어듭니다.","신상이라 상품평은 아직 적습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/kobukchip-sanghu.jpg"],"link":"https://link.coupang.com/a/iQESmpr2vQ","naver":""},{"id":"bm-abc-choco-187","title":"롯데웰푸드 ABC 초콜릿, 187g, 3개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"마트에서 한 봉씩 사 오던 ABC 초콜릿을 세 봉 묶어 받는 구성입니다","pts":["187g 봉지 세 개로 옵니다.","책상 서랍이나 가방에 나눠 두고 하나씩 꺼내 먹기 좋고, 로켓배송으로 다음 날 도착합니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/abc-choco-187.jpg"],"link":"https://link.coupang.com/a/iQEVKNmeo8","naver":""},{"id":"bm-ediya-toffe-nut","title":"이디야 비니스트 토피넛 라떼분말, 20g, 30개입, 1개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"코스트코에서 상자째 사 오던 토피넛 라떼 스틱을 서른 봉으로 받는 구성입니다","pts":["20g 스틱 30개입 한 상자입니다.","뜨거운 물에 한 봉 풀면 되고 상품평이 8천 개가 넘습니다.","코스트코에 가지 않아도 로켓배송으로 다음 날 도착합니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/ediya-toffe-nut.jpg"],"link":"https://link.coupang.com/a/iQEYy7kS3E","naver":""},{"id":"bm-led-thermo-clock","title":"샤오미 디지털 대화면 LCD 시계 온습도계(건전지포함), 화이트, 2개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"원룸 책상 위에 두고 온도와 습도, 시각을 한 화면으로 보는 시계입니다","pts":["숫자가 크게 뜨는 LCD 화면에 온도와 습도, 시각이 함께 나옵니다.","건전지가 들어 있어 콘센트 없이 두면 되고, 두 개라 방과 거실에 하나씩 나눠 둘 수 있습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/led-thermo-clock.jpg"],"link":"https://link.coupang.com/a/iShBc92TL2","naver":""},{"id":"bm-slim-power-strip","title":"필립스 고용량 멀티탭 3구 홈탭 납작멀티탭, 그레이 CHP1134G, 1개, 1.5m","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"소파 뒤나 책상 밑 좁은 틈에 밀어 넣는 납작 플러그 멀티탭입니다","pts":["플러그가 꺾여 있어 벽과 가구 사이 좁은 자리에도 들어갑니다.","3구에 선 길이 1.5m이고, 필립스 브랜드로 나온 제품입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/slim-power-strip.jpg"],"link":"https://link.coupang.com/a/iShJgZ75vU","naver":""},{"id":"bm-dove-cream-bar","title":"도브 뷰티 크림바, 90g, 12개입","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"샤워할 때 한 개씩 꺼내 쓰는 도브 비누를 열두 개 묶어 받는 구성입니다","pts":["90g 낱개 열두 개가 한 상자로 옵니다.","상품평이 7만 건을 넘고 최근 한 달 사이 만 명 이상이 산 것으로 표시된 상품입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/dove-cream-bar.jpg"],"link":"https://link.coupang.com/a/iShGQwqRzM","naver":""},{"id":"bm-veg-spinner","title":"벨라쿠진 무연마제 올스텐 304 짤순이 파스타망, 1세트","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"데친 나물의 물을 손으로 짜지 않아도 되는 스테인리스 짤순이입니다","pts":["바스켓에 데친 나물이나 불린 두부를 넣고 뚜껑을 눌러 물을 빼는 방식입니다.","파스타 삶은 물을 빼는 망으로도 쓰는 구성이고, 로켓배송으로 다음 날 도착합니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/veg-spinner.jpg"],"link":"https://link.coupang.com/a/iShEQzGA68","naver":""},{"id":"bm-thermal-pot","title":"키친아트 대용량 보온 티포트 1.8L, KAEP-8520","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"대추나 과일을 넣고 버튼만 누르면 차가 우러나고, 마실 만큼 따라내는 전기 티포트입니다","pts":["1.8L 유리 용기에 스테인리스 스트레이너가 들어 있는 전기 티포트입니다.","다이소 제품처럼 버튼으로 차를 내리지만 용량이 커서 식구가 여럿인 집이나 손님이 오는 날 한 번에 끓여 두기 좋습니다.","로켓배송 배지가 붙은 상품입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/thermal-pot.jpg"],"link":"https://link.coupang.com/a/iTWvfu4RvE","naver":""},{"id":"bm-silicone-container-s","title":"실리샵 국산 플래티넘 실리콘 밀폐용기 세트 (3colors), 대형+중형+소형, 미들그레이, 1개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"다이소에서 하나씩 사 모으던 실리콘 밀폐용기를 대, 중, 소 한 세트로 받는 구성입니다","pts":["국산 플래티넘 실리콘으로 만든 대형, 중형, 소형 세트입니다.","남은 반찬이나 밥을 소분해 담아 두는 용도로 쓰고, 세 가지 색상 중에 고를 수 있습니다.","낱개로 사 모으는 것과 달리 크기가 다른 세 개가 한 번에 옵니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/silicone-container-set.jpg"],"link":"https://link.coupang.com/a/iTWx799ftk","naver":""},{"id":"bm-stain-tissue","title":"고릴라랩 의류 얼룩 클리너 쏙티슈 10매입, 혼합색상, 1개","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"외출 중 옷에 묻은 얼룩을 그 자리에서 닦아 내는 휴대용 얼룩 제거 티슈입니다","pts":["한 장씩 개별 포장된 열 매가 한 상자로 옵니다.","가방에 넣어 다니다가 식사 중 튄 기름이나 커피 자국에 바로 쓰고, 세탁 전에 목깃이나 소매 얼룩에 먼저 문질러 두는 용도로도 씁니다.","로켓배송 배지가 붙은 상품입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/stain-tissue.jpg"],"link":"https://link.coupang.com/a/iTWA56cFZ6","naver":""},{"id":"bm-music-frame-xmas","title":"노래나오는 냉장고자석 인테리어소품 크리스마스 선물 뮤직박스 액자 인스타히트, 세트 1 메인 + 9 자기테이프","s":"chores","st":"6화 미뤄 둔 살림이 한꺼번에","hook":"냉장고 문에 붙여 두고 레코드판을 올리면 노래가 나오는 액자형 뮤직박스입니다","pts":["액자 본체 하나에 자기테이프 레코드판 9개가 한 세트로 옵니다.","레코드판을 액자에 대면 노래가 나오는 방식으로 상품평에 적혀 있고, USB-C로 충전해 씁니다.","크리스마스 S1~S5 디자인과 할로윈 테마 중에 고를 수 있으며, 해외직구로 12/11 도착 예정으로 표시됩니다.","단순 변심 반품에는 왕복 배송비가 따로 붙습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/music-frame-xmas.jpg"],"link":"https://link.coupang.com/a/iTZsVkfR0K","naver":""},{"id":"bm-tokyotomi-heater","title":"토요토미 팬히터 LC-L53 풀세트 (국내 정품 A/S 가능) 도요토미, BLACK","s":"wow","st":"7화 남편의 장바구니","hook":"캠핑하는 사람들이 먼저 찾는 일본식 팬히터입니다","pts":["기름을 넣고 쓰는 난로라 환기에 신경 써야 하고, 무게가 있어 한 번 자리를 잡으면 거실 한쪽에 두고 쓰게 됩니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/tokyotomi-heater.jpg"],"link":"https://link.coupang.com/a/iJZycVPxSu","naver":""},{"id":"bm-drone","title":"DJI Neo 2 플라이 모어 콤보 드론, 혼합색상, 1세트","s":"wow","st":"7화 남편의 장바구니","hook":"손바닥만 한 크기로 하늘 사진을 남기는 드론입니다","pts":["본체와 조종기, 배터리가 함께 오는 구성입니다.","겨울 여행에서 위에서 찍은 사진을 남기고 싶을 때 눈에 들어오는 세트입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/drone.jpg"],"link":"https://link.coupang.com/a/iJZCB6mDYq","naver":""},{"id":"bm-premiere-projector","title":"삼성전자 The Premiere 프로젝터 웜 화이트 254~330cm 방문설치, SP-LPDU9SAXXKR","s":"wow","st":"7화 남편의 장바구니","hook":"벽에 붙여 두고 쓰는 삼성 초단초점 프로젝터입니다","pts":["방문 설치로 배송되는 모델이라 자리를 잡아 주는 과정까지 포함되어 있습니다.","거실 벽 한 면을 화면으로 쓰고 싶을 때 비교해 볼 만한 상품입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/premiere-projector.jpg"],"link":"https://link.coupang.com/a/iJZGHOUWlM","naver":""},{"id":"bm-home-sauna","title":"[휴먼사우나] 로벤스 편백나무+히노끼 스톤찜질+좌훈+족욕찜질 원적외선 반신욕기, LPH-300","s":"wow","st":"7화 남편의 장바구니","hook":"집에 들이는 1인용 반신욕기입니다","pts":["크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/home-sauna.jpg"],"link":"https://link.coupang.com/a/iLFmqwxj0C","naver":""},{"id":"bm-snow-blower","title":"클라빈다 충전식 무선 전동 리튬 배터리 제설기 소형 다기능 휴대용 가정용 고출력 접이식, 1세트","s":"wow","st":"7화 남편의 장바구니","hook":"눈이 온 날 아침, 삽 대신 미는 충전식 제설기입니다","pts":["충전 배터리로 눈을 밀어 내는 소형 제설기입니다.","배터리 포함 여부와 날개 폭이 값을 가릅니다.","같은 검색에 손에 드는 송풍기형이 섞여 나오니 상품 구분을 확인해 보세요."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/snow-blower.jpg"],"link":"https://link.coupang.com/a/iLF6x1Pvky","naver":""},{"id":"bm-firewood-stove","title":"아웃도어웍스 화목난로, OW200","s":"wow","st":"7화 남편의 장바구니","hook":"장작을 넣고 불을 보는 캠핑용 화목난로입니다","pts":["연통과 함께 세팅하는 스테인리스 난로입니다."],"imgs":["https://myeongdang-jari.github.io/myeongdangjari/img/products/firewood-stove.jpg"],"link":"https://link.coupang.com/a/iNjIJWmvVk","naver":""}]</script>
+<div class="dv" id="dv" hidden role="dialog" aria-modal="true" aria-labelledby="dt"><div class="dvi">
+<div class="dtop"><button id="bk" aria-label="뒤로"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke="#17181c" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span>겨울 살림 마트</span></div>
+<div class="gal" id="gal"></div>
+<div class="dbody"><a class="ds" id="ds"></a><h1 id="dt"></h1><p class="lead" id="dh"></p>
+<div id="pw"><h2>이런 물건이에요</h2><ul id="dp"></ul></div>
+<p class="note">가격과 배송 조건은 쿠팡 상품 페이지에서 확인해 주세요. 판매처에서 바뀔 수 있어요.<br>이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+<div id="rw"><h2>같은 날 찾아 둔 물건</h2><div class="rel" id="rel"></div></div></div>
+<div class="cta" id="cta" data-cp="쿠팡에서 보기" data-nv="네이버에서 보기"></div>
+</div></div>
+<script type="application/json" id="d">[{"id": "ref05", "title": "에코와이드 끼우는 문풍지 창문 틈새막이 외풍 창틀 바람막이 L, 4개", "s": "window", "st": "1화 커튼이 혼자 흔들렸다", "hook": "창문 쪽에서 찬 바람이 솔솔 들어오는 집이라면", "pts": ["접착제나 공구 없이 창틀 레일 홈에 끼우는 방식이라 이사 갈 때도 떼어 다시 쓸 수 있습니다.", "네 개들이라 방마다 나눠 끼우기 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/wind-pack.jpg"], "link": "https://link.coupang.com/a/iCGEleYKcK", "naver": ""}, {"id": "bm-bubble-wrap", "title": "뽁순이 3중 뽁뽁이 단열에어캡, 1개", "s": "window", "st": "1화 커튼이 혼자 흔들렸다", "hook": "창유리에 붙여 방 안 온기가 밖으로 빠져나가는 것을 줄이는 단열 시트입니다", "pts": ["3중 에어캡 구조가 공기층을 만들어 유리에서 오는 냉기를 덜어 줍니다.", "물만 뿌려 붙이는 방식이라 뜯어낼 때도 자국이 남지 않습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/bubble-wrap.jpg"], "link": "https://link.coupang.com/a/iIEMwhrXoW", "naver": ""}, {"id": "bm-door-curtain", "title": "유미코 겨울 현관 자석 방풍커튼, 1개", "s": "window", "st": "1화 커튼이 혼자 흔들렸다", "hook": "문을 여닫을 때마다 복도 한기가 밀려오는 현관에 두르는 자석 커튼입니다", "pts": ["가운데가 자석으로 붙어 사람이 지나가면 스스로 닫히고, 문틀에 벨크로로 걸어 못을 쓰지 않습니다.", "안감이 두툼해 바람을 막아 줍니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/door-curtain.jpg"], "link": "https://link.coupang.com/a/iIEQEbGvW8", "naver": ""}, {"id": "bm-weatherstrip", "title": "코멧 국내생산 사계절 우레탄 문풍지 3M, 5개", "s": "window", "st": "1화 커튼이 혼자 흔들렸다", "hook": "문과 창문 틈에 붙여 바람이 새는 자리를 막는 접착식 우레탄 폼입니다", "pts": ["말랑한 우레탄이라 울퉁불퉁한 틈에도 모양대로 밀착되고 계절 상관없이 쓸 수 있습니다.", "3M씩 다섯 롤이라 문마다 나눠 붙이기 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/weatherstrip.jpg"], "link": "https://link.coupang.com/a/iIESNRkMGO", "naver": ""}, {"id": "g1113004226", "title": "하루온 군인핫팩 포켓용 대용량 핫팩 160g, 30개", "s": "street", "st": "2화 장갑을 껴도 손끝이 시리다", "hook": "출근길에 손이 꽁꽁 어는 계절이 왔어요", "pts": ["160g 큰 사이즈라 온기가 오래갑니다.", "30개입 한 상자라 아침에 하나씩 챙겨 나가기 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/hand-warmer.jpg"], "link": "https://link.coupang.com/a/iCGMOaYd52", "naver": ""}, {"id": "bm-balaclava", "title": "라세르 겨울 방한 기모 바라클라바", "s": "street", "st": "2화 장갑을 껴도 손끝이 시리다", "hook": "목부터 정수리까지 한 번에 감싸는 기모 바라클라바입니다", "pts": ["얼굴 둘레에 기모 안감을 넣어 찬 바람이 목덜미로 들어오는 것을 줄입니다.", "헬멧이나 모자 안에 같이 쓸 수 있는 두께입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/balaclava.jpg"], "link": "https://link.coupang.com/a/iIEUEDeUua", "naver": ""}, {"id": "bm-anti-fog", "title": "소낙스 김서림 방지제 관리용품, 500ml, 1개", "s": "street", "st": "2화 장갑을 껴도 손끝이 시리다", "hook": "겨울 아침 차에 오르면 앞유리에 서리는 김을 줄여 주는 코팅제입니다", "pts": ["유리 안쪽에 뿌려 닦아 두면 수증기가 맺히는 자리가 줄어듭니다.", "500ml라 한 겨울 내내 차 한 대에 쓰기 넉넉합니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/anti-fog.jpg"], "link": "https://link.coupang.com/a/iIE2GCK1TM", "naver": ""}, {"id": "bm-ice-scraper", "title": "깔끔조아 스크래치 없는 회전형 길이조절 차량용 성에제거기, 1개", "s": "street", "st": "2화 장갑을 껴도 손끝이 시리다", "hook": "손이 닿지 않는 앞유리 가운데까지 밀어 내는 길이조절 스크래퍼입니다", "pts": ["손잡이 각도가 돌아가고 길이가 늘어나 차 높이에 맞춰 쓸 수 있습니다.", "브러시가 함께 달려 눈과 성에를 한 번에 정리합니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/ice-scraper.jpg"], "link": "https://link.coupang.com/a/iIE47Fx8DY", "naver": ""}, {"id": "bm-k2-gloves", "title": "K2 세이프티 히트플렉스 니트 장갑, 1세트, 블랙", "s": "street", "st": "2화 장갑을 껴도 손끝이 시리다", "hook": "자전거 손잡이나 버스 손잡이를 잡는 아침, 손끝이 시린 것을 덜어 주는 니트 장갑입니다", "pts": ["니트로 짠 장갑이라 손등에 닿는 감촉이 부드럽고, 두께가 두껍지 않아 가방이나 코트 주머니에 넣어 두기 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/k2-gloves.jpg"], "link": "https://link.coupang.com/a/iJZgIrr1O0", "naver": ""}, {"id": "bm-frost-cover", "title": "카템 3중 차단 마그네틱 성에방지 커버, 전차종, 1세트", "s": "street", "st": "2화 장갑을 껴도 손끝이 시리다", "hook": "아침에 성에를 긁는 대신 밤에 덮어 두는 앞유리 커버입니다", "pts": ["자석과 문틈 고정 방식이라 덮어 두고 아침에 걷어 내면 됩니다.", "사이드미러까지 함께 덮는 구성이라 유리에 앉은 성에를 밀어 내는 시간을 줄이는 쪽입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/frost-cover.jpg"], "link": "https://link.coupang.com/a/iLFf9cx10m", "naver": ""}, {"id": "bm-heating-vest", "title": "에쉬울프 USB 발열조끼 스마트 온열조끼, DR013", "s": "street", "st": "2화 장갑을 껴도 손끝이 시리다", "hook": "보조배터리를 꽂으면 앞판과 뒷판이 데워지는 조끼입니다", "pts": ["패딩 안에 껴입거나 단독으로 입고 다닐 수 있는 두께입니다.", "USB 연결 방식이라 쓰는 보조배터리 용량에 따라 사용 시간이 달라지고, KC 인증 표기가 있는지 확인해 두는 편이 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/heating-vest.jpg"], "link": "https://link.coupang.com/a/iLFuzgsa9k", "naver": ""}, {"id": "bm-heated-boots", "title": "Mochae 발열 신발 USB충전 온열부츠 대용량 4000mAh 배터리 2개 3단계온도조절 물세탁가능 겨울 가정 사무실 야외, 화이트(260~265mm), NJB-01", "s": "street", "st": "2화 장갑을 껴도 손끝이 시리다", "hook": "신발 안쪽에서 열이 나는 부츠라, 아침 등원길처럼 서서 기다리는 시간에 발이 덜 시립니다", "pts": ["4000mAh 배터리 두 개가 함께 오고 3단계로 온도를 맞추는 충전식 온열부츠입니다.", "물세탁이 되는 재질로 표기돼 있고, 집이나 사무실, 야외에서 신는 부츠형입니다.", "화이트 260~265mm 사이즈로 나온 상품입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/heated-boots.jpg"], "link": "https://link.coupang.com/a/iTWD6spgUC", "naver": ""}, {"id": "g1113004411", "title": "HanilMedical 탄소열선 고급 전기요 HL-D205(25), 북극곰, M", "s": "bed", "st": "3화 보일러 틀까 말까", "hook": "보일러 틀기 전에 이불 속부터 데우고 싶을 때", "pts": ["탄소 열선을 촘촘히 넣어 온도가 고르게 퍼지고, 켜 둔 지 오래되면 스스로 꺼집니다.", "세탁이 되는 소재라 겨울이 끝난 뒤 손질도 간단합니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-blanket.jpg"], "link": "https://link.coupang.com/a/iCGTm4Ipcy", "naver": ""}, {"id": "bm-partition-heater", "title": "홈플래닛 접이식 파티션 히터, D2401, 그레이", "s": "bed", "st": "3화 보일러 틀까 말까", "hook": "책상 아래로 시린 발목과 무릎만 따로 감싸 주는 접이식 발난로입니다", "pts": ["쓰지 않을 때는 접어 세워 둘 수 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/partition-heater.jpg"], "link": "https://link.coupang.com/a/iIEIHsSHfM", "naver": ""}, {"id": "bm-humidifier", "title": "홈플래닛 초음파 가습기 4L, RD210/화이트", "s": "bed", "st": "3화 보일러 틀까 말까", "hook": "난방으로 건조해진 방 공기에 물안개를 채우는 4L 초음파 가습기입니다", "pts": ["물통을 위에서 열어 바로 채우고, 본체와 통이 분리돼 안쪽까지 씻을 수 있습니다.", "통이 커서 물을 채우는 일이 잦지 않습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/humidifier.jpg"], "link": "https://link.coupang.com/a/iIE620JWfI", "naver": ""}, {"id": "bm-fleece-blanket", "title": "더자리 마이블랭킷 극세사 담요", "s": "bed", "st": "3화 보일러 틀까 말까", "hook": "소파에 두고 무릎 덮기 좋은 극세사 담요입니다", "pts": ["촘촘한 극세사라 가볍고 부드럽습니다.", "이불 위에 한 겹 더 덮거나 차에 두고 쓰기 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/fleece-blanket.jpg"], "link": "https://link.coupang.com/a/iIFk7hUsDs", "naver": ""}, {"id": "bm-electric-seat", "title": "HanilMedical 1인용 전기방석 HL-100(20), 네이비, 450 x 450 mm", "s": "bed", "st": "3화 보일러 틀까 말까", "hook": "소파나 의자에 앉아 있는 동안 엉덩이부터 따뜻하게 데우는 1인용 전기방석입니다", "pts": ["전원을 넣으면 열선이 골고루 퍼지고, 쓰지 않을 때는 돌돌 말아 두면 됩니다.", "등받이 의자나 소파 한쪽에 깔아 두기 좋은 크기입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-seat.jpg"], "link": "https://link.coupang.com/a/iJZa0xMjV6", "naver": ""}, {"id": "bm-radiator", "title": "신일 컴팩트 라디에이터 5핀, SER-D5500KP", "s": "bed", "st": "3화 보일러 틀까 말까", "hook": "보일러를 켜기엔 아까운 날, 방 하나만 데우는 전기 라디에이터입니다", "pts": ["기름이 도는 방식이라 바람이 일지 않고 소리가 크지 않습니다.", "바퀴가 달려 있어 방과 거실 사이를 옮겨 가며 쓸 수 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/radiator.jpg"], "link": "https://link.coupang.com/a/iJZvbm24om", "naver": ""}, {"id": "bm-heating-tent", "title": "따수미 패브릭 난방텐트 3인용", "s": "bed", "st": "3화 보일러 틀까 말까", "hook": "침대 위에 씌워 방 하나만 덥히는 난방텐트입니다", "pts": ["지퍼로 여닫고 바닥이 없는 구조라 침대 위에 덮어 쓰는 방식입니다.", "3인용(킹) 크기로 나온 제품입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/heating-tent.jpg"], "link": "https://link.coupang.com/a/iNGssAUnfM", "naver": ""}, {"id": "g1113004403", "title": "효성어묵 부산옛날어묵 종합 (냉동), 1kg, 1개", "s": "soup", "st": "4화 결국 오늘도 어묵탕", "hook": "추운 밤엔 뜨끈한 어묵탕 한 그릇", "pts": ["사각, 봉, 야채 어묵이 섞여 있어 요리마다 골라 쓰기 좋습니다.", "1kg이라 몇 번 나눠 먹을 양입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/fish-cake.jpg"], "link": "https://link.coupang.com/a/iCGPZ9URPM", "naver": ""}, {"id": "bm-hoppang", "title": "삼립 호빵 발효미종 단팥 + 피자, 97g, 12개입, 1세트", "s": "soup", "st": "4화 결국 오늘도 어묵탕", "hook": "전자레인지나 찜기에 데워 겨울 저녁에 먹는 단팥, 야채 호빵입니다", "pts": ["단팥과 피자가 반씩 들어 있어 골라 먹기 좋습니다.", "낱개 포장이라 먹을 만큼만 데우면 되고, 로켓프레시로 다음 날 새벽에 도착합니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/hoppang.jpg"], "link": "https://link.coupang.com/a/iIFbUN1Zwy", "naver": ""}, {"id": "bm-boongeoppang", "title": "비비고 단팥붕어빵 (냉동), 300g, 1개", "s": "soup", "st": "4화 결국 오늘도 어묵탕", "hook": "에어프라이어에 돌리면 겉은 바삭하고 속은 뜨거운 냉동 붕어빵입니다", "pts": ["팬에 기름을 두르지 않고 에어프라이어로 데울 수 있습니다.", "300g 한 봉이라 아이 간식으로 부담 없는 양입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/boongeoppang.jpg"], "link": "https://link.coupang.com/a/iIFdE5NoCO", "naver": ""}, {"id": "bm-hot-choco", "title": "미떼 핫초코 오리지날, 30g, 30개입, 1개", "s": "soup", "st": "4화 결국 오늘도 어묵탕", "hook": "우유에 한 봉 풀면 되는 핫초코 30봉입니다", "pts": ["개별 포장이라 한 잔씩 뜯어 타면 됩니다.", "사무실이나 아이 간식으로 두고 쓰기 좋은 구성입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/hot-choco.jpg"], "link": "https://link.coupang.com/a/iIFf8a2pjg", "naver": ""}, {"id": "bm-kimchi", "title": "종가 포기김치, 2.3kg, 1개", "s": "soup", "st": "4화 결국 오늘도 어묵탕", "hook": "김장을 직접 담그지 않는 집에서 겨울 내내 꺼내 먹기 좋은 포기김치입니다", "pts": ["한 통으로 와서 김치통에 옮겨 담아 두면 됩니다.", "국이나 찌개에 넣을 때도 한 포기씩 꺼내 쓰기 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/kimchi.jpg"], "link": "https://link.coupang.com/a/iJZojEkCYe", "naver": ""}, {"id": "g1113010939", "title": "홀리해요 크리스마스 오르골 무드등 플랫 스노우볼, 산타", "s": "xmas", "st": "5화 엄마, 크리스마스 언제 와?", "hook": "크리스마스 선물로 작은 소리 하나 건네고 싶을 때", "pts": ["세워 두거나 들고 다닐 수 있는 형태라 선반과 식탁 어디에나 놓입니다.", "불을 켜면 은은한 무드등으로도 쓸 수 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/music-box.jpg"], "link": "https://link.coupang.com/a/iCIEE8o6uW", "naver": ""}, {"id": "bm-music-box-lamp", "title": "스네몬 오르골 오로라 무드등, 핑크화이트", "s": "xmas", "st": "5화 엄마, 크리스마스 언제 와?", "hook": "오로라 빛이 돌아가며 방 천장까지 물들이는 오르골 무드등입니다", "pts": ["음악이 나오는 오르골에 오로라 조명이 함께 들어 있어 아이 방 취침등으로도 쓸 수 있습니다.", "밝기를 낮춰 잠들 때 켜 두기 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/music-box-lamp.jpg"], "link": "https://link.coupang.com/a/iIFhNLDGpw", "naver": ""}, {"id": "bm-mini-tree", "title": "크리스마스 40cm 설레는 밤 완제 트리 풀세트 전구포함, 혼합색상", "s": "xmas", "st": "5화 엄마, 크리스마스 언제 와?", "hook": "꾸미는 수고 없이 꺼내 세우면 모습이 갖춰지는 40cm 미니 트리입니다", "pts": ["장식과 전구가 이미 달려 있어 처음 트리를 두는 집도 부담이 적습니다.", "40cm라 원룸이나 아이 방 책상 위에도 놓입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/mini-tree.jpg"], "link": "https://link.coupang.com/a/iIFjGOaEQC", "naver": ""}, {"id": "bm-advent-calendar", "title": "오리온 크리스마스 어드벤트 캘린더 과자세트, 9종, 1세트", "s": "xmas", "st": "5화 엄마, 크리스마스 언제 와?", "hook": "12월에 하루씩 열어 보는 크리스마스 달력입니다", "pts": ["과자 9종이 들어 있는 혼합 세트입니다.", "상자 겉면에 작은 문들이 있어 12월에 하나씩 열어 보는 방식입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/advent-calendar.jpg"], "link": "https://link.coupang.com/a/iNGrtQRPe8", "naver": ""}, {"id": "bm-sink-splash", "title": "달팽이리빙 퀴진드마망 실리콘 씽크대 물막이, 크림화이트, 1개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "설거지할 때 튀는 물이 옷과 바닥으로 가지 않게 세우는 실리콘 판입니다", "pts": ["하단 흡착판으로 상판에 붙여 세우고, 말랑한 실리콘 재질이라 부딪혀도 소리가 나지 않습니다.", "물때가 끼면 통째로 씻어 말리면 됩니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/sink-splash.jpg"], "link": "https://link.coupang.com/a/iIEWfbNl0e", "naver": ""}, {"id": "bm-oil-screen", "title": "시샘 연마제없는 스텐 다용도 기름방지망, 33cm, 1개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "고기를 굽거나 튀길 때 튀는 기름을 막아 두는 스테인리스 망입니다", "pts": ["촘촘한 망이라 김은 빠져나가고 기름은 막아 줍니다.", "손잡이가 달려 있어 조리 중에도 집기 편합니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/oil-screen.jpg"], "link": "https://link.coupang.com/a/iIEXV8gHw4", "naver": ""}, {"id": "bm-drain-filter", "title": "코멧 싱크대 배수구 거름망, 500개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "배수구에 끼워 음식물 찌꺼기와 머리카락을 한 번에 걸러 내는 망입니다", "pts": ["한 장씩 끼워 쓰고 가득 차면 그대로 버리면 됩니다.", "500장이라 몇 달은 다시 사러 가지 않아도 됩니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/drain-filter.jpg"], "link": "https://link.coupang.com/a/iIFajZuk5A", "naver": ""}, {"id": "bm-diatomite-mat", "title": "코멧 홈 빨아쓰는 규조토 발매트, 베이지 타원, 1개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "욕실에서 나와 젖은 발을 한 번만 디디면 물기를 빨아들이는 발매트입니다", "pts": ["규조토가 섞인 연질 소재라 돌처럼 단단하지 않고 발에 부드럽습니다.", "빨아서 말릴 수 있어 눅눅한 냄새 걱정이 덜합니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/diatomite-mat.jpg"], "link": "https://link.coupang.com/a/iIE0nWcz24", "naver": ""}, {"id": "bm-mold-gel", "title": "홈스타 바르는 곰팡이 싹 세정제, 120ml, 2개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "줄눈과 실리콘 틈에 발라 두면 문지르지 않아도 곰팡이가 들뜨는 젤형 세정제입니다", "pts": ["흘러내리지 않는 젤이라 벽면에도 붙어 있습니다.", "뾰족한 노즐로 좁은 틈에 바로 짜 넣을 수 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/mold-gel.jpg"], "link": "https://link.coupang.com/a/iIE8F8LqqO", "naver": ""}, {"id": "bm-electric-grill", "title": "홈플래닛 반반 멀티 전기그릴(개별 온도 조절), AD-SK18", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "한쪽은 굽고 한쪽은 끓이는 반반 상판 전기그릴입니다", "pts": ["좌우 온도를 따로 조절해 고기와 국물 요리를 같이 올려 둘 수 있습니다.", "상판이 넓어 식탁 가운데에 두고 여러 명이 둘러앉기 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/electric-grill.jpg"], "link": "https://link.coupang.com/a/iLEWQmy5U4", "naver": ""}, {"id": "bm-fishbread-maker", "title": "위즈웰 간식 메이커 3종 세트 붕어빵 + 와플 + 샌드위치, WSW-6137", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "플레이트를 바꿔 끼우면 붕어빵, 와플, 샌드위치가 되는 전기 메이커입니다", "pts": ["붕어빵틀과 와플판, 샌드위치판이 한 세트로 옵니다.", "아이와 같이 반죽을 붓고 기다리는 겨울 방학 간식용입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/fishbread-maker.jpg"], "link": "https://link.coupang.com/a/iLE0sQqZEq", "naver": ""}, {"id": "bm-mini-dehumidifier", "title": "EXTEDRG 제습기 2.8L 강력제습 가정용 저소음 원룸 미니 제습기, D9", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "창틀에 물방울이 맺히는 날, 방 안 물을 물통으로 모으는 작은 제습기입니다", "pts": ["옷장이나 욕실처럼 좁은 자리에 두는 2.8L 소형입니다.", "물통이 차면 표시가 뜨고, 습도가 내려가면 스스로 멈춥니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/mini-dehumidifier.jpg"], "link": "https://link.coupang.com/a/iNjEeRx34C", "naver": ""}, {"id": "bm-dehumidifier-12l", "title": "롯데알미늄 제습기 12L, LDH-7000N", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "빨래를 널어 둔 방의 물을 하루 12L까지 빼내는 컴프레서 제습기입니다", "pts": ["일일 제습량 12L, 사용면적 약 10평으로 표기된 모델입니다.", "물통은 2L이고 연속배수 호스를 연결할 수 있어 물 비우는 일을 줄일 수 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/dehumidifier-12l.jpg"], "link": "https://link.coupang.com/a/iNjUwx2rpA", "naver": ""}, {"id": "bm-winter-duvet", "title": "코멧 홈 양면 극세사 솔리드 차렵이불", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "커버를 씌우지 않고 바로 덮는 겨울 극세사 차렵이불입니다", "pts": ["솜이 안에 누벼 있어 이불커버 없이 쓰고, 빨래도 한 장만 하면 됩니다.", "앞뒤 색이 달라 뒤집어 덮을 수 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/winter-duvet.jpg"], "link": "https://link.coupang.com/a/iNjFeUXyNw", "naver": ""}, {"id": "bm-bathroom-heater", "title": "한경희생활과학 PTC 온풍기 욕실 난방기 스탠드 벽걸이 전기히터, HAAN-4000(블랙)", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "욕실 벽에 걸거나 세워 두고 샤워 전에 켜 두는 온풍기입니다", "pts": ["벽에 걸거나 세워 두는 겸용형이라 좁은 욕실에서 놓을 자리를 골라 쓸 수 있습니다.", "물이 닿는 곳에 두는 제품이라 설치 위치와 전원은 설명서를 따라 확인해 두는 편이 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/bathroom-heater.jpg"], "link": "https://link.coupang.com/a/iNkaGmHDW0", "naver": ""}, {"id": "bm-foot-spa", "title": "이노크아든 사파이어 스파 족욕기, FM-505, 화이트", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "물을 받아 온도를 맞춰 두는 습식 족욕기입니다", "pts": ["온도를 정해 두면 맞춰 가열하고, 바닥에 지압 롤러와 거품 기능이 있습니다.", "고정형이라 둘 자리와 콘센트 위치를 먼저 정하는 편이 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/foot-spa.jpg"], "link": "https://link.coupang.com/a/iNjK48KKbs", "naver": ""}, {"id": "bm-neck-massager", "title": "제스파 플러스 목어깨 등 허리 마사지기, ZP187, 퍼플", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "목에 걸치고 기대서 쓰는 목, 어깨 마사지기입니다", "pts": ["4개의 안마볼이 돌아가며 방향을 바꾸고, 온열을 함께 켤 수 있습니다.", "15분이 지나면 스스로 꺼지고, 차량용 전원선이 함께 들어 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/neck-massager.jpg"], "link": "https://link.coupang.com/a/iNjJRe2DPU", "naver": ""}, {"id": "bm-filter-shower", "title": "코멧 홈 파워수압 필터 샤워기 본품 + 필터 2개입, 실버", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "헤드 안쪽 필터로 물을 한 번 거르는 샤워기입니다", "pts": ["본체와 필터 2개가 한 세트로 옵니다.", "필터는 2~3개월 주기로 갈아 끼우고, 수압을 올려 주는 판이 들어 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/filter-shower.jpg"], "link": "https://link.coupang.com/a/iNjGtwDojc", "naver": ""}, {"id": "bm-thermos-lunchbox", "title": "써모스 일체형 대용량 보온도시락 + 보온백 + 수저 세트, 샌드베이지, 1개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "국물이나 반찬이 식지 않게 싸 가는 보온도시락입니다", "pts": ["1500ml를 네 단으로 나눠 담는 일체형이고 보온백과 수저가 같이 옵니다.", "보냉도 되는 제품으로 표기돼 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/thermos-lunchbox.jpg"], "link": "https://link.coupang.com/a/iNGqzfSzhA", "naver": ""}, {"id": "bm-baby-wipes", "title": "코멧 오리지널 유아용 아기물티슈 캡형, 100매입", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "한 장씩 뽑아 쓰는 아기물티슈입니다", "pts": ["캡을 눌러 한 장씩 뽑는 캡형 100매입입니다.", "상품평이 49만 개가 넘고 한 달에 10만 명 이상이 산 상품입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/baby-wipes.jpg"], "link": "https://link.coupang.com/a/iNGtoaNmy4", "naver": ""}, {"id": "bm-kids-balaclava", "title": "우드피카 유아용 패치 바라클라바 넥워머", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "목부터 머리까지 한 번에 덮는 아동용 넥워머입니다", "pts": ["단추로 여미는 아크릴 니트라 목도리처럼 풀리지 않습니다.", "아동, 유아용으로 나온 제품입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/kids-balaclava.jpg"], "link": "https://link.coupang.com/a/iNGukGGgi4", "naver": ""}, {"id": "bm-socks-5set", "title": "퍼니스코 여성 겨울 수면 양말 5종 SET", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "밤에 발이 시려 양말을 신고 자는 집에 두는 무압박 수면양말입니다", "pts": ["밴딩을 세게 조이지 않아 신고 자도 발목에 자국이 덜 남습니다.", "다섯 켤레가 한 세트라 빨아 가며 돌려 신기 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/socks-5set.jpg"], "link": "https://link.coupang.com/a/iO8Bl4KKOa", "naver": ""}, {"id": "bm-socks-4set", "title": "이지하임 4켤레 털빠짐없는 편안한 무압박 남녀공용 수면양말 세트", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "수면양말을 신고 나면 털이 묻어 나와 고민이던 집에 두는 네 켤레 세트입니다", "pts": ["상품명에 털 빠짐을 줄인 소재로 표기돼 있습니다.", "남녀공용으로 나와 온 가족이 나눠 신을 수 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/socks-4set.jpg"], "link": "https://link.coupang.com/a/iO8FgfqG8O", "naver": ""}, {"id": "bm-hotpack-attach", "title": "하루온 붙이는 핫팩 50g 10개입, 2개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "옷 안쪽에 붙여 두면 손에 쥐지 않아도 등과 배가 따뜻한 핫팩입니다", "pts": ["10개입 봉지 두 개로 오는 구성입니다.", "상품평이 5만 2천 개가 넘고, 최근 한 달 사이 7천 명 이상이 산 것으로 표시돼 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/hotpack-attach.jpg"], "link": "https://link.coupang.com/a/iO8CicdLVc", "naver": ""}, {"id": "bm-dish-soap", "title": "순샘 구연산 자몽향 주방세제 리필, 1.4L, 3개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "설거지할 때 기름이 잘 빠지지 않아 세제를 더 짜게 되는 집에 두는 리필입니다", "pts": ["1.4L 리필 세 통 구성입니다.", "구연산이 들어간 자몽향 세제로 표기돼 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/dish-soap.jpg"], "link": "https://link.coupang.com/a/iO8DtBKacu", "naver": ""}, {"id": "bm-drying-rack", "title": "코멧 홈 접이식 대형 빨래건조대, 그레이, 1개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "겨울엔 밖에 못 널어 거실에 건조대를 펴 두게 되는 집에 두는 접이식 건조대입니다", "pts": ["쓰지 않을 때는 접어 세워 둘 수 있습니다.", "상품평이 2만 2천 개가 넘는 상품입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/drying-rack.jpg"], "link": "https://link.coupang.com/a/iO8Eo2uBq0", "naver": ""}, {"id": "bm-dyson-airwrap", "title": "다이슨 에어랩 id 멀티 스타일러 앤 드라이어, 161845-01, 블루 + 코퍼", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "겨울 외출 전에 머리를 말리고 모양까지 잡고 싶다는 말이 나올 때 눈에 들어오는 기계입니다", "pts": ["본체와 여러 가지 헤드가 함께 오는 구성입니다.", "머리를 말리는 일과 모양을 잡는 일을 한 자리에서 끝내는 쪽입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/dyson-airwrap.jpg"], "link": "https://link.coupang.com/a/iO8Gt4yyfk", "naver": ""}, {"id": "bm-massage-chair", "title": "제스파 컴포르테 안마의자 + 전용 러그 방문설치, ZPC2034(안마의자), ZP540(러그), 퓨어화이트", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "퇴근하고 소파 대신 앉겠다고 하는 자리에 놓는 전신 안마의자입니다", "pts": ["안마의자와 전용 러그가 함께 오고 방문 설치로 배송됩니다.", "크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/massage-chair.jpg"], "link": "https://link.coupang.com/a/iO8HqggG16", "naver": ""}, {"id": "bm-homstar-pink", "title": "홈스타 핑크파워 욕실 찌든때 클리너, 750ml, 2개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "욕실 타일과 줄눈의 찌든 때에 뿌려 두는 거품형 세정제입니다", "pts": ["분사대가 달린 750ml 두 통 구성입니다.", "거품을 붙여 두었다가 물로 헹구는 방식으로 쓰고, 욕실과 주방에 한 통씩 나눠 둘 수 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/homstar-pink.jpg"], "link": "https://link.coupang.com/a/iQCW1zM8US", "naver": ""}, {"id": "bm-shower-rod-shelf", "title": "물빠짐 샤워봉 거치 선반 + 보조캡 3종 + 방수테이프 세트, 화이트, 1세트", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "샤워봉에 걸어 물이 빠지는 자리에 두는 선반입니다", "pts": ["샤워봉에 걸어 고정하는 방식이라 타공 없이 설치합니다.", "바닥이 물빠짐 구조라 샴푸병 밑에 물이 고이지 않고, 보조캡과 방수테이프가 함께 옵니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/shower-rod-shelf.jpg"], "link": "https://link.coupang.com/a/iQC1PH3waW", "naver": ""}, {"id": "bm-bathroom-shelf-set", "title": "다용도 무타공 욕실 수납선반 6종 세트 일자형 드라이기 거치대 비누받침대 칫솔걸이, 화이트, 1세트", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "못을 쓰지 않고 붙이는 욕실 수납 6종 세트입니다", "pts": ["일자형 선반과 비누받침, 칫솔걸이, 드라이기 거치대를 한 세트로 묶은 구성입니다.", "물이 빠지는 구조라 세면대 옆에 두기 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/bathroom-shelf-set.jpg"], "link": "https://link.coupang.com/a/iQC5PCoQuq", "naver": ""}, {"id": "bm-kobukchip-sanghu", "title": "오리온 꼬북칩 얼얼한 샹궈맛, 102g, 12개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "편의점에서 한 봉씩 집어 오던 매운 과자를 열두 봉 한 번에 받는 구성입니다", "pts": ["샹궈 향과 얼얼한 매운맛이 도는 102g 봉입니다.", "열두 봉이라 야식이나 간식으로 하나씩 꺼내 먹기 좋고, 편의점에 들러 낱봉으로 사 모으는 일이 줄어듭니다.", "신상이라 상품평은 아직 적습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/kobukchip-sanghu.jpg"], "link": "https://link.coupang.com/a/iQESmpr2vQ", "naver": ""}, {"id": "bm-abc-choco-187", "title": "롯데웰푸드 ABC 초콜릿, 187g, 3개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "마트에서 한 봉씩 사 오던 ABC 초콜릿을 세 봉 묶어 받는 구성입니다", "pts": ["187g 봉지 세 개로 옵니다.", "책상 서랍이나 가방에 나눠 두고 하나씩 꺼내 먹기 좋고, 로켓배송으로 다음 날 도착합니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/abc-choco-187.jpg"], "link": "https://link.coupang.com/a/iQEVKNmeo8", "naver": ""}, {"id": "bm-ediya-toffe-nut", "title": "이디야 비니스트 토피넛 라떼분말, 20g, 30개입, 1개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "코스트코에서 상자째 사 오던 토피넛 라떼 스틱을 서른 봉으로 받는 구성입니다", "pts": ["20g 스틱 30개입 한 상자입니다.", "뜨거운 물에 한 봉 풀면 되고 상품평이 8천 개가 넘습니다.", "코스트코에 가지 않아도 로켓배송으로 다음 날 도착합니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/ediya-toffe-nut.jpg"], "link": "https://link.coupang.com/a/iQEYy7kS3E", "naver": ""}, {"id": "bm-led-thermo-clock", "title": "샤오미 디지털 대화면 LCD 시계 온습도계(건전지포함), 화이트, 2개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "원룸 책상 위에 두고 온도와 습도, 시각을 한 화면으로 보는 시계입니다", "pts": ["숫자가 크게 뜨는 LCD 화면에 온도와 습도, 시각이 함께 나옵니다.", "건전지가 들어 있어 콘센트 없이 두면 되고, 두 개라 방과 거실에 하나씩 나눠 둘 수 있습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/led-thermo-clock.jpg"], "link": "https://link.coupang.com/a/iShBc92TL2", "naver": ""}, {"id": "bm-slim-power-strip", "title": "필립스 고용량 멀티탭 3구 홈탭 납작멀티탭, 그레이 CHP1134G, 1개, 1.5m", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "소파 뒤나 책상 밑 좁은 틈에 밀어 넣는 납작 플러그 멀티탭입니다", "pts": ["플러그가 꺾여 있어 벽과 가구 사이 좁은 자리에도 들어갑니다.", "3구에 선 길이 1.5m이고, 필립스 브랜드로 나온 제품입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/slim-power-strip.jpg"], "link": "https://link.coupang.com/a/iShJgZ75vU", "naver": ""}, {"id": "bm-dove-cream-bar", "title": "도브 뷰티 크림바, 90g, 12개입", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "샤워할 때 한 개씩 꺼내 쓰는 도브 비누를 열두 개 묶어 받는 구성입니다", "pts": ["90g 낱개 열두 개가 한 상자로 옵니다.", "상품평이 7만 건을 넘고 최근 한 달 사이 만 명 이상이 산 것으로 표시된 상품입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/dove-cream-bar.jpg"], "link": "https://link.coupang.com/a/iShGQwqRzM", "naver": ""}, {"id": "bm-veg-spinner", "title": "벨라쿠진 무연마제 올스텐 304 짤순이 파스타망, 1세트", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "데친 나물의 물을 손으로 짜지 않아도 되는 스테인리스 짤순이입니다", "pts": ["바스켓에 데친 나물이나 불린 두부를 넣고 뚜껑을 눌러 물을 빼는 방식입니다.", "파스타 삶은 물을 빼는 망으로도 쓰는 구성이고, 로켓배송으로 다음 날 도착합니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/veg-spinner.jpg"], "link": "https://link.coupang.com/a/iShEQzGA68", "naver": ""}, {"id": "bm-thermal-pot", "title": "키친아트 대용량 보온 티포트 1.8L, KAEP-8520", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "대추나 과일을 넣고 버튼만 누르면 차가 우러나고, 마실 만큼 따라내는 전기 티포트입니다", "pts": ["1.8L 유리 용기에 스테인리스 스트레이너가 들어 있는 전기 티포트입니다.", "다이소 제품처럼 버튼으로 차를 내리지만 용량이 커서 식구가 여럿인 집이나 손님이 오는 날 한 번에 끓여 두기 좋습니다.", "로켓배송 배지가 붙은 상품입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/thermal-pot.jpg"], "link": "https://link.coupang.com/a/iTWvfu4RvE", "naver": ""}, {"id": "bm-silicone-container-s", "title": "실리샵 국산 플래티넘 실리콘 밀폐용기 세트 (3colors), 대형+중형+소형, 미들그레이, 1개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "다이소에서 하나씩 사 모으던 실리콘 밀폐용기를 대, 중, 소 한 세트로 받는 구성입니다", "pts": ["국산 플래티넘 실리콘으로 만든 대형, 중형, 소형 세트입니다.", "남은 반찬이나 밥을 소분해 담아 두는 용도로 쓰고, 세 가지 색상 중에 고를 수 있습니다.", "낱개로 사 모으는 것과 달리 크기가 다른 세 개가 한 번에 옵니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/silicone-container-set.jpg"], "link": "https://link.coupang.com/a/iTWx799ftk", "naver": ""}, {"id": "bm-stain-tissue", "title": "고릴라랩 의류 얼룩 클리너 쏙티슈 10매입, 혼합색상, 1개", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "외출 중 옷에 묻은 얼룩을 그 자리에서 닦아 내는 휴대용 얼룩 제거 티슈입니다", "pts": ["한 장씩 개별 포장된 열 매가 한 상자로 옵니다.", "가방에 넣어 다니다가 식사 중 튄 기름이나 커피 자국에 바로 쓰고, 세탁 전에 목깃이나 소매 얼룩에 먼저 문질러 두는 용도로도 씁니다.", "로켓배송 배지가 붙은 상품입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/stain-tissue.jpg"], "link": "https://link.coupang.com/a/iTWA56cFZ6", "naver": ""}, {"id": "bm-music-frame-xmas", "title": "노래나오는 냉장고자석 인테리어소품 크리스마스 선물 뮤직박스 액자 인스타히트, 세트 1 메인 + 9 자기테이프", "s": "chores", "st": "6화 미뤄 둔 살림이 한꺼번에", "hook": "냉장고 문에 붙여 두고 레코드판을 올리면 노래가 나오는 액자형 뮤직박스입니다", "pts": ["액자 본체 하나에 자기테이프 레코드판 9개가 한 세트로 옵니다.", "레코드판을 액자에 대면 노래가 나오는 방식으로 상품평에 적혀 있고, USB-C로 충전해 씁니다.", "크리스마스 S1~S5 디자인과 할로윈 테마 중에 고를 수 있으며, 해외직구로 12/11 도착 예정으로 표시됩니다.", "단순 변심 반품에는 왕복 배송비가 따로 붙습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/music-frame-xmas.jpg"], "link": "https://link.coupang.com/a/iTZsVkfR0K", "naver": ""}, {"id": "bm-tokyotomi-heater", "title": "토요토미 팬히터 LC-L53 풀세트 (국내 정품 A/S 가능) 도요토미, BLACK", "s": "wow", "st": "7화 남편의 장바구니", "hook": "캠핑하는 사람들이 먼저 찾는 일본식 팬히터입니다", "pts": ["기름을 넣고 쓰는 난로라 환기에 신경 써야 하고, 무게가 있어 한 번 자리를 잡으면 거실 한쪽에 두고 쓰게 됩니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/tokyotomi-heater.jpg"], "link": "https://link.coupang.com/a/iJZycVPxSu", "naver": ""}, {"id": "bm-drone", "title": "DJI Neo 2 플라이 모어 콤보 드론, 혼합색상, 1세트", "s": "wow", "st": "7화 남편의 장바구니", "hook": "손바닥만 한 크기로 하늘 사진을 남기는 드론입니다", "pts": ["본체와 조종기, 배터리가 함께 오는 구성입니다.", "겨울 여행에서 위에서 찍은 사진을 남기고 싶을 때 눈에 들어오는 세트입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/drone.jpg"], "link": "https://link.coupang.com/a/iJZCB6mDYq", "naver": ""}, {"id": "bm-premiere-projector", "title": "삼성전자 The Premiere 프로젝터 웜 화이트 254~330cm 방문설치, SP-LPDU9SAXXKR", "s": "wow", "st": "7화 남편의 장바구니", "hook": "벽에 붙여 두고 쓰는 삼성 초단초점 프로젝터입니다", "pts": ["방문 설치로 배송되는 모델이라 자리를 잡아 주는 과정까지 포함되어 있습니다.", "거실 벽 한 면을 화면으로 쓰고 싶을 때 비교해 볼 만한 상품입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/premiere-projector.jpg"], "link": "https://link.coupang.com/a/iJZGHOUWlM", "naver": ""}, {"id": "bm-home-sauna", "title": "[휴먼사우나] 로벤스 편백나무+히노끼 스톤찜질+좌훈+족욕찜질 원적외선 반신욕기, LPH-300", "s": "wow", "st": "7화 남편의 장바구니", "hook": "집에 들이는 1인용 반신욕기입니다", "pts": ["크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/home-sauna.jpg"], "link": "https://link.coupang.com/a/iLFmqwxj0C", "naver": ""}, {"id": "bm-snow-blower", "title": "클라빈다 충전식 무선 전동 리튬 배터리 제설기 소형 다기능 휴대용 가정용 고출력 접이식, 1세트", "s": "wow", "st": "7화 남편의 장바구니", "hook": "눈이 온 날 아침, 삽 대신 미는 충전식 제설기입니다", "pts": ["충전 배터리로 눈을 밀어 내는 소형 제설기입니다.", "배터리 포함 여부와 날개 폭이 값을 가릅니다.", "같은 검색에 손에 드는 송풍기형이 섞여 나오니 상품 구분을 확인해 보세요."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/snow-blower.jpg"], "link": "https://link.coupang.com/a/iLF6x1Pvky", "naver": ""}, {"id": "bm-firewood-stove", "title": "아웃도어웍스 화목난로, OW200", "s": "wow", "st": "7화 남편의 장바구니", "hook": "장작을 넣고 불을 보는 캠핑용 화목난로입니다", "pts": ["연통과 함께 세팅하는 스테인리스 난로입니다."], "imgs": ["https://myeongdang-jari.github.io/myeongdangjari/img/products/firewood-stove.jpg"], "link": "https://link.coupang.com/a/iNjIJWmvVk", "naver": ""}]</script>
 <script>
-(function(){
-  "use strict";
-  var D = JSON.parse(document.getElementById('d').textContent);
-  var LABEL = {};
-  LABEL["window"] = "단열·방한";
-  LABEL["street"] = "차량·외출";
-  LABEL["bed"] = "난방·이불";
-  LABEL["soup"] = "간식·어묵";
-  LABEL["xmas"] = "크리스마스";
-  LABEL["chores"] = "욕실·살림";
-  LABEL["wow"] = "남편 위시";
-  var M = {}, I = {};
-  D.forEach(function(p, i){ M[p.id] = p; I[p.id] = i + 1; });
-
-  function $(id){ return document.getElementById(id); }
-  function el(tag, cls, txt){ var n = document.createElement(tag); if(cls) n.className = cls; if(txt != null) n.textContent = txt; return n; }
-  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
-    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
-  function pad(n){ return (n < 10 ? '0' : '') + n; }
-
-  /* ---------- 카드 만들기 (JSON에만 있고 화면에 없는 상품 보충) ---------- */
-  function makeCard(p){
-    var id = encodeURIComponent(p.id), no = pad(I[p.id] || 0), lab = LABEL[p.s] || '';
-    var a = document.createElement('article');
-    a.className = 'card'; a.dataset.id = p.id; a.dataset.cat = p.s;
-    a.innerHTML =
-      '<a class="ph" href="#p=' + id + '" tabindex="-1" aria-hidden="true">' +
-        '<img src="' + esc((p.imgs || [])[0] || '') + '" alt="" loading="lazy" width="492" height="492"></a>' +
-      '<p class="meta"><span class="no">No. ' + no + '</span><span class="tag">' + esc(lab) + '</span></p>' +
-      '<h3 class="name"><a href="#p=' + id + '">' + esc(p.title) + '</a></h3>' +
-      '<p class="why">' + esc(p.hook || '') + '</p>' +
-      '<a class="buy" href="' + esc(p.link || '') + '" target="_blank" rel="noopener noreferrer sponsored">' +
-        '쿠팡에서 보기 <span aria-hidden="true">&#8599;</span></a>';
-    return a;
-  }
-  function renumber(){
-    Array.prototype.forEach.call(document.querySelectorAll('.chapter'), function(sec){
-      Array.prototype.forEach.call(sec.querySelectorAll('.card'), function(c){
-        var n = c.querySelector('.no'); if(n) n.textContent = 'No. ' + pad(++SEQ);
-      });
-    });
-  }
-  var SEQ = 0;
-  var grids = {};
-  Array.prototype.forEach.call(document.querySelectorAll('.chapter'), function(sec){
-    grids[sec.dataset.cat] = sec.querySelector('.grid');
-  });
-  var have = {};
-  Array.prototype.forEach.call(document.querySelectorAll('.card[data-id]'), function(c){ have[c.dataset.id] = 1; });
-  D.forEach(function(p){
-    if(have[p.id] || !grids[p.s]) return;
-    grids[p.s].appendChild(makeCard(p));
-  });
-  renumber();
-
-  /* ---------- 검색·필터 ---------- */
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
-  var text = {};
-  cards.forEach(function(c){
-    var p = M[c.dataset.id] || {};
-    text[c.dataset.id] = ((p.title || '') + ' ' + (p.hook || '') + ' ' + ((p.pts || []).join(' ')))
-      .toLowerCase().replace(/\s+/g, ' ');
-  });
-  var chapters = Array.prototype.slice.call(document.querySelectorAll('.chapter'));
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
-  var input = $('q'), box = $('sb'), rs = $('rs'), empty = $('empty');
-  var cat = 'all', q = '';
-
-  function apply(anchor){
-    var terms = q.toLowerCase().replace(/\s+/g, ' ').trim().split(' ').filter(Boolean);
-    var total = 0;
-    chapters.forEach(function(sec){
-      var n = 0;
-      Array.prototype.forEach.call(sec.querySelectorAll('.card'), function(c){
-        var ok = (cat === 'all' || sec.dataset.cat === cat) && terms.every(function(t){
-          return (text[c.dataset.id] || '').indexOf(t) !== -1; });
-        c.hidden = !ok;
-        if(ok) n++;
-      });
-      sec.hidden = (n === 0);
-      var cc = sec.querySelector('.chcount');
-      if(cc) cc.textContent = '물건 ' + n + '가지';
-      total += n;
-    });
-    var label = cat === 'all' ? '전체' : (LABEL[cat] || '');
-    rs.innerHTML = q
-      ? '&ldquo;' + esc(q) + '&rdquo; &middot; <b>' + total + '</b>가지'
-      : label + ' &middot; <b>' + total + '</b>가지';
-    box.classList.toggle('has', !!q);
-    empty.classList.toggle('on', total === 0);
-    if(anchor){
-      var target = null;
-      if(!total) target = empty;
-      else chapters.forEach(function(sec){ if(!target && !sec.hidden) target = sec; });
-      if(target){
-        var bar = (document.querySelector('.site').offsetHeight || 0) +
-                  (document.querySelector('.tools').offsetHeight || 0);
-        var y = target.getBoundingClientRect().top + window.scrollY - bar - 14;
-        if(Math.abs(window.scrollY - y) > 120) window.scrollTo({top: Math.max(0, y), behavior: 'smooth'});
-      }
-    }
-  }
-  function setCat(next){
-    cat = next;
-    chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c.dataset.cat === cat)); });
-    apply(true);
-  }
-  function reset(){ q = ''; input.value = ''; setCat('all'); }
-
-  chips.forEach(function(c){ c.addEventListener('click', function(){ setCat(c.dataset.cat); }); });
-  input.addEventListener('input', function(e){ if(e.isComposing) return; q = input.value; apply(true); });
-  input.addEventListener('compositionend', function(){ q = input.value; apply(true); });
-  input.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ input.value = ''; q = ''; apply(); } });
-  $('qc').addEventListener('click', function(){ input.value = ''; q = ''; input.focus(); apply(true); });
-  $('reset').addEventListener('click', function(){ reset(); });
-  Array.prototype.forEach.call(document.querySelectorAll('.toc a'), function(a){
-    a.addEventListener('click', function(){ if(cat !== 'all' || q) reset(); });
-  });
-
-  /* ---------- 상세 ---------- */
-  var dv = $('dv'), nav = 0, last = null, opened = null;
-  function show(p){
-    var g = $('gal'); g.textContent = '';
-    (p.imgs || []).forEach(function(u){ var i = el('img'); i.src = u; i.alt = p.title; g.appendChild(i); });
-    g.classList.toggle('one', (p.imgs || []).length < 2);
-    var nc = document.querySelector('.card[data-id="' + p.id + '"] .no');
-    $('dno').textContent = nc ? nc.textContent : ('No. ' + pad(I[p.id] || 0));
-    $('ds').textContent = LABEL[p.s] || p.st || '';
-    $('ds').href = '#s-' + p.s;
-    $('dt').textContent = p.title;
-    $('dh').textContent = p.hook || '';
-    $('dh').hidden = !p.hook;
-    var u = $('dp'); u.textContent = '';
-    (p.pts || []).forEach(function(s){ u.appendChild(el('li', '', s)); });
-    $('pw').hidden = !(p.pts || []).length;
-    var a = $('cta'); a.textContent = '';
-    [['cp', p.link, a.dataset.cp], ['nv', p.naver, a.dataset.nv]].forEach(function(b){
-      if(b[1]){ var x = el('a', 'btn ' + b[0], b[2]); x.href = b[1];
-        x.target = '_blank'; x.rel = 'noopener noreferrer sponsored'; a.appendChild(x); }
-    });
-    var r = $('rel'); r.textContent = ''; var shown = 0, total = 0;
-    D.forEach(function(o){
-      if(o.s === p.s && o.id !== p.id) total++;
-      if(o.s === p.s && o.id !== p.id && shown < 6){
-        shown++;
-        var x = el('a', 'rc'); x.href = '#p=' + encodeURIComponent(o.id);
-        var i = el('img'); i.src = (o.imgs || [])[0]; i.alt = ''; i.loading = 'lazy';
-        x.appendChild(i); x.appendChild(el('span', '', o.title)); r.appendChild(x);
-      }
-    });
-    var more = $('rmore'); more.textContent = '';
-    if(total > shown){
-      var ma = el('a', 'morelink', '이 장에서 더 보기 (' + (total + 1) + '가지)');
-      ma.href = '#s-' + p.s; more.appendChild(ma);
-    }
-    $('rw').hidden = !r.children.length;
-    opened = document.querySelector('.card[data-id="' + p.id + '"]');
-    if(dv.hidden) last = document.activeElement;
-    dv.hidden = false; document.body.style.overflow = 'hidden';
-    dv.scrollTop = 0; g.scrollLeft = 0; $('bk').focus();
-  }
-  function closeDv(){
-    dv.hidden = true; document.body.style.overflow = '';
-    if(opened){
-      opened.scrollIntoView({block: 'center', behavior: 'smooth'});
-      opened.classList.add('flash');
-      setTimeout(function(){ opened.classList.remove('flash'); }, 1800);
-      opened = null;
-    }
-    if(last && last.focus) last.focus();
-  }
-  function route(){
-    var m = /^#p=(.+)$/.exec(location.hash);
-    var p = m && M[decodeURIComponent(m[1])];
-    if(p) show(p);
-    else if(!dv.hidden) closeDv();
-  }
-  function back(){
-    if(nav) history.back();
-    else { history.replaceState(null, '', location.pathname + location.search); route(); }
-  }
-  window.addEventListener('hashchange', function(){ nav++; route(); });
-  $('bk').onclick = back;
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !dv.hidden) back(); });
-
-  /* 머리말 개수는 데이터에서 */
-  Array.prototype.forEach.call(document.querySelectorAll('[data-count]'), function(n){
-    n.textContent = D.length;
-  });
-  apply();
-  route();
-})();
+(function(){var D=JSON.parse(document.getElementById('d').textContent),M={},nav=0,last=null;
+D.forEach(function(p){M[p.id]=p});
+function $(i){return document.getElementById(i)}
+function el(t,c,x){var n=document.createElement(t);if(c)n.className=c;if(x)n.textContent=x;return n}
+function pic(u,a){var i=el('img');i.src=u;i.alt=a||'';return i}
+var dv=$('dv');
+function show(p){var g=$('gal');g.textContent='';p.imgs.forEach(function(u){g.appendChild(pic(u,p.title))});g.classList.toggle('one',p.imgs.length<2);
+$('ds').textContent=p.st;$('ds').href='#s-'+p.s;$('dt').textContent=p.title;$('dh').textContent=p.hook;$('dh').hidden=!p.hook;
+var u=$('dp');u.textContent='';p.pts.forEach(function(s){u.appendChild(el('li','',s))});$('pw').hidden=!p.pts.length;
+var a=$('cta');a.textContent='';[['cp',p.link,a.dataset.cp],['nv',p.naver,a.dataset.nv]].forEach(function(b){if(b[1]){var x=el('a','btn '+b[0],b[2]);x.href=b[1];x.target='_blank';x.rel='noopener noreferrer sponsored';a.appendChild(x)}});
+var r=$('rel');r.textContent='';D.forEach(function(o){if(o.s===p.s&&o.id!==p.id){var x=el('a','rc');x.href='#p='+encodeURIComponent(o.id);var i=pic(o.imgs[0]);i.loading='lazy';x.appendChild(i);x.appendChild(el('span','',o.title));r.appendChild(x)}});
+$('rw').hidden=!r.children.length;
+if(dv.hidden)last=document.activeElement;dv.hidden=false;document.body.style.overflow='hidden';dv.scrollTop=0;g.scrollLeft=0;$('bk').focus()}
+function route(){var m=/^#p=(.+)$/.exec(location.hash),p=m&&M[decodeURIComponent(m[1])];
+if(p)show(p);else if(!dv.hidden){dv.hidden=true;document.body.style.overflow='';if(last&&last.focus)last.focus()}}
+function back(){if(nav)history.back();else{history.replaceState(null,'',location.pathname+location.search);route()}}
+window.addEventListener('hashchange',function(){nav++;route()});
+$('bk').onclick=back;document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!dv.hidden)back()});
+route()})();
 </script>
-<!-- build:5ae03baae65a · tools/build_bridge.py 로 생성 -->
+<!-- build:b9424f5da968 -->
 </body>
 </html>
