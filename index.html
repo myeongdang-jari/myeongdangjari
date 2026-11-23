@@ -92,6 +92,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .hero-media .hm-main img,.hero-media .hm-thumb img{aspect-ratio:1;border-radius:9px}
   .hero-media figcaption{display:none}
 }
+/* 폰에서는 히어로 사진을 접어 검색·카드가 첫 화면에 들어오게 한다 */
+@media(max-width:640px){
+  .hero{padding-top:14px}
+  .hero-media{display:none}
+  .hero-meta{display:none}
+  .stand{font-size:12.8px;line-height:1.68}
+  .chapter{padding-top:18px}
+  .chead{gap:10px;margin-bottom:13px}
+  .diary{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+  .chapter + .chapter{padding-top:22px;margin-top:26px}
+}
 
 /* 차례 — 컴팩트 인덱스 바 */
 .toc{max-width:var(--w);margin:clamp(14px,1.8vw,20px) auto 0;padding:0 var(--pad)}
