@@ -40,7 +40,7 @@
   <button id="refresh">새로고침</button>
   <span class="out" id="out">—</span>
 </div>
-<div class="stage"><iframe id="f" src="../index.html" title="쿠팡 브릿지 화면"></iframe></div>
+<div class="stage"><iframe id="f" title="쿠팡 브릿지 화면"></iframe></div>
 <script>
 (function(){
   var f = document.getElementById('f'), out = document.getElementById('out');
@@ -53,10 +53,9 @@
     var v = parseInt(e.target.value, 10); if(v >= 240) setW(v); });
   document.getElementById('sy').addEventListener('input', function(e){
     var v = parseInt(e.target.value, 10); if(v >= 0) try{ f.contentWindow.scrollTo(0, v); }catch(err){} });
-  document.getElementById('src').addEventListener('change', function(e){ f.src = e.target.value; });
-  document.getElementById('refresh').addEventListener('click', function(){ f.src = f.src;
-
-  });
+  function bust(u){ return u + (u.indexOf('?') < 0 ? '?' : '&') + 'cb=' + Date.now(); }
+  document.getElementById('src').addEventListener('change', function(e){ f.src = bust(e.target.value); });
+  document.getElementById('refresh').addEventListener('click', function(){ f.src = bust(f.getAttribute('src')); });
 
   window.qa = function(){
     var d = f.contentDocument, win = f.contentWindow;
@@ -93,6 +92,7 @@
   setInterval(tick, 1200);
   setTimeout(tick, 700);
   setW(375);
+  f.src = bust('../index.html'); // 캐시 무시하고 항상 최신 빌드를 본다
 })();
 </script>
 </body>
