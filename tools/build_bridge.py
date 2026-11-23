@@ -216,7 +216,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .chip:hover{border-color:var(--forest);color:var(--ink)}
 .chip[aria-pressed=true]{background:var(--forest);border-color:var(--forest);color:#f1f0e6}
 .chip .cn{font-size:10.5px;opacity:.62;font-variant-numeric:tabular-nums}
-@media(max-width:640px){.searchrow{gap:8px}.search{max-width:none}.rs{width:100%;margin-left:0;text-align:right}}
+@media(max-width:640px){.searchrow{gap:10px}.search{max-width:none;min-width:0}
+  .rs{font-size:11.5px;letter-spacing:0}}
 
 /* 장 */
 .chapters{max-width:var(--w);margin:0 auto;padding:0 var(--pad)}
