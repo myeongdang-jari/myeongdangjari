@@ -596,8 +596,9 @@ def build():
   var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
   var text = {};
   cards.forEach(function(c){
-    var lab = LABEL[c.dataset.cat] || '';
-    text[c.dataset.id] = (c.textContent + ' ' + lab).toLowerCase().replace(/\\s+/g, ' ');
+    var p = M[c.dataset.id] || {};
+    text[c.dataset.id] = ((p.title || '') + ' ' + (p.hook || '') + ' ' + ((p.pts || []).join(' ')))
+      .toLowerCase().replace(/\\s+/g, ' ');
   });
   var chapters = Array.prototype.slice.call(document.querySelectorAll('.chapter'));
   var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
