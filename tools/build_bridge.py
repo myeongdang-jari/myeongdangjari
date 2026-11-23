@@ -153,9 +153,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media(max-width:560px){.site .right .vol{display:none}}
 
 /* 히어로 */
-.hero{max-width:var(--w);margin:0 auto;padding:clamp(34px,5vw,64px) var(--pad) 0}
+.hero{max-width:var(--w);margin:0 auto;padding:clamp(30px,4.2vw,54px) var(--pad) 0}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);
-  gap:clamp(28px,4.4vw,56px);align-items:center}
+  gap:clamp(28px,4.4vw,56px);align-items:start}
 .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.2em;color:var(--forest-2);text-transform:uppercase}
 .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(32px,5.1vw,62px);line-height:1.16;
   letter-spacing:-.035em;color:var(--ink);margin-top:14px}
