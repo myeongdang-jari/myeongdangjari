@@ -207,12 +207,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .dtop button:hover{background:#ecebe2}
 .dtop .lb{font-size:11.5px;letter-spacing:.08em;color:var(--sub)}
 .dtop .lb b{color:var(--ink);font-weight:600}
-.dbody{padding:26px 0 34px;flex:1}
+.dbody{padding:26px 0 46px;flex:1}
 .gal{display:flex;overflow-x:auto;gap:8px;scroll-snap-type:x mandatory;scrollbar-width:none;
-  background:#fff;border:1px solid var(--line)}
+  background:#fff;border:1px solid var(--line);justify-content:center;align-items:center;
+  max-height:min(52vh,430px)}
 .gal::-webkit-scrollbar{display:none}
-.gal img{flex:none;width:100%;aspect-ratio:1;object-fit:contain;scroll-snap-align:start}
-.gal.one img{object-fit:contain}
+.gal img{flex:none;width:auto;height:auto;max-width:100%;max-height:min(52vh,430px);
+  object-fit:contain;scroll-snap-align:center;margin:0 auto}
 .ds{font-size:11px;letter-spacing:.14em;color:var(--forest-2);font-weight:600}
 .dbody h1{font-family:var(--serif);font-weight:700;font-size:clamp(21px,3vw,30px);line-height:1.42;
   letter-spacing:-.025em;color:var(--ink);margin-top:12px}
@@ -230,6 +231,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .rc span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
   font-size:11.5px;line-height:1.45;color:var(--body);margin-top:6px}
 .rc:hover span{color:var(--forest);text-decoration:underline;text-underline-offset:2px}
+.morelink{display:inline-block;margin-top:18px;font-size:12px;letter-spacing:.02em;color:var(--forest-2);
+  border-bottom:1px solid rgba(47,74,57,.3);padding-bottom:2px}
+.morelink:hover{border-color:var(--forest)}
 .cta{position:sticky;bottom:0;display:flex;gap:8px;margin:0 calc(var(--pad) * -1);
   padding:12px var(--pad) calc(12px + env(safe-area-inset-bottom));
   background:var(--paper);border-top:1px solid var(--line)}
@@ -970,7 +974,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       <p class="lead" id="dh"></p>
       <div id="pw"><h2>이런 물건이에요</h2><ul id="dp"></ul></div>
       <p class="note">가격과 배송 조건은 쿠팡 상품 페이지에서 확인해 주세요. 판매처에서 바뀔 수 있어요.<br>이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
-      <div id="rw"><h2>같은 장에서 찾아 둔 물건</h2><div class="rel" id="rel"></div></div>
+      <div id="rw"><h2>같은 장에서 찾아 둔 물건</h2><div class="rel" id="rel"></div><p id="rmore"></p></div>
     </div>
     <div class="cta" id="cta" data-cp="쿠팡에서 보기" data-nv="네이버에서 보기"></div>
   </div>
@@ -1044,7 +1048,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   var input = $('q'), box = $('sb'), rs = $('rs'), empty = $('empty');
   var cat = 'all', q = '';
 
-  function apply(){
+  function apply(anchor){
     var terms = q.toLowerCase().replace(/\s+/g, ' ').trim().split(' ').filter(Boolean);
     var total = 0;
     chapters.forEach(function(sec){
@@ -1066,20 +1070,31 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       : label + ' &middot; <b>' + total + '</b>가지';
     box.classList.toggle('has', !!q);
     empty.classList.toggle('on', total === 0);
+    if(anchor){
+      var target = null;
+      if(!total) target = empty;
+      else chapters.forEach(function(sec){ if(!target && !sec.hidden) target = sec; });
+      if(target){
+        var bar = (document.querySelector('.site').offsetHeight || 0) +
+                  (document.querySelector('.tools').offsetHeight || 0);
+        var y = target.getBoundingClientRect().top + window.scrollY - bar - 14;
+        if(Math.abs(window.scrollY - y) > 120) window.scrollTo({top: Math.max(0, y), behavior: 'smooth'});
+      }
+    }
   }
   function setCat(next){
     cat = next;
     chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c.dataset.cat === cat)); });
-    apply();
+    apply(true);
   }
   function reset(){ q = ''; input.value = ''; setCat('all'); }
 
   chips.forEach(function(c){ c.addEventListener('click', function(){ setCat(c.dataset.cat); }); });
-  input.addEventListener('input', function(e){ if(e.isComposing) return; q = input.value; apply(); });
-  input.addEventListener('compositionend', function(){ q = input.value; apply(); });
+  input.addEventListener('input', function(e){ if(e.isComposing) return; q = input.value; apply(true); });
+  input.addEventListener('compositionend', function(){ q = input.value; apply(true); });
   input.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ input.value = ''; q = ''; apply(); } });
-  $('qc').addEventListener('click', function(){ input.value = ''; q = ''; input.focus(); apply(); });
-  $('reset').addEventListener('click', function(){ reset(); window.scrollTo({top: 0, behavior: 'smooth'}); });
+  $('qc').addEventListener('click', function(){ input.value = ''; q = ''; input.focus(); apply(true); });
+  $('reset').addEventListener('click', function(){ reset(); });
   Array.prototype.forEach.call(document.querySelectorAll('.toc a'), function(a){
     a.addEventListener('click', function(){ if(cat !== 'all' || q) reset(); });
   });
@@ -1105,14 +1120,21 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       if(b[1]){ var x = el('a', 'btn ' + b[0], b[2]); x.href = b[1];
         x.target = '_blank'; x.rel = 'noopener noreferrer sponsored'; a.appendChild(x); }
     });
-    var r = $('rel'); r.textContent = '';
+    var r = $('rel'); r.textContent = ''; var shown = 0, total = 0;
     D.forEach(function(o){
-      if(o.s === p.s && o.id !== p.id){
+      if(o.s === p.s && o.id !== p.id) total++;
+      if(o.s === p.s && o.id !== p.id && shown < 6){
+        shown++;
         var x = el('a', 'rc'); x.href = '#p=' + encodeURIComponent(o.id);
         var i = el('img'); i.src = (o.imgs || [])[0]; i.alt = ''; i.loading = 'lazy';
         x.appendChild(i); x.appendChild(el('span', '', o.title)); r.appendChild(x);
       }
     });
+    var more = $('rmore'); more.textContent = '';
+    if(total > shown){
+      var ma = el('a', 'morelink', '이 장에서 더 보기 (' + (total + 1) + '가지)');
+      ma.href = '#s-' + p.s; more.appendChild(ma);
+    }
     $('rw').hidden = !r.children.length;
     opened = document.querySelector('.card[data-id="' + p.id + '"]');
     if(dv.hidden) last = document.activeElement;
