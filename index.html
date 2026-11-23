@@ -164,15 +164,18 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .card .buy span{font-size:11px}
 .card.flash .ph{box-shadow:0 0 0 2px var(--forest)}
 @media(max-width:1024px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 18px}}
-@media(max-width:760px){
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px}
+@media(max-width:860px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 16px}
   .chead{grid-template-columns:1fr;align-items:start}
   .diary{font-size:14px;line-height:1.85}
   .toc ol{grid-template-columns:1fr}
   .hero-grid{grid-template-columns:1fr}
   .stack .a img{aspect-ratio:16/10}
+}
+@media(max-width:640px){
   .card .name{font-size:13.5px}
   .card .why{font-size:12px}
+  .grid{gap:22px 13px}
 }
 
 /* 빈 결과 */
