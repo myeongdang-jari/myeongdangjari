@@ -360,16 +360,16 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   -webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .dv[hidden]{display:none!important}
 .dvi{max-width:820px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding:0 var(--pad)}
-.dtop{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:4px;height:56px;
+.dtop{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:12px;height:56px;
   margin:0 calc(var(--pad) * -1);padding:0 calc(var(--pad) - 6px);
   background:rgba(246,245,240,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line)}
 .dtop button{width:40px;height:40px;display:flex;align-items:center;justify-content:center;
   border-radius:50%;color:var(--ink);transition:background .15s}
 .dtop button:hover{background:#ecebe2}
-.dtop .lb{font-size:11px;letter-spacing:.08em;color:var(--sub)}
+.dtop .lb{font-size:11px;letter-spacing:.08em;color:var(--sub);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .dtop .lb b{color:var(--ink);font-weight:600}
-.dbody{padding:clamp(14px,2.4vw,22px) 0 40px;flex:1}
+.dbody{padding:clamp(14px,2.4vw,22px) 0 86px;flex:1}
 .gal{display:flex;overflow-x:auto;gap:8px;scroll-snap-type:x mandatory;scrollbar-width:none;
   background:var(--img-bg);border:1px solid var(--line);border-radius:14px;
   justify-content:center;align-items:center;max-height:min(46vh,400px)}
