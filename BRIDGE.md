@@ -16,6 +16,7 @@
 - 2026-11-19 갱신: 미니 제습기·12L 제습기·극세사 차렵이불·욕실 온풍기·족욕기·목어깨 마사지기·필터 샤워기·화목난로 8건을 더해 상품 링크 46건입니다.
 - 2026-11-18 갱신: 성에방지 커버·발열조끼·반반 전기그릴·붕어빵 메이커·1인용 사우나·무선 제설기 6건을 더해 상품 링크 38건입니다.
 - 쇼츠 검증 기준(2026-11-21 대표님 확정): 최근 30일 안에 올라온 쇼츠 · 조회 10만 이상. 영상 속 상품 이름·브랜드를 알 수 있고, 쿠팡에 같은 브랜드·용량이 있으며, 묶음·대용량·로켓배송처럼 쿠팡에서 살 이유가 있는 것만 담습니다. 조회 10만으로 낮춘 만큼 터진 영상이 아닌 것도 들어오므로 why_coupang에 약한 부분을 솔직히 적습니다.
+- 2026-11-24 갱신: 전쟁·비상 대비 생존용품 8건(서바이벌 12종 생존키트·CTM 재난 생존 키트 40종·이지밥 진격의 비상식량·알뜰공식 은박 담요 10개·바이오플러스 EVA 구급낭·코멧 랜턴+보조배터리 세트·YINTO 30000mAh 보조배터리·AKRUA 자가발전 비상라디오)을 더하고 페이지에 8장 「재난·비상」을 새로 만들었습니다. 상품 링크 80건입니다. 이 8건의 evidence는 쿠팡 상품 페이지 실측(상품평·평점·배송)이고, 함께 적은 쇼츠 3편은 주제 근거입니다(비상물품·비상식량·생존법 영상이 최근 30일 안에 65만~101만 조회). 영상에 이 상품이 나온 것은 아닙니다.
 - 문구 규칙: 가격 숫자·최저가·써 본 척·효과 장담·이모지 없이 씁니다.
 
 ## 상품 데이터
@@ -826,1054 +827,1358 @@
 - 상품 링크: https://link.coupang.com/a/iTZsVkfR0K
 - 사진: img/products/music-frame-xmas.jpg
 
+### 상품 74
+- id: survival-kit-12
+- 이름: 서바이벌 12종 생존키트 생존가방 야영 캠핑 비상용품 재난대비, 1세트, 블랙
+- 갈래: 재난·비상
+- 계정: take
+- 후킹 한 줄: 남편이 사 오자던 생존가방. 손전등과 공구, 구급용품까지 12가지가 한 가방에 들어 있습니다
+- 요약: 칼과 멀티툴, 손전등, 구급용품까지 12가지가 한 가방에 담긴 세트입니다. 평점 4.5에 상품평이 760개 넘게 쌓였고, 무료배송으로 11/27 도착 예정으로 표시됩니다. 도구를 하나씩 사 모으는 대신 한 번에 갖추는 쪽입니다.
+- 쿠팡 검색어: 생존가방 12종 생존키트
+- 상품 링크: https://link.coupang.com/a/iVBniEXBoy
+- 사진: img/products/survival-kit-12.jpg
+
+### 상품 75
+- id: survival-kit-ctm
+- 이름: CTM 재난 생존 키트 서바이벌 가방 캠핑 야영 비상용품 40종, 1세트, 블랙(혼합)
+- 갈래: 재난·비상
+- 계정: ads
+- 후킹 한 줄: 40가지가 한 가방에. 재난 대비 키트를 통째로 갖춘 구성입니다
+- 요약: 구급·생존 도구 40종이 한 가방에 담긴 키트입니다. 상품평이 100개 넘게 쌓였고 무료배송으로 다음 날 도착 예정입니다. 구성품이 많은 대신 12종 키트와 무엇이 들어 있는지 견줘 보고 고르면 좋습니다.
+- 쿠팡 검색어: CTM 재난 생존 키트 40종
+- 상품 링크: https://link.coupang.com/a/iVBzsc8Lts
+- 사진: img/products/survival-kit-ctm.jpg
+
+### 상품 76
+- id: emergency-food-rice
+- 이름: 이지밥 진격의 비상식량 1식단 쇠고기비빔밥, 110g, 5개
+- 갈래: 재난·비상
+- 계정: take
+- 후킹 한 줄: 상온에 그대로 두고 먹는 비상식량. 쇠고기비빔밥 다섯 개 묶음입니다
+- 요약: 비상식량으로 나온 110g 즉석밥 쇠고기비빔밥 다섯 개 묶음입니다. 상품평이 1,500개 넘고, 로켓배송으로 다음 날 도착 보장에 무료반품까지 붙어 있습니다. 집에 두고 오래 두는 용도라 유통기한은 받은 뒤 확인해 두는 편이 좋습니다.
+- 쿠팡 검색어: 이지밥 진격의 비상식량 쇠고기비빔밥
+- 상품 링크: https://link.coupang.com/a/iVBAJgjCdE
+- 사진: img/products/emergency-food-rice.jpg
+
+### 상품 77
+- id: foil-blanket-10
+- 이름: 알뜰공식 비상용 보온 은박 담요 대 160 x 210 cm, 실버, 10개
+- 갈래: 재난·비상
+- 계정: take
+- 후킹 한 줄: 가방마다 한 장씩 넣어 둘 은박 담요. 열 장이 한 묶음입니다
+- 요약: 160 x 210cm 큰 사이즈 은박 보온 담요 열 장이 한 묶음으로 옵니다. 상품평이 1,900개 넘게 쌓였고 다음 날 도착 예정입니다. 한 장씩 접어 차와 가방, 집 안 곳곳에 나눠 두는 용도입니다.
+- 쿠팡 검색어: 비상용 은박 담요 대형
+- 상품 링크: https://link.coupang.com/a/iVBHZhUlRk
+- 사진: img/products/foil-blanket-10.jpg
+
+### 상품 78
+- id: first-aid-pouch
+- 이름: 바이오플러스 EVA 구급낭 + 15종 구급약품, 1개
+- 갈래: 재난·비상
+- 계정: take
+- 후킹 한 줄: 반창고부터 소독약까지 15종을 한 파우치에 담은 가정용 구급낭입니다
+- 요약: EVA 소재 파우치에 구급용품 15종이 들어 있는 가정용 구급낭입니다. 상품평이 740개 넘고 다음 날 도착 예정입니다. 안에 든 약품의 종류와 유효기간은 받은 뒤 한 번 확인해 두는 편이 좋습니다.
+- 쿠팡 검색어: EVA 구급낭 15종
+- 상품 링크: https://link.coupang.com/a/iVBGSMjp4C
+- 사진: img/products/first-aid-pouch.jpg
+
+### 상품 79
+- id: lantern-powerbank
+- 이름: 코멧 휴대용 충전식 아웃도어 LED 캠핑 랜턴 + 보조배터리 10000mAh 세트, 블랙, 1개
+- 갈래: 재난·비상
+- 계정: ads
+- 후킹 한 줄: 정전된 밤 방을 밝히는 랜턴에, 휴대폰을 살리는 보조배터리까지 붙은 세트입니다
+- 요약: 충전식 LED 랜턴과 10000mAh 보조배터리가 한 세트로 오는 구성입니다. 상품평이 370개 넘고 다음 날 도착 예정입니다. 켜 두는 시간에 따라 배터리가 줄어드니 밝기 단계를 낮춰 두는 편이 오래갑니다.
+- 쿠팡 검색어: 충전식 캠핑 랜턴 보조배터리 세트
+- 상품 링크: https://link.coupang.com/a/iVBEAAHfoW
+- 사진: img/products/lantern-powerbank.jpg
+
+### 상품 80
+- id: powerbank-30000
+- 이름: YINTO 대용량 보조배터리 고속충전 30000mAh PD 22.5W QC3.0 잔량표시, 블랙, JM5
+- 갈래: 재난·비상
+- 계정: ads
+- 후킹 한 줄: 콘센트가 끊긴 날에도 휴대폰을 여러 번 채우는 30000mAh 보조배터리입니다
+- 요약: 30000mAh에 PD 22.5W·QC3.0 고속충전, 남은 양을 숫자로 보여 주는 화면이 달린 보조배터리입니다. 상품평이 1만 7천 개 넘고 최근 한 달 사이 2천 명 이상이 산 것으로 표시돼 있으며, 다음 날 도착 보장·무료배송입니다.
+- 쿠팡 검색어: 30000mAh 대용량 보조배터리
+- 상품 링크: https://link.coupang.com/a/iVBFN75lw4
+- 사진: img/products/powerbank-30000.jpg
+
+### 상품 81
+- id: crank-radio
+- 이름: AKRUA 랜턴라디오 수동라디오 비상라디오 자가발전손전등, 블랙, 1개
+- 갈래: 재난·비상
+- 계정: ads
+- 후킹 한 줄: 건전지가 없어도 손으로 돌려 켜는 라디오 겸 랜턴입니다
+- 요약: 크랭크를 돌려 충전하는 자가발전 방식에 라디오와 랜턴, 경고음이 붙은 비상용 라디오입니다. 상품평이 550개 넘게 쌓였고, 해외에서 들어오는 상품이라 12/4 도착 예정으로 표시됩니다.
+- 쿠팡 검색어: 자가발전 비상 라디오
+- 상품 링크: https://link.coupang.com/a/iVBKwAUSfQ
+- 사진: img/products/crank-radio.jpg
+
 ```json
 [
-  {
-    "id": "partition-heater",
-    "name": "홈플래닛 접이식 파티션 히터, D2401, 그레이",
-    "partners_link": "https://link.coupang.com/a/iIEIHsSHfM",
-    "image": "img/products/partition-heater.jpg",
-    "account": "ads",
-    "category": "겨울 난방·방풍",
-    "hook": "책상 아래로 시린 발목과 무릎만 따로 감싸 주는 접이식 발난로입니다.",
-    "summary": [
-      "삼면을 세워 찬 공기를 막고 원적외선 면발열로 데우는 방식이라 바람이 일지 않습니다. 쓰지 않을 때는 접어 세워 둘 수 있습니다."
-    ],
-    "search_keyword": "접이식 파티션 히터"
-  },
-  {
-    "id": "electric-blanket",
-    "name": "HanilMedical 탄소열선 고급 전기요 HL-D205(25), 북극곰, M",
-    "partners_link": "https://link.coupang.com/a/iCGTm4Ipcy",
-    "image": "img/products/electric-blanket.jpg",
-    "account": "ads",
-    "category": "겨울 난방·방풍",
-    "hook": "잠자리에 들기 전 이불 속을 미리 데워 두는 탄소열선 전기요입니다.",
-    "summary": [
-      "탄소 열선을 촘촘히 넣어 온도가 고르게 퍼지고, 켜 둔 지 오래되면 스스로 꺼집니다. 세탁이 되는 소재라 겨울이 끝난 뒤 손질도 간단합니다."
-    ],
-    "search_keyword": "한일의료기 전기요"
-  },
-  {
-    "id": "wind-pack",
-    "name": "에코와이드 끼우는 문풍지 창문 틈새막이 외풍 창틀 바람막이 L, 4개",
-    "partners_link": "https://link.coupang.com/a/iCGEleYKcK",
-    "image": "img/products/wind-pack.jpg",
-    "account": "ads",
-    "category": "겨울 난방·방풍",
-    "hook": "창틀 홈에 끼워 넣기만 하면 창문 틈으로 드는 바람을 줄여 줍니다.",
-    "summary": [
-      "접착제나 공구 없이 창틀 레일 홈에 끼우는 방식이라 이사 갈 때도 떼어 다시 쓸 수 있습니다. 네 개들이라 방마다 나눠 끼우기 좋습니다."
-    ],
-    "search_keyword": "창문 틈새막이"
-  },
-  {
-    "id": "bubble-wrap",
-    "name": "뽁순이 3중 뽁뽁이 단열에어캡, 1개",
-    "partners_link": "https://link.coupang.com/a/iIEMwhrXoW",
-    "image": "img/products/bubble-wrap.jpg",
-    "account": "ads",
-    "category": "겨울 난방·방풍",
-    "hook": "창유리에 붙여 방 안 온기가 밖으로 빠져나가는 것을 줄이는 단열 시트입니다.",
-    "summary": [
-      "3중 에어캡 구조가 공기층을 만들어 유리에서 오는 냉기를 덜어 줍니다. 물만 뿌려 붙이는 방식이라 뜯어낼 때도 자국이 남지 않습니다."
-    ],
-    "search_keyword": "단열 뽁뽁이"
-  },
-  {
-    "id": "door-curtain",
-    "name": "유미코 겨울 현관 자석 방풍커튼, 1개",
-    "partners_link": "https://link.coupang.com/a/iIEQEbGvW8",
-    "image": "img/products/door-curtain.jpg",
-    "account": "ads",
-    "category": "겨울 난방·방풍",
-    "hook": "문을 여닫을 때마다 복도 한기가 밀려오는 현관에 두르는 자석 커튼입니다.",
-    "summary": [
-      "가운데가 자석으로 붙어 사람이 지나가면 스스로 닫히고, 문틀에 벨크로로 걸어 못을 쓰지 않습니다. 안감이 두툼해 바람을 막아 줍니다."
-    ],
-    "search_keyword": "현관 방풍커튼"
-  },
-  {
-    "id": "weatherstrip",
-    "name": "코멧 국내생산 사계절 우레탄 문풍지 3M, 5개",
-    "partners_link": "https://link.coupang.com/a/iIESNRkMGO",
-    "image": "img/products/weatherstrip.jpg",
-    "account": "ads",
-    "category": "겨울 난방·방풍",
-    "hook": "문과 창문 틈에 붙여 바람이 새는 자리를 막는 접착식 우레탄 폼입니다.",
-    "summary": [
-      "말랑한 우레탄이라 울퉁불퉁한 틈에도 모양대로 밀착되고 계절 상관없이 쓸 수 있습니다. 3M씩 다섯 롤이라 문마다 나눠 붙이기 좋습니다."
-    ],
-    "search_keyword": "문풍지"
-  },
-  {
-    "id": "humidifier",
-    "name": "홈플래닛 초음파 가습기 4L, RD210/화이트",
-    "partners_link": "https://link.coupang.com/a/iIE620JWfI",
-    "image": "img/products/humidifier.jpg",
-    "account": "ads",
-    "category": "겨울 난방·방풍",
-    "hook": "난방으로 건조해진 방 공기에 물안개를 채우는 4L 초음파 가습기입니다.",
-    "summary": [
-      "물통을 위에서 열어 바로 채우고, 본체와 통이 분리돼 안쪽까지 씻을 수 있습니다. 통이 커서 물을 채우는 일이 잦지 않습니다."
-    ],
-    "search_keyword": "가습기 4L"
-  },
-  {
-    "id": "hand-warmer",
-    "name": "하루온 군인핫팩 포켓용 대용량 핫팩 160g, 30개",
-    "partners_link": "https://link.coupang.com/a/iCGMOaYd52",
-    "image": "img/products/hand-warmer.jpg",
-    "account": "ads",
-    "category": "출퇴근·차량",
-    "hook": "주머니에 넣고 하루를 버티는 대용량 포켓 핫팩입니다.",
-    "summary": [
-      "160g 큰 사이즈라 온기가 오래갑니다. 30개입 한 상자라 아침에 하나씩 챙겨 나가기 좋습니다."
-    ],
-    "search_keyword": "하루온 핫팩"
-  },
-  {
-    "id": "balaclava",
-    "name": "라세르 겨울 방한 기모 바라클라바",
-    "partners_link": "https://link.coupang.com/a/iIEUEDeUua",
-    "image": "img/products/balaclava.jpg",
-    "account": "ads",
-    "category": "출퇴근·차량",
-    "hook": "목부터 정수리까지 한 번에 감싸는 기모 바라클라바입니다.",
-    "summary": [
-      "얼굴 둘레에 기모 안감을 넣어 찬 바람이 목덜미로 들어오는 것을 줄입니다. 헬멧이나 모자 안에 같이 쓸 수 있는 두께입니다."
-    ],
-    "search_keyword": "방한 바라클라바"
-  },
-  {
-    "id": "anti-fog",
-    "name": "소낙스 김서림 방지제 관리용품, 500ml, 1개",
-    "partners_link": "https://link.coupang.com/a/iIE2GCK1TM",
-    "image": "img/products/anti-fog.jpg",
-    "account": "ads",
-    "category": "출퇴근·차량",
-    "hook": "겨울 아침 차에 오르면 앞유리에 서리는 김을 줄여 주는 코팅제입니다.",
-    "summary": [
-      "유리 안쪽에 뿌려 닦아 두면 수증기가 맺히는 자리가 줄어듭니다. 500ml라 한 겨울 내내 차 한 대에 쓰기 넉넉합니다."
-    ],
-    "search_keyword": "김서림 방지제"
-  },
-  {
-    "id": "ice-scraper",
-    "name": "깔끔조아 스크래치 없는 회전형 길이조절 차량용 성에제거기, 1개",
-    "partners_link": "https://link.coupang.com/a/iIE47Fx8DY",
-    "image": "img/products/ice-scraper.jpg",
-    "account": "ads",
-    "category": "출퇴근·차량",
-    "hook": "손이 닿지 않는 앞유리 가운데까지 밀어 내는 길이조절 스크래퍼입니다.",
-    "summary": [
-      "손잡이 각도가 돌아가고 길이가 늘어나 차 높이에 맞춰 쓸 수 있습니다. 브러시가 함께 달려 눈과 성에를 한 번에 정리합니다."
-    ],
-    "search_keyword": "차량 성에제거기"
-  },
-  {
-    "id": "sink-splash",
-    "name": "달팽이리빙 퀴진드마망 실리콘 씽크대 물막이, 크림화이트, 1개",
-    "partners_link": "https://link.coupang.com/a/iIEWfbNl0e",
-    "image": "img/products/sink-splash.jpg",
-    "account": "ads",
-    "category": "주방·살림",
-    "hook": "설거지할 때 튀는 물이 옷과 바닥으로 가지 않게 세우는 실리콘 판입니다.",
-    "summary": [
-      "하단 흡착판으로 상판에 붙여 세우고, 말랑한 실리콘 재질이라 부딪혀도 소리가 나지 않습니다. 물때가 끼면 통째로 씻어 말리면 됩니다."
-    ],
-    "search_keyword": "싱크대 물막이"
-  },
-  {
-    "id": "oil-screen",
-    "name": "시샘 연마제없는 스텐 다용도 기름방지망, 33cm, 1개",
-    "partners_link": "https://link.coupang.com/a/iIEXV8gHw4",
-    "image": "img/products/oil-screen.jpg",
-    "account": "ads",
-    "category": "주방·살림",
-    "hook": "고기를 굽거나 튀길 때 튀는 기름을 막아 두는 스테인리스 망입니다.",
-    "summary": [
-      "촘촘한 망이라 김은 빠져나가고 기름은 막아 줍니다. 손잡이가 달려 있어 조리 중에도 집기 편합니다."
-    ],
-    "search_keyword": "기름튐 방지망"
-  },
-  {
-    "id": "drain-filter",
-    "name": "코멧 싱크대 배수구 거름망, 500개",
-    "partners_link": "https://link.coupang.com/a/iIFajZuk5A",
-    "image": "img/products/drain-filter.jpg",
-    "account": "take",
-    "category": "주방·살림",
-    "hook": "배수구에 끼워 음식물 찌꺼기와 머리카락을 한 번에 걸러 내는 망입니다.",
-    "summary": [
-      "한 장씩 끼워 쓰고 가득 차면 그대로 버리면 됩니다. 500장이라 몇 달은 다시 사러 가지 않아도 됩니다."
-    ],
-    "search_keyword": "배수구 거름망"
-  },
-  {
-    "id": "diatomite-mat",
-    "name": "코멧 홈 빨아쓰는 규조토 발매트, 베이지 타원, 1개",
-    "partners_link": "https://link.coupang.com/a/iIE0nWcz24",
-    "image": "img/products/diatomite-mat.jpg",
-    "account": "take",
-    "category": "욕실·위생",
-    "hook": "욕실에서 나와 젖은 발을 한 번만 디디면 물기를 빨아들이는 발매트입니다.",
-    "summary": [
-      "규조토가 섞인 연질 소재라 돌처럼 단단하지 않고 발에 부드럽습니다. 빨아서 말릴 수 있어 눅눅한 냄새 걱정이 덜합니다."
-    ],
-    "search_keyword": "규조토 발매트"
-  },
-  {
-    "id": "mold-gel",
-    "name": "홈스타 바르는 곰팡이 싹 세정제, 120ml, 2개",
-    "partners_link": "https://link.coupang.com/a/iIE8F8LqqO",
-    "image": "img/products/mold-gel.jpg",
-    "account": "take",
-    "category": "욕실·위생",
-    "hook": "줄눈과 실리콘 틈에 발라 두면 문지르지 않아도 곰팡이가 들뜨는 젤형 세정제입니다.",
-    "summary": [
-      "흘러내리지 않는 젤이라 벽면에도 붙어 있습니다. 뾰족한 노즐로 좁은 틈에 바로 짜 넣을 수 있습니다."
-    ],
-    "search_keyword": "곰팡이 제거 젤"
-  },
-  {
-    "id": "fish-cake",
-    "name": "효성어묵 부산옛날어묵 종합 (냉동), 1kg, 1개",
-    "partners_link": "https://link.coupang.com/a/iCGPZ9URPM",
-    "image": "img/products/fish-cake.jpg",
-    "account": "take",
-    "category": "겨울간식·식품",
-    "hook": "냉동실에 두고 국이나 떡볶이에 꺼내 쓰는 종합 어묵입니다.",
-    "summary": [
-      "사각·봉·야채 어묵이 섞여 있어 요리마다 골라 쓰기 좋습니다. 1kg이라 몇 번 나눠 먹을 양입니다."
-    ],
-    "search_keyword": "효성어묵 종합"
-  },
-  {
-    "id": "hoppang",
-    "name": "삼립 호빵 발효미종 단팥 + 피자, 97g, 12개입, 1세트",
-    "partners_link": "https://link.coupang.com/a/iSh2YrMnUi",
-    "image": "img/products/hoppang.jpg",
-    "account": "take",
-    "category": "겨울간식·식품",
-    "hook": "전자레인지나 찜기에 데워 겨울 저녁에 먹는 단팥, 피자 호빵입니다",
-    "summary": [
-      "단팥과 피자가 반씩 들어 있어 골라 먹기 좋습니다. 낱개 포장이라 먹을 만큼만 데우면 되고, 로켓프레시로 다음 날 새벽에 도착합니다."
-    ],
-    "search_keyword": "삼립 호빵"
-  },
-  {
-    "id": "boongeoppang",
-    "name": "비비고 단팥붕어빵 (냉동), 300g, 1개",
-    "partners_link": "https://link.coupang.com/a/iIFdE5NoCO",
-    "image": "img/products/boongeoppang.jpg",
-    "account": "take",
-    "category": "겨울간식·식품",
-    "hook": "에어프라이어에 돌리면 겉은 바삭하고 속은 뜨거운 냉동 붕어빵입니다.",
-    "summary": [
-      "팬에 기름을 두르지 않고 에어프라이어로 데울 수 있습니다. 300g 한 봉이라 아이 간식으로 부담 없는 양입니다."
-    ],
-    "search_keyword": "비비고 붕어빵"
-  },
-  {
-    "id": "hot-choco",
-    "name": "미떼 핫초코 오리지날, 30g, 30개입, 1개",
-    "partners_link": "https://link.coupang.com/a/iIFf8a2pjg",
-    "image": "img/products/hot-choco.jpg",
-    "account": "take",
-    "category": "겨울간식·식품",
-    "hook": "우유에 한 봉 풀면 되는 핫초코 30봉입니다.",
-    "summary": [
-      "개별 포장이라 한 잔씩 뜯어 타면 됩니다. 사무실이나 아이 간식으로 두고 쓰기 좋은 구성입니다."
-    ],
-    "search_keyword": "미떼 핫초코"
-  },
-  {
-    "id": "music-box",
-    "name": "홀리해요 크리스마스 오르골 무드등 플랫 스노우볼, 산타",
-    "partners_link": "https://link.coupang.com/a/iCIEE8o6uW",
-    "image": "img/products/music-box.jpg",
-    "account": "take",
-    "category": "홈·데코",
-    "hook": "손잡이를 들면 눈이 내리고 음악이 흐르는 납작한 스노우볼입니다.",
-    "summary": [
-      "세워 두거나 들고 다닐 수 있는 형태라 선반과 식탁 어디에나 놓입니다. 불을 켜면 은은한 무드등으로도 쓸 수 있습니다."
-    ],
-    "search_keyword": "크리스마스 오르골 스노우볼"
-  },
-  {
-    "id": "music-box-lamp",
-    "name": "스네몬 오르골 오로라 무드등, 핑크화이트",
-    "partners_link": "https://link.coupang.com/a/iIFhNLDGpw",
-    "image": "img/products/music-box-lamp.jpg",
-    "account": "take",
-    "category": "홈·데코",
-    "hook": "오로라 빛이 돌아가며 방 천장까지 물들이는 오르골 무드등입니다.",
-    "summary": [
-      "음악이 나오는 오르골에 오로라 조명이 함께 들어 있어 아이 방 취침등으로도 쓸 수 있습니다. 밝기를 낮춰 잠들 때 켜 두기 좋습니다."
-    ],
-    "search_keyword": "오르골 무드등"
-  },
-  {
-    "id": "mini-tree",
-    "name": "크리스마스 40cm 설레는 밤 완제 트리 풀세트 전구포함, 혼합색상",
-    "partners_link": "https://link.coupang.com/a/iIFjGOaEQC",
-    "image": "img/products/mini-tree.jpg",
-    "account": "take",
-    "category": "홈·데코",
-    "hook": "꾸미는 수고 없이 꺼내 세우면 모습이 갖춰지는 40cm 미니 트리입니다.",
-    "summary": [
-      "장식과 전구가 이미 달려 있어 처음 트리를 두는 집도 부담이 적습니다. 40cm라 원룸이나 아이 방 책상 위에도 놓입니다."
-    ],
-    "search_keyword": "미니 크리스마스 트리"
-  },
-  {
-    "id": "fleece-blanket",
-    "name": "더자리 마이블랭킷 극세사 담요",
-    "partners_link": "https://link.coupang.com/a/iIFk7hUsDs",
-    "image": "img/products/fleece-blanket.jpg",
-    "account": "take",
-    "category": "홈·데코",
-    "hook": "소파에 두고 무릎 덮기 좋은 극세사 담요입니다.",
-    "summary": [
-      "촘촘한 극세사라 가볍고 부드럽습니다. 이불 위에 한 겹 더 덮거나 차에 두고 쓰기 좋습니다."
-    ],
-    "search_keyword": "극세사 담요"
-  },
-  {
-    "id": "electric-seat",
-    "name": "HanilMedical 1인용 전기방석 HL-100(20), 네이비, 450 x 450 mm",
-    "partners_link": "https://link.coupang.com/a/iJZa0xMjV6",
-    "image": "img/products/electric-seat.jpg",
-    "account": "take",
-    "category": "잠자리",
-    "hook": "소파나 의자에 앉아 있는 동안 엉덩이부터 따뜻하게 데우는 1인용 전기방석입니다.",
-    "summary": [
-      "전원을 넣으면 열선이 골고루 퍼지고, 쓰지 않을 때는 돌돌 말아 두면 됩니다. 등받이 의자나 소파 한쪽에 깔아 두기 좋은 크기입니다."
-    ],
-    "search_keyword": "전기방석 1인용"
-  },
-  {
-    "id": "k2-gloves",
-    "name": "K2 세이프티 히트플렉스 니트 장갑, 1세트, 블랙",
-    "partners_link": "https://link.coupang.com/a/iJZgIrr1O0",
-    "image": "img/products/k2-gloves.jpg",
-    "account": "ads",
-    "category": "출퇴근길",
-    "hook": "자전거 손잡이나 버스 손잡이를 잡는 아침, 손끝이 시린 것을 덜어 주는 니트 장갑입니다.",
-    "summary": [
-      "니트로 짠 장갑이라 손등에 닿는 감촉이 부드럽고, 두께가 두껍지 않아 가방이나 코트 주머니에 넣어 두기 좋습니다."
-    ],
-    "search_keyword": "K2 방한장갑"
-  },
-  {
-    "id": "kimchi",
-    "name": "종가 포기김치, 2.3kg, 1개",
-    "partners_link": "https://link.coupang.com/a/iJZojEkCYe",
-    "image": "img/products/kimchi.jpg",
-    "account": "take",
-    "category": "겨울 야식",
-    "hook": "김장을 직접 담그지 않는 집에서 겨울 내내 꺼내 먹기 좋은 포기김치입니다.",
-    "summary": [
-      "한 통으로 와서 김치통에 옮겨 담아 두면 됩니다. 국이나 찌개에 넣을 때도 한 포기씩 꺼내 쓰기 좋습니다."
-    ],
-    "search_keyword": "종가 포기김치"
-  },
-  {
-    "id": "radiator",
-    "name": "신일 컴팩트 라디에이터 5핀, SER-D5500KP",
-    "partners_link": "https://link.coupang.com/a/iJZvbm24om",
-    "image": "img/products/radiator.jpg",
-    "account": "take",
-    "category": "겨울 준비",
-    "hook": "보일러를 켜기엔 아까운 날, 방 하나만 데우는 전기 라디에이터입니다.",
-    "summary": [
-      "기름이 도는 방식이라 바람이 일지 않고 소리가 크지 않습니다. 바퀴가 달려 있어 방과 거실 사이를 옮겨 가며 쓸 수 있습니다."
-    ],
-    "search_keyword": "신일 라디에이터"
-  },
-  {
-    "id": "tokyotomi-heater",
-    "name": "토요토미 팬히터 LC-L53 풀세트 (국내 정품 A/S 가능) 도요토미, BLACK",
-    "partners_link": "https://link.coupang.com/a/iJZycVPxSu",
-    "image": "img/products/tokyotomi-heater.jpg",
-    "account": "ads",
-    "category": "별별템",
-    "hook": "캠핑하는 사람들이 먼저 찾는 일본식 팬히터입니다. 쿠팡에 정품으로 올라와 있습니다.",
-    "summary": [
-      "기름을 넣고 쓰는 난로라 환기에 신경 써야 하고, 무게가 있어 한 번 자리를 잡으면 거실 한쪽에 두고 쓰게 됩니다."
-    ],
-    "search_keyword": "토요토미 팬히터"
-  },
-  {
-    "id": "drone",
-    "name": "DJI Neo 2 플라이 모어 콤보 드론, 혼합색상, 1세트",
-    "partners_link": "https://link.coupang.com/a/iJZCB6mDYq",
-    "image": "img/products/drone.jpg",
-    "account": "ads",
-    "category": "별별템",
-    "hook": "손바닥만 한 크기로 하늘 사진을 남기는 드론입니다. 쿠팡 가전 코너에 이런 것도 있습니다.",
-    "summary": [
-      "본체와 조종기, 배터리가 함께 오는 구성입니다. 겨울 여행에서 위에서 찍은 사진을 남기고 싶을 때 눈에 들어오는 세트입니다."
-    ],
-    "search_keyword": "DJI Neo 2 드론"
-  },
-  {
-    "id": "premiere-projector",
-    "name": "삼성전자 The Premiere 프로젝터 웜 화이트 254~330cm 방문설치, SP-LPDU9SAXXKR",
-    "partners_link": "https://link.coupang.com/a/iJZGHOUWlM",
-    "image": "img/products/premiere-projector.jpg",
-    "account": "ads",
-    "category": "별별템",
-    "hook": "벽에 붙여 두고 쓰는 삼성 초단초점 프로젝터입니다. 장바구니에 담아 둘 수 있는 가전으로 쿠팡에 올라와 있습니다.",
-    "summary": [
-      "방문 설치로 배송되는 모델이라 자리를 잡아 주는 과정까지 포함되어 있습니다. 거실 벽 한 면을 화면으로 쓰고 싶을 때 비교해 볼 만한 상품입니다."
-    ],
-    "search_keyword": "삼성 더 프리미어 프로젝터"
-  },
-  {
-    "id": "frost-cover",
-    "name": "카템 3중 차단 마그네틱 성에방지 커버, 전차종, 1세트",
-    "partners_link": "https://link.coupang.com/a/iLFf9cx10m",
-    "image": "img/products/frost-cover.jpg",
-    "account": "take",
-    "category": "출퇴근길",
-    "hook": "아침에 성에를 긁는 대신 밤에 덮어 두는 앞유리 커버입니다.",
-    "summary": [
-      "자석과 문틈 고정 방식이라 덮어 두고 아침에 걷어 내면 됩니다. 사이드미러까지 함께 덮는 구성이라 유리에 앉은 성에를 밀어 내는 시간을 줄이는 쪽입니다."
-    ],
-    "search_keyword": "차량 성에방지커버"
-  },
-  {
-    "id": "heating-vest",
-    "name": "에쉬울프 USB 발열조끼 스마트 온열조끼, DR013",
-    "partners_link": "https://link.coupang.com/a/iLFuzgsa9k",
-    "image": "img/products/heating-vest.jpg",
-    "account": "take",
-    "category": "출퇴근길",
-    "hook": "보조배터리를 꽂으면 앞판과 뒷판이 데워지는 조끼입니다.",
-    "summary": [
-      "패딩 안에 껴입거나 단독으로 입고 다닐 수 있는 두께입니다. USB 연결 방식이라 쓰는 보조배터리 용량에 따라 사용 시간이 달라지고, KC 인증 표기가 있는지 확인해 두는 편이 좋습니다."
-    ],
-    "search_keyword": "USB 발열조끼"
-  },
-  {
-    "id": "electric-grill",
-    "name": "홈플래닛 반반 멀티 전기그릴(개별 온도 조절), AD-SK18",
-    "partners_link": "https://link.coupang.com/a/iLEWQmy5U4",
-    "image": "img/products/electric-grill.jpg",
-    "account": "take",
-    "category": "연말 홈파티",
-    "hook": "한쪽은 굽고 한쪽은 끓이는 반반 상판 전기그릴입니다.",
-    "summary": [
-      "좌우 온도를 따로 조절해 고기와 국물 요리를 같이 올려 둘 수 있습니다. 상판이 넓어 식탁 가운데에 두고 여러 명이 둘러앉기 좋습니다."
-    ],
-    "search_keyword": "반반 전기그릴"
-  },
-  {
-    "id": "fishbread-maker",
-    "name": "위즈웰 간식 메이커 3종 세트 붕어빵 + 와플 + 샌드위치, WSW-6137",
-    "partners_link": "https://link.coupang.com/a/iLE0sQqZEq",
-    "image": "img/products/fishbread-maker.jpg",
-    "account": "take",
-    "category": "겨울 간식",
-    "hook": "플레이트를 바꿔 끼우면 붕어빵, 와플, 샌드위치가 되는 전기 메이커입니다.",
-    "summary": [
-      "붕어빵틀과 와플판, 샌드위치판이 한 세트로 옵니다. 아이와 같이 반죽을 붓고 기다리는 겨울 방학 간식용입니다."
-    ],
-    "search_keyword": "붕어빵 메이커"
-  },
-  {
-    "id": "home-sauna",
-    "name": "[휴먼사우나] 로벤스 편백나무+히노끼 스톤찜질+좌훈+족욕찜질 원적외선 반신욕기, LPH-300",
-    "partners_link": "https://link.coupang.com/a/iLFmqwxj0C",
-    "image": "img/products/home-sauna.jpg",
-    "account": "ads",
-    "category": "별별템",
-    "hook": "집에 들이는 1인용 반신욕기입니다. 편백나무 안에서 앉는 자리와 스톤을 데우는 구조입니다.",
-    "summary": [
-      "원적외선 방식이라 물을 끓이지 않고 앉는 자리와 스톤을 데웁니다. 크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다."
-    ],
-    "search_keyword": "1인용 가정용 사우나"
-  },
-  {
-    "id": "snow-blower",
-    "name": "클라빈다 충전식 무선 전동 리튬 배터리 제설기 소형 다기능 휴대용 가정용 고출력 접이식, 1세트",
-    "partners_link": "https://link.coupang.com/a/iLF6x1Pvky",
-    "image": "img/products/snow-blower.jpg",
-    "account": "ads",
-    "category": "별별템",
-    "hook": "눈이 온 날 아침, 삽 대신 미는 충전식 제설기입니다.",
-    "summary": [
-      "충전 배터리로 눈을 밀어 내는 소형 제설기입니다. 배터리 포함 여부와 날개 폭이 값을 가릅니다. 같은 검색에 손에 드는 송풍기형이 섞여 나오니 상품 구분을 확인해 보세요."
-    ],
-    "search_keyword": "무선 제설기"
-  },
-  {
-    "id": "mini-dehumidifier",
-    "name": "EXTEDRG 제습기 2.8L 강력제습 가정용 저소음 원룸 미니 제습기, D9",
-    "partners_link": "https://link.coupang.com/a/iNjEeRx34C",
-    "image": "img/products/mini-dehumidifier.jpg",
-    "account": "take",
-    "category": "결로·습기",
-    "hook": "창틀에 물방울이 맺히는 날, 방 안 물을 물통으로 모으는 작은 제습기입니다.",
-    "summary": [
-      "옷장이나 욕실처럼 좁은 자리에 두는 2.8L 소형입니다. 물통이 차면 표시가 뜨고, 습도가 내려가면 스스로 멈춥니다."
-    ],
-    "search_keyword": "미니 제습기"
-  },
-  {
-    "id": "dehumidifier-12l",
-    "name": "롯데알미늄 제습기 12L, LDH-7000N",
-    "partners_link": "https://link.coupang.com/a/iNjUwx2rpA",
-    "image": "img/products/dehumidifier-12l.jpg",
-    "account": "take",
-    "category": "결로·습기",
-    "hook": "빨래를 널어 둔 방의 물을 하루 12L까지 빼내는 컴프레서 제습기입니다.",
-    "summary": [
-      "일일 제습량 12L, 사용면적 약 10평으로 표기된 모델입니다. 물통은 2L이고 연속배수 호스를 연결할 수 있어 물 비우는 일을 줄일 수 있습니다."
-    ],
-    "search_keyword": "가정용 제습기 12L"
-  },
-  {
-    "id": "winter-duvet",
-    "name": "코멧 홈 양면 극세사 솔리드 차렵이불",
-    "partners_link": "https://link.coupang.com/a/iNjFeUXyNw",
-    "image": "img/products/winter-duvet.jpg",
-    "account": "take",
-    "category": "겨울 침구",
-    "hook": "커버를 씌우지 않고 바로 덮는 겨울 극세사 차렵이불입니다.",
-    "summary": [
-      "솜이 안에 누벼 있어 이불커버 없이 쓰고, 빨래도 한 장만 하면 됩니다. 앞뒤 색이 달라 뒤집어 덮을 수 있습니다."
-    ],
-    "search_keyword": "극세사 차렵이불"
-  },
-  {
-    "id": "bathroom-heater",
-    "name": "한경희생활과학 PTC 온풍기 욕실 난방기 스탠드 벽걸이 전기히터, HAAN-4000(블랙)",
-    "partners_link": "https://link.coupang.com/a/iNkaGmHDW0",
-    "image": "img/products/bathroom-heater.jpg",
-    "account": "take",
-    "category": "욕실 난방",
-    "hook": "욕실 벽에 걸거나 세워 두고 샤워 전에 켜 두는 온풍기입니다.",
-    "summary": [
-      "벽에 걸거나 세워 두는 겸용형이라 좁은 욕실에서 놓을 자리를 골라 쓸 수 있습니다. 물이 닿는 곳에 두는 제품이라 설치 위치와 전원은 설명서를 따라 확인해 두는 편이 좋습니다."
-    ],
-    "search_keyword": "욕실 온풍기"
-  },
-  {
-    "id": "foot-spa",
-    "name": "이노크아든 사파이어 스파 족욕기, FM-505, 화이트",
-    "partners_link": "https://link.coupang.com/a/iNjK48KKbs",
-    "image": "img/products/foot-spa.jpg",
-    "account": "take",
-    "category": "겨울 발 보온",
-    "hook": "물을 받아 온도를 맞춰 두는 습식 족욕기입니다.",
-    "summary": [
-      "온도를 정해 두면 맞춰 가열하고, 바닥에 지압 롤러와 거품 기능이 있습니다. 고정형이라 둘 자리와 콘센트 위치를 먼저 정하는 편이 좋습니다."
-    ],
-    "search_keyword": "가정용 족욕기"
-  },
-  {
-    "id": "neck-massager",
-    "name": "제스파 플러스 목어깨 등 허리 마사지기, ZP187, 퍼플",
-    "partners_link": "https://link.coupang.com/a/iNjJRe2DPU",
-    "image": "img/products/neck-massager.jpg",
-    "account": "take",
-    "category": "겨울 몸풀기",
-    "hook": "목에 걸치고 기대서 쓰는 목·어깨 마사지기입니다.",
-    "summary": [
-      "4개의 안마볼이 돌아가며 방향을 바꾸고, 온열을 함께 켤 수 있습니다. 15분이 지나면 스스로 꺼지고, 차량용 전원선이 함께 들어 있습니다."
-    ],
-    "search_keyword": "목어깨 마사지기"
-  },
-  {
-    "id": "filter-shower",
-    "name": "코멧 홈 파워수압 필터 샤워기 본품 + 필터 2개입, 실버",
-    "partners_link": "https://link.coupang.com/a/iNjGtwDojc",
-    "image": "img/products/filter-shower.jpg",
-    "account": "take",
-    "category": "욕실",
-    "hook": "헤드 안쪽 필터로 물을 한 번 거르는 샤워기입니다.",
-    "summary": [
-      "본체와 필터 2개가 한 세트로 옵니다. 필터는 2~3개월 주기로 갈아 끼우고, 수압을 올려 주는 판이 들어 있습니다."
-    ],
-    "search_keyword": "필터 샤워기"
-  },
-  {
-    "id": "firewood-stove",
-    "name": "아웃도어웍스 화목난로, OW200",
-    "partners_link": "https://link.coupang.com/a/iNjIJWmvVk",
-    "image": "img/products/firewood-stove.jpg",
-    "account": "ads",
-    "category": "별별템",
-    "hook": "장작을 넣고 불을 보는 캠핑용 화목난로입니다.",
-    "summary": [
-      "연통과 함께 세팅하는 스테인리스 난로입니다. 불을 쓰는 제품이라 실내에서는 환기와 설치 자리, 소방 안전을 먼저 확인해야 합니다."
-    ],
-    "search_keyword": "캠핑 화목난로"
-  },
-  {
-    "id": "thermos-lunchbox",
-    "name": "써모스 일체형 대용량 보온도시락 + 보온백 + 수저 세트, 샌드베이지, 1개",
-    "partners_link": "https://link.coupang.com/a/iNGqzfSzhA",
-    "image": "img/products/thermos-lunchbox.jpg",
-    "account": "take",
-    "category": "주방·도시락",
-    "hook": "국물이나 반찬이 식지 않게 싸 가는 보온도시락입니다.",
-    "summary": [
-      "1500ml를 네 단으로 나눠 담는 일체형이고 보온백과 수저가 같이 옵니다. 보냉도 되는 제품으로 표기돼 있습니다."
-    ],
-    "search_keyword": "써모스 보온도시락"
-  },
-  {
-    "id": "advent-calendar",
-    "name": "오리온 크리스마스 어드벤트 캘린더 과자세트, 9종, 1세트",
-    "partners_link": "https://link.coupang.com/a/iNGrtQRPe8",
-    "image": "img/products/advent-calendar.jpg",
-    "account": "myeongjanae",
-    "category": "크리스마스",
-    "hook": "12월에 하루씩 열어 보는 크리스마스 달력입니다.",
-    "summary": [
-      "과자 9종이 들어 있는 혼합 세트입니다. 상자 겉면에 작은 문들이 있어 12월에 하나씩 열어 보는 방식입니다."
-    ],
-    "search_keyword": "어드벤트 캘린더"
-  },
-  {
-    "id": "heating-tent",
-    "name": "따수미 패브릭 난방텐트 3인용",
-    "partners_link": "https://link.coupang.com/a/iNGssAUnfM",
-    "image": "img/products/heating-tent.jpg",
-    "account": "take",
-    "category": "겨울 난방·방풍",
-    "hook": "침대 위에 씌워 방 하나만 덥히는 난방텐트입니다.",
-    "summary": [
-      "지퍼로 여닫고 바닥이 없는 구조라 침대 위에 덮어 쓰는 방식입니다. 3인용(킹) 크기로 나온 제품입니다."
-    ],
-    "search_keyword": "패브릭 난방텐트"
-  },
-  {
-    "id": "baby-wipes",
-    "name": "코멧 오리지널 유아용 아기물티슈 캡형, 100매입",
-    "partners_link": "https://link.coupang.com/a/iNGtoaNmy4",
-    "image": "img/products/baby-wipes.jpg",
-    "account": "myeongjanae",
-    "category": "생필품",
-    "hook": "한 장씩 뽑아 쓰는 아기물티슈입니다.",
-    "summary": [
-      "캡을 눌러 한 장씩 뽑는 캡형 100매입입니다. 상품평이 49만 개가 넘고 한 달에 10만 명 이상이 산 상품입니다."
-    ],
-    "search_keyword": "코멧 아기물티슈"
-  },
-  {
-    "id": "kids-balaclava",
-    "name": "우드피카 유아용 패치 바라클라바 넥워머",
-    "partners_link": "https://link.coupang.com/a/iNGukGGgi4",
-    "image": "img/products/kids-balaclava.jpg",
-    "account": "take",
-    "category": "겨울 방한",
-    "hook": "목부터 머리까지 한 번에 덮는 아동용 넥워머입니다.",
-    "summary": [
-      "단추로 여미는 아크릴 니트라 목도리처럼 풀리지 않습니다. 아동·유아용으로 나온 제품입니다."
-    ],
-    "search_keyword": "유아 바라클라바"
-  },
-  {
-    "id": "socks-5set",
-    "name": "퍼니스코 여성 겨울 수면 양말 5종 SET",
-    "partners_link": "https://link.coupang.com/a/iO8Bl4KKOa",
-    "image": "img/products/socks-5set.jpg",
-    "account": "take",
-    "category": "겨울 침구·수면",
-    "hook": "밤에 발이 시려 양말을 신고 자는 집에 두는 무압박 수면양말입니다.",
-    "summary": [
-      "밴딩을 세게 조이지 않아 신고 자도 발목에 자국이 덜 남습니다. 다섯 켤레가 한 세트라 빨아 가며 돌려 신기 좋습니다."
-    ],
-    "search_keyword": "여성 수면양말 5종"
-  },
-  {
-    "id": "socks-4set",
-    "name": "이지하임 4켤레 털빠짐없는 편안한 무압박 남녀공용 수면양말 세트",
-    "partners_link": "https://link.coupang.com/a/iO8FgfqG8O",
-    "image": "img/products/socks-4set.jpg",
-    "account": "take",
-    "category": "겨울 침구·수면",
-    "hook": "수면양말을 신고 나면 털이 묻어 나와 고민이던 집에 두는 네 켤레 세트입니다.",
-    "summary": [
-      "상품명에 털 빠짐을 줄인 소재로 표기돼 있습니다. 남녀공용으로 나와 온 가족이 나눠 신을 수 있습니다."
-    ],
-    "search_keyword": "무압박 수면양말 4켤레"
-  },
-  {
-    "id": "hotpack-attach",
-    "name": "하루온 붙이는 핫팩 50g 10개입, 2개",
-    "partners_link": "https://link.coupang.com/a/iO8CicdLVc",
-    "image": "img/products/hotpack-attach.jpg",
-    "account": "take",
-    "category": "겨울 방한",
-    "hook": "옷 안쪽에 붙여 두면 손에 쥐지 않아도 등과 배가 따뜻한 핫팩입니다.",
-    "summary": [
-      "10개입 봉지 두 개로 오는 구성입니다. 상품평이 5만 2천 개가 넘고, 최근 한 달 사이 7천 명 이상이 산 것으로 표시돼 있습니다."
-    ],
-    "search_keyword": "하루온 붙이는 핫팩"
-  },
-  {
-    "id": "dish-soap",
-    "name": "순샘 구연산 자몽향 주방세제 리필, 1.4L, 3개",
-    "partners_link": "https://link.coupang.com/a/iO8DtBKacu",
-    "image": "img/products/dish-soap.jpg",
-    "account": "take",
-    "category": "살림·세제",
-    "hook": "설거지할 때 기름이 잘 빠지지 않아 세제를 더 짜게 되는 집에 두는 리필입니다.",
-    "summary": [
-      "1.4L 리필 세 통 구성입니다. 구연산이 들어간 자몽향 세제로 표기돼 있습니다."
-    ],
-    "search_keyword": "순샘 주방세제 리필"
-  },
-  {
-    "id": "drying-rack",
-    "name": "코멧 홈 접이식 대형 빨래건조대, 그레이, 1개",
-    "partners_link": "https://link.coupang.com/a/iO8Eo2uBq0",
-    "image": "img/products/drying-rack.jpg",
-    "account": "take",
-    "category": "살림·빨래",
-    "hook": "겨울엔 밖에 못 널어 거실에 건조대를 펴 두게 되는 집에 두는 접이식 건조대입니다.",
-    "summary": [
-      "쓰지 않을 때는 접어 세워 둘 수 있습니다. 상품평이 2만 2천 개가 넘는 상품입니다."
-    ],
-    "search_keyword": "코멧 접이식 빨래건조대"
-  },
-  {
-    "id": "dyson-airwrap",
-    "name": "다이슨 에어랩 id 멀티 스타일러 앤 드라이어, 161845-01, 블루 + 코퍼",
-    "partners_link": "https://link.coupang.com/a/iO8Gt4yyfk",
-    "image": "img/products/dyson-airwrap.jpg",
-    "account": "ads",
-    "category": "뷰티·가전",
-    "hook": "겨울 외출 전에 머리를 말리고 모양까지 잡고 싶다는 말이 나올 때 눈에 들어오는 기계입니다.",
-    "summary": [
-      "본체와 여러 가지 헤드가 함께 오는 구성입니다. 머리를 말리는 일과 모양을 잡는 일을 한 자리에서 끝내는 쪽입니다."
-    ],
-    "search_keyword": "다이슨 에어랩"
-  },
-  {
-    "id": "massage-chair",
-    "name": "제스파 컴포르테 안마의자 + 전용 러그 방문설치, ZPC2034(안마의자), ZP540(러그), 퓨어화이트",
-    "partners_link": "https://link.coupang.com/a/iO8HqggG16",
-    "image": "img/products/massage-chair.jpg",
-    "account": "ads",
-    "category": "가전·설치",
-    "hook": "퇴근하고 소파 대신 앉겠다고 하는 자리에 놓는 전신 안마의자입니다.",
-    "summary": [
-      "안마의자와 전용 러그가 함께 오고 방문 설치로 배송됩니다. 크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다."
-    ],
-    "search_keyword": "제스파 컴포르테 안마의자"
-  },
-  {
-    "id": "homstar-pink",
-    "name": "홈스타 핑크파워 욕실 찌든때 클리너, 750ml, 2개",
-    "partners_link": "https://link.coupang.com/a/iQCW1zM8US",
-    "image": "img/products/homstar-pink.jpg",
-    "account": "take",
-    "category": "욕실·위생",
-    "hook": "욕실 타일과 줄눈의 찌든 때에 뿌려 두는 거품형 세정제입니다.",
-    "summary": [
-      "분사대가 달린 750ml 두 통 구성입니다. 거품을 붙여 두었다가 물로 헹구는 방식으로 쓰고, 욕실과 주방에 한 통씩 나눠 둘 수 있습니다."
-    ],
-    "search_keyword": "홈스타 핑크파워",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/ln-Zo04IiU4",
-      "views": 5600000,
-      "uploaded": "2026-08-12",
-      "store_word": "다이소",
-      "why_coupang": "영상에서 이 제품은 다이소보다 쿠팡이 더 저렴하다고 짚었습니다. 두 통 구성으로 한 번에 받는 쪽입니다."
-    }
-  },
-  {
-    "id": "shower-rod-shelf",
-    "name": "물빠짐 샤워봉 거치 선반 + 보조캡 3종 + 방수테이프 세트, 화이트, 1세트",
-    "partners_link": "https://link.coupang.com/a/iQC1PH3waW",
-    "image": "img/products/shower-rod-shelf.jpg",
-    "account": "take",
-    "category": "욕실 수납",
-    "hook": "샤워봉에 걸어 물이 빠지는 자리에 두는 선반입니다.",
-    "summary": [
-      "샤워봉에 걸어 고정하는 방식이라 타공 없이 설치합니다. 바닥이 물빠짐 구조라 샴푸병 밑에 물이 고이지 않고, 보조캡과 방수테이프가 함께 옵니다."
-    ],
-    "search_keyword": "샤워봉 선반",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/ln-Zo04IiU4",
-      "views": 5600000,
-      "uploaded": "2026-08-12",
-      "store_word": "다이소",
-      "why_coupang": "샤워봉에 거는 방식이라 타공 없이 쓰고, 보조캡과 방수테이프까지 한 세트로 옵니다."
-    }
-  },
-  {
-    "id": "bathroom-shelf-set",
-    "name": "다용도 무타공 욕실 수납선반 6종 세트 일자형 드라이기 거치대 비누받침대 칫솔걸이, 화이트, 1세트",
-    "partners_link": "https://link.coupang.com/a/iQC5PCoQuq",
-    "image": "img/products/bathroom-shelf-set.jpg",
-    "account": "take",
-    "category": "욕실 수납",
-    "hook": "못을 쓰지 않고 붙이는 욕실 수납 6종 세트입니다.",
-    "summary": [
-      "일자형 선반과 비누받침, 칫솔걸이, 드라이기 거치대를 한 세트로 묶은 구성입니다. 물이 빠지는 구조라 세면대 옆에 두기 좋습니다."
-    ],
-    "search_keyword": "무타공 욕실선반 세트",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/ln-Zo04IiU4",
-      "views": 5600000,
-      "uploaded": "2026-08-12",
-      "store_word": "다이소",
-      "why_coupang": "6종을 한 세트로 묶어 욕실 수납을 한 번에 맞추는 구성입니다."
-    }
-  },
-  {
-    "id": "kobukchip-sanghu",
-    "name": "오리온 꼬북칩 얼얼한 샹궈맛, 102g, 12개",
-    "partners_link": "https://link.coupang.com/a/iQESmpr2vQ",
-    "image": "img/products/kobukchip-sanghu.jpg",
-    "account": "ads",
-    "category": "편의점 간식·과자",
-    "hook": "편의점에서 한 봉씩 집어 오던 매운 과자를 열두 봉 한 번에 받는 구성입니다.",
-    "summary": [
-      "샹궈 향과 얼얼한 매운맛이 도는 102g 봉입니다. 열두 봉이라 야식이나 간식으로 하나씩 꺼내 먹기 좋고, 편의점에 들러 낱봉으로 사 모으는 일이 줄어듭니다. 신상이라 상품평은 아직 적습니다."
-    ],
-    "search_keyword": "꼬북칩 얼얼한 샹궈맛",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/x02aTqykcHY",
-      "views": 104537,
-      "uploaded": "2026-11-05",
-      "store_word": "편의점",
-      "why_coupang": "편의점에서 낱봉으로 집어 오는 102g을 열두 봉 묶음으로 받습니다. 신상이라 상품평이 적어 리뷰 인용 줄은 빼고 구성만 쓰는 편이 좋습니다."
-    }
-  },
-  {
-    "id": "abc-choco-187",
-    "name": "롯데웰푸드 ABC 초콜릿, 187g, 3개",
-    "partners_link": "https://link.coupang.com/a/iQEVKNmeo8",
-    "image": "img/products/abc-choco-187.jpg",
-    "account": "ads",
-    "category": "간식·초콜릿",
-    "hook": "마트에서 한 봉씩 사 오던 ABC 초콜릿을 세 봉 묶어 받는 구성입니다.",
-    "summary": [
-      "187g 봉지 세 개로 옵니다. 책상 서랍이나 가방에 나눠 두고 하나씩 꺼내 먹기 좋고, 로켓배송으로 다음 날 도착합니다."
-    ],
-    "search_keyword": "롯데 ABC 초콜릿 187g",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/ztY8I1H1tVI",
-      "views": 151571,
-      "uploaded": "2026-11-11",
-      "store_word": "마트",
-      "why_coupang": "영상은 마트 신상 ABC 소프트밀크 187g 한 봉을 소개합니다. 쿠팡에서는 같은 187g 봉을 세 개 묶음으로 받고 로켓배송으로 다음 날 옵니다."
-    }
-  },
-  {
-    "id": "ediya-toffe-nut",
-    "name": "이디야 비니스트 토피넛 라떼분말, 20g, 30개입, 1개",
-    "partners_link": "https://link.coupang.com/a/iQEYy7kS3E",
-    "image": "img/products/ediya-toffe-nut.jpg",
-    "account": "take",
-    "category": "겨울 음료·커피",
-    "hook": "코스트코에서 상자째 사 오던 토피넛 라떼 스틱을 서른 봉으로 받는 구성입니다.",
-    "summary": [
-      "20g 스틱 30개입 한 상자입니다. 뜨거운 물에 한 봉 풀면 되고 상품평이 8천 개가 넘습니다. 코스트코에 가지 않아도 로켓배송으로 다음 날 도착합니다."
-    ],
-    "search_keyword": "이디야 토피넛 라떼",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/kJlODeg5_hQ",
-      "views": 125233,
-      "uploaded": "2026-11-19",
-      "store_word": "코스트코",
-      "why_coupang": "영상은 코스트코에서 이디야 토피넛 라떼 한 상자를 장바구니에 담습니다. 쿠팡 같은 30개입 상자가 할인가로 올라와 있고, 회원이 아니어도 다음 날 도착합니다."
-    }
-  },
-  {
-    "id": "led-thermo-clock",
-    "name": "샤오미 디지털 대화면 LCD 시계 온습도계(건전지포함), 화이트, 2개",
-    "partners_link": "https://link.coupang.com/a/iShBc92TL2",
-    "image": "img/products/led-thermo-clock.jpg",
-    "account": "ads",
-    "category": "자취 살림",
-    "hook": "원룸 책상 위에 두고 온도와 습도, 시각을 한 화면으로 보는 시계입니다.",
-    "summary": [
-      "숫자가 크게 뜨는 LCD 화면에 온도와 습도, 시각이 함께 나옵니다. 건전지가 들어 있어 콘센트 없이 두면 되고, 두 개라 방과 거실에 하나씩 나눠 둘 수 있습니다."
-    ],
-    "search_keyword": "샤오미 온습도계 시계",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/QXoij_61VqA",
-      "views": 248370,
-      "uploaded": "2026-11-17",
-      "store_word": "쿠팡",
-      "why_coupang": "영상 첫 번째 항목이 습도와 온도, 요일을 보여 주는 무선 시계입니다. 쿠팡에서는 같은 화면 구성의 온습도계를 두 개 묶음으로 받습니다."
-    }
-  },
-  {
-    "id": "slim-power-strip",
-    "name": "필립스 고용량 멀티탭 3구 홈탭 납작멀티탭, 그레이 CHP1134G, 1개, 1.5m",
-    "partners_link": "https://link.coupang.com/a/iShJgZ75vU",
-    "image": "img/products/slim-power-strip.jpg",
-    "account": "ads",
-    "category": "자취 살림",
-    "hook": "소파 뒤나 책상 밑 좁은 틈에 밀어 넣는 납작 플러그 멀티탭입니다.",
-    "summary": [
-      "플러그가 꺾여 있어 벽과 가구 사이 좁은 자리에도 들어갑니다. 3구에 선 길이 1.5m이고, 필립스 브랜드로 나온 제품입니다."
-    ],
-    "search_keyword": "필립스 납작 멀티탭 3구",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/QXoij_61VqA",
-      "views": 248370,
-      "uploaded": "2026-11-17",
-      "store_word": "쿠팡",
-      "why_coupang": "영상 열 번째 항목이 소파 뒤 좁은 틈의 콘센트를 쓰는 납작 멀티탭입니다. 쿠팡에서 같은 납작형 3구를 찾을 수 있습니다."
-    }
-  },
-  {
-    "id": "dove-cream-bar",
-    "name": "도브 뷰티 크림바, 90g, 12개입",
-    "partners_link": "https://link.coupang.com/a/iShGQwqRzM",
-    "image": "img/products/dove-cream-bar.jpg",
-    "account": "ads",
-    "category": "욕실·비누",
-    "hook": "샤워할 때 한 개씩 꺼내 쓰는 도브 비누를 열두 개 묶어 받는 구성입니다.",
-    "summary": [
-      "90g 낱개 열두 개가 한 상자로 옵니다. 상품평이 7만 건을 넘고 최근 한 달 사이 만 명 이상이 산 것으로 표시된 상품입니다."
-    ],
-    "search_keyword": "도브 뷰티 크림바 90g",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/BLHLS0toKYE",
-      "views": 276427,
-      "uploaded": "2026-11-15",
-      "store_word": "다이소",
-      "why_coupang": "영상은 다이소에서 산 작은 도브 비누를 짜서 쓰는 용기에 옮겨 담는 장면을 보여 줍니다. 쿠팡에서는 같은 90g 비누를 열두 개 한 상자로 받습니다."
-    }
-  },
-  {
-    "id": "veg-spinner",
-    "name": "벨라쿠진 무연마제 올스텐 304 짤순이 파스타망, 1세트",
-    "partners_link": "https://link.coupang.com/a/iShEQzGA68",
-    "image": "img/products/veg-spinner.jpg",
-    "account": "take",
-    "category": "주방 살림",
-    "hook": "데친 나물의 물을 손으로 짜지 않아도 되는 스테인리스 짤순이입니다.",
-    "summary": [
-      "바스켓에 데친 나물이나 불린 두부를 넣고 뚜껑을 눌러 물을 빼는 방식입니다. 파스타 삶은 물을 빼는 망으로도 쓰는 구성이고, 로켓배송으로 다음 날 도착합니다."
-    ],
-    "search_keyword": "벨라쿠진 짤순이",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/VHdqdcscMbw",
-      "views": 196064,
-      "uploaded": "2026-11-16",
-      "store_word": "쿠팡",
-      "why_coupang": "영상 첫 번째 항목이 뚜껑을 눌러 물을 빼는 스테인리스 짤순이입니다. 쿠팡에서 같은 방식의 올스텐 짤순이를 로켓배송으로 받습니다."
-    }
-  },
-  {
-    "id": "thermal-pot",
-    "name": "키친아트 대용량 보온 티포트 1.8L, KAEP-8520",
-    "partners_link": "https://link.coupang.com/a/iTWvfu4RvE",
-    "image": "img/products/thermal-pot.jpg",
-    "account": "take",
-    "category": "주방 살림",
-    "hook": "대추나 과일을 넣고 버튼만 누르면 차가 우러나고, 마실 만큼 따라내는 전기 티포트입니다.",
-    "summary": [
-      "1.8L 유리 용기에 스테인리스 스트레이너가 들어 있는 전기 티포트입니다. 다이소 제품처럼 버튼으로 차를 내리지만 용량이 커서 식구가 여럿인 집이나 손님이 오는 날 한 번에 끓여 두기 좋습니다. 로켓배송 배지가 붙은 상품입니다."
-    ],
-    "search_keyword": "키친아트 보온 티포트 1.8L",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/tCPkJV_6a3I",
-      "views": 1109289,
-      "uploaded": "2026-11-11",
-      "store_word": "다이소",
-      "why_coupang": "영상은 다이소에서 산 보온 주전자에 차를 넣고 버튼을 눌러 따라내는 장면을 보여 줍니다. 쿠팡에서는 같은 버튼식에 용량이 더 큰 1.8L 티포트를 로켓배송으로 받습니다."
-    }
-  },
-  {
-    "id": "silicone-container-set",
-    "name": "실리샵 국산 플래티넘 실리콘 밀폐용기 세트 (3colors), 대형+중형+소형, 미들그레이, 1개",
-    "partners_link": "https://link.coupang.com/a/iTWx799ftk",
-    "image": "img/products/silicone-container-set.jpg",
-    "account": "take",
-    "category": "주방 수납",
-    "hook": "다이소에서 하나씩 사 모으던 실리콘 밀폐용기를 대·중·소 한 세트로 받는 구성입니다.",
-    "summary": [
-      "국산 플래티넘 실리콘으로 만든 대형·중형·소형 세트입니다. 남은 반찬이나 밥을 소분해 담아 두는 용도로 쓰고, 세 가지 색상 중에 고를 수 있습니다. 낱개로 사 모으는 것과 달리 크기가 다른 세 개가 한 번에 옵니다."
-    ],
-    "search_keyword": "실리콘 밀폐용기 세트",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/Uc74lPPnfOE",
-      "views": 228297,
-      "uploaded": "2026-11-17",
-      "store_word": "다이소",
-      "why_coupang": "영상은 다이소 보관용기 아홉 가지를 소개하며 네 번째로 실리콘 100mL·200mL 용기를 보여 줍니다. 쿠팡에서는 같은 실리콘 용기를 대·중·소 세트로 받습니다."
-    }
-  },
-  {
-    "id": "stain-tissue",
-    "name": "고릴라랩 의류 얼룩 클리너 쏙티슈 10매입, 혼합색상, 1개",
-    "partners_link": "https://link.coupang.com/a/iTWA56cFZ6",
-    "image": "img/products/stain-tissue.jpg",
-    "account": "take",
-    "category": "살림·빨래",
-    "hook": "외출 중 옷에 묻은 얼룩을 그 자리에서 닦아 내는 휴대용 얼룩 제거 티슈입니다.",
-    "summary": [
-      "한 장씩 개별 포장된 열 매가 한 상자로 옵니다. 가방에 넣어 다니다가 식사 중 튄 기름이나 커피 자국에 바로 쓰고, 세탁 전에 목깃이나 소매 얼룩에 먼저 문질러 두는 용도로도 씁니다. 로켓배송 배지가 붙은 상품입니다."
-    ],
-    "search_keyword": "고릴라랩 얼룩 클리너 쏙티슈",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/zFQLZMHtk1Q",
-      "views": 200093,
-      "uploaded": "2026-11-16",
-      "store_word": "쿠팡",
-      "why_coupang": "영상 첫 번째 항목이 낱개로 포장돼 열 개씩 오는 얼룩 제거 티슈입니다. 쿠팡에서 같은 열 매입 구성을 로켓배송으로 받습니다."
-    }
-  },
-  {
-    "id": "heated-boots",
-    "name": "Mochae 발열 신발 USB충전 온열부츠 대용량 4000mAh 배터리 2개 3단계온도조절 물세탁가능 겨울 가정 사무실 야외, 화이트(260~265mm), NJB-01",
-    "partners_link": "https://link.coupang.com/a/iTWD6spgUC",
-    "image": "img/products/heated-boots.jpg",
-    "account": "ads",
-    "category": "출퇴근길",
-    "hook": "신발 안쪽에서 열이 나는 부츠라, 아침 등원길처럼 서서 기다리는 시간에 발이 덜 시립니다.",
-    "summary": [
-      "4000mAh 배터리 두 개가 함께 오고 3단계로 온도를 맞추는 충전식 온열부츠입니다. 물세탁이 되는 재질로 표기돼 있고, 집이나 사무실, 야외에서 신는 부츠형입니다. 화이트 260~265mm 사이즈로 나온 상품입니다."
-    ],
-    "search_keyword": "Mochae 온열부츠",
-    "evidence": {
-      "shorts_url": "https://www.youtube.com/shorts/O418_3awTW8",
-      "views": 146297,
-      "uploaded": "2026-11-13",
-      "store_word": "다이소",
-      "why_coupang": "영상 마지막 항목이 옆 주머니에 배터리를 넣어 하루 종일 발을 데우는 발열 부츠입니다. 쿠팡에서는 같은 방식의 충전식 온열부츠를 배터리 두 개 구성으로 받습니다."
-    }
-  },
-  {
-    "id": "music-frame-xmas",
-    "name": "노래나오는 냉장고자석 인테리어소품 크리스마스 선물 뮤직박스 액자 인스타히트, 세트 1 메인 + 9 자기테이프",
-    "partners_link": "https://link.coupang.com/a/iTZsVkfR0K",
-    "image": "img/products/music-frame-xmas.jpg",
-    "account": "take",
-    "category": "크리스마스·선물",
-    "hook": "냉장고 문에 붙여 두고 레코드판을 올리면 노래가 나오는 액자형 뮤직박스입니다.",
-    "summary": [
-      "액자 본체 하나에 자기테이프 레코드판 9개가 한 세트로 옵니다. 레코드판을 액자에 대면 노래가 나오는 방식으로 상품평에 적혀 있고, USB-C로 충전해 씁니다. 크리스마스 S1~S5 디자인과 할로윈 테마 중에 고를 수 있으며, 해외직구로 12/11 도착 예정으로 표시됩니다. 단순 변심 반품에는 왕복 배송비가 따로 붙습니다."
-    ],
-    "search_keyword": "노래나오는 냉장고자석 뮤직박스 액자",
-    "evidence": {
-      "source": "스레드 광고 레퍼런스 + 쿠팡 상품 페이지 실측",
-      "ad_reference": "2026-11-23 스레드에서 같은 구성(미니 레코드 냉장고 자석 뮤직박스) 상품이 58,100원에 광고되고 있었습니다.",
-      "price_merit": "이 리스팅은 45,800원으로 표시되어 광고가보다 낮고 무료배송입니다.",
-      "checked": "2026-11-23",
-      "product_id": "9735352404",
-      "review_count": 23,
-      "rating": 4.5,
-      "shipping": "무료배송 · 12/11 도착 예정 · 해외직구",
-      "return_note": "교환/반품 왕복비용 30,000원(고객 변심). 무료반품 아님.",
-      "substituted_for": "원래 확인한 상품(크리스마스 냉장고 자석 뮤직 플레이어 9종 NFC, productId 9714878008, 48,500원 · 상품평 21 · 무료배송 · 교환/반품 왕복 0원)은 파트너스 간편 링크 만들기에서 '법적으로 또는 판매자의 요청에 따라 링크 생성이 제한된 상품'으로 두 번 거절되어, 같은 구성의 링크 가능한 리스팅으로 담았습니다.",
-      "why_coupang": "같은 구성의 상품이 쿠팡에 여러 판매자로 올라와 있고, 그중 상품평이 23개 쌓인 리스팅입니다. 상품평에는 레코드판을 대면 노래가 나오고 자석이 잘 붙는다는 내용과 함께, 노래가 뒤바뀌어 붙어 있거나 아는 캐럴이 아니라는 불만도 있습니다."
-    }
+ {
+  "id": "partition-heater",
+  "name": "홈플래닛 접이식 파티션 히터, D2401, 그레이",
+  "partners_link": "https://link.coupang.com/a/iIEIHsSHfM",
+  "image": "img/products/partition-heater.jpg",
+  "account": "ads",
+  "category": "겨울 난방·방풍",
+  "hook": "책상 아래로 시린 발목과 무릎만 따로 감싸 주는 접이식 발난로입니다.",
+  "summary": [
+   "삼면을 세워 찬 공기를 막고 원적외선 면발열로 데우는 방식이라 바람이 일지 않습니다. 쓰지 않을 때는 접어 세워 둘 수 있습니다."
+  ],
+  "search_keyword": "접이식 파티션 히터"
+ },
+ {
+  "id": "electric-blanket",
+  "name": "HanilMedical 탄소열선 고급 전기요 HL-D205(25), 북극곰, M",
+  "partners_link": "https://link.coupang.com/a/iCGTm4Ipcy",
+  "image": "img/products/electric-blanket.jpg",
+  "account": "ads",
+  "category": "겨울 난방·방풍",
+  "hook": "잠자리에 들기 전 이불 속을 미리 데워 두는 탄소열선 전기요입니다.",
+  "summary": [
+   "탄소 열선을 촘촘히 넣어 온도가 고르게 퍼지고, 켜 둔 지 오래되면 스스로 꺼집니다. 세탁이 되는 소재라 겨울이 끝난 뒤 손질도 간단합니다."
+  ],
+  "search_keyword": "한일의료기 전기요"
+ },
+ {
+  "id": "wind-pack",
+  "name": "에코와이드 끼우는 문풍지 창문 틈새막이 외풍 창틀 바람막이 L, 4개",
+  "partners_link": "https://link.coupang.com/a/iCGEleYKcK",
+  "image": "img/products/wind-pack.jpg",
+  "account": "ads",
+  "category": "겨울 난방·방풍",
+  "hook": "창틀 홈에 끼워 넣기만 하면 창문 틈으로 드는 바람을 줄여 줍니다.",
+  "summary": [
+   "접착제나 공구 없이 창틀 레일 홈에 끼우는 방식이라 이사 갈 때도 떼어 다시 쓸 수 있습니다. 네 개들이라 방마다 나눠 끼우기 좋습니다."
+  ],
+  "search_keyword": "창문 틈새막이"
+ },
+ {
+  "id": "bubble-wrap",
+  "name": "뽁순이 3중 뽁뽁이 단열에어캡, 1개",
+  "partners_link": "https://link.coupang.com/a/iIEMwhrXoW",
+  "image": "img/products/bubble-wrap.jpg",
+  "account": "ads",
+  "category": "겨울 난방·방풍",
+  "hook": "창유리에 붙여 방 안 온기가 밖으로 빠져나가는 것을 줄이는 단열 시트입니다.",
+  "summary": [
+   "3중 에어캡 구조가 공기층을 만들어 유리에서 오는 냉기를 덜어 줍니다. 물만 뿌려 붙이는 방식이라 뜯어낼 때도 자국이 남지 않습니다."
+  ],
+  "search_keyword": "단열 뽁뽁이"
+ },
+ {
+  "id": "door-curtain",
+  "name": "유미코 겨울 현관 자석 방풍커튼, 1개",
+  "partners_link": "https://link.coupang.com/a/iIEQEbGvW8",
+  "image": "img/products/door-curtain.jpg",
+  "account": "ads",
+  "category": "겨울 난방·방풍",
+  "hook": "문을 여닫을 때마다 복도 한기가 밀려오는 현관에 두르는 자석 커튼입니다.",
+  "summary": [
+   "가운데가 자석으로 붙어 사람이 지나가면 스스로 닫히고, 문틀에 벨크로로 걸어 못을 쓰지 않습니다. 안감이 두툼해 바람을 막아 줍니다."
+  ],
+  "search_keyword": "현관 방풍커튼"
+ },
+ {
+  "id": "weatherstrip",
+  "name": "코멧 국내생산 사계절 우레탄 문풍지 3M, 5개",
+  "partners_link": "https://link.coupang.com/a/iIESNRkMGO",
+  "image": "img/products/weatherstrip.jpg",
+  "account": "ads",
+  "category": "겨울 난방·방풍",
+  "hook": "문과 창문 틈에 붙여 바람이 새는 자리를 막는 접착식 우레탄 폼입니다.",
+  "summary": [
+   "말랑한 우레탄이라 울퉁불퉁한 틈에도 모양대로 밀착되고 계절 상관없이 쓸 수 있습니다. 3M씩 다섯 롤이라 문마다 나눠 붙이기 좋습니다."
+  ],
+  "search_keyword": "문풍지"
+ },
+ {
+  "id": "humidifier",
+  "name": "홈플래닛 초음파 가습기 4L, RD210/화이트",
+  "partners_link": "https://link.coupang.com/a/iIE620JWfI",
+  "image": "img/products/humidifier.jpg",
+  "account": "ads",
+  "category": "겨울 난방·방풍",
+  "hook": "난방으로 건조해진 방 공기에 물안개를 채우는 4L 초음파 가습기입니다.",
+  "summary": [
+   "물통을 위에서 열어 바로 채우고, 본체와 통이 분리돼 안쪽까지 씻을 수 있습니다. 통이 커서 물을 채우는 일이 잦지 않습니다."
+  ],
+  "search_keyword": "가습기 4L"
+ },
+ {
+  "id": "hand-warmer",
+  "name": "하루온 군인핫팩 포켓용 대용량 핫팩 160g, 30개",
+  "partners_link": "https://link.coupang.com/a/iCGMOaYd52",
+  "image": "img/products/hand-warmer.jpg",
+  "account": "ads",
+  "category": "출퇴근·차량",
+  "hook": "주머니에 넣고 하루를 버티는 대용량 포켓 핫팩입니다.",
+  "summary": [
+   "160g 큰 사이즈라 온기가 오래갑니다. 30개입 한 상자라 아침에 하나씩 챙겨 나가기 좋습니다."
+  ],
+  "search_keyword": "하루온 핫팩"
+ },
+ {
+  "id": "balaclava",
+  "name": "라세르 겨울 방한 기모 바라클라바",
+  "partners_link": "https://link.coupang.com/a/iIEUEDeUua",
+  "image": "img/products/balaclava.jpg",
+  "account": "ads",
+  "category": "출퇴근·차량",
+  "hook": "목부터 정수리까지 한 번에 감싸는 기모 바라클라바입니다.",
+  "summary": [
+   "얼굴 둘레에 기모 안감을 넣어 찬 바람이 목덜미로 들어오는 것을 줄입니다. 헬멧이나 모자 안에 같이 쓸 수 있는 두께입니다."
+  ],
+  "search_keyword": "방한 바라클라바"
+ },
+ {
+  "id": "anti-fog",
+  "name": "소낙스 김서림 방지제 관리용품, 500ml, 1개",
+  "partners_link": "https://link.coupang.com/a/iIE2GCK1TM",
+  "image": "img/products/anti-fog.jpg",
+  "account": "ads",
+  "category": "출퇴근·차량",
+  "hook": "겨울 아침 차에 오르면 앞유리에 서리는 김을 줄여 주는 코팅제입니다.",
+  "summary": [
+   "유리 안쪽에 뿌려 닦아 두면 수증기가 맺히는 자리가 줄어듭니다. 500ml라 한 겨울 내내 차 한 대에 쓰기 넉넉합니다."
+  ],
+  "search_keyword": "김서림 방지제"
+ },
+ {
+  "id": "ice-scraper",
+  "name": "깔끔조아 스크래치 없는 회전형 길이조절 차량용 성에제거기, 1개",
+  "partners_link": "https://link.coupang.com/a/iIE47Fx8DY",
+  "image": "img/products/ice-scraper.jpg",
+  "account": "ads",
+  "category": "출퇴근·차량",
+  "hook": "손이 닿지 않는 앞유리 가운데까지 밀어 내는 길이조절 스크래퍼입니다.",
+  "summary": [
+   "손잡이 각도가 돌아가고 길이가 늘어나 차 높이에 맞춰 쓸 수 있습니다. 브러시가 함께 달려 눈과 성에를 한 번에 정리합니다."
+  ],
+  "search_keyword": "차량 성에제거기"
+ },
+ {
+  "id": "sink-splash",
+  "name": "달팽이리빙 퀴진드마망 실리콘 씽크대 물막이, 크림화이트, 1개",
+  "partners_link": "https://link.coupang.com/a/iIEWfbNl0e",
+  "image": "img/products/sink-splash.jpg",
+  "account": "ads",
+  "category": "주방·살림",
+  "hook": "설거지할 때 튀는 물이 옷과 바닥으로 가지 않게 세우는 실리콘 판입니다.",
+  "summary": [
+   "하단 흡착판으로 상판에 붙여 세우고, 말랑한 실리콘 재질이라 부딪혀도 소리가 나지 않습니다. 물때가 끼면 통째로 씻어 말리면 됩니다."
+  ],
+  "search_keyword": "싱크대 물막이"
+ },
+ {
+  "id": "oil-screen",
+  "name": "시샘 연마제없는 스텐 다용도 기름방지망, 33cm, 1개",
+  "partners_link": "https://link.coupang.com/a/iIEXV8gHw4",
+  "image": "img/products/oil-screen.jpg",
+  "account": "ads",
+  "category": "주방·살림",
+  "hook": "고기를 굽거나 튀길 때 튀는 기름을 막아 두는 스테인리스 망입니다.",
+  "summary": [
+   "촘촘한 망이라 김은 빠져나가고 기름은 막아 줍니다. 손잡이가 달려 있어 조리 중에도 집기 편합니다."
+  ],
+  "search_keyword": "기름튐 방지망"
+ },
+ {
+  "id": "drain-filter",
+  "name": "코멧 싱크대 배수구 거름망, 500개",
+  "partners_link": "https://link.coupang.com/a/iIFajZuk5A",
+  "image": "img/products/drain-filter.jpg",
+  "account": "take",
+  "category": "주방·살림",
+  "hook": "배수구에 끼워 음식물 찌꺼기와 머리카락을 한 번에 걸러 내는 망입니다.",
+  "summary": [
+   "한 장씩 끼워 쓰고 가득 차면 그대로 버리면 됩니다. 500장이라 몇 달은 다시 사러 가지 않아도 됩니다."
+  ],
+  "search_keyword": "배수구 거름망"
+ },
+ {
+  "id": "diatomite-mat",
+  "name": "코멧 홈 빨아쓰는 규조토 발매트, 베이지 타원, 1개",
+  "partners_link": "https://link.coupang.com/a/iIE0nWcz24",
+  "image": "img/products/diatomite-mat.jpg",
+  "account": "take",
+  "category": "욕실·위생",
+  "hook": "욕실에서 나와 젖은 발을 한 번만 디디면 물기를 빨아들이는 발매트입니다.",
+  "summary": [
+   "규조토가 섞인 연질 소재라 돌처럼 단단하지 않고 발에 부드럽습니다. 빨아서 말릴 수 있어 눅눅한 냄새 걱정이 덜합니다."
+  ],
+  "search_keyword": "규조토 발매트"
+ },
+ {
+  "id": "mold-gel",
+  "name": "홈스타 바르는 곰팡이 싹 세정제, 120ml, 2개",
+  "partners_link": "https://link.coupang.com/a/iIE8F8LqqO",
+  "image": "img/products/mold-gel.jpg",
+  "account": "take",
+  "category": "욕실·위생",
+  "hook": "줄눈과 실리콘 틈에 발라 두면 문지르지 않아도 곰팡이가 들뜨는 젤형 세정제입니다.",
+  "summary": [
+   "흘러내리지 않는 젤이라 벽면에도 붙어 있습니다. 뾰족한 노즐로 좁은 틈에 바로 짜 넣을 수 있습니다."
+  ],
+  "search_keyword": "곰팡이 제거 젤"
+ },
+ {
+  "id": "fish-cake",
+  "name": "효성어묵 부산옛날어묵 종합 (냉동), 1kg, 1개",
+  "partners_link": "https://link.coupang.com/a/iCGPZ9URPM",
+  "image": "img/products/fish-cake.jpg",
+  "account": "take",
+  "category": "겨울간식·식품",
+  "hook": "냉동실에 두고 국이나 떡볶이에 꺼내 쓰는 종합 어묵입니다.",
+  "summary": [
+   "사각·봉·야채 어묵이 섞여 있어 요리마다 골라 쓰기 좋습니다. 1kg이라 몇 번 나눠 먹을 양입니다."
+  ],
+  "search_keyword": "효성어묵 종합"
+ },
+ {
+  "id": "hoppang",
+  "name": "삼립 호빵 발효미종 단팥 + 피자, 97g, 12개입, 1세트",
+  "partners_link": "https://link.coupang.com/a/iSh2YrMnUi",
+  "image": "img/products/hoppang.jpg",
+  "account": "take",
+  "category": "겨울간식·식품",
+  "hook": "전자레인지나 찜기에 데워 겨울 저녁에 먹는 단팥, 피자 호빵입니다",
+  "summary": [
+   "단팥과 피자가 반씩 들어 있어 골라 먹기 좋습니다. 낱개 포장이라 먹을 만큼만 데우면 되고, 로켓프레시로 다음 날 새벽에 도착합니다."
+  ],
+  "search_keyword": "삼립 호빵"
+ },
+ {
+  "id": "boongeoppang",
+  "name": "비비고 단팥붕어빵 (냉동), 300g, 1개",
+  "partners_link": "https://link.coupang.com/a/iIFdE5NoCO",
+  "image": "img/products/boongeoppang.jpg",
+  "account": "take",
+  "category": "겨울간식·식품",
+  "hook": "에어프라이어에 돌리면 겉은 바삭하고 속은 뜨거운 냉동 붕어빵입니다.",
+  "summary": [
+   "팬에 기름을 두르지 않고 에어프라이어로 데울 수 있습니다. 300g 한 봉이라 아이 간식으로 부담 없는 양입니다."
+  ],
+  "search_keyword": "비비고 붕어빵"
+ },
+ {
+  "id": "hot-choco",
+  "name": "미떼 핫초코 오리지날, 30g, 30개입, 1개",
+  "partners_link": "https://link.coupang.com/a/iIFf8a2pjg",
+  "image": "img/products/hot-choco.jpg",
+  "account": "take",
+  "category": "겨울간식·식품",
+  "hook": "우유에 한 봉 풀면 되는 핫초코 30봉입니다.",
+  "summary": [
+   "개별 포장이라 한 잔씩 뜯어 타면 됩니다. 사무실이나 아이 간식으로 두고 쓰기 좋은 구성입니다."
+  ],
+  "search_keyword": "미떼 핫초코"
+ },
+ {
+  "id": "music-box",
+  "name": "홀리해요 크리스마스 오르골 무드등 플랫 스노우볼, 산타",
+  "partners_link": "https://link.coupang.com/a/iCIEE8o6uW",
+  "image": "img/products/music-box.jpg",
+  "account": "take",
+  "category": "홈·데코",
+  "hook": "손잡이를 들면 눈이 내리고 음악이 흐르는 납작한 스노우볼입니다.",
+  "summary": [
+   "세워 두거나 들고 다닐 수 있는 형태라 선반과 식탁 어디에나 놓입니다. 불을 켜면 은은한 무드등으로도 쓸 수 있습니다."
+  ],
+  "search_keyword": "크리스마스 오르골 스노우볼"
+ },
+ {
+  "id": "music-box-lamp",
+  "name": "스네몬 오르골 오로라 무드등, 핑크화이트",
+  "partners_link": "https://link.coupang.com/a/iIFhNLDGpw",
+  "image": "img/products/music-box-lamp.jpg",
+  "account": "take",
+  "category": "홈·데코",
+  "hook": "오로라 빛이 돌아가며 방 천장까지 물들이는 오르골 무드등입니다.",
+  "summary": [
+   "음악이 나오는 오르골에 오로라 조명이 함께 들어 있어 아이 방 취침등으로도 쓸 수 있습니다. 밝기를 낮춰 잠들 때 켜 두기 좋습니다."
+  ],
+  "search_keyword": "오르골 무드등"
+ },
+ {
+  "id": "mini-tree",
+  "name": "크리스마스 40cm 설레는 밤 완제 트리 풀세트 전구포함, 혼합색상",
+  "partners_link": "https://link.coupang.com/a/iIFjGOaEQC",
+  "image": "img/products/mini-tree.jpg",
+  "account": "take",
+  "category": "홈·데코",
+  "hook": "꾸미는 수고 없이 꺼내 세우면 모습이 갖춰지는 40cm 미니 트리입니다.",
+  "summary": [
+   "장식과 전구가 이미 달려 있어 처음 트리를 두는 집도 부담이 적습니다. 40cm라 원룸이나 아이 방 책상 위에도 놓입니다."
+  ],
+  "search_keyword": "미니 크리스마스 트리"
+ },
+ {
+  "id": "fleece-blanket",
+  "name": "더자리 마이블랭킷 극세사 담요",
+  "partners_link": "https://link.coupang.com/a/iIFk7hUsDs",
+  "image": "img/products/fleece-blanket.jpg",
+  "account": "take",
+  "category": "홈·데코",
+  "hook": "소파에 두고 무릎 덮기 좋은 극세사 담요입니다.",
+  "summary": [
+   "촘촘한 극세사라 가볍고 부드럽습니다. 이불 위에 한 겹 더 덮거나 차에 두고 쓰기 좋습니다."
+  ],
+  "search_keyword": "극세사 담요"
+ },
+ {
+  "id": "electric-seat",
+  "name": "HanilMedical 1인용 전기방석 HL-100(20), 네이비, 450 x 450 mm",
+  "partners_link": "https://link.coupang.com/a/iJZa0xMjV6",
+  "image": "img/products/electric-seat.jpg",
+  "account": "take",
+  "category": "잠자리",
+  "hook": "소파나 의자에 앉아 있는 동안 엉덩이부터 따뜻하게 데우는 1인용 전기방석입니다.",
+  "summary": [
+   "전원을 넣으면 열선이 골고루 퍼지고, 쓰지 않을 때는 돌돌 말아 두면 됩니다. 등받이 의자나 소파 한쪽에 깔아 두기 좋은 크기입니다."
+  ],
+  "search_keyword": "전기방석 1인용"
+ },
+ {
+  "id": "k2-gloves",
+  "name": "K2 세이프티 히트플렉스 니트 장갑, 1세트, 블랙",
+  "partners_link": "https://link.coupang.com/a/iJZgIrr1O0",
+  "image": "img/products/k2-gloves.jpg",
+  "account": "ads",
+  "category": "출퇴근길",
+  "hook": "자전거 손잡이나 버스 손잡이를 잡는 아침, 손끝이 시린 것을 덜어 주는 니트 장갑입니다.",
+  "summary": [
+   "니트로 짠 장갑이라 손등에 닿는 감촉이 부드럽고, 두께가 두껍지 않아 가방이나 코트 주머니에 넣어 두기 좋습니다."
+  ],
+  "search_keyword": "K2 방한장갑"
+ },
+ {
+  "id": "kimchi",
+  "name": "종가 포기김치, 2.3kg, 1개",
+  "partners_link": "https://link.coupang.com/a/iJZojEkCYe",
+  "image": "img/products/kimchi.jpg",
+  "account": "take",
+  "category": "겨울 야식",
+  "hook": "김장을 직접 담그지 않는 집에서 겨울 내내 꺼내 먹기 좋은 포기김치입니다.",
+  "summary": [
+   "한 통으로 와서 김치통에 옮겨 담아 두면 됩니다. 국이나 찌개에 넣을 때도 한 포기씩 꺼내 쓰기 좋습니다."
+  ],
+  "search_keyword": "종가 포기김치"
+ },
+ {
+  "id": "radiator",
+  "name": "신일 컴팩트 라디에이터 5핀, SER-D5500KP",
+  "partners_link": "https://link.coupang.com/a/iJZvbm24om",
+  "image": "img/products/radiator.jpg",
+  "account": "take",
+  "category": "겨울 준비",
+  "hook": "보일러를 켜기엔 아까운 날, 방 하나만 데우는 전기 라디에이터입니다.",
+  "summary": [
+   "기름이 도는 방식이라 바람이 일지 않고 소리가 크지 않습니다. 바퀴가 달려 있어 방과 거실 사이를 옮겨 가며 쓸 수 있습니다."
+  ],
+  "search_keyword": "신일 라디에이터"
+ },
+ {
+  "id": "tokyotomi-heater",
+  "name": "토요토미 팬히터 LC-L53 풀세트 (국내 정품 A/S 가능) 도요토미, BLACK",
+  "partners_link": "https://link.coupang.com/a/iJZycVPxSu",
+  "image": "img/products/tokyotomi-heater.jpg",
+  "account": "ads",
+  "category": "별별템",
+  "hook": "캠핑하는 사람들이 먼저 찾는 일본식 팬히터입니다. 쿠팡에 정품으로 올라와 있습니다.",
+  "summary": [
+   "기름을 넣고 쓰는 난로라 환기에 신경 써야 하고, 무게가 있어 한 번 자리를 잡으면 거실 한쪽에 두고 쓰게 됩니다."
+  ],
+  "search_keyword": "토요토미 팬히터"
+ },
+ {
+  "id": "drone",
+  "name": "DJI Neo 2 플라이 모어 콤보 드론, 혼합색상, 1세트",
+  "partners_link": "https://link.coupang.com/a/iJZCB6mDYq",
+  "image": "img/products/drone.jpg",
+  "account": "ads",
+  "category": "별별템",
+  "hook": "손바닥만 한 크기로 하늘 사진을 남기는 드론입니다. 쿠팡 가전 코너에 이런 것도 있습니다.",
+  "summary": [
+   "본체와 조종기, 배터리가 함께 오는 구성입니다. 겨울 여행에서 위에서 찍은 사진을 남기고 싶을 때 눈에 들어오는 세트입니다."
+  ],
+  "search_keyword": "DJI Neo 2 드론"
+ },
+ {
+  "id": "premiere-projector",
+  "name": "삼성전자 The Premiere 프로젝터 웜 화이트 254~330cm 방문설치, SP-LPDU9SAXXKR",
+  "partners_link": "https://link.coupang.com/a/iJZGHOUWlM",
+  "image": "img/products/premiere-projector.jpg",
+  "account": "ads",
+  "category": "별별템",
+  "hook": "벽에 붙여 두고 쓰는 삼성 초단초점 프로젝터입니다. 장바구니에 담아 둘 수 있는 가전으로 쿠팡에 올라와 있습니다.",
+  "summary": [
+   "방문 설치로 배송되는 모델이라 자리를 잡아 주는 과정까지 포함되어 있습니다. 거실 벽 한 면을 화면으로 쓰고 싶을 때 비교해 볼 만한 상품입니다."
+  ],
+  "search_keyword": "삼성 더 프리미어 프로젝터"
+ },
+ {
+  "id": "frost-cover",
+  "name": "카템 3중 차단 마그네틱 성에방지 커버, 전차종, 1세트",
+  "partners_link": "https://link.coupang.com/a/iLFf9cx10m",
+  "image": "img/products/frost-cover.jpg",
+  "account": "take",
+  "category": "출퇴근길",
+  "hook": "아침에 성에를 긁는 대신 밤에 덮어 두는 앞유리 커버입니다.",
+  "summary": [
+   "자석과 문틈 고정 방식이라 덮어 두고 아침에 걷어 내면 됩니다. 사이드미러까지 함께 덮는 구성이라 유리에 앉은 성에를 밀어 내는 시간을 줄이는 쪽입니다."
+  ],
+  "search_keyword": "차량 성에방지커버"
+ },
+ {
+  "id": "heating-vest",
+  "name": "에쉬울프 USB 발열조끼 스마트 온열조끼, DR013",
+  "partners_link": "https://link.coupang.com/a/iLFuzgsa9k",
+  "image": "img/products/heating-vest.jpg",
+  "account": "take",
+  "category": "출퇴근길",
+  "hook": "보조배터리를 꽂으면 앞판과 뒷판이 데워지는 조끼입니다.",
+  "summary": [
+   "패딩 안에 껴입거나 단독으로 입고 다닐 수 있는 두께입니다. USB 연결 방식이라 쓰는 보조배터리 용량에 따라 사용 시간이 달라지고, KC 인증 표기가 있는지 확인해 두는 편이 좋습니다."
+  ],
+  "search_keyword": "USB 발열조끼"
+ },
+ {
+  "id": "electric-grill",
+  "name": "홈플래닛 반반 멀티 전기그릴(개별 온도 조절), AD-SK18",
+  "partners_link": "https://link.coupang.com/a/iLEWQmy5U4",
+  "image": "img/products/electric-grill.jpg",
+  "account": "take",
+  "category": "연말 홈파티",
+  "hook": "한쪽은 굽고 한쪽은 끓이는 반반 상판 전기그릴입니다.",
+  "summary": [
+   "좌우 온도를 따로 조절해 고기와 국물 요리를 같이 올려 둘 수 있습니다. 상판이 넓어 식탁 가운데에 두고 여러 명이 둘러앉기 좋습니다."
+  ],
+  "search_keyword": "반반 전기그릴"
+ },
+ {
+  "id": "fishbread-maker",
+  "name": "위즈웰 간식 메이커 3종 세트 붕어빵 + 와플 + 샌드위치, WSW-6137",
+  "partners_link": "https://link.coupang.com/a/iLE0sQqZEq",
+  "image": "img/products/fishbread-maker.jpg",
+  "account": "take",
+  "category": "겨울 간식",
+  "hook": "플레이트를 바꿔 끼우면 붕어빵, 와플, 샌드위치가 되는 전기 메이커입니다.",
+  "summary": [
+   "붕어빵틀과 와플판, 샌드위치판이 한 세트로 옵니다. 아이와 같이 반죽을 붓고 기다리는 겨울 방학 간식용입니다."
+  ],
+  "search_keyword": "붕어빵 메이커"
+ },
+ {
+  "id": "home-sauna",
+  "name": "[휴먼사우나] 로벤스 편백나무+히노끼 스톤찜질+좌훈+족욕찜질 원적외선 반신욕기, LPH-300",
+  "partners_link": "https://link.coupang.com/a/iLFmqwxj0C",
+  "image": "img/products/home-sauna.jpg",
+  "account": "ads",
+  "category": "별별템",
+  "hook": "집에 들이는 1인용 반신욕기입니다. 편백나무 안에서 앉는 자리와 스톤을 데우는 구조입니다.",
+  "summary": [
+   "원적외선 방식이라 물을 끓이지 않고 앉는 자리와 스톤을 데웁니다. 크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다."
+  ],
+  "search_keyword": "1인용 가정용 사우나"
+ },
+ {
+  "id": "snow-blower",
+  "name": "클라빈다 충전식 무선 전동 리튬 배터리 제설기 소형 다기능 휴대용 가정용 고출력 접이식, 1세트",
+  "partners_link": "https://link.coupang.com/a/iLF6x1Pvky",
+  "image": "img/products/snow-blower.jpg",
+  "account": "ads",
+  "category": "별별템",
+  "hook": "눈이 온 날 아침, 삽 대신 미는 충전식 제설기입니다.",
+  "summary": [
+   "충전 배터리로 눈을 밀어 내는 소형 제설기입니다. 배터리 포함 여부와 날개 폭이 값을 가릅니다. 같은 검색에 손에 드는 송풍기형이 섞여 나오니 상품 구분을 확인해 보세요."
+  ],
+  "search_keyword": "무선 제설기"
+ },
+ {
+  "id": "mini-dehumidifier",
+  "name": "EXTEDRG 제습기 2.8L 강력제습 가정용 저소음 원룸 미니 제습기, D9",
+  "partners_link": "https://link.coupang.com/a/iNjEeRx34C",
+  "image": "img/products/mini-dehumidifier.jpg",
+  "account": "take",
+  "category": "결로·습기",
+  "hook": "창틀에 물방울이 맺히는 날, 방 안 물을 물통으로 모으는 작은 제습기입니다.",
+  "summary": [
+   "옷장이나 욕실처럼 좁은 자리에 두는 2.8L 소형입니다. 물통이 차면 표시가 뜨고, 습도가 내려가면 스스로 멈춥니다."
+  ],
+  "search_keyword": "미니 제습기"
+ },
+ {
+  "id": "dehumidifier-12l",
+  "name": "롯데알미늄 제습기 12L, LDH-7000N",
+  "partners_link": "https://link.coupang.com/a/iNjUwx2rpA",
+  "image": "img/products/dehumidifier-12l.jpg",
+  "account": "take",
+  "category": "결로·습기",
+  "hook": "빨래를 널어 둔 방의 물을 하루 12L까지 빼내는 컴프레서 제습기입니다.",
+  "summary": [
+   "일일 제습량 12L, 사용면적 약 10평으로 표기된 모델입니다. 물통은 2L이고 연속배수 호스를 연결할 수 있어 물 비우는 일을 줄일 수 있습니다."
+  ],
+  "search_keyword": "가정용 제습기 12L"
+ },
+ {
+  "id": "winter-duvet",
+  "name": "코멧 홈 양면 극세사 솔리드 차렵이불",
+  "partners_link": "https://link.coupang.com/a/iNjFeUXyNw",
+  "image": "img/products/winter-duvet.jpg",
+  "account": "take",
+  "category": "겨울 침구",
+  "hook": "커버를 씌우지 않고 바로 덮는 겨울 극세사 차렵이불입니다.",
+  "summary": [
+   "솜이 안에 누벼 있어 이불커버 없이 쓰고, 빨래도 한 장만 하면 됩니다. 앞뒤 색이 달라 뒤집어 덮을 수 있습니다."
+  ],
+  "search_keyword": "극세사 차렵이불"
+ },
+ {
+  "id": "bathroom-heater",
+  "name": "한경희생활과학 PTC 온풍기 욕실 난방기 스탠드 벽걸이 전기히터, HAAN-4000(블랙)",
+  "partners_link": "https://link.coupang.com/a/iNkaGmHDW0",
+  "image": "img/products/bathroom-heater.jpg",
+  "account": "take",
+  "category": "욕실 난방",
+  "hook": "욕실 벽에 걸거나 세워 두고 샤워 전에 켜 두는 온풍기입니다.",
+  "summary": [
+   "벽에 걸거나 세워 두는 겸용형이라 좁은 욕실에서 놓을 자리를 골라 쓸 수 있습니다. 물이 닿는 곳에 두는 제품이라 설치 위치와 전원은 설명서를 따라 확인해 두는 편이 좋습니다."
+  ],
+  "search_keyword": "욕실 온풍기"
+ },
+ {
+  "id": "foot-spa",
+  "name": "이노크아든 사파이어 스파 족욕기, FM-505, 화이트",
+  "partners_link": "https://link.coupang.com/a/iNjK48KKbs",
+  "image": "img/products/foot-spa.jpg",
+  "account": "take",
+  "category": "겨울 발 보온",
+  "hook": "물을 받아 온도를 맞춰 두는 습식 족욕기입니다.",
+  "summary": [
+   "온도를 정해 두면 맞춰 가열하고, 바닥에 지압 롤러와 거품 기능이 있습니다. 고정형이라 둘 자리와 콘센트 위치를 먼저 정하는 편이 좋습니다."
+  ],
+  "search_keyword": "가정용 족욕기"
+ },
+ {
+  "id": "neck-massager",
+  "name": "제스파 플러스 목어깨 등 허리 마사지기, ZP187, 퍼플",
+  "partners_link": "https://link.coupang.com/a/iNjJRe2DPU",
+  "image": "img/products/neck-massager.jpg",
+  "account": "take",
+  "category": "겨울 몸풀기",
+  "hook": "목에 걸치고 기대서 쓰는 목·어깨 마사지기입니다.",
+  "summary": [
+   "4개의 안마볼이 돌아가며 방향을 바꾸고, 온열을 함께 켤 수 있습니다. 15분이 지나면 스스로 꺼지고, 차량용 전원선이 함께 들어 있습니다."
+  ],
+  "search_keyword": "목어깨 마사지기"
+ },
+ {
+  "id": "filter-shower",
+  "name": "코멧 홈 파워수압 필터 샤워기 본품 + 필터 2개입, 실버",
+  "partners_link": "https://link.coupang.com/a/iNjGtwDojc",
+  "image": "img/products/filter-shower.jpg",
+  "account": "take",
+  "category": "욕실",
+  "hook": "헤드 안쪽 필터로 물을 한 번 거르는 샤워기입니다.",
+  "summary": [
+   "본체와 필터 2개가 한 세트로 옵니다. 필터는 2~3개월 주기로 갈아 끼우고, 수압을 올려 주는 판이 들어 있습니다."
+  ],
+  "search_keyword": "필터 샤워기"
+ },
+ {
+  "id": "firewood-stove",
+  "name": "아웃도어웍스 화목난로, OW200",
+  "partners_link": "https://link.coupang.com/a/iNjIJWmvVk",
+  "image": "img/products/firewood-stove.jpg",
+  "account": "ads",
+  "category": "별별템",
+  "hook": "장작을 넣고 불을 보는 캠핑용 화목난로입니다.",
+  "summary": [
+   "연통과 함께 세팅하는 스테인리스 난로입니다. 불을 쓰는 제품이라 실내에서는 환기와 설치 자리, 소방 안전을 먼저 확인해야 합니다."
+  ],
+  "search_keyword": "캠핑 화목난로"
+ },
+ {
+  "id": "thermos-lunchbox",
+  "name": "써모스 일체형 대용량 보온도시락 + 보온백 + 수저 세트, 샌드베이지, 1개",
+  "partners_link": "https://link.coupang.com/a/iNGqzfSzhA",
+  "image": "img/products/thermos-lunchbox.jpg",
+  "account": "take",
+  "category": "주방·도시락",
+  "hook": "국물이나 반찬이 식지 않게 싸 가는 보온도시락입니다.",
+  "summary": [
+   "1500ml를 네 단으로 나눠 담는 일체형이고 보온백과 수저가 같이 옵니다. 보냉도 되는 제품으로 표기돼 있습니다."
+  ],
+  "search_keyword": "써모스 보온도시락"
+ },
+ {
+  "id": "advent-calendar",
+  "name": "오리온 크리스마스 어드벤트 캘린더 과자세트, 9종, 1세트",
+  "partners_link": "https://link.coupang.com/a/iNGrtQRPe8",
+  "image": "img/products/advent-calendar.jpg",
+  "account": "myeongjanae",
+  "category": "크리스마스",
+  "hook": "12월에 하루씩 열어 보는 크리스마스 달력입니다.",
+  "summary": [
+   "과자 9종이 들어 있는 혼합 세트입니다. 상자 겉면에 작은 문들이 있어 12월에 하나씩 열어 보는 방식입니다."
+  ],
+  "search_keyword": "어드벤트 캘린더"
+ },
+ {
+  "id": "heating-tent",
+  "name": "따수미 패브릭 난방텐트 3인용",
+  "partners_link": "https://link.coupang.com/a/iNGssAUnfM",
+  "image": "img/products/heating-tent.jpg",
+  "account": "take",
+  "category": "겨울 난방·방풍",
+  "hook": "침대 위에 씌워 방 하나만 덥히는 난방텐트입니다.",
+  "summary": [
+   "지퍼로 여닫고 바닥이 없는 구조라 침대 위에 덮어 쓰는 방식입니다. 3인용(킹) 크기로 나온 제품입니다."
+  ],
+  "search_keyword": "패브릭 난방텐트"
+ },
+ {
+  "id": "baby-wipes",
+  "name": "코멧 오리지널 유아용 아기물티슈 캡형, 100매입",
+  "partners_link": "https://link.coupang.com/a/iNGtoaNmy4",
+  "image": "img/products/baby-wipes.jpg",
+  "account": "myeongjanae",
+  "category": "생필품",
+  "hook": "한 장씩 뽑아 쓰는 아기물티슈입니다.",
+  "summary": [
+   "캡을 눌러 한 장씩 뽑는 캡형 100매입입니다. 상품평이 49만 개가 넘고 한 달에 10만 명 이상이 산 상품입니다."
+  ],
+  "search_keyword": "코멧 아기물티슈"
+ },
+ {
+  "id": "kids-balaclava",
+  "name": "우드피카 유아용 패치 바라클라바 넥워머",
+  "partners_link": "https://link.coupang.com/a/iNGukGGgi4",
+  "image": "img/products/kids-balaclava.jpg",
+  "account": "take",
+  "category": "겨울 방한",
+  "hook": "목부터 머리까지 한 번에 덮는 아동용 넥워머입니다.",
+  "summary": [
+   "단추로 여미는 아크릴 니트라 목도리처럼 풀리지 않습니다. 아동·유아용으로 나온 제품입니다."
+  ],
+  "search_keyword": "유아 바라클라바"
+ },
+ {
+  "id": "socks-5set",
+  "name": "퍼니스코 여성 겨울 수면 양말 5종 SET",
+  "partners_link": "https://link.coupang.com/a/iO8Bl4KKOa",
+  "image": "img/products/socks-5set.jpg",
+  "account": "take",
+  "category": "겨울 침구·수면",
+  "hook": "밤에 발이 시려 양말을 신고 자는 집에 두는 무압박 수면양말입니다.",
+  "summary": [
+   "밴딩을 세게 조이지 않아 신고 자도 발목에 자국이 덜 남습니다. 다섯 켤레가 한 세트라 빨아 가며 돌려 신기 좋습니다."
+  ],
+  "search_keyword": "여성 수면양말 5종"
+ },
+ {
+  "id": "socks-4set",
+  "name": "이지하임 4켤레 털빠짐없는 편안한 무압박 남녀공용 수면양말 세트",
+  "partners_link": "https://link.coupang.com/a/iO8FgfqG8O",
+  "image": "img/products/socks-4set.jpg",
+  "account": "take",
+  "category": "겨울 침구·수면",
+  "hook": "수면양말을 신고 나면 털이 묻어 나와 고민이던 집에 두는 네 켤레 세트입니다.",
+  "summary": [
+   "상품명에 털 빠짐을 줄인 소재로 표기돼 있습니다. 남녀공용으로 나와 온 가족이 나눠 신을 수 있습니다."
+  ],
+  "search_keyword": "무압박 수면양말 4켤레"
+ },
+ {
+  "id": "hotpack-attach",
+  "name": "하루온 붙이는 핫팩 50g 10개입, 2개",
+  "partners_link": "https://link.coupang.com/a/iO8CicdLVc",
+  "image": "img/products/hotpack-attach.jpg",
+  "account": "take",
+  "category": "겨울 방한",
+  "hook": "옷 안쪽에 붙여 두면 손에 쥐지 않아도 등과 배가 따뜻한 핫팩입니다.",
+  "summary": [
+   "10개입 봉지 두 개로 오는 구성입니다. 상품평이 5만 2천 개가 넘고, 최근 한 달 사이 7천 명 이상이 산 것으로 표시돼 있습니다."
+  ],
+  "search_keyword": "하루온 붙이는 핫팩"
+ },
+ {
+  "id": "dish-soap",
+  "name": "순샘 구연산 자몽향 주방세제 리필, 1.4L, 3개",
+  "partners_link": "https://link.coupang.com/a/iO8DtBKacu",
+  "image": "img/products/dish-soap.jpg",
+  "account": "take",
+  "category": "살림·세제",
+  "hook": "설거지할 때 기름이 잘 빠지지 않아 세제를 더 짜게 되는 집에 두는 리필입니다.",
+  "summary": [
+   "1.4L 리필 세 통 구성입니다. 구연산이 들어간 자몽향 세제로 표기돼 있습니다."
+  ],
+  "search_keyword": "순샘 주방세제 리필"
+ },
+ {
+  "id": "drying-rack",
+  "name": "코멧 홈 접이식 대형 빨래건조대, 그레이, 1개",
+  "partners_link": "https://link.coupang.com/a/iO8Eo2uBq0",
+  "image": "img/products/drying-rack.jpg",
+  "account": "take",
+  "category": "살림·빨래",
+  "hook": "겨울엔 밖에 못 널어 거실에 건조대를 펴 두게 되는 집에 두는 접이식 건조대입니다.",
+  "summary": [
+   "쓰지 않을 때는 접어 세워 둘 수 있습니다. 상품평이 2만 2천 개가 넘는 상품입니다."
+  ],
+  "search_keyword": "코멧 접이식 빨래건조대"
+ },
+ {
+  "id": "dyson-airwrap",
+  "name": "다이슨 에어랩 id 멀티 스타일러 앤 드라이어, 161845-01, 블루 + 코퍼",
+  "partners_link": "https://link.coupang.com/a/iO8Gt4yyfk",
+  "image": "img/products/dyson-airwrap.jpg",
+  "account": "ads",
+  "category": "뷰티·가전",
+  "hook": "겨울 외출 전에 머리를 말리고 모양까지 잡고 싶다는 말이 나올 때 눈에 들어오는 기계입니다.",
+  "summary": [
+   "본체와 여러 가지 헤드가 함께 오는 구성입니다. 머리를 말리는 일과 모양을 잡는 일을 한 자리에서 끝내는 쪽입니다."
+  ],
+  "search_keyword": "다이슨 에어랩"
+ },
+ {
+  "id": "massage-chair",
+  "name": "제스파 컴포르테 안마의자 + 전용 러그 방문설치, ZPC2034(안마의자), ZP540(러그), 퓨어화이트",
+  "partners_link": "https://link.coupang.com/a/iO8HqggG16",
+  "image": "img/products/massage-chair.jpg",
+  "account": "ads",
+  "category": "가전·설치",
+  "hook": "퇴근하고 소파 대신 앉겠다고 하는 자리에 놓는 전신 안마의자입니다.",
+  "summary": [
+   "안마의자와 전용 러그가 함께 오고 방문 설치로 배송됩니다. 크기와 무게가 있어 둘 자리와 문 폭을 먼저 재 보고 정하는 편이 좋습니다."
+  ],
+  "search_keyword": "제스파 컴포르테 안마의자"
+ },
+ {
+  "id": "homstar-pink",
+  "name": "홈스타 핑크파워 욕실 찌든때 클리너, 750ml, 2개",
+  "partners_link": "https://link.coupang.com/a/iQCW1zM8US",
+  "image": "img/products/homstar-pink.jpg",
+  "account": "take",
+  "category": "욕실·위생",
+  "hook": "욕실 타일과 줄눈의 찌든 때에 뿌려 두는 거품형 세정제입니다.",
+  "summary": [
+   "분사대가 달린 750ml 두 통 구성입니다. 거품을 붙여 두었다가 물로 헹구는 방식으로 쓰고, 욕실과 주방에 한 통씩 나눠 둘 수 있습니다."
+  ],
+  "search_keyword": "홈스타 핑크파워",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/ln-Zo04IiU4",
+   "views": 5600000,
+   "uploaded": "2026-08-12",
+   "store_word": "다이소",
+   "why_coupang": "영상에서 이 제품은 다이소보다 쿠팡이 더 저렴하다고 짚었습니다. 두 통 구성으로 한 번에 받는 쪽입니다."
   }
+ },
+ {
+  "id": "shower-rod-shelf",
+  "name": "물빠짐 샤워봉 거치 선반 + 보조캡 3종 + 방수테이프 세트, 화이트, 1세트",
+  "partners_link": "https://link.coupang.com/a/iQC1PH3waW",
+  "image": "img/products/shower-rod-shelf.jpg",
+  "account": "take",
+  "category": "욕실 수납",
+  "hook": "샤워봉에 걸어 물이 빠지는 자리에 두는 선반입니다.",
+  "summary": [
+   "샤워봉에 걸어 고정하는 방식이라 타공 없이 설치합니다. 바닥이 물빠짐 구조라 샴푸병 밑에 물이 고이지 않고, 보조캡과 방수테이프가 함께 옵니다."
+  ],
+  "search_keyword": "샤워봉 선반",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/ln-Zo04IiU4",
+   "views": 5600000,
+   "uploaded": "2026-08-12",
+   "store_word": "다이소",
+   "why_coupang": "샤워봉에 거는 방식이라 타공 없이 쓰고, 보조캡과 방수테이프까지 한 세트로 옵니다."
+  }
+ },
+ {
+  "id": "bathroom-shelf-set",
+  "name": "다용도 무타공 욕실 수납선반 6종 세트 일자형 드라이기 거치대 비누받침대 칫솔걸이, 화이트, 1세트",
+  "partners_link": "https://link.coupang.com/a/iQC5PCoQuq",
+  "image": "img/products/bathroom-shelf-set.jpg",
+  "account": "take",
+  "category": "욕실 수납",
+  "hook": "못을 쓰지 않고 붙이는 욕실 수납 6종 세트입니다.",
+  "summary": [
+   "일자형 선반과 비누받침, 칫솔걸이, 드라이기 거치대를 한 세트로 묶은 구성입니다. 물이 빠지는 구조라 세면대 옆에 두기 좋습니다."
+  ],
+  "search_keyword": "무타공 욕실선반 세트",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/ln-Zo04IiU4",
+   "views": 5600000,
+   "uploaded": "2026-08-12",
+   "store_word": "다이소",
+   "why_coupang": "6종을 한 세트로 묶어 욕실 수납을 한 번에 맞추는 구성입니다."
+  }
+ },
+ {
+  "id": "kobukchip-sanghu",
+  "name": "오리온 꼬북칩 얼얼한 샹궈맛, 102g, 12개",
+  "partners_link": "https://link.coupang.com/a/iQESmpr2vQ",
+  "image": "img/products/kobukchip-sanghu.jpg",
+  "account": "ads",
+  "category": "편의점 간식·과자",
+  "hook": "편의점에서 한 봉씩 집어 오던 매운 과자를 열두 봉 한 번에 받는 구성입니다.",
+  "summary": [
+   "샹궈 향과 얼얼한 매운맛이 도는 102g 봉입니다. 열두 봉이라 야식이나 간식으로 하나씩 꺼내 먹기 좋고, 편의점에 들러 낱봉으로 사 모으는 일이 줄어듭니다. 신상이라 상품평은 아직 적습니다."
+  ],
+  "search_keyword": "꼬북칩 얼얼한 샹궈맛",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/x02aTqykcHY",
+   "views": 104537,
+   "uploaded": "2026-11-05",
+   "store_word": "편의점",
+   "why_coupang": "편의점에서 낱봉으로 집어 오는 102g을 열두 봉 묶음으로 받습니다. 신상이라 상품평이 적어 리뷰 인용 줄은 빼고 구성만 쓰는 편이 좋습니다."
+  }
+ },
+ {
+  "id": "abc-choco-187",
+  "name": "롯데웰푸드 ABC 초콜릿, 187g, 3개",
+  "partners_link": "https://link.coupang.com/a/iQEVKNmeo8",
+  "image": "img/products/abc-choco-187.jpg",
+  "account": "ads",
+  "category": "간식·초콜릿",
+  "hook": "마트에서 한 봉씩 사 오던 ABC 초콜릿을 세 봉 묶어 받는 구성입니다.",
+  "summary": [
+   "187g 봉지 세 개로 옵니다. 책상 서랍이나 가방에 나눠 두고 하나씩 꺼내 먹기 좋고, 로켓배송으로 다음 날 도착합니다."
+  ],
+  "search_keyword": "롯데 ABC 초콜릿 187g",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/ztY8I1H1tVI",
+   "views": 151571,
+   "uploaded": "2026-11-11",
+   "store_word": "마트",
+   "why_coupang": "영상은 마트 신상 ABC 소프트밀크 187g 한 봉을 소개합니다. 쿠팡에서는 같은 187g 봉을 세 개 묶음으로 받고 로켓배송으로 다음 날 옵니다."
+  }
+ },
+ {
+  "id": "ediya-toffe-nut",
+  "name": "이디야 비니스트 토피넛 라떼분말, 20g, 30개입, 1개",
+  "partners_link": "https://link.coupang.com/a/iQEYy7kS3E",
+  "image": "img/products/ediya-toffe-nut.jpg",
+  "account": "take",
+  "category": "겨울 음료·커피",
+  "hook": "코스트코에서 상자째 사 오던 토피넛 라떼 스틱을 서른 봉으로 받는 구성입니다.",
+  "summary": [
+   "20g 스틱 30개입 한 상자입니다. 뜨거운 물에 한 봉 풀면 되고 상품평이 8천 개가 넘습니다. 코스트코에 가지 않아도 로켓배송으로 다음 날 도착합니다."
+  ],
+  "search_keyword": "이디야 토피넛 라떼",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/kJlODeg5_hQ",
+   "views": 125233,
+   "uploaded": "2026-11-19",
+   "store_word": "코스트코",
+   "why_coupang": "영상은 코스트코에서 이디야 토피넛 라떼 한 상자를 장바구니에 담습니다. 쿠팡 같은 30개입 상자가 할인가로 올라와 있고, 회원이 아니어도 다음 날 도착합니다."
+  }
+ },
+ {
+  "id": "led-thermo-clock",
+  "name": "샤오미 디지털 대화면 LCD 시계 온습도계(건전지포함), 화이트, 2개",
+  "partners_link": "https://link.coupang.com/a/iShBc92TL2",
+  "image": "img/products/led-thermo-clock.jpg",
+  "account": "ads",
+  "category": "자취 살림",
+  "hook": "원룸 책상 위에 두고 온도와 습도, 시각을 한 화면으로 보는 시계입니다.",
+  "summary": [
+   "숫자가 크게 뜨는 LCD 화면에 온도와 습도, 시각이 함께 나옵니다. 건전지가 들어 있어 콘센트 없이 두면 되고, 두 개라 방과 거실에 하나씩 나눠 둘 수 있습니다."
+  ],
+  "search_keyword": "샤오미 온습도계 시계",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/QXoij_61VqA",
+   "views": 248370,
+   "uploaded": "2026-11-17",
+   "store_word": "쿠팡",
+   "why_coupang": "영상 첫 번째 항목이 습도와 온도, 요일을 보여 주는 무선 시계입니다. 쿠팡에서는 같은 화면 구성의 온습도계를 두 개 묶음으로 받습니다."
+  }
+ },
+ {
+  "id": "slim-power-strip",
+  "name": "필립스 고용량 멀티탭 3구 홈탭 납작멀티탭, 그레이 CHP1134G, 1개, 1.5m",
+  "partners_link": "https://link.coupang.com/a/iShJgZ75vU",
+  "image": "img/products/slim-power-strip.jpg",
+  "account": "ads",
+  "category": "자취 살림",
+  "hook": "소파 뒤나 책상 밑 좁은 틈에 밀어 넣는 납작 플러그 멀티탭입니다.",
+  "summary": [
+   "플러그가 꺾여 있어 벽과 가구 사이 좁은 자리에도 들어갑니다. 3구에 선 길이 1.5m이고, 필립스 브랜드로 나온 제품입니다."
+  ],
+  "search_keyword": "필립스 납작 멀티탭 3구",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/QXoij_61VqA",
+   "views": 248370,
+   "uploaded": "2026-11-17",
+   "store_word": "쿠팡",
+   "why_coupang": "영상 열 번째 항목이 소파 뒤 좁은 틈의 콘센트를 쓰는 납작 멀티탭입니다. 쿠팡에서 같은 납작형 3구를 찾을 수 있습니다."
+  }
+ },
+ {
+  "id": "dove-cream-bar",
+  "name": "도브 뷰티 크림바, 90g, 12개입",
+  "partners_link": "https://link.coupang.com/a/iShGQwqRzM",
+  "image": "img/products/dove-cream-bar.jpg",
+  "account": "ads",
+  "category": "욕실·비누",
+  "hook": "샤워할 때 한 개씩 꺼내 쓰는 도브 비누를 열두 개 묶어 받는 구성입니다.",
+  "summary": [
+   "90g 낱개 열두 개가 한 상자로 옵니다. 상품평이 7만 건을 넘고 최근 한 달 사이 만 명 이상이 산 것으로 표시된 상품입니다."
+  ],
+  "search_keyword": "도브 뷰티 크림바 90g",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/BLHLS0toKYE",
+   "views": 276427,
+   "uploaded": "2026-11-15",
+   "store_word": "다이소",
+   "why_coupang": "영상은 다이소에서 산 작은 도브 비누를 짜서 쓰는 용기에 옮겨 담는 장면을 보여 줍니다. 쿠팡에서는 같은 90g 비누를 열두 개 한 상자로 받습니다."
+  }
+ },
+ {
+  "id": "veg-spinner",
+  "name": "벨라쿠진 무연마제 올스텐 304 짤순이 파스타망, 1세트",
+  "partners_link": "https://link.coupang.com/a/iShEQzGA68",
+  "image": "img/products/veg-spinner.jpg",
+  "account": "take",
+  "category": "주방 살림",
+  "hook": "데친 나물의 물을 손으로 짜지 않아도 되는 스테인리스 짤순이입니다.",
+  "summary": [
+   "바스켓에 데친 나물이나 불린 두부를 넣고 뚜껑을 눌러 물을 빼는 방식입니다. 파스타 삶은 물을 빼는 망으로도 쓰는 구성이고, 로켓배송으로 다음 날 도착합니다."
+  ],
+  "search_keyword": "벨라쿠진 짤순이",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/VHdqdcscMbw",
+   "views": 196064,
+   "uploaded": "2026-11-16",
+   "store_word": "쿠팡",
+   "why_coupang": "영상 첫 번째 항목이 뚜껑을 눌러 물을 빼는 스테인리스 짤순이입니다. 쿠팡에서 같은 방식의 올스텐 짤순이를 로켓배송으로 받습니다."
+  }
+ },
+ {
+  "id": "thermal-pot",
+  "name": "키친아트 대용량 보온 티포트 1.8L, KAEP-8520",
+  "partners_link": "https://link.coupang.com/a/iTWvfu4RvE",
+  "image": "img/products/thermal-pot.jpg",
+  "account": "take",
+  "category": "주방 살림",
+  "hook": "대추나 과일을 넣고 버튼만 누르면 차가 우러나고, 마실 만큼 따라내는 전기 티포트입니다.",
+  "summary": [
+   "1.8L 유리 용기에 스테인리스 스트레이너가 들어 있는 전기 티포트입니다. 다이소 제품처럼 버튼으로 차를 내리지만 용량이 커서 식구가 여럿인 집이나 손님이 오는 날 한 번에 끓여 두기 좋습니다. 로켓배송 배지가 붙은 상품입니다."
+  ],
+  "search_keyword": "키친아트 보온 티포트 1.8L",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/tCPkJV_6a3I",
+   "views": 1109289,
+   "uploaded": "2026-11-11",
+   "store_word": "다이소",
+   "why_coupang": "영상은 다이소에서 산 보온 주전자에 차를 넣고 버튼을 눌러 따라내는 장면을 보여 줍니다. 쿠팡에서는 같은 버튼식에 용량이 더 큰 1.8L 티포트를 로켓배송으로 받습니다."
+  }
+ },
+ {
+  "id": "silicone-container-set",
+  "name": "실리샵 국산 플래티넘 실리콘 밀폐용기 세트 (3colors), 대형+중형+소형, 미들그레이, 1개",
+  "partners_link": "https://link.coupang.com/a/iTWx799ftk",
+  "image": "img/products/silicone-container-set.jpg",
+  "account": "take",
+  "category": "주방 수납",
+  "hook": "다이소에서 하나씩 사 모으던 실리콘 밀폐용기를 대·중·소 한 세트로 받는 구성입니다.",
+  "summary": [
+   "국산 플래티넘 실리콘으로 만든 대형·중형·소형 세트입니다. 남은 반찬이나 밥을 소분해 담아 두는 용도로 쓰고, 세 가지 색상 중에 고를 수 있습니다. 낱개로 사 모으는 것과 달리 크기가 다른 세 개가 한 번에 옵니다."
+  ],
+  "search_keyword": "실리콘 밀폐용기 세트",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/Uc74lPPnfOE",
+   "views": 228297,
+   "uploaded": "2026-11-17",
+   "store_word": "다이소",
+   "why_coupang": "영상은 다이소 보관용기 아홉 가지를 소개하며 네 번째로 실리콘 100mL·200mL 용기를 보여 줍니다. 쿠팡에서는 같은 실리콘 용기를 대·중·소 세트로 받습니다."
+  }
+ },
+ {
+  "id": "stain-tissue",
+  "name": "고릴라랩 의류 얼룩 클리너 쏙티슈 10매입, 혼합색상, 1개",
+  "partners_link": "https://link.coupang.com/a/iTWA56cFZ6",
+  "image": "img/products/stain-tissue.jpg",
+  "account": "take",
+  "category": "살림·빨래",
+  "hook": "외출 중 옷에 묻은 얼룩을 그 자리에서 닦아 내는 휴대용 얼룩 제거 티슈입니다.",
+  "summary": [
+   "한 장씩 개별 포장된 열 매가 한 상자로 옵니다. 가방에 넣어 다니다가 식사 중 튄 기름이나 커피 자국에 바로 쓰고, 세탁 전에 목깃이나 소매 얼룩에 먼저 문질러 두는 용도로도 씁니다. 로켓배송 배지가 붙은 상품입니다."
+  ],
+  "search_keyword": "고릴라랩 얼룩 클리너 쏙티슈",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/zFQLZMHtk1Q",
+   "views": 200093,
+   "uploaded": "2026-11-16",
+   "store_word": "쿠팡",
+   "why_coupang": "영상 첫 번째 항목이 낱개로 포장돼 열 개씩 오는 얼룩 제거 티슈입니다. 쿠팡에서 같은 열 매입 구성을 로켓배송으로 받습니다."
+  }
+ },
+ {
+  "id": "heated-boots",
+  "name": "Mochae 발열 신발 USB충전 온열부츠 대용량 4000mAh 배터리 2개 3단계온도조절 물세탁가능 겨울 가정 사무실 야외, 화이트(260~265mm), NJB-01",
+  "partners_link": "https://link.coupang.com/a/iTWD6spgUC",
+  "image": "img/products/heated-boots.jpg",
+  "account": "ads",
+  "category": "출퇴근길",
+  "hook": "신발 안쪽에서 열이 나는 부츠라, 아침 등원길처럼 서서 기다리는 시간에 발이 덜 시립니다.",
+  "summary": [
+   "4000mAh 배터리 두 개가 함께 오고 3단계로 온도를 맞추는 충전식 온열부츠입니다. 물세탁이 되는 재질로 표기돼 있고, 집이나 사무실, 야외에서 신는 부츠형입니다. 화이트 260~265mm 사이즈로 나온 상품입니다."
+  ],
+  "search_keyword": "Mochae 온열부츠",
+  "evidence": {
+   "shorts_url": "https://www.youtube.com/shorts/O418_3awTW8",
+   "views": 146297,
+   "uploaded": "2026-11-13",
+   "store_word": "다이소",
+   "why_coupang": "영상 마지막 항목이 옆 주머니에 배터리를 넣어 하루 종일 발을 데우는 발열 부츠입니다. 쿠팡에서는 같은 방식의 충전식 온열부츠를 배터리 두 개 구성으로 받습니다."
+  }
+ },
+ {
+  "id": "music-frame-xmas",
+  "name": "노래나오는 냉장고자석 인테리어소품 크리스마스 선물 뮤직박스 액자 인스타히트, 세트 1 메인 + 9 자기테이프",
+  "partners_link": "https://link.coupang.com/a/iTZsVkfR0K",
+  "image": "img/products/music-frame-xmas.jpg",
+  "account": "take",
+  "category": "크리스마스·선물",
+  "hook": "냉장고 문에 붙여 두고 레코드판을 올리면 노래가 나오는 액자형 뮤직박스입니다.",
+  "summary": [
+   "액자 본체 하나에 자기테이프 레코드판 9개가 한 세트로 옵니다. 레코드판을 액자에 대면 노래가 나오는 방식으로 상품평에 적혀 있고, USB-C로 충전해 씁니다. 크리스마스 S1~S5 디자인과 할로윈 테마 중에 고를 수 있으며, 해외직구로 12/11 도착 예정으로 표시됩니다. 단순 변심 반품에는 왕복 배송비가 따로 붙습니다."
+  ],
+  "search_keyword": "노래나오는 냉장고자석 뮤직박스 액자",
+  "evidence": {
+   "source": "스레드 광고 레퍼런스 + 쿠팡 상품 페이지 실측",
+   "ad_reference": "2026-11-23 스레드에서 같은 구성(미니 레코드 냉장고 자석 뮤직박스) 상품이 58,100원에 광고되고 있었습니다.",
+   "price_merit": "이 리스팅은 45,800원으로 표시되어 광고가보다 낮고 무료배송입니다.",
+   "checked": "2026-11-23",
+   "product_id": "9735352404",
+   "review_count": 23,
+   "rating": 4.5,
+   "shipping": "무료배송 · 12/11 도착 예정 · 해외직구",
+   "return_note": "교환/반품 왕복비용 30,000원(고객 변심). 무료반품 아님.",
+   "substituted_for": "원래 확인한 상품(크리스마스 냉장고 자석 뮤직 플레이어 9종 NFC, productId 9714878008, 48,500원 · 상품평 21 · 무료배송 · 교환/반품 왕복 0원)은 파트너스 간편 링크 만들기에서 '법적으로 또는 판매자의 요청에 따라 링크 생성이 제한된 상품'으로 두 번 거절되어, 같은 구성의 링크 가능한 리스팅으로 담았습니다.",
+   "why_coupang": "같은 구성의 상품이 쿠팡에 여러 판매자로 올라와 있고, 그중 상품평이 23개 쌓인 리스팅입니다. 상품평에는 레코드판을 대면 노래가 나오고 자석이 잘 붙는다는 내용과 함께, 노래가 뒤바뀌어 붙어 있거나 아는 캐럴이 아니라는 불만도 있습니다."
+  }
+ },
+ {
+  "id": "survival-kit-12",
+  "name": "서바이벌 12종 생존키트 생존가방 야영 캠핑 비상용품 재난대비, 1세트, 블랙",
+  "partners_link": "https://link.coupang.com/a/iVBniEXBoy",
+  "image": "img/products/survival-kit-12.jpg",
+  "account": "take",
+  "category": "재난·비상",
+  "hook": "남편이 사 오자던 생존가방. 손전등과 공구, 구급용품까지 12가지가 한 가방에 들어 있습니다",
+  "summary": [
+   "칼과 멀티툴, 손전등, 구급용품까지 12가지가 한 가방에 담긴 세트입니다. 평점 4.5에 상품평이 760개 넘게 쌓였고, 무료배송으로 11/27 도착 예정으로 표시됩니다. 도구를 하나씩 사 모으는 대신 한 번에 갖추는 쪽입니다."
+  ],
+  "search_keyword": "생존가방 12종 생존키트",
+  "evidence": {
+   "source": "쿠팡 상품 페이지 실측 + 유튜브 쇼츠 주제 근거",
+   "checked": "2026-11-24",
+   "product_id": "4704405737",
+   "review_count": 767,
+   "rating": 4.5,
+   "shipping": "무료배송 · 11/27(금) 도착 예정",
+   "shorts_url": "https://www.youtube.com/shorts/fvHD3uk5_eA",
+   "views": 814169,
+   "uploaded": "2026-10-31",
+   "shorts_title": "남편이 비상물품을 사들이기 시작했다",
+   "match": "주제 근거 — 영상에 이 상품이 나온 것은 아닙니다. 조회수는 2026-11-23~24 집계값입니다.",
+   "why_coupang": "생존도구를 하나씩 사 모으지 않고 12종을 한 세트로 갖출 수 있고, 상품평이 760개 넘게 쌓인 상품입니다."
+  }
+ },
+ {
+  "id": "survival-kit-ctm",
+  "name": "CTM 재난 생존 키트 서바이벌 가방 캠핑 야영 비상용품 40종, 1세트, 블랙(혼합)",
+  "partners_link": "https://link.coupang.com/a/iVBzsc8Lts",
+  "image": "img/products/survival-kit-ctm.jpg",
+  "account": "ads",
+  "category": "재난·비상",
+  "hook": "40가지가 한 가방에. 재난 대비 키트를 통째로 갖춘 구성입니다",
+  "summary": [
+   "구급·생존 도구 40종이 한 가방에 담긴 키트입니다. 상품평이 100개 넘게 쌓였고 무료배송으로 다음 날 도착 예정입니다. 구성품이 많은 대신 12종 키트와 무엇이 들어 있는지 견줘 보고 고르면 좋습니다."
+  ],
+  "search_keyword": "CTM 재난 생존 키트 40종",
+  "evidence": {
+   "source": "쿠팡 상품 페이지 실측 + 유튜브 쇼츠 주제 근거",
+   "checked": "2026-11-24",
+   "product_id": "8719695106",
+   "review_count": 102,
+   "rating": 4.5,
+   "shipping": "무료배송 · 내일(11/25) 도착 예정",
+   "shorts_url": "https://www.youtube.com/shorts/fvHD3uk5_eA",
+   "views": 814169,
+   "uploaded": "2026-10-31",
+   "shorts_title": "남편이 비상물품을 사들이기 시작했다",
+   "match": "주제 근거 — 영상에 이 상품이 나온 것은 아닙니다. 조회수는 2026-11-23~24 집계값입니다.",
+   "why_coupang": "40종 구성이라 1인 가구가 재난가방을 처음 갖출 때 한 번에 채우기 좋습니다. 상품평은 100개 남짓이라 다른 키트와 구성을 견줘 보는 편이 좋습니다."
+  }
+ },
+ {
+  "id": "emergency-food-rice",
+  "name": "이지밥 진격의 비상식량 1식단 쇠고기비빔밥, 110g, 5개",
+  "partners_link": "https://link.coupang.com/a/iVBAJgjCdE",
+  "image": "img/products/emergency-food-rice.jpg",
+  "account": "take",
+  "category": "재난·비상",
+  "hook": "상온에 그대로 두고 먹는 비상식량. 쇠고기비빔밥 다섯 개 묶음입니다",
+  "summary": [
+   "비상식량으로 나온 110g 즉석밥 쇠고기비빔밥 다섯 개 묶음입니다. 상품평이 1,500개 넘고, 로켓배송으로 다음 날 도착 보장에 무료반품까지 붙어 있습니다. 집에 두고 오래 두는 용도라 유통기한은 받은 뒤 확인해 두는 편이 좋습니다."
+  ],
+  "search_keyword": "이지밥 진격의 비상식량 쇠고기비빔밥",
+  "evidence": {
+   "source": "쿠팡 상품 페이지 실측 + 유튜브 쇼츠 주제 근거",
+   "checked": "2026-11-24",
+   "product_id": "8327054230",
+   "review_count": 1532,
+   "rating": 4.5,
+   "shipping": "내일(11/25) 도착 보장 · 무료배송 · 무료반품",
+   "shorts_url": "https://www.youtube.com/shorts/2d5RWonYtZo",
+   "views": 1009378,
+   "uploaded": "2026-11-04",
+   "shorts_title": "비상 식량 준비 '이것'부터 하세요..!",
+   "match": "주제 근거 — 영상에 이 상품이 나온 것은 아닙니다. 조회수는 2026-11-23~24 집계값입니다.",
+   "why_coupang": "비상식량으로 나온 즉석밥이라 상온 보관이 되고, 다섯 개 묶음이라 한 끼씩 돌려 먹기 좋습니다. 상품평이 1,500개 넘게 쌓인 상품입니다."
+  }
+ },
+ {
+  "id": "foil-blanket-10",
+  "name": "알뜰공식 비상용 보온 은박 담요 대 160 x 210 cm, 실버, 10개",
+  "partners_link": "https://link.coupang.com/a/iVBHZhUlRk",
+  "image": "img/products/foil-blanket-10.jpg",
+  "account": "take",
+  "category": "재난·비상",
+  "hook": "가방마다 한 장씩 넣어 둘 은박 담요. 열 장이 한 묶음입니다",
+  "summary": [
+   "160 x 210cm 큰 사이즈 은박 보온 담요 열 장이 한 묶음으로 옵니다. 상품평이 1,900개 넘게 쌓였고 다음 날 도착 예정입니다. 한 장씩 접어 차와 가방, 집 안 곳곳에 나눠 두는 용도입니다."
+  ],
+  "search_keyword": "비상용 은박 담요 대형",
+  "evidence": {
+   "source": "쿠팡 상품 페이지 실측 + 유튜브 쇼츠 주제 근거",
+   "checked": "2026-11-24",
+   "product_id": "6957933231",
+   "review_count": 1903,
+   "rating": 4.5,
+   "shipping": "내일(11/25) 도착 예정 · 무료배송",
+   "shorts_url": "https://www.youtube.com/shorts/2d5RWonYtZo",
+   "views": 1009378,
+   "uploaded": "2026-11-04",
+   "shorts_title": "비상 식량 준비 '이것'부터 하세요..!",
+   "match": "주제 근거 — 영상에 이 상품이 나온 것은 아닙니다. 조회수는 2026-11-23~24 집계값입니다.",
+   "why_coupang": "은박 담요는 낱장으로도 팔지만, 여기는 160x210cm 큰 사이즈를 열 장 묶어 두기 때문에 차와 가방, 집에 나눠 둘 수 있습니다."
+  }
+ },
+ {
+  "id": "first-aid-pouch",
+  "name": "바이오플러스 EVA 구급낭 + 15종 구급약품, 1개",
+  "partners_link": "https://link.coupang.com/a/iVBGSMjp4C",
+  "image": "img/products/first-aid-pouch.jpg",
+  "account": "take",
+  "category": "재난·비상",
+  "hook": "반창고부터 소독약까지 15종을 한 파우치에 담은 가정용 구급낭입니다",
+  "summary": [
+   "EVA 소재 파우치에 구급용품 15종이 들어 있는 가정용 구급낭입니다. 상품평이 740개 넘고 다음 날 도착 예정입니다. 안에 든 약품의 종류와 유효기간은 받은 뒤 한 번 확인해 두는 편이 좋습니다."
+  ],
+  "search_keyword": "EVA 구급낭 15종",
+  "evidence": {
+   "source": "쿠팡 상품 페이지 실측 + 유튜브 쇼츠 주제 근거",
+   "checked": "2026-11-24",
+   "product_id": "8401243307",
+   "review_count": 743,
+   "rating": 4.5,
+   "shipping": "내일(11/25) 도착 예정 · 무료배송",
+   "shorts_url": "https://www.youtube.com/shorts/-0aGEPRe5-w",
+   "views": 657641,
+   "uploaded": "2026-11-15",
+   "shorts_title": "한국에서 비상사태 터졌을때 생존법",
+   "match": "주제 근거 — 영상에 이 상품이 나온 것은 아닙니다. 조회수는 2026-11-23~24 집계값입니다.",
+   "why_coupang": "구급용품 15종을 한 파우치에 담아 두어 하나씩 사 모으지 않아도 됩니다. 상품평이 740개 넘게 쌓인 상품입니다."
+  }
+ },
+ {
+  "id": "lantern-powerbank",
+  "name": "코멧 휴대용 충전식 아웃도어 LED 캠핑 랜턴 + 보조배터리 10000mAh 세트, 블랙, 1개",
+  "partners_link": "https://link.coupang.com/a/iVBEAAHfoW",
+  "image": "img/products/lantern-powerbank.jpg",
+  "account": "ads",
+  "category": "재난·비상",
+  "hook": "정전된 밤 방을 밝히는 랜턴에, 휴대폰을 살리는 보조배터리까지 붙은 세트입니다",
+  "summary": [
+   "충전식 LED 랜턴과 10000mAh 보조배터리가 한 세트로 오는 구성입니다. 상품평이 370개 넘고 다음 날 도착 예정입니다. 켜 두는 시간에 따라 배터리가 줄어드니 밝기 단계를 낮춰 두는 편이 오래갑니다."
+  ],
+  "search_keyword": "충전식 캠핑 랜턴 보조배터리 세트",
+  "evidence": {
+   "source": "쿠팡 상품 페이지 실측 + 유튜브 쇼츠 주제 근거",
+   "checked": "2026-11-24",
+   "product_id": "8512052937",
+   "review_count": 374,
+   "rating": 5.0,
+   "shipping": "내일(11/25) 도착 예정 · 무료배송",
+   "shorts_url": "https://www.youtube.com/shorts/-0aGEPRe5-w",
+   "views": 657641,
+   "uploaded": "2026-11-15",
+   "shorts_title": "한국에서 비상사태 터졌을때 생존법",
+   "match": "주제 근거 — 영상에 이 상품이 나온 것은 아닙니다. 조회수는 2026-11-23~24 집계값입니다.",
+   "why_coupang": "랜턴과 보조배터리를 따로 사면 두 개가 되지만, 이 세트는 랜턴에 10000mAh 배터리가 붙어 있어 정전 때 한 손에 들고 쓸 수 있습니다."
+  }
+ },
+ {
+  "id": "powerbank-30000",
+  "name": "YINTO 대용량 보조배터리 고속충전 30000mAh PD 22.5W QC3.0 잔량표시, 블랙, JM5",
+  "partners_link": "https://link.coupang.com/a/iVBFN75lw4",
+  "image": "img/products/powerbank-30000.jpg",
+  "account": "ads",
+  "category": "재난·비상",
+  "hook": "콘센트가 끊긴 날에도 휴대폰을 여러 번 채우는 30000mAh 보조배터리입니다",
+  "summary": [
+   "30000mAh에 PD 22.5W·QC3.0 고속충전, 남은 양을 숫자로 보여 주는 화면이 달린 보조배터리입니다. 상품평이 1만 7천 개 넘고 최근 한 달 사이 2천 명 이상이 산 것으로 표시돼 있으며, 다음 날 도착 보장·무료배송입니다."
+  ],
+  "search_keyword": "30000mAh 대용량 보조배터리",
+  "evidence": {
+   "source": "쿠팡 상품 페이지 실측 + 유튜브 쇼츠 주제 근거",
+   "checked": "2026-11-24",
+   "product_id": "8259885955",
+   "review_count": 17133,
+   "rating": 5.0,
+   "shipping": "내일(11/25) 도착 보장 · 무료배송",
+   "shorts_url": "https://www.youtube.com/shorts/-0aGEPRe5-w",
+   "views": 657641,
+   "uploaded": "2026-11-15",
+   "shorts_title": "한국에서 비상사태 터졌을때 생존법",
+   "match": "주제 근거 — 영상에 이 상품이 나온 것은 아닙니다. 조회수는 2026-11-23~24 집계값입니다.",
+   "why_coupang": "30000mAh는 대용량 쪽이라 정전이 길어질 때 휴대폰을 여러 번 채울 수 있고, 남은 양이 숫자로 보여 미리 가늠할 수 있습니다. 상품평이 1만 7천 개 넘는 상품입니다."
+  }
+ },
+ {
+  "id": "crank-radio",
+  "name": "AKRUA 랜턴라디오 수동라디오 비상라디오 자가발전손전등, 블랙, 1개",
+  "partners_link": "https://link.coupang.com/a/iVBKwAUSfQ",
+  "image": "img/products/crank-radio.jpg",
+  "account": "ads",
+  "category": "재난·비상",
+  "hook": "건전지가 없어도 손으로 돌려 켜는 라디오 겸 랜턴입니다",
+  "summary": [
+   "크랭크를 돌려 충전하는 자가발전 방식에 라디오와 랜턴, 경고음이 붙은 비상용 라디오입니다. 상품평이 550개 넘게 쌓였고, 해외에서 들어오는 상품이라 12/4 도착 예정으로 표시됩니다."
+  ],
+  "search_keyword": "자가발전 비상 라디오",
+  "evidence": {
+   "source": "쿠팡 상품 페이지 실측 + 유튜브 쇼츠 주제 근거",
+   "checked": "2026-11-24",
+   "product_id": "7440466133",
+   "review_count": 552,
+   "rating": 4.5,
+   "shipping": "무료배송 · 12/4 도착 예정",
+   "shorts_url": "https://www.youtube.com/shorts/-0aGEPRe5-w",
+   "views": 657641,
+   "uploaded": "2026-11-15",
+   "shorts_title": "한국에서 비상사태 터졌을때 생존법",
+   "match": "주제 근거 — 영상에 이 상품이 나온 것은 아닙니다. 조회수는 2026-11-23~24 집계값입니다.",
+   "why_coupang": "건전지를 넣어 두지 않아도 손으로 돌려 쓸 수 있는 자가발전 방식이라 정전이 길어질 때를 대비하는 쪽입니다. 해외배송이라 도착까지 열흘 남짓 걸린다고 표시돼 있습니다."
+  }
+ }
 ]
 ```

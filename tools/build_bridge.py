@@ -94,6 +94,16 @@ SECTIONS = [
         "diary": "애들을 재우고 나니 남편이 휴대폰을 내밀어. 캠핑 갈 때 쓴다는 팬히터, 가방에 들어간다는 드론, "
                  "거실 벽을 화면으로 쓴다는 프로젝터. 살 건 아니라는데 눈은 진심이야. 구경은 같이 했어.",
     },
+    {
+        "slug": "resilience",
+        "no": "08",
+        "label": "재난·비상",
+        "eyebrow": "8화 · 비상 대비",
+        "title": "뉴스가 무서운 밤에",
+        "diary": "애들을 재우고 뉴스를 보다가 남편이 『우리도 뭐라도 사 둘까』 하더라. 큰일이야 있겠냐고 웃으면서도, "
+                 "정전되면 집이 깜깜해지고 물이 끊기면 애들 씻길 것도 없으니까. 그날 밤에 조용히 찾아본 것들이야. "
+                 "사 두면 몇 해씩 그대로 있는 것들이라, 한 번 갖춰 두면 마음이 놓이는 쪽이야.",
+    },
 ]
 
 HERO_IMAGES = ["fleece-blanket.jpg", "music-box.jpg", "hoppang.jpg"]
@@ -426,7 +436,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   <div class="in">
     <a class="brand" href="./"><span class="mk">{mark}</span><span class="bt">겨울 살림 마트</span></a>
     <div class="right">
-      <span class="vol">2026년 11월 · 7개 장</span>
+      <span class="vol">2026년 11월 · 8개 장</span>
       <span class="sep vol"></span>
       <span>이번 호 <b data-count>{count}</b>가지</span>
     </div>
@@ -493,7 +503,7 @@ def build():
       <p class="stand">창틈에서 시작해 현관, 이불 속, 식탁 위까지. 한 주 동안 하나씩 찾아 둔
         겨울 살림 물건 {len(data)}가지를 장마다 모았습니다. 필요한 것만 골라 보세요.</p>
       <div class="hero-meta">
-        <span>7개 장</span><span class="d"></span>
+        <span>8개 장</span><span class="d"></span>
         <span>물건 <b data-count>{len(data)}</b>가지</span><span class="d"></span>
         <span>2026년 11월</span>
       </div>
