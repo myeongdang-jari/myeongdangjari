@@ -129,6 +129,54 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .toc .c{padding-left:5px;border-left:1px solid var(--line-2);line-height:1}
 }
 
+/* 릴스 띠 — 히어로 바로 아래, 영상으로 본 상품을 맨 앞에 */
+.reels{max-width:var(--w);margin:clamp(18px,2.6vw,30px) auto 0;padding:0 var(--pad)}
+.reels[hidden]{display:none}
+.rtop{border-top:1px solid var(--line-2);padding-top:12px}
+.rtop .rh{display:flex;align-items:flex-end;justify-content:space-between;gap:14px 24px}
+.rtop h2{font-family:var(--serif);font-weight:700;font-size:clamp(19px,2.2vw,26px);line-height:1.3;
+  letter-spacing:-.03em;color:var(--ink);margin-top:7px}
+.rtop .rsub{font-size:12.5px;line-height:1.65;color:var(--sub);max-width:24em;text-align:right;flex:none}
+.rail{list-style:none;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));
+  gap:clamp(10px,1.4vw,16px);margin-top:clamp(12px,1.7vw,18px)}
+.rail li{min-width:0}
+.rl{display:block;min-width:0}
+.rlph{position:relative;display:block;aspect-ratio:480/560;border-radius:10px;overflow:hidden;
+  background:#11150f;border:1px solid var(--line)}
+.rlph img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.rl:hover .rlph img{transform:scale(1.035)}
+.rl .play{position:absolute;left:50%;top:50%;width:36px;height:36px;margin:-18px 0 0 -18px;
+  display:flex;align-items:center;justify-content:center;border-radius:50%;
+  background:rgba(246,245,240,.92);color:var(--forest);box-shadow:0 2px 10px rgba(0,0,0,.28)}
+.rl .play::before{content:"";width:0;height:0;border-left:9px solid currentColor;
+  border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+.rlmeta{display:block;margin-top:8px;font-size:10px;letter-spacing:.07em;color:var(--sub);
+  font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rlmeta b{color:var(--forest-2);font-weight:700}
+.rlt{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:3px;
+  font-size:12px;font-weight:600;line-height:1.45;letter-spacing:-.015em;color:var(--ink)}
+.rl:hover .rlt{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-2)}
+.rl.flash .rlph{box-shadow:0 0 0 2px var(--forest)}
+@media(max-width:900px){
+  .rtop .rh{display:block}
+  .rtop .rsub{text-align:left;margin-top:6px;max-width:34em}
+  .rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+    -ms-overflow-style:none;margin:12px calc(var(--pad) * -1) 0;padding:0 var(--pad) 2px}
+  .rail::-webkit-scrollbar{display:none}
+  .rail li{flex:0 0 150px;scroll-snap-align:start}
+}
+@media(max-width:640px){
+  .reels{margin-top:14px}
+  .rtop{padding-top:10px}
+  .rtop h2{font-size:clamp(18px,5.2vw,22px);margin-top:6px}
+  .rtop .rsub{font-size:11.8px;line-height:1.6}
+  .rail li{flex:0 0 142px}
+  .rlph{border-radius:9px}
+  .rl .play{width:32px;height:32px;margin:-16px 0 0 -16px}
+  .rlmeta{margin-top:7px;font-size:9.5px}
+  .rlt{font-size:11.5px}
+}
+
 /* 탐색 바 — 스크롤 시 뒤 글자가 비치지 않게 종이색으로 불투명하게 깐다(blur는 보조) */
 .tools{position:sticky;top:var(--hh);z-index:30;background:var(--paper);
   backdrop-filter:saturate(150%) blur(8px);-webkit-backdrop-filter:saturate(150%) blur(8px);
@@ -359,6 +407,56 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       <figcaption>이번 호에 실린 물건들 &mdash; 사진은 판매 중인 상품 사진입니다.</figcaption>
     </div>
   </div>
+</section>
+
+<section class="reels" id="s-reels" aria-labelledby="h-reels">
+  <div class="rtop">
+    <div class="rh">
+      <div>
+        <p class="eyebrow">릴스 &middot; 7편</p>
+        <h2 id="h-reels">릴스로 먼저 본 7가지</h2>
+      </div>
+      <p class="rsub">영상으로 소개한 물건을 맨 앞에 모았습니다. 누르면 영상부터 다시 보고,
+        쿠팡에서 값과 배송 조건을 확인할 수 있어요.</p>
+    </div>
+  </div>
+  <ul class="rail" style="grid-template-columns:repeat(7,minmax(0,1fr))">
+    <li><a class="rl" href="#p=bm-thermal-pot">
+      <span class="rlph"><img src="img/reels/thermal-pot-06e7fa93.jpg" alt="" width="480" height="560" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+      <span class="rlmeta"><b>릴스 01</b> &middot; 욕실·살림</span>
+      <span class="rlt">키친아트 대용량 보온 티포트 1.8L, KAEP-8520</span>
+    </a></li>
+    <li><a class="rl" href="#p=bm-veg-spinner">
+      <span class="rlph"><img src="img/reels/veg-spinner-39df3879.jpg" alt="" width="480" height="560" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+      <span class="rlmeta"><b>릴스 02</b> &middot; 욕실·살림</span>
+      <span class="rlt">벨라쿠진 무연마제 올스텐 304 짤순이 파스타망, 1세트</span>
+    </a></li>
+    <li><a class="rl" href="#p=bm-silicone-container-s">
+      <span class="rlph"><img src="img/reels/silicone-container-8d489287.jpg" alt="" width="480" height="560" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+      <span class="rlmeta"><b>릴스 03</b> &middot; 욕실·살림</span>
+      <span class="rlt">실리샵 국산 플래티넘 실리콘 밀폐용기 세트 (3colors), 대형+중형+소형, 미들그레이, 1개</span>
+    </a></li>
+    <li><a class="rl" href="#p=bm-bathroom-shelf-set">
+      <span class="rlph"><img src="img/reels/bathroom-shelf-6edfe957.jpg" alt="" width="480" height="560" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+      <span class="rlmeta"><b>릴스 04</b> &middot; 욕실·살림</span>
+      <span class="rlt">다용도 무타공 욕실 수납선반 6종 세트 일자형 드라이기 거치대 비누받침대 칫솔걸이, 화이트, 1세트</span>
+    </a></li>
+    <li><a class="rl" href="#p=bm-heattech-marunfive">
+      <span class="rlph"><img src="img/reels/heattech-marunfive-c2dcd0b7.jpg" alt="" width="480" height="560" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+      <span class="rlmeta"><b>릴스 05</b> &middot; 차량·외출</span>
+      <span class="rlt">마른파이브 남성용 히트터치 기모 발열내의 세트</span>
+    </a></li>
+    <li><a class="rl" href="#p=bm-winter-slipper-balcance">
+      <span class="rlph"><img src="img/reels/winter-slipper-327a151e.jpg" alt="" width="480" height="560" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+      <span class="rlmeta"><b>릴스 06</b> &middot; 난방·이불</span>
+      <span class="rlt">발캉스 겨울 남여공용 무중력 리커버리 쿠션 경량 방한 털 샌들</span>
+    </a></li>
+    <li><a class="rl" href="#p=bm-mop-sheet-cheongso">
+      <span class="rlph"><img src="img/reels/mop-sheet-5ca66f7a.jpg" alt="" width="480" height="560" loading="lazy"><span class="play" aria-hidden="true"></span></span>
+      <span class="rlmeta"><b>릴스 07</b> &middot; 욕실·살림</span>
+      <span class="rlt">청소엔구띠 물걸레청소포 캡형 30매, 10개</span>
+    </a></li>
+  </ul>
 </section>
 
 <section class="toc" aria-labelledby="toc-h">
@@ -1390,6 +1488,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   var cat = 'all', q = '';
 
   function apply(anchor){
+    var band = $('s-reels');
+    if(band) band.hidden = !!(q || cat !== 'all');
     var terms = q.toLowerCase().replace(/\s+/g, ' ').trim().split(' ').filter(Boolean);
     var total = 0;
     chapters.forEach(function(sec){
@@ -1443,6 +1543,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   /* ---------- 상세 ---------- */
   var dv = $('dv'), nav = 0, last = null, opened = null;
   function show(p){
+    var from = document.activeElement;
     var rb = $('dw'), rv = $('dwv'), rl = $('dwl');
     if(p.video){
       rv.poster = (p.imgs || [])[0] || '';
@@ -1488,7 +1589,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       ma.href = '#s-' + p.s; more.appendChild(ma);
     }
     $('rw').hidden = !r.children.length;
-    opened = document.querySelector('.card[data-id="' + p.id + '"]');
+    /* 닫으면 누른 자리(릴스 띠 카드 또는 장 카드)로 돌아간다 */
+    opened = (from && from.getAttribute && from.getAttribute('href') === '#p=' + p.id)
+      ? from : document.querySelector('.card[data-id="' + p.id + '"]');
     if(dv.hidden) last = document.activeElement;
     dv.hidden = false; document.body.style.overflow = 'hidden';
     dv.scrollTop = 0; g.scrollLeft = 0; $('bk').focus();

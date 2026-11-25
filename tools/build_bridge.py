@@ -14,6 +14,13 @@ v2 변경점
 - 탐색 바를 불투명 아이보리 + blur로 정돈(뒤 카드 글자 비침 제거)
 - ■ 문자 로고를 창틀 모티프 SVG 심볼로 교체, 차례는 컴팩트 인덱스 바(점프 칩)로 축약
 - 상세 모달의 여백·버튼 대비 상향
+
+v2.1 변경점
+- `video`(릴스)가 붙은 상품을 히어로 바로 아래 「릴스 띠」(`#s-reels`)로 모아 최상단에 배치.
+  띠의 카드는 상세 모달(`#p=...`)로 이어지고, 상품은 자기 장에도 그대로 남는다(총 개수·딥링크 불변).
+  띠는 `.chapter`가 아니라서 장 수(8개 장)와 장 앵커에는 영향이 없다.
+- 띠의 커버는 `img/reels/{릴스 파일명}.jpg`(영상 2초 지점을 480×560으로 잘라 만든 것)이고,
+  커버가 없으면 상품 사진을 쓴다. 릴스 순서는 아래 REEL_ORDER가 정한다.
 """
 import hashlib
 import html
@@ -108,6 +115,18 @@ SECTIONS = [
 
 HERO_IMAGES = ["fleece-blanket.jpg", "music-box.jpg", "hoppang.jpg"]
 IMG_BASE = "https://myeongdang-jari.github.io/myeongdangjari/img/products/"
+
+# 릴스 띠에 세울 상품 순서(왼쪽부터). 여기 없는 video 상품은 데이터 순서대로 뒤에 붙는다.
+REEL_ORDER = [
+    "bm-thermal-pot",
+    "bm-veg-spinner",
+    "bm-silicone-container-s",
+    "bm-bathroom-shelf-set",
+    "bm-heattech-marunfive",
+    "bm-winter-slipper-balcance",
+    "bm-mop-sheet-cheongso",
+]
+REEL_COVER_DIR = ROOT / "img" / "reels"
 
 # 창틀 네 칸 모티프 — 헤더·푸터 로고 심볼
 MARK = ('<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">'
@@ -244,6 +263,54 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .toc a:hover{border-color:var(--forest)}
   .toc .t{display:none}
   .toc .c{padding-left:5px;border-left:1px solid var(--line-2);line-height:1}
+}
+
+/* 릴스 띠 — 히어로 바로 아래, 영상으로 본 상품을 맨 앞에 */
+.reels{max-width:var(--w);margin:clamp(18px,2.6vw,30px) auto 0;padding:0 var(--pad)}
+.reels[hidden]{display:none}
+.rtop{border-top:1px solid var(--line-2);padding-top:12px}
+.rtop .rh{display:flex;align-items:flex-end;justify-content:space-between;gap:14px 24px}
+.rtop h2{font-family:var(--serif);font-weight:700;font-size:clamp(19px,2.2vw,26px);line-height:1.3;
+  letter-spacing:-.03em;color:var(--ink);margin-top:7px}
+.rtop .rsub{font-size:12.5px;line-height:1.65;color:var(--sub);max-width:24em;text-align:right;flex:none}
+.rail{list-style:none;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));
+  gap:clamp(10px,1.4vw,16px);margin-top:clamp(12px,1.7vw,18px)}
+.rail li{min-width:0}
+.rl{display:block;min-width:0}
+.rlph{position:relative;display:block;aspect-ratio:480/560;border-radius:10px;overflow:hidden;
+  background:#11150f;border:1px solid var(--line)}
+.rlph img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.rl:hover .rlph img{transform:scale(1.035)}
+.rl .play{position:absolute;left:50%;top:50%;width:36px;height:36px;margin:-18px 0 0 -18px;
+  display:flex;align-items:center;justify-content:center;border-radius:50%;
+  background:rgba(246,245,240,.92);color:var(--forest);box-shadow:0 2px 10px rgba(0,0,0,.28)}
+.rl .play::before{content:"";width:0;height:0;border-left:9px solid currentColor;
+  border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+.rlmeta{display:block;margin-top:8px;font-size:10px;letter-spacing:.07em;color:var(--sub);
+  font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rlmeta b{color:var(--forest-2);font-weight:700}
+.rlt{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:3px;
+  font-size:12px;font-weight:600;line-height:1.45;letter-spacing:-.015em;color:var(--ink)}
+.rl:hover .rlt{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-2)}
+.rl.flash .rlph{box-shadow:0 0 0 2px var(--forest)}
+@media(max-width:900px){
+  .rtop .rh{display:block}
+  .rtop .rsub{text-align:left;margin-top:6px;max-width:34em}
+  .rail{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+    -ms-overflow-style:none;margin:12px calc(var(--pad) * -1) 0;padding:0 var(--pad) 2px}
+  .rail::-webkit-scrollbar{display:none}
+  .rail li{flex:0 0 150px;scroll-snap-align:start}
+}
+@media(max-width:640px){
+  .reels{margin-top:14px}
+  .rtop{padding-top:10px}
+  .rtop h2{font-size:clamp(18px,5.2vw,22px);margin-top:6px}
+  .rtop .rsub{font-size:11.8px;line-height:1.6}
+  .rail li{flex:0 0 142px}
+  .rlph{border-radius:9px}
+  .rl .play{width:32px;height:32px;margin:-16px 0 0 -16px}
+  .rlmeta{margin-top:7px;font-size:9.5px}
+  .rlt{font-size:11.5px}
 }
 
 /* 탐색 바 — 스크롤 시 뒤 글자가 비치지 않게 종이색으로 불투명하게 깐다(blur는 보조) */
@@ -484,6 +551,28 @@ def card_html(p, no, label):
              reel='<span class="tag reel">릴스</span>' if p.get("video") else '')
 
 
+def reel_cover(p):
+    """릴스 커버 경로. img/reels/{릴스 파일명}.jpg 가 있으면 그것, 없으면 상품 사진."""
+    stem = pathlib.Path(p.get("video", "")).stem
+    if stem.startswith("reel-"):
+        stem = stem[len("reel-"):]
+    if stem and (REEL_COVER_DIR / f"{stem}.jpg").exists():
+        return f"img/reels/{stem}.jpg"
+    return (p.get("imgs") or [""])[0]
+
+
+def reel_card_html(p, idx, label):
+    return (
+        '    <li><a class="rl" href="#p={pid}">\n'
+        '      <span class="rlph"><img src="{img}" alt="" width="480" height="560" loading="lazy">'
+        '<span class="play" aria-hidden="true"></span></span>\n'
+        '      <span class="rlmeta"><b>릴스 {idx:02d}</b> &middot; {label}</span>\n'
+        '      <span class="rlt">{title}</span>\n'
+        '    </a></li>\n'
+    ).format(pid=esc(p["id"]), img=esc(reel_cover(p)), idx=idx, label=esc(label),
+             title=esc(p["title"]))
+
+
 def build():
     src = INDEX.read_text(encoding="utf-8")
     m = re.search(r'\n<script type="application/json" id="d">(\[.*?)</script>', src, re.S)
@@ -499,6 +588,20 @@ def build():
     counts = {s["slug"]: 0 for s in SECTIONS}
     for p in data:
         counts[p["s"]] = counts.get(p["s"], 0) + 1
+
+    # 상품 번호는 장 순서 → 데이터 순서로 한 번만 매긴다. 장 카드와 상세 머리말이 같은 번호를 쓴다.
+    numbered = []
+    seq = 0
+    for s in SECTIONS:
+        for p in data:
+            if p["s"] == s["slug"]:
+                seq += 1
+                numbered.append((seq, s, p))
+
+    # 릴스 띠에 세울 상품 — REEL_ORDER 순서, 그 밖의 video 상품은 데이터 순서대로 뒤에
+    reels = [p for p in data if p.get("video")]
+    reels.sort(key=lambda p: (REEL_ORDER.index(p["id"]) if p["id"] in REEL_ORDER else len(REEL_ORDER),
+                              data.index(p)))
 
     head = (HEAD.replace("{title}", esc(title)).replace("{desc}", esc(desc))
             .replace("{ogimg}", esc(ogimg)).replace("{ftc}", FTC)
@@ -530,8 +633,29 @@ def build():
     </div>
   </div>
 </section>
+""")
 
-<section class="toc" aria-labelledby="toc-h">
+    # 릴스 띠 — 히어로 바로 아래. video 필드가 있는 상품만 세운다.
+    if reels:
+        out.append(f"""
+<section class="reels" id="s-reels" aria-labelledby="h-reels">
+  <div class="rtop">
+    <div class="rh">
+      <div>
+        <p class="eyebrow">릴스 &middot; {len(reels)}편</p>
+        <h2 id="h-reels">릴스로 먼저 본 {len(reels)}가지</h2>
+      </div>
+      <p class="rsub">영상으로 소개한 물건을 맨 앞에 모았습니다. 누르면 영상부터 다시 보고,
+        쿠팡에서 값과 배송 조건을 확인할 수 있어요.</p>
+    </div>
+  </div>
+  <ul class="rail" style="grid-template-columns:repeat({len(reels)},minmax(0,1fr))">
+""")
+        for i, p in enumerate(reels, 1):
+            out.append(reel_card_html(p, i, labels.get(p["s"], p.get("st", ""))))
+        out.append("  </ul>\n</section>\n\n")
+
+    out.append("""<section class="toc" aria-labelledby="toc-h">
   <h2 id="toc-h">차례</h2>
   <ol>
 """)
@@ -571,9 +695,8 @@ def build():
     out.append("    </div>\n  </div>\n</div>\n\n<div class=\"chapters\">\n")
 
     # 장 + 카드
-    n = 0
     for s in SECTIONS:
-        items = [p for p in data if p["s"] == s["slug"]]
+        items = [(num, p) for num, ss, p in numbered if ss["slug"] == s["slug"]]
         out.append(f"""  <section class="chapter" id="s-{s["slug"]}" data-cat="{s["slug"]}" aria-labelledby="h-{s["slug"]}">
     <div class="chead">
       <div class="chleft">
@@ -587,9 +710,8 @@ def build():
     </div>
     <div class="grid">
 """)
-        for p in items:
-            n += 1
-            out.append(card_html(p, n, labels[s["slug"]]))
+        for num, p in items:
+            out.append(card_html(p, num, labels[s["slug"]]))
         out.append("    </div>\n  </section>\n\n")
 
     out.append("""  <div class="empty" id="empty">
@@ -711,6 +833,8 @@ def build():
   var cat = 'all', q = '';
 
   function apply(anchor){
+    var band = $('s-reels');
+    if(band) band.hidden = !!(q || cat !== 'all');
     var terms = q.toLowerCase().replace(/\s+/g, ' ').trim().split(' ').filter(Boolean);
     var total = 0;
     chapters.forEach(function(sec){
@@ -764,6 +888,7 @@ def build():
   /* ---------- 상세 ---------- */
   var dv = $('dv'), nav = 0, last = null, opened = null;
   function show(p){
+    var from = document.activeElement;
     var rb = $('dw'), rv = $('dwv'), rl = $('dwl');
     if(p.video){
       rv.poster = (p.imgs || [])[0] || '';
@@ -809,7 +934,9 @@ def build():
       ma.href = '#s-' + p.s; more.appendChild(ma);
     }
     $('rw').hidden = !r.children.length;
-    opened = document.querySelector('.card[data-id="' + p.id + '"]');
+    /* 닫으면 누른 자리(릴스 띠 카드 또는 장 카드)로 돌아간다 */
+    opened = (from && from.getAttribute && from.getAttribute('href') === '#p=' + p.id)
+      ? from : document.querySelector('.card[data-id="' + p.id + '"]');
     if(dv.hidden) last = document.activeElement;
     dv.hidden = false; document.body.style.overflow = 'hidden';
     dv.scrollTop = 0; g.scrollLeft = 0; $('bk').focus();
