@@ -313,6 +313,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .card .meta{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.07em;color:var(--sub)}
 .card .no{color:var(--forest-2);font-weight:700;letter-spacing:.1em;font-variant-numeric:tabular-nums;white-space:nowrap}
 .card .tag{padding-left:8px;border-left:1px solid var(--line-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .tag.reel{display:inline-flex;align-items:center;gap:4px;margin-left:2px;padding:2px 7px;border:0;
+  border-radius:99px;background:var(--forest);color:#f1f0e6;font-weight:600;letter-spacing:.02em}
+.card .tag.reel::before{content:"";width:0;height:0;border-left:4px solid currentColor;
+  border-top:3px solid transparent;border-bottom:3px solid transparent}
 .card .name{font-size:13.5px;font-weight:600;line-height:1.45;letter-spacing:-.015em;color:var(--ink);
   margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
   min-height:calc(2 * 1.45em)}
@@ -380,6 +384,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .dtop .lb{font-size:11px;letter-spacing:.08em;color:var(--sub);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .dtop .lb b{color:var(--ink);font-weight:600}
 .dbody{padding:clamp(14px,2.4vw,22px) 0 86px;flex:1}
+/* 릴스 플레이어 */
+.reelbox{margin:0 0 14px;background:#0d0f0e;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.reelbox[hidden]{display:none}
+.reelbox video{display:block;width:100%;max-height:min(62vh,560px);background:#0d0f0e}
+.reelmeta{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:8px 12px;font-size:11px;color:#c2c8bd;background:#141815}
+.reelmeta b{font-weight:600;color:#f1f0e6;letter-spacing:.04em}
+.reelmeta a{color:#eceade;border-bottom:1px solid rgba(241,240,230,.35);padding-bottom:1px}
 .gal{display:flex;overflow-x:auto;gap:8px;scroll-snap-type:x mandatory;scrollbar-width:none;
   background:var(--img-bg);border:1px solid var(--line);border-radius:14px;
   justify-content:center;align-items:center;max-height:min(46vh,400px)}
@@ -460,7 +472,7 @@ def card_html(p, no, label):
         '<img src="{img}" alt="" loading="lazy" width="492" height="492"></a>\n'
         '        <div class="cbody">\n'
         '          <p class="meta"><span class="no">No. {no}</span>'
-        '<span class="tag">{label}</span></p>\n'
+        '<span class="tag">{label}</span>{reel}</p>\n'
         '          <h3 class="name"><a href="#p={purl}">{title}</a></h3>\n'
         '          <p class="why">{hook}</p>\n'
         '          <a class="buy" href="{link}" target="_blank" rel="noopener noreferrer sponsored">'
@@ -468,7 +480,8 @@ def card_html(p, no, label):
         '        </div>\n'
         '      </article>\n'
     ).format(pid=pid, cat=esc(p["s"]), purl=esc(p["id"]), img=img, no=f"{no:02d}",
-             label=esc(label), title=title, hook=hook, link=esc(p["link"]))
+             label=esc(label), title=title, hook=hook, link=esc(p["link"]),
+             reel='<span class="tag reel">릴스</span>' if p.get("video") else '')
 
 
 def build():
@@ -608,6 +621,10 @@ def build():
       <span class="lb">겨울 살림 마트 &middot; <b id="dno"></b></span>
     </div>
     <div class="dbody">
+      <div class="reelbox" id="dw" hidden>
+        <video id="dwv" controls playsinline preload="metadata"></video>
+        <div class="reelmeta"><b>릴스로 보기</b><a id="dwl" href="#" target="_blank" rel="noopener">영상만 열기</a></div>
+      </div>
       <div class="gal" id="gal"></div>
       <a class="ds" id="ds"></a>
       <h1 id="dt"></h1>
@@ -651,7 +668,8 @@ def build():
       '<a class="ph" href="#p=' + id + '" tabindex="-1" aria-hidden="true">' +
         '<img src="' + esc((p.imgs || [])[0] || '') + '" alt="" loading="lazy" width="492" height="492"></a>' +
       '<div class="cbody">' +
-        '<p class="meta"><span class="no">No. ' + no + '</span><span class="tag">' + esc(lab) + '</span></p>' +
+        '<p class="meta"><span class="no">No. ' + no + '</span><span class="tag">' + esc(lab) + '</span>' +
+          (p.video ? '<span class="tag reel">릴스</span>' : '') + '</p>' +
         '<h3 class="name"><a href="#p=' + id + '">' + esc(p.title) + '</a></h3>' +
         '<p class="why">' + esc(p.hook || '') + '</p>' +
         '<a class="buy" href="' + esc(p.link || '') + '" target="_blank" rel="noopener noreferrer sponsored">' +
@@ -684,8 +702,8 @@ def build():
   var text = {};
   cards.forEach(function(c){
     var p = M[c.dataset.id] || {};
-    text[c.dataset.id] = ((p.title || '') + ' ' + (p.hook || '') + ' ' + ((p.pts || []).join(' ')))
-      .toLowerCase().replace(/\s+/g, ' ');
+    text[c.dataset.id] = ((p.title || '') + ' ' + (p.hook || '') + ' ' + ((p.pts || []).join(' ')) +
+      (p.video ? ' 릴스 영상' : '')).toLowerCase().replace(/\s+/g, ' ');
   });
   var chapters = Array.prototype.slice.call(document.querySelectorAll('.chapter'));
   var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
@@ -746,6 +764,15 @@ def build():
   /* ---------- 상세 ---------- */
   var dv = $('dv'), nav = 0, last = null, opened = null;
   function show(p){
+    var rb = $('dw'), rv = $('dwv'), rl = $('dwl');
+    if(p.video){
+      rv.poster = (p.imgs || [])[0] || '';
+      if(rv.getAttribute('src') !== p.video) rv.src = p.video;
+      rl.href = p.video; rb.hidden = false;
+    } else {
+      try { rv.pause(); } catch(e){}
+      rv.removeAttribute('src'); rv.load(); rb.hidden = true;
+    }
     var g = $('gal'); g.textContent = '';
     (p.imgs || []).forEach(function(u){ var i = el('img'); i.src = u; i.alt = p.title; g.appendChild(i); });
     g.classList.toggle('one', (p.imgs || []).length < 2);
@@ -788,6 +815,7 @@ def build():
     dv.scrollTop = 0; g.scrollLeft = 0; $('bk').focus();
   }
   function closeDv(){
+    var rv = $('dwv'); if(rv && !rv.paused){ try { rv.pause(); } catch(e){} }
     dv.hidden = true; document.body.style.overflow = '';
     if(opened){
       opened.scrollIntoView({block: 'center', behavior: 'smooth'});
