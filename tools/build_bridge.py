@@ -686,7 +686,7 @@ def build():
         쿠팡에서 값과 배송 조건을 확인할 수 있어요.</p>
     </div>
   </div>
-  <ul class="rail" style="grid-template-columns:repeat({len(reels)},minmax(0,1fr))">
+  <ul class="rail" style="grid-template-columns:repeat({min(len(reels), 7)},minmax(0,1fr))">
 """)
         for i, p in enumerate(reels, 1):
             out.append(reel_card_html(p, i, labels.get(p["s"], p.get("st", ""))))
