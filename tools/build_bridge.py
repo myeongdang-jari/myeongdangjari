@@ -150,6 +150,9 @@ REEL_ORDER = [
     "g1113004403",
     "g1113004411",
     "g1113010939",
+    "bm-pure-sunday-dishcloth",
+    "bm-medien-toothbrush",
+    "bm-sock-maker-49",
 ]
 REEL_COVER_DIR = ROOT / "img" / "reels"
 

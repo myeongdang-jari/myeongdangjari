@@ -42,6 +42,10 @@ REELS = {
     "g1113004403": "v/g1113004403-fb86f32d.mp4",
     "g1113004411": "v/g1113004411-6f2626fa.mp4",
     "g1113010939": "v/g1113010939-cb56203c.mp4",
+    # 2026-11-26: 09장 「국내 생산」 숏클립 3편(네이버 쇼핑라이브 숏클립 레퍼런스 스타일, 7초 9:16)
+    "bm-pure-sunday-dishcloth": "v/bm-pure-sunday-dishcloth-a20ad648.mp4",
+    "bm-medien-toothbrush": "v/bm-medien-toothbrush-49489237.mp4",
+    "bm-sock-maker-49": "v/bm-sock-maker-49-931f587f.mp4",
 }
 
 
