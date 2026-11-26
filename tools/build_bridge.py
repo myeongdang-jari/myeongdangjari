@@ -125,6 +125,9 @@ REEL_ORDER = [
     "bm-heattech-marunfive",
     "bm-winter-slipper-balcance",
     "bm-mop-sheet-cheongso",
+    "bm-homstar-pink",
+    "bm-home-sauna",
+    "bm-weatherstrip",
 ]
 REEL_COVER_DIR = ROOT / "img" / "reels"
 

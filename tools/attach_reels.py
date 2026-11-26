@@ -27,6 +27,9 @@ REELS = {
     "bm-veg-spinner": "v/reel-veg-spinner-39df3879.mp4",
     "bm-silicone-container-s": "v/reel-silicone-container-8d489287.mp4",
     "bm-bathroom-shelf-set": "v/reel-bathroom-shelf-6edfe957.mp4",
+    "bm-homstar-pink": "v/bm-homstar-pink_th-2e47dcff.mp4",
+    "bm-home-sauna": "v/bm-home-sauna-bd3da7c2.mp4",
+    "bm-weatherstrip": "v/bm-weatherstrip-f75e63a1.mp4",
 }
 
 
