@@ -30,6 +30,18 @@ REELS = {
     "bm-homstar-pink": "v/bm-homstar-pink_th-2e47dcff.mp4",
     "bm-home-sauna": "v/bm-home-sauna-bd3da7c2.mp4",
     "bm-weatherstrip": "v/bm-weatherstrip-f75e63a1.mp4",
+    # 2026-11-26: v/에 이미 만들어져 놀고 있던 릴스 11편 추가 연결(같은 상품에 본이 여러 개면 최신 파일 사용)
+    "bm-bubble-wrap": "v/bm-bubble-wrap-20701add.mp4",
+    "bm-door-curtain": "v/bm-door-curtain-91cb7fe9.mp4",
+    "bm-drone": "v/bm-drone-c03af97e.mp4",
+    "bm-humidifier": "v/bm-humidifier-3deec2ce.mp4",
+    "bm-partition-heater": "v/bm-partition-heater-7a2b4847.mp4",
+    "bm-premiere-projector": "v/bm-premiere-projector-4036a1e8.mp4",
+    "bm-shower-rod-shelf": "v/bm-shower-rod-shelf-849d7520.mp4",
+    "g1113004226": "v/g1113004226-4c49ad03.mp4",
+    "g1113004403": "v/g1113004403-fb86f32d.mp4",
+    "g1113004411": "v/g1113004411-6f2626fa.mp4",
+    "g1113010939": "v/g1113010939-cb56203c.mp4",
 }
 
 
