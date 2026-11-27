@@ -26,7 +26,8 @@ REELS = {
     "bm-thermal-pot": "v/reel-thermal-pot-06e7fa93.mp4",
     "bm-veg-spinner": "v/reel-veg-spinner-39df3879.mp4",
     "bm-silicone-container-s": "v/reel-silicone-container-8d489287.mp4",
-    "bm-bathroom-shelf-set": "v/reel-bathroom-shelf-6edfe957.mp4",
+    # 2026-11-27: 같은 상품의 새 본(_th 광고형 15초)이 올라와 최신 파일로 교체
+    "bm-bathroom-shelf-set": "v/bm-bathroom-shelf-set_th-9b07b462.mp4",
     "bm-homstar-pink": "v/bm-homstar-pink_th-2e47dcff.mp4",
     "bm-home-sauna": "v/bm-home-sauna-bd3da7c2.mp4",
     "bm-weatherstrip": "v/bm-weatherstrip-f75e63a1.mp4",
@@ -50,6 +51,8 @@ REELS = {
     "bm-riond-microwave-set": "v/bm-riond-microwave-set-night.mp4",
     "bm-hannune-pantry-box": "v/bm-hannune-pantry-box-night.mp4",
     "bm-prieel-pillow-cover": "v/bm-prieel-pillow-cover-night.mp4",
+    # 2026-11-27: 13:12 업로드분 — 라세르 겨울 방한 기모 바라클라바(15초 1080x1920)
+    "bm-balaclava": "v/bm-balaclava-412b271f.mp4",
 }
 
 
