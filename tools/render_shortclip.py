@@ -458,6 +458,37 @@ SPECS = {
         "name": ["49년양말장인 국산", "무지 양말 10켤레 세트"],
         "cover_name": "49년양말장인 국산 양말 10켤레",
     },
+    # 2026-11-27: 09장 「국내 생산」 남은 3종 — 장 전체를 릴스로 채움
+    "bm-riond-microwave-set": {
+        "photo": "img/products/riond-microwave-container.jpg",
+        "eyebrow": "09 · 국내 생산 · RIOND",
+        "eyebrow_short": "09 · 국내 생산 · RIOND",
+        "title": ["전자레인지에 그대로,", "국내 생산 뚜껑 세트"],
+        "points": [("국내 생산", "MADE IN KOREA"), ("BPA프리", "BPA FREE"), ("뚜껑 덮어 데우기", "MICROWAVE")],
+        "tag": "09 · 국내 생산",
+        "name": ["리온드 국내생산", "전자레인지 접시뚜껑세트"],
+        "cover_name": "리온드 전자레인지 접시뚜껑세트",
+    },
+    "bm-hannune-pantry-box": {
+        "photo": "img/products/hannune-pantry-box.jpg",
+        "eyebrow": "09 · 국내 생산 · HANNUNE",
+        "eyebrow_short": "09 · 국내 생산 · HANNUNE",
+        "title": ["선반 한 칸,", "네 통으로 정리"],
+        "points": [("국내 생산", "MADE IN KOREA"), ("4개 한 세트", "4 BOXES"), ("팬트리 정리", "PANTRY")],
+        "tag": "09 · 국내 생산",
+        "name": ["한누네 국내생산", "다용도 팬트리 정리함 4개"],
+        "cover_name": "한누네 팬트리 정리함 4개",
+    },
+    "bm-prieel-pillow-cover": {
+        "photo": "img/products/prieel-pillow-cover.jpg",
+        "eyebrow": "09 · 국내 생산 · PRIEEL",
+        "eyebrow_short": "09 · 국내 생산 · PRIEEL",
+        "title": ["베갯잠은 자주,", "국내 생산 커버"],
+        "points": [("국내 생산", "MADE IN KOREA"), ("피그먼트 코튼", "COTTON"), ("색 맞춰 여분", "SPARE")],
+        "tag": "09 · 국내 생산",
+        "name": ["쁘리엘르 국내생산", "코튼캔디 베개 커버"],
+        "cover_name": "쁘리엘르 베개 커버",
+    },
 }
 
 

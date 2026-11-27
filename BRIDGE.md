@@ -2495,4 +2495,56 @@
    "shipping": "판매처 조건 확인 필요",
    "why_coupang": "양말은 돌려 신다 보면 금방 줄어서, 열 켤레 묶음을 한 번에 받아 두는 쪽이 편합니다."
   }
+ },
+ {
+  "id": "kimjang-cabbage",
+  "name": "해남 땅끝산들 절임배추, 20kg",
+  "partners_link": "https://link.coupang.com/a/i0zY3Gq8bY",
+  "image": "img/products/kimjang-cabbage.jpg",
+  "account": "take",
+  "category": "김장·겨울 저장",
+  "hook": "김장 날, 절이고 소금 빼는 일까지 끝난 배추를 스무 킬로로 받는 구성입니다",
+  "summary": [
+   "해남 땅끝산들 절임배추 20kg 한 박스입니다. 받는 날짜를 지정해 주문하는 방식이라 김장 날에 맞춰 두기 좋고, 락앤락 김치통 두 통에 나눠 담는 짝으로 함께 올려 두었습니다."
+  ],
+  "search_keyword": "해남 땅끝산들 절임배추 20kg",
+  "pair_with": "kimchi-container",
+  "evidence": {
+   "source": "유튜브 최근 30일 인기 영상(절임배추 20kg 김장김치) + 쿠팡 파트너스 콘솔 상품 검색·링크 발급 실측",
+   "shorts_url": "https://www.youtube.com/watch?v=0bf7oUbGBpE",
+   "views": 526129,
+   "uploaded": "2026-11-16경",
+   "store_word": "김장철(시즌 라운드업)",
+   "checked": "2026-11-27",
+   "product_id": "7583865134",
+   "origin": "국내산(상품명 '해남 땅끝산들', 콘솔 상품명 기준)",
+   "shipping": "로켓프레시(파트너스 콘솔 배지 확인)",
+   "why_coupang": "절임배추는 절이고 소금 빼는 시간이 관건이라, 산지에서 절인 것을 받는 날짜를 정해 받는 쪽이 편합니다."
+  }
+ },
+ {
+  "id": "kimchi-container",
+  "name": "락앤락 직사각 김치통 투핸들, 16L, 2개",
+  "partners_link": "https://link.coupang.com/a/i0z25EE72W",
+  "image": "img/products/kimchi-container.jpg",
+  "account": "take",
+  "category": "주방·김장 보관",
+  "hook": "김장 한 통 담아 두고 꺼내 먹을 김치통, 손잡이 달린 십육 리터 두 개입니다",
+  "summary": [
+   "락앤락 직사각 김치통 16L 두 개 구성입니다. 사각형이라 김치냉장고나 선반에 밀어 넣기 좋고, 절임배추 20kg을 두 통에 나눠 담는 짝으로 함께 올렸습니다."
+  ],
+  "search_keyword": "락앤락 직사각 김치통 16L 2개",
+  "pair_with": "kimjang-cabbage",
+  "evidence": {
+   "source": "유튜브 최근 30일 인기 영상(김장김치 담그는 법) + 쿠팡 파트너스 콘솔 상품 검색·링크 발급 실측",
+   "shorts_url": "https://www.youtube.com/watch?v=BE4oP2FzDYA",
+   "views": 2649483,
+   "uploaded": "2026-11-13경",
+   "store_word": "김장철(시즌 라운드업)",
+   "checked": "2026-11-27",
+   "product_id": "107647",
+   "origin": "상품명 표기 없음(제조국 미확인)",
+   "shipping": "판매처 조건 확인 필요",
+   "why_coupang": "김치통은 크기와 뚜껑 잠금이 관건이라, 16L 두 통을 한 번에 받아 김장 양에 맞춰 나눠 쓰는 쪽이 편합니다."
+  }
  }]```

@@ -46,6 +46,10 @@ REELS = {
     "bm-pure-sunday-dishcloth": "v/bm-pure-sunday-dishcloth-a20ad648.mp4",
     "bm-medien-toothbrush": "v/bm-medien-toothbrush-49489237.mp4",
     "bm-sock-maker-49": "v/bm-sock-maker-49-931f587f.mp4",
+    # 2026-11-27: 09장 「국내 생산」 남은 3종 숏클립 — 09장 6종 전부 릴스
+    "bm-riond-microwave-set": "v/bm-riond-microwave-set-night.mp4",
+    "bm-hannune-pantry-box": "v/bm-hannune-pantry-box-night.mp4",
+    "bm-prieel-pillow-cover": "v/bm-prieel-pillow-cover-night.mp4",
 }
 
 
