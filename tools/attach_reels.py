@@ -53,6 +53,9 @@ REELS = {
     "bm-prieel-pillow-cover": "v/bm-prieel-pillow-cover-night.mp4",
     # 2026-11-27: 13:12 업로드분 — 라세르 겨울 방한 기모 바라클라바(15초 1080x1920)
     "bm-balaclava": "v/bm-balaclava-412b271f.mp4",
+    # 2026-11-28: 신규 2종 숏클립(render_shortclip.py, 7초 1080x1920)
+    "bm-water-heating-mat": "v/bm-water-heating-mat-night.mp4",
+    "bm-frozen-hotteok": "v/bm-frozen-hotteok-night.mp4",
 }
 
 

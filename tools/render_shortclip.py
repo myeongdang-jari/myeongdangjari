@@ -259,7 +259,7 @@ def draw_texts(canvas, spec, t):
     a3 = ease_out((t - 2.2) / 0.8)
     if a3 > 0:
         tmp = Image.new("RGBA", (W, 60), (0, 0, 0, 0))
-        spaced(ImageDraw.Draw(tmp), "명당 밤도깨비 시장 · 9화 국내 생산", cx, 30,
+        spaced(ImageDraw.Draw(tmp), f"명당 밤도깨비 시장 · {spec['tag']}", cx, 30,
                F("SemiBold", 22), 5.0, MUTED + (int(220 * a3),))
         paste_rgba(layer, tmp, 0, 1720)
     canvas.alpha_composite(layer)
@@ -422,7 +422,7 @@ def render_cover(spec, photo_path, out_jpg, cw=480, ch=560):
     # 하단 이름 바
     d.rectangle((0, ch - 84, cw, ch), fill=(255, 255, 255, 255))
     d.text((22, ch - 56), spec["cover_name"], font=F("Bold", 22), fill=INK + (255,), anchor="lm")
-    d.text((22, ch - 26), "09 · 국내 생산", font=F("SemiBold", 15), fill=GOLD + (255,), anchor="lm")
+    d.text((22, ch - 26), spec["tag"], font=F("SemiBold", 15), fill=GOLD + (255,), anchor="lm")
     canvas.convert("RGB").save(out_jpg, quality=90, optimize=True)
     print(f"커버 완료: {out_jpg}")
 
@@ -488,6 +488,27 @@ SPECS = {
         "tag": "09 · 국내 생산",
         "name": ["쁘리엘르 국내생산", "코튼캔디 베개 커버"],
         "cover_name": "쁘리엘르 베개 커버",
+    },
+    # 2026-11-28: 신규 2종 숏클립
+    "bm-water-heating-mat": {
+        "photo": "img/products/water-heating-mat.jpg",
+        "eyebrow": "03 · 난방·이불 · ILWOL",
+        "eyebrow_short": "03 · 난방·이불 · ILWOL",
+        "title": ["보일러 대신,", "이불 속부터"],
+        "points": [("물순환 방식", "WATER TYPE"), ("싱글·더블", "TWO SIZES"), ("커버 세탁", "WASHABLE")],
+        "tag": "03 · 난방·이불",
+        "name": ["일월 숲속애 온수매트", "싱글 100 x 200 cm"],
+        "cover_name": "일월 숲속애 온수매트 싱글",
+    },
+    "bm-frozen-hotteok": {
+        "photo": "img/products/frozen-hotteok.jpg",
+        "eyebrow": "04 · 간식·어묵 · HOTTEOK",
+        "eyebrow_short": "04 · 간식·어묵 · HOTTEOK",
+        "title": ["프라이팬에 한 장,", "겨울 저녁 간식"],
+        "points": [("냉동 20개입", "20 PIECES"), ("한 장씩 구워", "PAN FRY"), ("먹을 만큼만", "AS NEEDED")],
+        "tag": "04 · 간식·어묵",
+        "name": ["호떡당 꿀호떡 냉동", "70g 20개입"],
+        "cover_name": "호떡당 꿀호떡 냉동 20개입",
     },
 }
 
